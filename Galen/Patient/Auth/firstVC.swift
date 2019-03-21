@@ -15,35 +15,67 @@ class firstVC: UIViewController{
     
     @IBOutlet weak var Signin: UIButton!
     
+    @IBOutlet weak var SignUP: UIButton!
+    
+    @IBOutlet weak var NotNow: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)
-        let LiftGradientColor = #colorLiteral(red: 0.337254902, green: 0.8980392157, blue: 0.6549019608, alpha: 1)
+       gradBTNS()
+        imageLogo.image = UIImage(named: "logo")
         
+    }
+    func gradBTNS() {
+        
+    let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)
+    let LiftGradientColor = #colorLiteral(red: 0.337254902, green: 0.8980392157, blue: 0.6549019608, alpha: 1)
+    
+        // Sign in BTN
         let gradientLayer = CAGradientLayer()
         
         gradientLayer.frame = Signin.bounds
         
         gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
         
-        //Vertical
-        //gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        //gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        
-        //Horizontal
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
         Signin.layer.insertSublayer(gradientLayer, at: 0)
         
-        Signin.layer.cornerRadius = 10
+        Signin.layer.cornerRadius = Signin.frame.height / 2
         Signin.clipsToBounds = true
         
-        imageLogo.image = UIImage(named: "logo")
+        // Sign Up BTN
+        let gradientLayer2 = CAGradientLayer()
         
-    }
+        gradientLayer2.frame = SignUP.bounds
+        
+        gradientLayer2.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
+        
+        gradientLayer2.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer2.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        SignUP.layer.insertSublayer(gradientLayer2, at: 0)
+        
+        SignUP.layer.cornerRadius = SignUP.frame.height / 2
+        SignUP.clipsToBounds = true
+        
+        // Not Now BTN
+        let gradientLayer3 = CAGradientLayer()
+        
+        gradientLayer3.frame = NotNow.bounds
+        
+        gradientLayer3.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
     
+        gradientLayer3.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer3.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        NotNow.layer.insertSublayer(gradientLayer3, at: 0)
+        
+        NotNow.layer.cornerRadius = NotNow.frame.height / 2
+        NotNow.clipsToBounds = true
+
+    }
     
 }
