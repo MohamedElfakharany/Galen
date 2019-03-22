@@ -73,7 +73,7 @@ class firstVC: UIViewController{
         
         NotNow.layer.insertSublayer(gradientLayer3, at: 0)
         
-        NotNow.layer.cornerRadius = NotNow.frame.height / 2
+        NotNow.layer.cornerRadius = 17.5
         NotNow.clipsToBounds = true
 
     }
