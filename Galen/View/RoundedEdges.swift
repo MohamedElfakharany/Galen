@@ -14,7 +14,7 @@ class RoundedEdges: UIView {
 extension UIView {
     func MakeRoundeEdges(_ View : UIView){
         
-        View.layer.cornerRadius = View.frame.height / 2
+        View.layer.cornerRadius = 17.5
         View.clipsToBounds = true
     }
     

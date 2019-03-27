@@ -48,6 +48,8 @@ class restPasswordVC: UIViewController {
         if let myImage = UIImage(named: "phone-call"){
             
             phoneNumber.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            phoneNumber.MakeRoundeEdges(phoneNumber)
+            phoneNumber.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
         
     }
@@ -69,7 +71,7 @@ class restPasswordVC: UIViewController {
         
         SendBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        SendBtnOutlet.layer.cornerRadius = SendBtnOutlet.frame.height / 2
+        SendBtnOutlet.layer.cornerRadius = 17.5
         SendBtnOutlet.clipsToBounds = true
     }
     
