@@ -2902,7 +2902,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUb-rZ-oSs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 17 Dec 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfk-9m-kC6">
                                                             <rect key="frame" x="20" y="11.5" width="135" height="17"/>
@@ -2911,7 +2911,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 8 pm to 9 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-sJ-AOA">
-                                                            <rect key="frame" x="237" y="12.5" width="108" height="15"/>
+                                                            <rect key="frame" x="182" y="12.5" width="108" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -2934,13 +2934,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Dr. Mohamed Ahmed Hussien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1K-cg-Brm">
-                                                    <rect key="frame" x="98" y="50" width="226" height="15"/>
+                                                    <rect key="frame" x="98" y="50" width="171" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepciality Of Neurosurgery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfn-ln-qgt">
-                                                    <rect key="frame" x="98" y="70" width="226" height="12"/>
+                                                    <rect key="frame" x="98" y="70" width="171" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="9Fv-RP-ysb"/>
                                                     </constraints>
@@ -2948,8 +2948,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Cancelled Appoinment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-fW-G34">
-                                                    <rect key="frame" x="98" y="105" width="242" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Cancelled Appoinment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-fW-G34">
+                                                    <rect key="frame" x="98" y="103" width="153" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2970,7 +2970,6 @@
                                                 <constraint firstItem="LUb-rZ-oSs" firstAttribute="top" secondItem="mYt-7p-UGW" secondAttribute="top" id="TsG-Ez-Q6B"/>
                                                 <constraint firstItem="Zfn-ln-qgt" firstAttribute="leading" secondItem="E1K-cg-Brm" secondAttribute="leading" id="Upi-Yg-93S"/>
                                                 <constraint firstItem="vIY-fW-G34" firstAttribute="leading" secondItem="E1K-cg-Brm" secondAttribute="leading" id="fD3-Sk-yEJ"/>
-                                                <constraint firstItem="vIY-fW-G34" firstAttribute="trailing" secondItem="E1K-cg-Brm" secondAttribute="trailing" id="fxs-Je-MI4"/>
                                                 <constraint firstItem="E1K-cg-Brm" firstAttribute="leading" secondItem="lYz-bk-DCJ" secondAttribute="trailing" constant="8" symbolic="YES" id="njN-1h-IOh"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="E1K-cg-Brm" secondAttribute="trailing" constant="16" id="wAD-XX-cWL"/>
                                             </constraints>
