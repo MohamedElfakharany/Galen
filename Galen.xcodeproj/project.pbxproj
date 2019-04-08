@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B38C00224A5393000C132B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38BFF224A5393000C132B /* moreVC.swift */; };
+		96B38C02224A5751000C132B /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C01224A5750000C132B /* settingVC.swift */; };
+		96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C05224AAAF6000C132B /* searchResultsVC.swift */; };
+		96B38C0A224ABEE6000C132B /* DoctorResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */; };
+		96B38C0D224AC0FA000C132B /* DoctorResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */; };
+		96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C0E224AC47E000C132B /* doctorDataVC.swift */; };
+		96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */; };
+		96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */; };
+		96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C14224B0035000C132B /* ChooseYourDoctorVC.swift */; };
+		96B38C18224B00D2000C132B /* MyAppoinmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C17224B00D2000C132B /* MyAppoinmentsVC.swift */; };
+		96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C1A224B0112000C132B /* FavoritsVC.swift */; };
+		96B38C1D224B0195000C132B /* EditMyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C1C224B0195000C132B /* EditMyProfileVC.swift */; };
+		96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C1E224B01C5000C132B /* changePasswordVC.swift */; };
+		96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C20224B0550000C132B /* ApprovalListVC.swift */; };
 		96D419F522380198001B0411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F422380198001B0411 /* AppDelegate.swift */; };
 		96D419F722380199001B0411 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F622380199001B0411 /* firstVC.swift */; };
 		96D419FA22380199001B0411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D419F822380199001B0411 /* Main.storyboard */; };
@@ -32,6 +46,20 @@
 		17438C3606885CCECC8DA425 /* Pods_Galen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Galen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.debug.xcconfig"; sourceTree = "<group>"; };
 		943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.release.xcconfig"; sourceTree = "<group>"; };
+		96B38BFF224A5393000C132B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
+		96B38C01224A5750000C132B /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
+		96B38C05224AAAF6000C132B /* searchResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultsVC.swift; sourceTree = "<group>"; };
+		96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorResultsCell.xib; sourceTree = "<group>"; };
+		96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorResultsCell.swift; sourceTree = "<group>"; };
+		96B38C0E224AC47E000C132B /* doctorDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorDataVC.swift; sourceTree = "<group>"; };
+		96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReservationVC.swift; sourceTree = "<group>"; };
+		96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTheBookingVC.swift; sourceTree = "<group>"; };
+		96B38C14224B0035000C132B /* ChooseYourDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourDoctorVC.swift; sourceTree = "<group>"; };
+		96B38C17224B00D2000C132B /* MyAppoinmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppoinmentsVC.swift; sourceTree = "<group>"; };
+		96B38C1A224B0112000C132B /* FavoritsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsVC.swift; sourceTree = "<group>"; };
+		96B38C1C224B0195000C132B /* EditMyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyProfileVC.swift; sourceTree = "<group>"; };
+		96B38C1E224B01C5000C132B /* changePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordVC.swift; sourceTree = "<group>"; };
+		96B38C20224B0550000C132B /* ApprovalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListVC.swift; sourceTree = "<group>"; };
 		96D419F122380198001B0411 /* Galen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D419F422380198001B0411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D419F622380199001B0411 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
@@ -73,6 +101,65 @@
 				943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		96B38BFE224A537E000C132B /* more */ = {
+			isa = PBXGroup;
+			children = (
+				96B38BFF224A5393000C132B /* moreVC.swift */,
+				96B38C01224A5750000C132B /* settingVC.swift */,
+				96B38C20224B0550000C132B /* ApprovalListVC.swift */,
+				96B38C1C224B0195000C132B /* EditMyProfileVC.swift */,
+				96B38C1E224B01C5000C132B /* changePasswordVC.swift */,
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		96B38C03224AAA87000C132B /* SearchByAreaAndSpeciality */ = {
+			isa = PBXGroup;
+			children = (
+				96B38C0B224AC0A0000C132B /* DoctorResultsCell */,
+				96D41A2422380400001B0411 /* SearchByAreaAndSpecialityVC.swift */,
+				96B38C05224AAAF6000C132B /* searchResultsVC.swift */,
+				96B38C0E224AC47E000C132B /* doctorDataVC.swift */,
+				96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */,
+				96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */,
+			);
+			path = SearchByAreaAndSpeciality;
+			sourceTree = "<group>";
+		};
+		96B38C04224AAACE000C132B /* PatiantSearchForDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */,
+				96B38C14224B0035000C132B /* ChooseYourDoctorVC.swift */,
+			);
+			path = PatiantSearchForDoctor;
+			sourceTree = "<group>";
+		};
+		96B38C0B224AC0A0000C132B /* DoctorResultsCell */ = {
+			isa = PBXGroup;
+			children = (
+				96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */,
+				96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */,
+			);
+			path = DoctorResultsCell;
+			sourceTree = "<group>";
+		};
+		96B38C16224B009B000C132B /* Appoinments */ = {
+			isa = PBXGroup;
+			children = (
+				96B38C17224B00D2000C132B /* MyAppoinmentsVC.swift */,
+			);
+			path = Appoinments;
+			sourceTree = "<group>";
+		};
+		96B38C19224B00FD000C132B /* Favorits */ = {
+			isa = PBXGroup;
+			children = (
+				96B38C1A224B0112000C132B /* FavoritsVC.swift */,
+			);
+			path = Favorits;
 			sourceTree = "<group>";
 		};
 		96D419E822380198001B0411 = {
@@ -133,6 +220,9 @@
 			children = (
 				96D41A1C2238035D001B0411 /* Auth */,
 				96D41A1D22380369001B0411 /* search */,
+				96B38C16224B009B000C132B /* Appoinments */,
+				96B38C19224B00FD000C132B /* Favorits */,
+				96B38BFE224A537E000C132B /* more */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -169,8 +259,8 @@
 		96D41A1D22380369001B0411 /* search */ = {
 			isa = PBXGroup;
 			children = (
-				96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */,
-				96D41A2422380400001B0411 /* SearchByAreaAndSpecialityVC.swift */,
+				96B38C03224AAA87000C132B /* SearchByAreaAndSpeciality */,
+				96B38C04224AAACE000C132B /* PatiantSearchForDoctor */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -246,6 +336,7 @@
 				96D41A022238019B001B0411 /* LaunchScreen.storyboard in Resources */,
 				96D419FF2238019B001B0411 /* Assets.xcassets in Resources */,
 				96D419FA22380199001B0411 /* Main.storyboard in Resources */,
+				96B38C0A224ABEE6000C132B /* DoctorResultsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +369,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Galen/Pods-Galen-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,16 +393,29 @@
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
+				96B38C00224A5393000C132B /* moreVC.swift in Sources */,
 				96D41A2522380400001B0411 /* SearchByAreaAndSpecialityVC.swift in Sources */,
+				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,
+				96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */,
+				96B38C1D224B0195000C132B /* EditMyProfileVC.swift in Sources */,
+				96B38C0D224AC0FA000C132B /* DoctorResultsCell.swift in Sources */,
+				96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */,
+				96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */,
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
+				96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */,
+				96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */,
 				96D41A1B22380345001B0411 /* RoundedEdges.swift in Sources */,
+				96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */,
+				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
 				96D41A192238032D001B0411 /* gradintColor.swift in Sources */,
 				96D41A15223802D0001B0411 /* config.swift in Sources */,
 				96D41A21223803AC001B0411 /* restPasswordVC.swift in Sources */,
 				96D41A11223802A0001B0411 /* helper.swift in Sources */,
+				96B38C18224B00D2000C132B /* MyAppoinmentsVC.swift in Sources */,
+				96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */,
 				96D41A23223803CB001B0411 /* signUpVC.swift in Sources */,
 				96D419F522380198001B0411 /* AppDelegate.swift in Sources */,
 			);
@@ -469,7 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,7 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

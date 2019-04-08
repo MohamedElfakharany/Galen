@@ -106,7 +106,7 @@ class LoginVC: UIViewController {
         
         SignInBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        SignInBtnOutlet.layer.cornerRadius = SignInBtnOutlet.frame.height / 2
+        SignInBtnOutlet.layer.cornerRadius = 17.5
         SignInBtnOutlet.clipsToBounds = true
     }
     

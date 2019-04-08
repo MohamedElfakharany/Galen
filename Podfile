@@ -8,6 +8,7 @@ target 'Galen' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'IQKeyboardManagerSwift'
   # Pods for Galen
 
 end

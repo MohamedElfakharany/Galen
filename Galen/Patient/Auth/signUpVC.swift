@@ -11,6 +11,7 @@ import UIKit
 class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
     
     var gender = ["male","female"]
+    var VarSelectedGander=0
     
     @IBOutlet weak var patientCode: UITextField!
     @IBOutlet weak var patientName: UITextField!
@@ -103,7 +104,14 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             return
         }
         
-        API_Auth.register(patient_code: patientCode.text ?? "", patient_name: patientName.text ?? "", phone_number: phoneNumber.text ?? "", email_adress: emailAdress.text ?? "", password: password.text ?? "", password_confirmation: passwordConfirmation.text ?? "", date_of_birth: dateOfBirth.text ?? "", insurance_companies: insuranceCompanies.text ?? "") { (error:Error?, success: Bool, data) in
+        API_Auth.register(patient_code: patientCode.text ?? "",
+                          patient_name: patientName.text ?? "",
+                          phone_number: phoneNumber.text ?? "",
+                          email_adress: emailAdress.text ?? "",
+                          password: password.text ?? "",
+                          password_confirmation: passwordConfirmation.text ?? "",
+                          date_of_birth: dateOfBirth.text ?? "",
+                          insurance_companies: insuranceCompanies.text ?? "") { (error:Error?, success: Bool, data) in
             
             if success {
                 if data == nil {
@@ -198,7 +206,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
+        VarSelectedGander=row
         return gender[row]
     }
     
@@ -226,7 +234,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         
         RegisterBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        RegisterBtnOutlet.layer.cornerRadius = RegisterBtnOutlet.frame.height / 2
+        RegisterBtnOutlet.layer.cornerRadius = 17.5
         RegisterBtnOutlet.clipsToBounds = true
       
     }

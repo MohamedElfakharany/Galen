@@ -11,7 +11,7 @@ import UIKit
 class gradintColor: UIView {
 
     
-    func setBackGround( colorOne : UIColor , colortwo : UIColor) {
+    /*func setBackGround( colorOne : UIColor , colortwo : UIColor) {
         
         let gradintLayer = CAGradientLayer()
         gradintLayer.frame = bounds
@@ -19,9 +19,10 @@ class gradintColor: UIView {
         gradintLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
         gradintLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         self.layer.insertSublayer(gradintLayer, at: 0)
-    }
+    }*/
     
 }
+/*
 extension UIView{
     func setGradientBackGround(colorOne : UIColor , colorTwo : UIColor){
         let gradientLayer = CAGradientLayer()
@@ -32,7 +33,7 @@ extension UIView{
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-}
+}*/
 extension UINavigationBar {
     func setGradientBackground(colors: [Any]) {
         let gradient: CAGradientLayer = CAGradientLayer()

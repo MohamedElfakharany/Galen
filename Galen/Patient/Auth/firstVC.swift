@@ -23,7 +23,7 @@ class firstVC: UIViewController{
         super.viewDidLoad()
         
        gradBTNS()
-        imageLogo.image = UIImage(named: "logo")
+        imageLogo.image = UIImage(named: "Logo")
         
     }
     func gradBTNS() {
@@ -43,7 +43,7 @@ class firstVC: UIViewController{
         
         Signin.layer.insertSublayer(gradientLayer, at: 0)
         
-        Signin.layer.cornerRadius = Signin.frame.height / 2
+        Signin.layer.cornerRadius = 17.5
         Signin.clipsToBounds = true
         
         // Sign Up BTN
@@ -58,7 +58,7 @@ class firstVC: UIViewController{
         
         SignUP.layer.insertSublayer(gradientLayer2, at: 0)
         
-        SignUP.layer.cornerRadius = SignUP.frame.height / 2
+        SignUP.layer.cornerRadius = 17.5
         SignUP.clipsToBounds = true
         
         // Not Now BTN
@@ -73,7 +73,7 @@ class firstVC: UIViewController{
         
         NotNow.layer.insertSublayer(gradientLayer3, at: 0)
         
-        NotNow.layer.cornerRadius = NotNow.frame.height / 2
+        NotNow.layer.cornerRadius = 17.5
         NotNow.clipsToBounds = true
 
     }
