@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class moreVC: UIViewController {
 
@@ -45,5 +47,23 @@ class moreVC: UIViewController {
     
     
     @IBAction func logoutBtnAction(_ sender: Any) {
+        
+        let url = "http://microtec1.egytag.com:30001/api/user/logout"
+        
+        let accessTokenObject = ["access_token" : helper.getAPIToken()]
+        
+        let parameters : Parameters = [
+            "Cookie" : accessTokenObject
+            ]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (DataResponse) in
+            print( DataResponse.response )
+         
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "FirstVC")
+            self.present(newViewController, animated: true, completion: nil)
+            
+        }
     }
 }

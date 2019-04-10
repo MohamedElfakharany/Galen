@@ -50,14 +50,20 @@ class LoginVC: UIViewController {
         
         API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "") { (error: Error?, success: Bool, data) in
             if success {
-                if data == nil {
-                    print("success")
+                if data == "trueLogin" {
+                    
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+                    self.present(newViewController, animated: true, completion: nil)
+                   // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
+                    
                 }else {
                     self.showAlert(title: "Login Filed", message: "\(data ?? "")")
                 }
                 //
             }else {
                 self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                print(error)
             }
             
         }

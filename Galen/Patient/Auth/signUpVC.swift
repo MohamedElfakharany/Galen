@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
     
+    
+    var ICsNames = [String]()
     var gender = ["male","female"]
     var VarSelectedGander=0
     
@@ -22,16 +26,70 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     @IBOutlet  weak var dateOfBirth: UITextField!
     @IBOutlet  weak var insuranceCompanies: UITextField!
     @IBOutlet weak var TypeLabel: UILabel!
+    @IBOutlet weak var PickerViewICs: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.PickerViewICs.isHidden = true
+        self.PickerViewICs.delegate = self
+        insuranceCompanies.delegate = self
+        GetInsurnaceCompany()
         gradBTNS()
         imageText()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
+    }
+    
+    
+    func GetInsurnaceCompany(){
+        
+        
+        //////
+        API_Auth.login(email: "gaber.hosny.fci.scu@gmail.com" , password: "0663403457" ) { (error: Error?, success: Bool, data) in
+            if success {
+            print("FakeLoginDone")
+            }else {
+                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                print(error)
+            }
+            
+        }
+        //////
+        
+        let parameters : Parameters = [
+            "accessToken" : "8462a029bb221e63e98d2653cf985ade"
+        ]
+        
+        Alamofire.request("http://microtec1.egytag.com:30001/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            switch (response.result){
+            case .success(let Value):
+            let json = JSON(Value)
+                print("json =   \(json)")
+            let ICs = json["list"].arrayObject as! [[String : Any]]
+            for IC in ICs {
+               if let ICName = IC["name"] {
+                self.ICsNames.append(ICName as! String)
+                 }
+                print("Array OF ICsNames \(self.ICsNames)")
+                }
+            case .failure(_):
+                print("error  = \(String(describing: response.result.error))")
+            }
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("insideMethod")
+        if textField === self.insuranceCompanies {
+            print("in textfieldbegin editing")
+            self.PickerViewICs.isHidden = false
+            self.insuranceCompanies.isHidden = true
+        } else {
+            print("insidefuncbutnottheCorrecttextFIeld")
+        }
     }
     
    
@@ -75,12 +133,12 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             return
         }
         // password & passwordConfirmation are equals
-        guard  password == passwordConfirmation else {
+        /*guard  password == passwordConfirmation else {
             let messages = NSLocalizedString("Passwords not match", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
             return
-        }
+        }*/
         
         // date of birth
         guard let dateOfBirths = dateOfBirth.text, !dateOfBirths.isEmpty else {
@@ -114,14 +172,30 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
                           insurance_companies: insuranceCompanies.text ?? "") { (error:Error?, success: Bool, data) in
             
             if success {
-                if data == nil {
+                if data != nil {
                     print("success")
+                    API_Auth.login(email: data?[0] ?? "" , password: data?[1] ?? "") { (error: Error?, success: Bool, data) in
+                        if success {
+                            if data == "trueLogin" {
+                                
+                                self.performSegue(withIdentifier: "TrueLoginAfterSignup", sender: nil )
+                                
+                            }else {
+                                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                            }
+                            //
+                        }else {
+                            self.showAlert(title: "Login Filed", message: "\(data ?? "")")
+                            print(error ?? "")
+                        }
+                        
+                    }
                 }else {
-                    self.showAlert(title: "Register Filed", message: "\(data ?? "") Sorry Try again")
+                    self.showAlert(title: "Register Filed", message: "\(data![0] ) Sorry Try again")
                 }
                 
             }else {
-                self.showAlert(title: "Register Filed", message: "\(data ?? "") Sorry Try again")
+                self.showAlert(title: "Register Filed", message: "\(data![0] ) Sorry Try again")
             }
             
         }
@@ -202,16 +276,31 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return gender.count
+        if pickerView == PickYourGender {
+            return gender.count
+        } else {
+            return self.ICsNames.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        VarSelectedGander=row
-        return gender[row]
+        if pickerView == PickYourGender {
+            VarSelectedGander=row
+            return gender[row]
+        } else {
+            VarSelectedGander=row
+            return ICsNames[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == PickYourGender {
         TypeLabel.text=gender[row];
+        } else {
+            self.insuranceCompanies.isHidden = false
+            self.insuranceCompanies.text = self.ICsNames[row]
+            self.PickerViewICs.isHidden = true
+        }
     }
     
     // Button Outlet View

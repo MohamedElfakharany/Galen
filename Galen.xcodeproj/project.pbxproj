@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */; };
 		96B38C00224A5393000C132B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38BFF224A5393000C132B /* moreVC.swift */; };
 		96B38C02224A5751000C132B /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C01224A5750000C132B /* settingVC.swift */; };
 		96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C05224AAAF6000C132B /* searchResultsVC.swift */; };
@@ -46,6 +47,7 @@
 		17438C3606885CCECC8DA425 /* Pods_Galen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Galen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.debug.xcconfig"; sourceTree = "<group>"; };
 		943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.release.xcconfig"; sourceTree = "<group>"; };
+		96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarViewController.swift; sourceTree = "<group>"; };
 		96B38BFF224A5393000C132B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		96B38C01224A5750000C132B /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		96B38C05224AAAF6000C132B /* searchResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultsVC.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				96B38C03224AAA87000C132B /* SearchByAreaAndSpeciality */,
 				96B38C04224AAACE000C132B /* PatiantSearchForDoctor */,
+				96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
+				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
 				96B38C00224A5393000C132B /* moreVC.swift in Sources */,
 				96D41A2522380400001B0411 /* SearchByAreaAndSpecialityVC.swift in Sources */,
 				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,

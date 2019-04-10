@@ -10,10 +10,11 @@ import Foundation
 
 struct URLsPatient {
     
-    static let main = ""
+    static let main = "http://microtec1.egytag.com:30001/api/"
     
-    static let register = main + "register"
-    static let login = main + "login"
+    static let register = main + "register/add"
+    static let login = main + "user/login"
     static let restPassword = main + "restPassword"
+     static let EditProfile = main + "patients/update"
     
 }

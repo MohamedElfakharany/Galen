@@ -23,21 +23,38 @@ class API_Auth: NSObject {
         
         print(parameters)
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            print(response)
             switch response.result
             {
             case .failure(let error):
                 completion(error, false, nil)
+                print("the error is")
                 print(error)
                 //self.showAlert(title: "Error", message: "\(error)")
                 
             case .success(let value):
                 let json = JSON(value)
-                print(value)
-                if let user_token = json["message"]["userToken"].string {
+                if json["error"] != "Login Error , You Are Loged " {
+                    print("thereisauser")
+                 print("json =   \(json)")
+                if let user_token = json["accessToken"].string {
                     print("user token \(user_token)")
                     helper.saveAPIToken(token: user_token)
-                    completion(nil, true , nil)
+                    print("loginIsDone")
+                    completion(nil, true , "trueLogin")
+                    }
+                    
+                    let user = json["user"].dictionary ?? ["nouser" : "nouser"]
+                    print("theuser  \(user)")
+                    
+                    if let user_id: String = user["id"]?.stringValue {
+                        print("user id \(user_id )")
+                        helper.saveUserId(userId: user_id  )
+                    }
+                        print("loginIsDone")
+                        completion(nil, true , "trueLogin")
                 }else {
+                    Alamofire.request("http://microtec1.egytag.com:30001/api/user/logout", method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
                     let data = json["message"].string
                     print(data ?? "no")
                     completion(nil, true, data)
@@ -57,14 +74,50 @@ class API_Auth: NSObject {
      @IBOutlet  weak var dateOfBirth: UITextField!
      @IBOutlet  weak var insuranceCompanies: UITextField!
      */
-    class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
+    class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: [String]?)->Void) {
         
-        let url = URLsPatient.register+"?name=\(patient_code.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_code)&email=\(patient_name.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_name)&phone=\(phone_number.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? phone_number)&password=\(email_adress.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? email_adress)&password=\(password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password)&password=\(password_confirmation.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password_confirmation)&address=\(date_of_birth.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? date_of_birth)&address=\(insurance_companies.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? insurance_companies)"
-        print(url)
+        let url = URLsPatient.register
+        /*+"patient_name=\(patient_name.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_name)&patient_mobile=\(phone_number.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? phone_number)&patient_user_name=\(email_adress.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? email_adress)&patient_password=\(password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password)&patient_birth_date=\(date_of_birth.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? date_of_birth)&patient_insurance=\(insurance_companies.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? insurance_companies)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!*/
+            
+            let parameters : Parameters = [
+                "patient_name" : patient_name.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_name ,
+                "patient_mobile" : phone_number.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? phone_number ,
+                "patient_user_name" :   email_adress.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? email_adress,
+                "patient_password" :   password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password ,
+                "patient_birth_date" : date_of_birth.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? date_of_birth,
+                "patient_insurance" : insurance_companies.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? insurance_companies,
+                ]
+
         
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+            
+            print("myresponse")
+            print(response)
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false, nil)
+                print(error)
+                //self.showAlert(title: "Error", message: "\(error)")
+                
+            case .success(let value):
+                let data = [email_adress,password]
+                let json = JSON(value)
+                //print(value)
+                if let user_token = json["message"]["userToken"].string {
+                 //print("user token \(user_token)")
+                    helper.saveAPIToken(token: user_token)
+                    completion(nil, true , nil)
+                }else {
+                   // let data. = json["message"].string
+                    //print(data ?? "no")
+                    completion(nil, true, data)
+                }
+                
+            }
     }
     
-    class func restPassword(email: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
+        func restPassword(email: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
         
         let url = URLsPatient.restPassword
         print(url)
@@ -99,5 +152,5 @@ class API_Auth: NSObject {
         
     }
 
-
+    }
 }
