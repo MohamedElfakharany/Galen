@@ -10,9 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-
 class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate {
-    
     
     @IBOutlet weak var PickerViewIC: UIPickerView!
     @IBOutlet weak var TxtViewName: UITextField!
@@ -24,17 +22,12 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
     @IBOutlet weak var PickerViewGender: UIPickerView!
     @IBOutlet weak var BtnSave: UIButton!
     
-    
     var ICsNames = [String]()
     var gender = ["male","female"]
     var VarSelectedGander=0
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         
         PickerViewIC.delegate = self
         PickerViewGender.delegate = self
@@ -49,7 +42,6 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
 }
-    
     
     func GetInsurnaceCompany(){
         
@@ -75,7 +67,6 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         }
     }
     
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("insideMethod")
         if textField === self.TxtViewIC {
@@ -88,15 +79,17 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         }
     }
     
+    
+    
     func imageText() {
         
-        // patient name
         if let myImage = UIImage(named: "user"){
-            
-           TxtViewName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-           TxtViewName.MakeRoundeEdges(TxtViewName)
+            // patient Name
+            TxtViewName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtViewName.MakeRoundeEdges(TxtViewName)
             TxtViewName.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
+        
         //patient phone number
         if let myImage = UIImage(named: "phone-call"){
             
@@ -196,7 +189,6 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
         
-        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
             
             print("myresponse")
@@ -223,4 +215,9 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
     }
+    
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true , completion : nil)
+    }
+    
 }

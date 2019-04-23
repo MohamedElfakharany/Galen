@@ -19,6 +19,8 @@ class ApprovalListVC: UIViewController {
             ])
         
     }
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true , completion : nil)
+    }
     
-
 }

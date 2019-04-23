@@ -9,7 +9,13 @@
 import UIKit
 
 class searchResultsVC: UIViewController {
-
+    @IBOutlet weak var citySearchCriteriaLabel: UILabel!
+    @IBOutlet weak var specialitySearchCriteriaLabel: UILabel!
+    @IBOutlet weak var ICSearchCriteriaLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,5 +24,9 @@ class searchResultsVC: UIViewController {
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
     }
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true , completion : nil)
+    }
+    
 
 }

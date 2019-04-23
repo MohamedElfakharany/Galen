@@ -1,31 +1,38 @@
 //
-//  LoginVC.swift
+//  HospitalSignInVC.swift
 //  Galen
 //
-//  Created by elfakharany on 3/12/19.
+//  Created by elfakharany on 4/16/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
-class LoginVC: UIViewController {
-
+class HospitalSignInVC: UIViewController {
+   
     @IBOutlet weak var TxtFieldPassword: UITextField!
     @IBOutlet weak var TxtfieldEmail: UITextField!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageText()
+        
         gradBTNS()
+        imageText()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
     }
     
+    
+    
+    
+    
     @IBAction func BtnActSignin(_ sender: Any) {
+        
         
         guard let userName = TxtfieldEmail.text, !userName.isEmpty else {
             let messages = NSLocalizedString("enter your Email", comment: "hhhh")
@@ -48,7 +55,7 @@ class LoginVC: UIViewController {
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
                     self.present(newViewController, animated: true, completion: nil)
-                   // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
+                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
                     
                 }else {
                     self.showAlert(title: "Login Filed", message: "\(data ?? "")")
@@ -70,7 +77,7 @@ class LoginVC: UIViewController {
             TxtfieldEmail.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
             
             TxtfieldEmail.MakeRoundeEdges(TxtfieldEmail)
-           TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+            TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
         if let myImage = UIImage(named: "password"){
             
@@ -78,8 +85,12 @@ class LoginVC: UIViewController {
             
             TxtFieldPassword.MakeRoundeEdges(TxtFieldPassword)
             TxtFieldPassword.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-           
+            
         }
+        
+        
+        
+        
     }
     
     @IBOutlet weak var SignInBtnOutlet: UIButton!

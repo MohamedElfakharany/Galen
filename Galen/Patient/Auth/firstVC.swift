@@ -10,9 +10,6 @@ import UIKit
 
 class firstVC: UIViewController{
 
-    @IBOutlet weak var imageLogo: UIImageView!
-    
-    
     @IBOutlet weak var Signin: UIButton!
     
     @IBOutlet weak var SignUP: UIButton!
@@ -23,7 +20,6 @@ class firstVC: UIViewController{
         super.viewDidLoad()
         
        gradBTNS()
-        imageLogo.image = UIImage(named: "Logo")
         
     }
     func gradBTNS() {

@@ -13,7 +13,7 @@ import SwiftyJSON
 class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
     
     
-    var ICsNames = [String]()
+    var ICsNames = ["egypt","cairo","alex","kfs"]
     var gender = ["male","female"]
     var VarSelectedGander=0
     
@@ -35,28 +35,26 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         self.PickerViewICs.delegate = self
         insuranceCompanies.delegate = self
         GetInsurnaceCompany()
-        gradBTNS()
         imageText()
+        gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
     }
     
-    
     func GetInsurnaceCompany(){
-        
-        
+        /*
         //////
         API_Auth.login(email: "gaber.hosny.fci.scu@gmail.com" , password: "0663403457" ) { (error: Error?, success: Bool, data) in
             if success {
             print("FakeLoginDone")
             }else {
                 self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                print(error)
+                print(error as Any)
             }
             
-        }
+        }*/
         //////
         
         let parameters : Parameters = [
@@ -92,7 +90,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         }
     }
     
-   
     @IBAction func RegisterBTN(_ sender: Any) {
         // patient code
         
@@ -197,18 +194,15 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             }else {
                 self.showAlert(title: "Register Filed", message: "\(data![0] ) Sorry Try again")
             }
-            
         }
-        
-        
-        
     }
     
-    // Text Fields Views
+    
+    //////////////// Text Fields Views ////////////////
     func imageText() {
-        
+        // patient code
         if let myImage = UIImage(named: "user"){
-            // patient code
+            
             patientCode.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
             patientCode.MakeRoundeEdges(patientCode)
             patientCode.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
@@ -228,9 +222,10 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             phoneNumber.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
         // patient email adress
-        if let myImage = UIImage(named: "email"){
+        if let myImage = UIImage(named: "user"){
             
             emailAdress.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            
             emailAdress.MakeRoundeEdges(emailAdress)
             emailAdress.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
@@ -264,7 +259,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         }
     }
     
-    
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
     }
@@ -296,11 +290,12 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == PickYourGender {
         TypeLabel.text=gender[row];
-        } else {
-            self.insuranceCompanies.isHidden = false
-            self.insuranceCompanies.text = self.ICsNames[row]
-            self.PickerViewICs.isHidden = true
-        }
+        } else
+            {
+                self.insuranceCompanies.isHidden = false
+                insuranceCompanies.text = ICsNames[row]
+                self.PickerViewICs.isHidden = true
+            }
     }
     
     // Button Outlet View
@@ -323,14 +318,15 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         
         RegisterBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        RegisterBtnOutlet.layer.cornerRadius = 17.5
+        RegisterBtnOutlet.layer.cornerRadius = RegisterBtnOutlet.frame.height/2
         RegisterBtnOutlet.clipsToBounds = true
       
     }
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true , completion : nil)
+    }
     
-    
-    
-    // keybord down
+    // keyboard down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         

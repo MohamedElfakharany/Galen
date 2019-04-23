@@ -26,14 +26,16 @@ class ChooseYourDoctorVC: UIViewController {
     
     func imageText() {
         
-        if let myImage = UIImage(named: "search"){
+        if let myImage = UIImage(named: "nav-search"){
             
             DoctorNameTF.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
             
             DoctorNameTF.MakeRoundeEdges(DoctorNameTF)
             DoctorNameTF.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
+        
     }
+    
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)
@@ -51,7 +53,7 @@ class ChooseYourDoctorVC: UIViewController {
         
         MyApointmentBTN.layer.insertSublayer(gradientLayer, at: 0)
    
-        MyApointmentBTN.layer.cornerRadius = 17.5
+        MyApointmentBTN.layer.cornerRadius = 5
         MyApointmentBTN.clipsToBounds = true
     }
         

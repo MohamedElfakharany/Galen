@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */; };
+		9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */; };
+		9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */; };
+		9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD3226FBEFE00CA5900 /* hospitalAdminPage.swift */; };
+		9663BBD6226FBF3B00CA5900 /* hospitalDefination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD5226FBF3B00CA5900 /* hospitalDefination.swift */; };
+		9663BBD8226FC24B00CA5900 /* hospitalAddDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD7226FC24B00CA5900 /* hospitalAddDoctor.swift */; };
+		9663BBDA226FC26200CA5900 /* hospitalDoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD9226FC26200CA5900 /* hospitalDoctorData.swift */; };
+		9663BBDE226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBDD226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift */; };
+		9663BBE0226FC33600CA5900 /* hospitalEditedDoctorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBDF226FC33600CA5900 /* hospitalEditedDoctorData.swift */; };
+		9663BBE2226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBE1226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift */; };
+		9663BBE5226FD57C00CA5900 /* DefinitionOfWorkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBE4226FD57C00CA5900 /* DefinitionOfWorkingHours.swift */; };
+		9663BBE7226FD59700CA5900 /* hospitalDoctorAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBE6226FD59700CA5900 /* hospitalDoctorAppointments.swift */; };
+		9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBE9226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift */; };
+		9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBEB226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift */; };
+		9663BBEE226FD69900CA5900 /* HospitalBlockPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBED226FD69900CA5900 /* HospitalBlockPatient.swift */; };
+		9663BBF0226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBEF226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift */; };
+		9677423C2265D796004CF27A /* Hospital.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9677423B2265D796004CF27A /* Hospital.storyboard */; };
 		96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */; };
+		96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AFFD0D2265E1C100135291 /* HospitalFirstVC.swift */; };
+		96AFFD102265E2E600135291 /* HospitalSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AFFD0F2265E2E600135291 /* HospitalSignInVC.swift */; };
 		96B38C00224A5393000C132B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38BFF224A5393000C132B /* moreVC.swift */; };
 		96B38C02224A5751000C132B /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C01224A5750000C132B /* settingVC.swift */; };
 		96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C05224AAAF6000C132B /* searchResultsVC.swift */; };
-		96B38C0A224ABEE6000C132B /* DoctorResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */; };
-		96B38C0D224AC0FA000C132B /* DoctorResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */; };
 		96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C0E224AC47E000C132B /* doctorDataVC.swift */; };
 		96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */; };
 		96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */; };
@@ -40,6 +57,7 @@
 		96D41A23223803CB001B0411 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D41A22223803CB001B0411 /* signUpVC.swift */; };
 		96D41A2522380400001B0411 /* SearchByAreaAndSpecialityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D41A2422380400001B0411 /* SearchByAreaAndSpecialityVC.swift */; };
 		96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */; };
+		96F49D972265E8890095D09E /* HospitalResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F49D962265E8890095D09E /* HospitalResetPasswordVC.swift */; };
 		D081CD13F3D2FC0E0F32E277 /* Pods_Galen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17438C3606885CCECC8DA425 /* Pods_Galen.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +65,29 @@
 		17438C3606885CCECC8DA425 /* Pods_Galen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Galen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.debug.xcconfig"; sourceTree = "<group>"; };
 		943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.release.xcconfig"; sourceTree = "<group>"; };
+		9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorSearchResultCell.swift; sourceTree = "<group>"; };
+		9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalFirstAfterLogin.swift; sourceTree = "<group>"; };
+		9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDashbored.swift; sourceTree = "<group>"; };
+		9663BBD3226FBEFE00CA5900 /* hospitalAdminPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalAdminPage.swift; sourceTree = "<group>"; };
+		9663BBD5226FBF3B00CA5900 /* hospitalDefination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalDefination.swift; sourceTree = "<group>"; };
+		9663BBD7226FC24B00CA5900 /* hospitalAddDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalAddDoctor.swift; sourceTree = "<group>"; };
+		9663BBD9226FC26200CA5900 /* hospitalDoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalDoctorData.swift; sourceTree = "<group>"; };
+		9663BBDD226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalSearchToEditDoctor.swift; sourceTree = "<group>"; };
+		9663BBDF226FC33600CA5900 /* hospitalEditedDoctorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalEditedDoctorData.swift; sourceTree = "<group>"; };
+		9663BBE1226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDoctorEditingDetails.swift; sourceTree = "<group>"; };
+		9663BBE4226FD57C00CA5900 /* DefinitionOfWorkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionOfWorkingHours.swift; sourceTree = "<group>"; };
+		9663BBE6226FD59700CA5900 /* hospitalDoctorAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalDoctorAppointments.swift; sourceTree = "<group>"; };
+		9663BBE9226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalView_ModifyDoctorAppointments.swift; sourceTree = "<group>"; };
+		9663BBEB226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalDoctorAppointmentsAfterModify.swift; sourceTree = "<group>"; };
+		9663BBED226FD69900CA5900 /* HospitalBlockPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalBlockPatient.swift; sourceTree = "<group>"; };
+		9663BBEF226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCreateAccountDoctor.swift; sourceTree = "<group>"; };
+		9677423B2265D796004CF27A /* Hospital.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hospital.storyboard; sourceTree = "<group>"; };
 		96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarViewController.swift; sourceTree = "<group>"; };
+		96AFFD0D2265E1C100135291 /* HospitalFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalFirstVC.swift; sourceTree = "<group>"; };
+		96AFFD0F2265E2E600135291 /* HospitalSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSignInVC.swift; sourceTree = "<group>"; };
 		96B38BFF224A5393000C132B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		96B38C01224A5750000C132B /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		96B38C05224AAAF6000C132B /* searchResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultsVC.swift; sourceTree = "<group>"; };
-		96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorResultsCell.xib; sourceTree = "<group>"; };
-		96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorResultsCell.swift; sourceTree = "<group>"; };
 		96B38C0E224AC47E000C132B /* doctorDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorDataVC.swift; sourceTree = "<group>"; };
 		96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReservationVC.swift; sourceTree = "<group>"; };
 		96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTheBookingVC.swift; sourceTree = "<group>"; };
@@ -82,6 +117,7 @@
 		96D41A22223803CB001B0411 /* signUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		96D41A2422380400001B0411 /* SearchByAreaAndSpecialityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByAreaAndSpecialityVC.swift; sourceTree = "<group>"; };
 		96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatiantSearchForDoctorVC.swift; sourceTree = "<group>"; };
+		96F49D962265E8890095D09E /* HospitalResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalResetPasswordVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +141,95 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9662E625226B75BA00145A62 /* cellsClass */ = {
+			isa = PBXGroup;
+			children = (
+				9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */,
+			);
+			path = cellsClass;
+			sourceTree = "<group>";
+		};
+		9663BBCD226FBDCD00CA5900 /* First_AfterLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */,
+				9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */,
+			);
+			path = First_AfterLogin;
+			sourceTree = "<group>";
+		};
+		9663BBD2226FBE8400CA5900 /* definations&Additions */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBD3226FBEFE00CA5900 /* hospitalAdminPage.swift */,
+				9663BBD5226FBF3B00CA5900 /* hospitalDefination.swift */,
+				9663BBDB226FC28000CA5900 /* addDoctor */,
+				9663BBDC226FC2A500CA5900 /* editDoctor */,
+				9663BBE3226FCA7000CA5900 /* DefinationOfWorkingTimes */,
+				9663BBE8226FD5F500CA5900 /* View_ModifyDoctorAppointments */,
+				9663BBED226FD69900CA5900 /* HospitalBlockPatient.swift */,
+				9663BBEF226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift */,
+			);
+			path = "definations&Additions";
+			sourceTree = "<group>";
+		};
+		9663BBDB226FC28000CA5900 /* addDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBD7226FC24B00CA5900 /* hospitalAddDoctor.swift */,
+				9663BBD9226FC26200CA5900 /* hospitalDoctorData.swift */,
+			);
+			path = addDoctor;
+			sourceTree = "<group>";
+		};
+		9663BBDC226FC2A500CA5900 /* editDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBDD226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift */,
+				9663BBDF226FC33600CA5900 /* hospitalEditedDoctorData.swift */,
+				9663BBE1226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift */,
+			);
+			path = editDoctor;
+			sourceTree = "<group>";
+		};
+		9663BBE3226FCA7000CA5900 /* DefinationOfWorkingTimes */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBE4226FD57C00CA5900 /* DefinitionOfWorkingHours.swift */,
+				9663BBE6226FD59700CA5900 /* hospitalDoctorAppointments.swift */,
+			);
+			path = DefinationOfWorkingTimes;
+			sourceTree = "<group>";
+		};
+		9663BBE8226FD5F500CA5900 /* View_ModifyDoctorAppointments */ = {
+			isa = PBXGroup;
+			children = (
+				9663BBE9226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift */,
+				9663BBEB226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift */,
+			);
+			path = View_ModifyDoctorAppointments;
+			sourceTree = "<group>";
+		};
+		9677423A2265D759004CF27A /* storyboardModules */ = {
+			isa = PBXGroup;
+			children = (
+				96D41A002238019B001B0411 /* LaunchScreen.storyboard */,
+				96D419F822380199001B0411 /* Main.storyboard */,
+				9677423B2265D796004CF27A /* Hospital.storyboard */,
+			);
+			path = storyboardModules;
+			sourceTree = "<group>";
+		};
+		96AFFD0C2265E11800135291 /* Hospital */ = {
+			isa = PBXGroup;
+			children = (
+				96F49D952265E8570095D09E /* Auth */,
+				9663BBCD226FBDCD00CA5900 /* First_AfterLogin */,
+				9663BBD2226FBE8400CA5900 /* definations&Additions */,
+			);
+			path = Hospital;
+			sourceTree = "<group>";
+		};
 		96B38BFE224A537E000C132B /* more */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +245,6 @@
 		96B38C03224AAA87000C132B /* SearchByAreaAndSpeciality */ = {
 			isa = PBXGroup;
 			children = (
-				96B38C0B224AC0A0000C132B /* DoctorResultsCell */,
 				96D41A2422380400001B0411 /* SearchByAreaAndSpecialityVC.swift */,
 				96B38C05224AAAF6000C132B /* searchResultsVC.swift */,
 				96B38C0E224AC47E000C132B /* doctorDataVC.swift */,
@@ -137,15 +261,6 @@
 				96B38C14224B0035000C132B /* ChooseYourDoctorVC.swift */,
 			);
 			path = PatiantSearchForDoctor;
-			sourceTree = "<group>";
-		};
-		96B38C0B224AC0A0000C132B /* DoctorResultsCell */ = {
-			isa = PBXGroup;
-			children = (
-				96B38C09224ABEE6000C132B /* DoctorResultsCell.xib */,
-				96B38C0C224AC0FA000C132B /* DoctorResultsCell.swift */,
-			);
-			path = DoctorResultsCell;
 			sourceTree = "<group>";
 		};
 		96B38C16224B009B000C132B /* Appoinments */ = {
@@ -185,15 +300,16 @@
 		96D419F322380198001B0411 /* Galen */ = {
 			isa = PBXGroup;
 			children = (
-				96D41A09223801D0001B0411 /* APIs */,
+				9662E625226B75BA00145A62 /* cellsClass */,
 				96D41A0C2238021F001B0411 /* URLs */,
 				96D41A0A22380204001B0411 /* Extentions */,
-				96D41A0B22380213001B0411 /* Patient */,
+				96D41A09223801D0001B0411 /* APIs */,
 				96D41A0D22380228001B0411 /* View */,
+				96D41A0B22380213001B0411 /* Patient */,
+				96AFFD0C2265E11800135291 /* Hospital */,
+				9677423A2265D759004CF27A /* storyboardModules */,
 				96D419F422380198001B0411 /* AppDelegate.swift */,
-				96D419F822380199001B0411 /* Main.storyboard */,
 				96D419FE2238019B001B0411 /* Assets.xcassets */,
-				96D41A002238019B001B0411 /* LaunchScreen.storyboard */,
 				96D41A032238019B001B0411 /* Info.plist */,
 				96D419FB22380199001B0411 /* Galen.xcdatamodeld */,
 			);
@@ -268,6 +384,16 @@
 			path = search;
 			sourceTree = "<group>";
 		};
+		96F49D952265E8570095D09E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				96AFFD0D2265E1C100135291 /* HospitalFirstVC.swift */,
+				96AFFD0F2265E2E600135291 /* HospitalSignInVC.swift */,
+				96F49D962265E8890095D09E /* HospitalResetPasswordVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		9FF6CA6E3B155ECAB8DA34C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +465,7 @@
 				96D41A022238019B001B0411 /* LaunchScreen.storyboard in Resources */,
 				96D419FF2238019B001B0411 /* Assets.xcassets in Resources */,
 				96D419FA22380199001B0411 /* Main.storyboard in Resources */,
-				96B38C0A224ABEE6000C132B /* DoctorResultsCell.xib in Resources */,
+				9677423C2265D796004CF27A /* Hospital.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,19 +519,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9663BBD6226FBF3B00CA5900 /* hospitalDefination.swift in Sources */,
+				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
+				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
+				9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */,
+				9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */,
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
 				96B38C00224A5393000C132B /* moreVC.swift in Sources */,
 				96D41A2522380400001B0411 /* SearchByAreaAndSpecialityVC.swift in Sources */,
+				96AFFD102265E2E600135291 /* HospitalSignInVC.swift in Sources */,
+				9663BBF0226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift in Sources */,
+				9663BBD8226FC24B00CA5900 /* hospitalAddDoctor.swift in Sources */,
 				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,
 				96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */,
 				96B38C1D224B0195000C132B /* EditMyProfileVC.swift in Sources */,
-				96B38C0D224AC0FA000C132B /* DoctorResultsCell.swift in Sources */,
+				96F49D972265E8890095D09E /* HospitalResetPasswordVC.swift in Sources */,
 				96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */,
 				96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */,
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
+				96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */,
+				9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */,
+				9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
 				96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */,
@@ -416,8 +553,15 @@
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
 				96D41A192238032D001B0411 /* gradintColor.swift in Sources */,
 				96D41A15223802D0001B0411 /* config.swift in Sources */,
+				9663BBDE226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift in Sources */,
+				9663BBE2226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift in Sources */,
 				96D41A21223803AC001B0411 /* restPasswordVC.swift in Sources */,
+				9663BBE0226FC33600CA5900 /* hospitalEditedDoctorData.swift in Sources */,
+				9663BBE7226FD59700CA5900 /* hospitalDoctorAppointments.swift in Sources */,
+				9663BBE5226FD57C00CA5900 /* DefinitionOfWorkingHours.swift in Sources */,
+				9663BBDA226FC26200CA5900 /* hospitalDoctorData.swift in Sources */,
 				96D41A11223802A0001B0411 /* helper.swift in Sources */,
+				9663BBEE226FD69900CA5900 /* HospitalBlockPatient.swift in Sources */,
 				96B38C18224B00D2000C132B /* MyAppoinmentsVC.swift in Sources */,
 				96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */,
 				96D41A23223803CB001B0411 /* signUpVC.swift in Sources */,

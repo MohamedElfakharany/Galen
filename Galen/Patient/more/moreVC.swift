@@ -41,7 +41,7 @@ class moreVC: UIViewController {
         
         logoutBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        logoutBtnOutlet.layer.cornerRadius = 17.5
+        logoutBtnOutlet.layer.cornerRadius = 5
         logoutBtnOutlet.clipsToBounds = true
     }
     
@@ -65,5 +65,9 @@ class moreVC: UIViewController {
             self.present(newViewController, animated: true, completion: nil)
             
         }
+    }
+    
+    @IBAction func backBtn(_ sender: Any){
+        dismiss(animated: true, completion: nil)
     }
 }

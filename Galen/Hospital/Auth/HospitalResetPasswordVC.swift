@@ -1,16 +1,15 @@
 //
-//  restPasswordVC.swift
+//  HospitalResetPasswordVC.swift
 //  Galen
 //
-//  Created by elfakharany on 3/12/19.
+//  Created by elfakharany on 4/16/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class restPasswordVC: UIViewController {
+class HospitalResetPasswordVC: UIViewController {
 
- 
     @IBOutlet weak var phoneNumber: UITextField!
     
     override func viewDidLoad() {

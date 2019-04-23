@@ -40,7 +40,7 @@ class settingVC: UIViewController {
         
         updateMyDataBtnOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        updateMyDataBtnOutlet.layer.cornerRadius = 17.5
+        updateMyDataBtnOutlet.layer.cornerRadius = updateMyDataBtnOutlet.frame.height/2
         updateMyDataBtnOutlet.clipsToBounds = true
         
         // Sign Up BTN
@@ -55,13 +55,12 @@ class settingVC: UIViewController {
         
         changePasswordBtnOutlet.layer.insertSublayer(gradientLayer2, at: 0)
         
-        changePasswordBtnOutlet.layer.cornerRadius = 17.5
+        changePasswordBtnOutlet.layer.cornerRadius = changePasswordBtnOutlet.frame.height/2
         changePasswordBtnOutlet.clipsToBounds = true
     }
-    @IBAction func updateMyDataBtnAction(_ sender: Any) {
+    @IBAction func backBTN(_ sender: Any) {
+        dismiss(animated: true , completion : nil)
     }
     
-    @IBAction func changePasswordBtnAction(_ sender: Any) {
-    }
     
 }

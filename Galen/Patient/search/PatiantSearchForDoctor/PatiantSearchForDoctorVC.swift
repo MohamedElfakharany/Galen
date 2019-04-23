@@ -49,7 +49,7 @@ class PatiantSearchForDoctorViewController: UIViewController {
         
         BtnSearchByAreaANDSpecialty.layer.insertSublayer(gradientLayer, at: 0)
         
-        BtnSearchByAreaANDSpecialty.layer.cornerRadius = 17.5
+        BtnSearchByAreaANDSpecialty.layer.cornerRadius = BtnSearchByAreaANDSpecialty.frame.height/2
         BtnSearchByAreaANDSpecialty.clipsToBounds = true
         
         // Sign Up BTN
@@ -64,7 +64,7 @@ class PatiantSearchForDoctorViewController: UIViewController {
         
         BtnSearchByDoctorName.layer.insertSublayer(gradientLayer2, at: 0)
         
-        BtnSearchByDoctorName.layer.cornerRadius = 17.5
+        BtnSearchByDoctorName.layer.cornerRadius = BtnSearchByDoctorName.frame.height/2
         BtnSearchByDoctorName.clipsToBounds = true
     }
     
