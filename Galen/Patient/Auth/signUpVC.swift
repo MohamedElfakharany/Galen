@@ -12,11 +12,12 @@ import SwiftyJSON
 
 class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
     
-    
-    var ICsNames = ["egypt","cairo","alex","kfs"]
-    var gender = ["male","female"]
+    var pickerView = UIPickerView()
+    var ICsNames:[String] = []
+    var gender:[String] = []
     var VarSelectedGander=0
-    
+    var selectedTxtField = UITextField()
+   
     @IBOutlet weak var patientCode: UITextField!
     @IBOutlet weak var patientName: UITextField!
     @IBOutlet  weak var phoneNumber: UITextField!
@@ -25,15 +26,14 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     @IBOutlet  weak var passwordConfirmation: UITextField!
     @IBOutlet  weak var dateOfBirth: UITextField!
     @IBOutlet  weak var insuranceCompanies: UITextField!
-    @IBOutlet weak var TypeLabel: UILabel!
-    @IBOutlet weak var PickerViewICs: UIPickerView!
+    @IBOutlet weak var ganderTxtField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.PickerViewICs.isHidden = true
-        self.PickerViewICs.delegate = self
-        insuranceCompanies.delegate = self
+        gender = ["male","female"]
+        ICsNames = ["one","two","three","four","five","six"]
+       
         GetInsurnaceCompany()
         imageText()
         gradBTNS()
@@ -41,6 +41,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
+       
     }
     
     func GetInsurnaceCompany(){
@@ -79,16 +80,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         }
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("insideMethod")
-        if textField === self.insuranceCompanies {
-            print("in textfieldbegin editing")
-            self.PickerViewICs.isHidden = false
-            self.insuranceCompanies.isHidden = true
-        } else {
-            print("insidefuncbutnottheCorrecttextFIeld")
-        }
-    }
     
     @IBAction func RegisterBTN(_ sender: Any) {
         // patient code
@@ -129,13 +120,13 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             self.showAlert(title: title, message: messages)
             return
         }
-        // password & passwordConfirmation are equals
-        /*guard  password == passwordConfirmation else {
+        // password & password Confirmation are match
+        guard  password == passwordConfirmation else {
             let messages = NSLocalizedString("Passwords not match", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
             return
-        }*/
+        }
         
         // date of birth
         guard let dateOfBirths = dateOfBirth.text, !dateOfBirths.isEmpty else {
@@ -152,7 +143,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             return
         }
         // Select Gender
-        guard let Type_Label = TypeLabel.text, !Type_Label.isEmpty else {
+        guard let Type_TxtField = ganderTxtField.text, !Type_TxtField.isEmpty else {
             let messages = NSLocalizedString("Select Your Gender", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
@@ -166,7 +157,9 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
                           password: password.text ?? "",
                           password_confirmation: passwordConfirmation.text ?? "",
                           date_of_birth: dateOfBirth.text ?? "",
-                          insurance_companies: insuranceCompanies.text ?? "") { (error:Error?, success: Bool, data) in
+                          insurance_companies: insuranceCompanies.text ?? "",
+                          gander: ganderTxtField.text ?? "")    {
+                            (error:Error?, success: Bool, data) in
             
             if success {
                 if data != nil {
@@ -257,45 +250,56 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             insuranceCompanies.MakeRoundeEdges(insuranceCompanies)
             insuranceCompanies.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
+        // patient gander
+        if let myImage = UIImage(named: "gander"){
+            
+            ganderTxtField.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+        ganderTxtField.MakeRoundeEdges(ganderTxtField)
+            ganderTxtField.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
     }
     
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
     }
-    // Picker View Gender
-    @IBOutlet weak var PickYourGender: UIPickerView!
+    // Picker Views
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == PickYourGender {
+        if  selectedTxtField == ganderTxtField {
             return gender.count
-        } else {
+        } else if selectedTxtField == insuranceCompanies {
             return self.ICsNames.count
+        }else{
+            return 0
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == PickYourGender {
+        if selectedTxtField == ganderTxtField {
             VarSelectedGander=row
             return gender[row]
-        } else {
+        } else if selectedTxtField == insuranceCompanies {
             VarSelectedGander=row
             return ICsNames[row]
+        }else {
+            return ""
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == PickYourGender {
-        TypeLabel.text=gender[row];
-        } else
-            {
-                self.insuranceCompanies.isHidden = false
-                insuranceCompanies.text = ICsNames[row]
-                self.PickerViewICs.isHidden = true
-            }
+        if  selectedTxtField == ganderTxtField {
+            ganderTxtField.text = gender[row]
+            self.view.endEditing(true)
+        } else if selectedTxtField == insuranceCompanies {
+             insuranceCompanies.text = ICsNames[row]
+            self.view.endEditing(true)
+        }else {
+            return
+        }
     }
     
     // Button Outlet View
@@ -322,8 +326,16 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         RegisterBtnOutlet.clipsToBounds = true
       
     }
-    @IBAction func backBTN(_ sender: Any) {
-        dismiss(animated: true , completion : nil)
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource  = self
+        selectedTxtField = textField
+        if selectedTxtField == ganderTxtField{
+            selectedTxtField.inputView = pickerView
+        }else if selectedTxtField == insuranceCompanies{
+            selectedTxtField.inputView  = pickerView
+        }
     }
     
     // keyboard down

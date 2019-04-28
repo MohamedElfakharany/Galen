@@ -55,6 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="64R-9g-gnr"/>
                     </view>
                     <connections>
+                        <outlet property="SignInOutletBTN" destination="EvP-ed-46n" id="ApG-fV-Woe"/>
                         <outlet property="Signin" destination="EvP-ed-46n" id="cS5-oy-stS"/>
                         <outlet property="imageLogo" destination="xzA-mB-MZc" id="Laj-mH-6vz"/>
                     </connections>
@@ -63,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="538" y="-161"/>
         </scene>
-        <!--FirstVC-->
+        <!--Hospital First After Login-->
         <scene sceneID="TRj-aV-juG">
             <objects>
-                <viewController storyboardIdentifier="FirstVC" id="uc5-u6-IeF" customClass="firstVC" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstVC" id="uc5-u6-IeF" customClass="HospitalFirstAfterLogin" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gx4-xp-y6d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +154,7 @@
         <!--appointments-->
         <scene sceneID="BQj-jg-q13">
             <objects>
-                <viewController title="appointments" id="vwu-cG-jMX" sceneMemberID="viewController">
+                <viewController title="appointments" id="vwu-cG-jMX" customClass="HospitalDashbored" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rzM-GO-5xO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="3516" y="1130"/>
         </scene>
-        <!--View Controller-->
+        <!--Hospital Admin Page-->
         <scene sceneID="odW-eR-OQ3">
             <objects>
-                <viewController id="Iww-rS-CrG" sceneMemberID="viewController">
+                <viewController id="Iww-rS-CrG" customClass="hospitalAdminPage" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdD-QL-JVH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -372,7 +373,7 @@
         <!--Hospital \ Clinic Defination-->
         <scene sceneID="ihF-O0-iQS">
             <objects>
-                <viewController title="Hospital \ Clinic Defination" id="v1i-dB-qkv" sceneMemberID="viewController">
+                <viewController title="Hospital \ Clinic Defination" id="v1i-dB-qkv" customClass="hospitalDefination" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1B-SO-oKv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -781,7 +782,7 @@
         <!--Doctor's Data-->
         <scene sceneID="DDP-ei-7DC">
             <objects>
-                <viewController title="Doctor's Data" id="S9i-1i-KAv" sceneMemberID="viewController">
+                <viewController title="Doctor's Data" id="S9i-1i-KAv" customClass="hospitalDoctorData" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIk-qy-GRu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1034,7 +1035,7 @@
         <!--Edit / Delete Doctor-->
         <scene sceneID="ImS-ZT-j0j">
             <objects>
-                <viewController title="Edit / Delete Doctor" id="vQ8-W0-17T" sceneMemberID="viewController">
+                <viewController title="Edit / Delete Doctor" id="vQ8-W0-17T" customClass="hospitalSearchToEditDoctor" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lvP-mB-jqd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1093,7 +1094,7 @@
         <!--Edit / Delete Doctor-->
         <scene sceneID="xDY-cz-MZH">
             <objects>
-                <viewController title="Edit / Delete Doctor" id="eNg-k4-dZU" sceneMemberID="viewController">
+                <viewController title="Edit / Delete Doctor" id="eNg-k4-dZU" customClass="hospitalEditedDoctorData" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLX-WA-HRi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1349,7 +1350,7 @@
         <!--EDIT DETAILS-->
         <scene sceneID="H5O-cm-3C6">
             <objects>
-                <viewController title="EDIT DETAILS" id="G3y-2i-9QT" sceneMemberID="viewController">
+                <viewController title="EDIT DETAILS" id="G3y-2i-9QT" customClass="HospitalDoctorEditingDetails" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRC-8U-77V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1590,7 +1591,7 @@
         <!--Definition of Working hours-->
         <scene sceneID="a7Y-ZU-OgR">
             <objects>
-                <viewController title="Definition of Working hours" id="wxc-gM-b2M" sceneMemberID="viewController">
+                <viewController title="Definition of Working hours" id="wxc-gM-b2M" customClass="DefinitionOfWorkingHours" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6S7-ak-qSN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1698,7 +1699,7 @@
         <!--Doctor appointments-->
         <scene sceneID="cSN-xs-hQ3">
             <objects>
-                <viewController title="Doctor appointments" id="w7V-Bn-vGc" sceneMemberID="viewController">
+                <viewController title="Doctor appointments" id="w7V-Bn-vGc" customClass="HospitalDoctorAppointments" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="brw-e1-Dif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1804,7 +1805,7 @@
         <!--View / modify doctor appointments-->
         <scene sceneID="bgP-r0-Dgg">
             <objects>
-                <viewController title="View / modify doctor appointments" id="6fF-ZS-oCj" sceneMemberID="viewController">
+                <viewController title="View / modify doctor appointments" id="6fF-ZS-oCj" customClass="hospitalView_ModifyDoctorAppointments" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sc8-Oh-ieq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1863,7 +1864,7 @@
         <!--Doctor appointments-->
         <scene sceneID="m2p-Nu-Ccm">
             <objects>
-                <viewController title="Doctor appointments" id="ZfT-yM-EKd" sceneMemberID="viewController">
+                <viewController title="Doctor appointments" id="ZfT-yM-EKd" customClass="hospitalDoctorAppointmentsAfterModify" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fei-AX-yCS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1966,10 +1967,10 @@
             </objects>
             <point key="canvasLocation" x="2566" y="4608"/>
         </scene>
-        <!--View Controller-->
+        <!--Hospital Block Patient-->
         <scene sceneID="dKe-r4-Rze">
             <objects>
-                <viewController id="hOV-Zz-eoW" sceneMemberID="viewController">
+                <viewController id="hOV-Zz-eoW" customClass="HospitalBlockPatient" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XW9-Lz-oZ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2082,7 +2083,7 @@
         <!--Create an account for a doctor-->
         <scene sceneID="pVz-F3-zih">
             <objects>
-                <viewController title="Create an account for a doctor" id="2gD-dA-ltZ" sceneMemberID="viewController">
+                <viewController title="Create an account for a doctor" id="2gD-dA-ltZ" customClass="HospitalCreateAccountDoctor" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wON-GZ-O4A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2183,7 +2184,7 @@
         <!--Doctor Registeration-->
         <scene sceneID="FJb-yi-nGq">
             <objects>
-                <viewController title="Doctor Registeration" id="UcO-8x-eTE" sceneMemberID="viewController">
+                <viewController title="Doctor Registeration" id="UcO-8x-eTE" customClass="hospitalAddDoctor" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FDC-UN-c4h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

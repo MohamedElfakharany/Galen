@@ -7,144 +7,84 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SearchByAreaAndSpecialityViewController: UIViewController {
+class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+
+    var pickerView = UIPickerView()
+    var ICsNames:[String] = []
+    var Governorates:[String] = []
+    var DocSpecialties:[String] = []
+    var VarSelectedpicker=0
+    var selectedTxtField = UITextField()
     
     @IBOutlet weak var BtnAutoLocate: UIButton!
     @IBOutlet weak var BtnSelectGovernate: UIButton!
     
     @IBOutlet weak var TextFieldCityName: UITextField!
     
-    @IBOutlet weak var BtnAllGovernate: UIButton!
-    @IBOutlet weak var PickerAllGovernate: UIPickerView!
-    
-    @IBOutlet weak var BtnSpecailaity: UIButton!
-    @IBOutlet weak var PickerSpecailaity: UIPickerView!
-    
-    @IBOutlet weak var BtnIncurnaceCopamny: UIButton!
-    @IBOutlet weak var pickerInsurnaceCompany: UIPickerView!
+    @IBOutlet weak var AllGovernorates: UITextField!
+    @IBOutlet weak var Specialties: UITextField!
+    @IBOutlet weak var InsuranceCompanies: UITextField!
     
     @IBOutlet weak var BtnSearch: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageText()
+        Governorates = ["dahab","cairo","alex","kfs","ismailia","suez","por said","sharm","hurghada"]
+        ICsNames = ["one","two","three","four","five","six"]
+        DocSpecialties = ["General Surgery","Neurosurgery","Radiology","Emergency Medicine","Optometrists"]
         
+        imageText()
+        gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
-        gradBTNS()
         
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        circularShapes(Shape: BtnAutoLocate)
-        setGradBackGround(
-            colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnAutoLocate)
-        
-        circularShapes(Shape: BtnAutoLocate)
-        self.BtnSelectGovernate.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        setGradBackGround(
-            colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnSearch)
-        
-        self.PickerSpecailaity.isHidden = true
-        self.pickerInsurnaceCompany.isHidden = true
-        self.PickerAllGovernate.isHidden = true
-        
-        setGradBackGround(
-            colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: (self.navigationController?.navigationBar)!)
-        
-    }
-    
-    ////VIEWS FUNC
-    func circularShapes (Shape : UIView){
-        Shape.layer.cornerRadius = Shape.layer.frame.width / 2
-        Shape.clipsToBounds = true
-    }
-    func MakeRoundeEdges(View : UIView){
-        View.layer.cornerRadius = 10
-        View.clipsToBounds = true
-    }
-    func setGradBackGround( colorOne : UIColor , colortwo : UIColor , Gradintview : UIView) {
-        let gradintLayer = CAGradientLayer()
-        gradintLayer.frame = Gradintview.bounds
-        gradintLayer.colors = [colorOne.cgColor , colortwo.cgColor]
-        gradintLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
-        gradintLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        Gradintview.layer.insertSublayer(gradintLayer, at: 0)
-        
-        
-    }
-    ///////ENDVIEWSFUNC
-    
-    //////BtnForPICKERS
-    @IBAction func BtnActAllGovernates(_ sender: Any) {
-        if (self.PickerAllGovernate.isHidden == false) {
-            self.PickerAllGovernate.isHidden = true
-        }else{
-            self.PickerAllGovernate.isHidden = false
-        }
-    }
-    
-    @IBAction func BtnActSpeciality(_ sender: Any) {
-        
-        if (self.PickerSpecailaity.isHidden == false) {
-            self.PickerSpecailaity.isHidden = true
-        }else{
-            self.PickerSpecailaity.isHidden = false
-        }
-    }
-    
-    @IBAction func btnActInsurnaceCopany(_ sender: Any) {
-        if (self.pickerInsurnaceCompany.isHidden == false) {
-            self.pickerInsurnaceCompany.isHidden = true
-        }else{
-            self.pickerInsurnaceCompany.isHidden = false
-        }
-        
-    }
+
     //////////ENDBTNACTFORPICKERS
     
     @IBAction func BtnActAutoLocate(_ sender: Any) {
         
-        if (self.BtnAutoLocate.backgroundColor == #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)){
-            setGradBackGround(
-                colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnAutoLocate)
-            self.BtnSelectGovernate.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }else{
-            self.BtnAutoLocate.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            setGradBackGround(
-                colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnSelectGovernate)
-        }
-    }
-    @IBAction func btnActSelectGovernate(_ sender: Any) {
-        
-        if (self.BtnSelectGovernate.backgroundColor == #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)){
-            setGradBackGround(
-                colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnSelectGovernate)
-            self.BtnAutoLocate.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }else{
-            self.BtnSelectGovernate.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            setGradBackGround(
-                colorOne: UIColor.init(red: 86.0, green: 177.0, blue: 210, alpha: 1.0) , colortwo: UIColor.init(red: 86, green: 229, blue: 167, alpha: 1.0), Gradintview: self.BtnAutoLocate)
-        }
         
     }
- 
     func imageText() {
-        
+        // city name
         if let myImage = UIImage(named: "search"){
             
             TextFieldCityName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
             
             TextFieldCityName.MakeRoundeEdges(TextFieldCityName)
             TextFieldCityName.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+
+        // All Governorates
+        if let myImage = UIImage(named: "selectbox-downarrow"){
+            
+            AllGovernorates.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            
+            AllGovernorates.MakeRoundeEdges(AllGovernorates)
+            AllGovernorates.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        // Specialties
+        if let myImage = UIImage(named: "selectbox-downarrow"){
+            
+            Specialties.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            
+            Specialties.MakeRoundeEdges(Specialties)
+            Specialties.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        // InsuranceCompanies
+        if let myImage = UIImage(named: "selectbox-downarrow"){
+            
+            InsuranceCompanies.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            
+            InsuranceCompanies.MakeRoundeEdges(InsuranceCompanies)
+            InsuranceCompanies.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
     }
     
@@ -155,23 +95,72 @@ class SearchByAreaAndSpecialityViewController: UIViewController {
         
         // Sign in BTN
         let gradientLayer = CAGradientLayer()
-        
         gradientLayer.frame = BtnSearch.bounds
-        
         gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
-        
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
         BtnSearch.layer.insertSublayer(gradientLayer, at: 0)
-        
-        BtnSearch.layer.cornerRadius = 17.5
+        BtnSearch.layer.cornerRadius = BtnSearch.frame.height/2
         BtnSearch.clipsToBounds = true
     }
     
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if selectedTxtField == AllGovernorates {
+            return Governorates.count
+        }else if selectedTxtField == Specialties{
+            return DocSpecialties.count
+        }else  {
+            return ICsNames.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if selectedTxtField == AllGovernorates{
+            VarSelectedpicker = row
+            return Governorates[row]
+        }else if selectedTxtField == Specialties {
+            VarSelectedpicker = row
+            return DocSpecialties[row]
+        }else{
+            VarSelectedpicker = row
+            return ICsNames[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if  selectedTxtField == AllGovernorates {
+            AllGovernorates.text = Governorates[row]
+            self.view.endEditing(true)
+        }else if selectedTxtField == Specialties {
+            Specialties.text = DocSpecialties[row]
+            self.view.endEditing(true)
+        }else {
+            InsuranceCompanies.text = ICsNames[row]
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource  = self
+        selectedTxtField = textField
+        if selectedTxtField == AllGovernorates{
+            selectedTxtField.inputView = pickerView
+        }else if selectedTxtField == Specialties {
+            selectedTxtField.inputView  = pickerView
+        }else {
+            selectedTxtField.inputView  = pickerView
+        }
+    }
+    
     
     // keybord down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

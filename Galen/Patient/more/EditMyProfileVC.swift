@@ -12,31 +12,28 @@ import SwiftyJSON
 
 class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate {
     
-    @IBOutlet weak var PickerViewIC: UIPickerView!
+    var pickerView = UIPickerView()
+    var ICsNames:[String] = []
+    var gender:[String] = []
+    var VarSelectedGander=0
+    var selectedTxtField = UITextField()
+    
     @IBOutlet weak var TxtViewName: UITextField!
     @IBOutlet weak var TxtViewMob: UITextField!
     @IBOutlet weak var TxtViewEmail: UITextField!
     @IBOutlet weak var TxtViewDOB: UITextField!
-    @IBOutlet weak var TxtViewIC: UITextField!
-    @IBOutlet weak var TxtFieldGender: UITextField!
-    @IBOutlet weak var PickerViewGender: UIPickerView!
+    @IBOutlet weak var insuranceCompanies: UITextField!
+    @IBOutlet weak var ganderTxtField: UITextField!
     @IBOutlet weak var BtnSave: UIButton!
-    
-    var ICsNames = [String]()
-    var gender = ["male","female"]
-    var VarSelectedGander=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PickerViewIC.delegate = self
-        PickerViewGender.delegate = self
-        
-        PickerViewGender.isHidden = true
-        PickerViewIC.isHidden = true
-        
-         GetInsurnaceCompany()
-        
+        gender = ["male","female"]
+        ICsNames = ["egypt","cairo","alex","kfs"]
+        imageText()
+        gradBTNS()
+        GetInsurnaceCompany()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
@@ -66,20 +63,6 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("insideMethod")
-        if textField === self.TxtViewIC {
-            print("in textfieldbegin editing")
-            self.PickerViewIC.isHidden = false
-            self.TxtViewIC.isHidden = true
-        } else if textField === self.TxtFieldGender {
-            self.PickerViewGender.isHidden = false
-            self.TxtFieldGender.isHidden = true
-        }
-    }
-    
-    
     
     func imageText() {
         
@@ -115,45 +98,59 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         // patient insurance companies
         if let myImage = UIImage(named: "insurance-companies"){
             
-           TxtViewIC.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtViewIC.MakeRoundeEdges(TxtViewIC)
-            TxtViewIC.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+           insuranceCompanies.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            insuranceCompanies.MakeRoundeEdges(insuranceCompanies)
+            insuranceCompanies.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
     }
     
-    ///pickersFunctions
+        //pickersFunctions
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == PickerViewGender {
+        if  selectedTxtField == ganderTxtField {
             return gender.count
-        } else {
+        } else if selectedTxtField == insuranceCompanies {
             return self.ICsNames.count
+        }else{
+            return 0
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == PickerViewGender {
+        if selectedTxtField == ganderTxtField {
             VarSelectedGander=row
             return gender[row]
-        } else {
+        } else if selectedTxtField == insuranceCompanies {
             VarSelectedGander=row
             return ICsNames[row]
+        }else {
+            return ""
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == PickerViewGender {
-            self.PickerViewGender.isHidden = true
-            TxtFieldGender.text=gender[row];
-            TxtFieldGender.isHidden = false
-        } else {
-            self.TxtViewIC.isHidden = false
-            self.TxtViewIC.text = self.ICsNames[row];
-            self.PickerViewIC.isHidden = true
+        if  selectedTxtField == ganderTxtField {
+            ganderTxtField.text = gender[row]
+            self.view.endEditing(true)
+        } else if selectedTxtField == insuranceCompanies {
+            insuranceCompanies.text = ICsNames[row]
+            self.view.endEditing(true)
+        }else {
+            return
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource  = self
+        selectedTxtField = textField
+        if selectedTxtField == ganderTxtField{
+            selectedTxtField.inputView = pickerView
+        }else if selectedTxtField == insuranceCompanies{
+            selectedTxtField.inputView  = pickerView
         }
     }
     
@@ -175,9 +172,9 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         var parameters : Parameters = [
             "patient_name" : TxtViewName.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
             "patient_mobile" : TxtViewMob.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
-            "patient_user_name" :   TxtViewEmail.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
+            "patient_email" :   TxtViewEmail.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
             "patient_birth_date" : TxtViewDOB.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
-            "patient_insurance" : TxtViewIC.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
+            "patient_insurance" : insuranceCompanies.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
             "accessToken": AccessToken?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
             "id": userid?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
             ]
@@ -215,9 +212,29 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
     }
-    
+    func gradBTNS() {
+        
+        let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)
+        let LiftGradientColor = #colorLiteral(red: 0.337254902, green: 0.8980392157, blue: 0.6549019608, alpha: 1)
+        
+        // Register BTN
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = BtnSave.bounds
+        
+        gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
+        
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        BtnSave.layer.insertSublayer(gradientLayer, at: 0)
+        BtnSave.layer.cornerRadius = BtnSave.frame.height/2
+        BtnSave.clipsToBounds = true
+        
+    }
     @IBAction func backBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
     }
+    
     
 }

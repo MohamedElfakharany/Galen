@@ -74,7 +74,7 @@ class API_Auth: NSObject {
      @IBOutlet  weak var dateOfBirth: UITextField!
      @IBOutlet  weak var insuranceCompanies: UITextField!
      */
-    class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: [String]?)->Void) {
+    class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String,gander:String , completion: @escaping (_ error: Error?, _ success: Bool, _ data: [String]?)->Void) {
         
         let url = URLsPatient.register
         /*+"patient_name=\(patient_name.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_name)&patient_mobile=\(phone_number.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? phone_number)&patient_user_name=\(email_adress.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? email_adress)&patient_password=\(password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password)&patient_birth_date=\(date_of_birth.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? date_of_birth)&patient_insurance=\(insurance_companies.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? insurance_companies)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!*/
@@ -86,6 +86,7 @@ class API_Auth: NSObject {
                 "patient_password" :   password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? password ,
                 "patient_birth_date" : date_of_birth.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? date_of_birth,
                 "patient_insurance" : insurance_companies.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? insurance_companies,
+                "gander" : gander.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? gander
                 ]
 
         

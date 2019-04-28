@@ -282,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Bc6-1F-lZi">
-                                <rect key="frame" x="16" y="74" width="288" height="397.5"/>
+                                <rect key="frame" x="16" y="74" width="288" height="227"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-jp-BSo">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="12"/>
@@ -323,9 +323,6 @@
                                                             <constraint firstAttribute="width" constant="20" id="AfY-Q7-I2D"/>
                                                             <constraint firstAttribute="height" constant="20" id="in5-rF-gND"/>
                                                         </constraints>
-                                                        <connections>
-                                                            <action selector="btnActSelectGovernate:" destination="qET-0K-Phc" eventType="touchUpInside" id="IKE-fb-YHF"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Governate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYO-DO-Erx">
                                                         <rect key="frame" x="170" y="0.0" width="118" height="20"/>
@@ -349,61 +346,47 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="RRU-JR-2Pw">
-                                        <rect key="frame" x="0.0" y="107" width="288" height="290.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xw-uP-uyJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="8"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="    All Governates" image="gray-downarrow">
-                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="BtnActAllGovernates:" destination="qET-0K-Phc" eventType="touchUpInside" id="ZCA-uj-F9D"/>
-                                                </connections>
-                                            </button>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ut0-ne-XTb">
-                                                <rect key="frame" x="0.0" y="8" width="288" height="75"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="SDX-R1-yyU"/>
-                                                </constraints>
-                                            </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4Q-EK-nRZ">
-                                                <rect key="frame" x="0.0" y="83" width="288" height="8.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="    Specialites" image="gray-downarrow">
-                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="BtnActSpeciality:" destination="qET-0K-Phc" eventType="touchUpInside" id="Xe8-4i-8ig"/>
-                                                </connections>
-                                            </button>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOx-gi-yK9">
-                                                <rect key="frame" x="0.0" y="91.5" width="288" height="75"/>
-                                            </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFC-Rj-bQd">
-                                                <rect key="frame" x="0.0" y="166.5" width="288" height="49"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="    Insurnace Company" image="gray-downarrow">
-                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnActInsurnaceCopany:" destination="qET-0K-Phc" eventType="touchUpInside" id="THN-wv-W4F"/>
-                                                </connections>
-                                            </button>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFD-zd-oyy">
-                                                <rect key="frame" x="0.0" y="215.5" width="288" height="75"/>
-                                            </pickerView>
-                                        </subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="All Governorates ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DwY-ki-Erf">
+                                        <rect key="frame" x="0.0" y="107" width="288" height="30"/>
                                         <constraints>
-                                            <constraint firstItem="iFD-zd-oyy" firstAttribute="height" secondItem="Ut0-ne-XTb" secondAttribute="height" id="Ick-67-bIk"/>
-                                            <constraint firstItem="KOx-gi-yK9" firstAttribute="height" secondItem="Ut0-ne-XTb" secondAttribute="height" id="qWq-VI-LDN"/>
+                                            <constraint firstAttribute="height" constant="30" id="2cc-4H-DeG"/>
                                         </constraints>
-                                    </stackView>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qET-0K-Phc" id="XLR-Vc-mvy"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Specialties ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTd-9I-aOH">
+                                        <rect key="frame" x="0.0" y="152" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="PvT-DL-Fsf"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qET-0K-Phc" id="qlo-7d-0zV"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance Companies ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XvT-gR-S4D">
+                                        <rect key="frame" x="0.0" y="197" width="288" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fR1-Wr-BGs"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qET-0K-Phc" id="CI9-yC-Jsd"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT2-79-1Qb">
-                                <rect key="frame" x="30" y="501.5" width="260" height="30"/>
+                                <rect key="frame" x="30" y="331" width="260" height="30"/>
+                                <color key="backgroundColor" red="0.33725490200000002" green="0.8980392157" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="rvH-8X-2Mr" kind="show" id="atE-1T-Qjb"/>
@@ -438,16 +421,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="BtnAllGovernate" destination="1Xw-uP-uyJ" id="v1e-hh-CRJ"/>
+                        <outlet property="AllGovernorates" destination="DwY-ki-Erf" id="Km7-lN-XoL"/>
                         <outlet property="BtnAutoLocate" destination="nna-OP-n3d" id="PLD-2Y-2YH"/>
-                        <outlet property="BtnIncurnaceCopamny" destination="uFC-Rj-bQd" id="fjl-Es-Gv0"/>
                         <outlet property="BtnSearch" destination="MT2-79-1Qb" id="Qoz-Ce-fEr"/>
                         <outlet property="BtnSelectGovernate" destination="k2X-vq-oPQ" id="2aH-HK-1oH"/>
-                        <outlet property="BtnSpecailaity" destination="o4Q-EK-nRZ" id="IMu-E7-TgJ"/>
-                        <outlet property="PickerAllGovernate" destination="Ut0-ne-XTb" id="Nk5-gb-2RA"/>
-                        <outlet property="PickerSpecailaity" destination="KOx-gi-yK9" id="mIL-oZ-wgF"/>
+                        <outlet property="InsuranceCompanies" destination="XvT-gR-S4D" id="lwq-r1-doB"/>
+                        <outlet property="Specialties" destination="sTd-9I-aOH" id="pFq-2E-feK"/>
                         <outlet property="TextFieldCityName" destination="bc1-Zp-DMX" id="fCr-qK-2Lt"/>
-                        <outlet property="pickerInsurnaceCompany" destination="iFD-zd-oyy" id="006-Vc-wmg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DK1-3k-lWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1624,85 +1604,70 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-8I-ECv">
-                                <rect key="frame" x="20" y="10" width="280" height="380"/>
+                                <rect key="frame" x="20" y="10" width="280" height="424"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patient Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s1R-UE-QPZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaQ-1U-Uon">
-                                        <rect key="frame" x="0.0" y="29" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="46" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hMC-Qm-Ugh">
-                                        <rect key="frame" x="0.0" y="57.5" width="280" height="21"/>
+                                        <rect key="frame" x="0.0" y="92" width="280" height="38.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-t2-28R">
-                                        <rect key="frame" x="0.0" y="86.5" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="138.5" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xS1-h4-39o">
-                                        <rect key="frame" x="0.0" y="115" width="280" height="21"/>
+                                        <rect key="frame" x="0.0" y="184.5" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91A-1x-iwi">
-                                        <rect key="frame" x="0.0" y="144" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="230.5" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="GkK-L9-avz">
-                                        <rect key="frame" x="0.0" y="172.5" width="280" height="21"/>
+                                        <rect key="frame" x="0.0" y="276.5" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance companies" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-t4-gkr">
-                                        <rect key="frame" x="0.0" y="201.5" width="280" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance companies ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-t4-gkr">
+                                        <rect key="frame" x="0.0" y="322.5" width="280" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cns-DD-9wA">
-                                        <rect key="frame" x="0.0" y="230.5" width="280" height="95"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="fUT-OZ-VzR" id="4eH-qx-1YD"/>
-                                            <outlet property="delegate" destination="fUT-OZ-VzR" id="Ddb-x6-AOE"/>
+                                            <outlet property="delegate" destination="fUT-OZ-VzR" id="ufI-AX-0WK"/>
                                         </connections>
-                                    </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV7-lh-o6C">
-                                        <rect key="frame" x="0.0" y="333.5" width="280" height="46.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Your Gander ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv5-ac-z4B">
+                                        <rect key="frame" x="0.0" y="368.5" width="280" height="55.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fUT-OZ-VzR" id="NDS-4Z-qBd"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="cns-DD-9wA" firstAttribute="height" secondItem="Dme-8I-ECv" secondAttribute="height" multiplier="0.25" id="pDK-n5-jVW"/>
-                                </constraints>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfL-qQ-7Zi">
-                                <rect key="frame" x="20" y="390" width="280" height="45"/>
-                                <color key="tintColor" red="0.33725490200000002" green="0.8980392157" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Icl-Ea-VEy"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="fUT-OZ-VzR" id="rzz-wI-6rl"/>
-                                    <outlet property="delegate" destination="fUT-OZ-VzR" id="E0R-UE-Llu"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-UX-JnN">
                                 <rect key="frame" x="20" y="443" width="280" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1722,13 +1687,10 @@
                             <constraint firstItem="koR-El-A1b" firstAttribute="bottom" secondItem="yxC-Yj-yfj" secondAttribute="bottom" id="FTS-cD-hTQ"/>
                             <constraint firstItem="Dme-8I-ECv" firstAttribute="top" secondItem="koR-El-A1b" secondAttribute="top" constant="10" id="M8W-ET-7Je"/>
                             <constraint firstItem="Dme-8I-ECv" firstAttribute="leading" secondItem="koR-El-A1b" secondAttribute="leading" constant="20" id="NBE-iZ-PVH"/>
-                            <constraint firstItem="qfL-qQ-7Zi" firstAttribute="leading" secondItem="koR-El-A1b" secondAttribute="leading" constant="20" id="PL9-5W-vAD"/>
-                            <constraint firstItem="koR-El-A1b" firstAttribute="trailing" secondItem="qfL-qQ-7Zi" secondAttribute="trailing" constant="20" id="QH3-4f-QA1"/>
+                            <constraint firstItem="UgR-UX-JnN" firstAttribute="top" secondItem="Dme-8I-ECv" secondAttribute="bottom" constant="9" id="VUu-bx-Yk6"/>
                             <constraint firstItem="yxC-Yj-yfj" firstAttribute="top" secondItem="koR-El-A1b" secondAttribute="top" id="YTl-yk-sQa"/>
-                            <constraint firstItem="UgR-UX-JnN" firstAttribute="top" secondItem="qfL-qQ-7Zi" secondAttribute="bottom" constant="8" symbolic="YES" id="cxu-ps-NWf"/>
-                            <constraint firstAttribute="bottom" secondItem="Dme-8I-ECv" secondAttribute="bottom" constant="114" id="pZi-k3-LhE"/>
+                            <constraint firstAttribute="bottom" secondItem="Dme-8I-ECv" secondAttribute="bottom" constant="70" id="pZi-k3-LhE"/>
                             <constraint firstItem="Dme-8I-ECv" firstAttribute="trailing" secondItem="koR-El-A1b" secondAttribute="trailing" constant="-20" id="rdP-CK-t5T"/>
-                            <constraint firstItem="qfL-qQ-7Zi" firstAttribute="top" secondItem="Dme-8I-ECv" secondAttribute="bottom" id="sok-Zw-9z5"/>
                             <constraint firstItem="UgR-UX-JnN" firstAttribute="leading" secondItem="koR-El-A1b" secondAttribute="leading" constant="20" id="zxQ-cV-feF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="koR-El-A1b"/>
@@ -1737,18 +1699,16 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="9Qh-kY-c0G">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="BackBTN:" destination="fUT-OZ-VzR" id="afg-Jj-alM"/>
+                                <action selector="BackBTN:" destination="fUT-OZ-VzR" id="vFy-4l-X0L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="PickYourGender" destination="qfL-qQ-7Zi" id="XjS-ds-ejz"/>
-                        <outlet property="PickerViewICs" destination="cns-DD-9wA" id="TzI-ZV-qyr"/>
                         <outlet property="RegisterBtnOutlet" destination="UgR-UX-JnN" id="NzG-Gc-PQ3"/>
-                        <outlet property="TypeLabel" destination="xV7-lh-o6C" id="4VJ-D8-WYk"/>
                         <outlet property="dateOfBirth" destination="GkK-L9-avz" id="xY3-XK-Ryy"/>
                         <outlet property="emailAdress" destination="UQ4-t2-28R" id="uJa-gh-Zhh"/>
+                        <outlet property="ganderTxtField" destination="Qv5-ac-z4B" id="EdS-Ly-3Ee"/>
                         <outlet property="insuranceCompanies" destination="xi1-t4-gkr" id="FCI-CW-j4S"/>
                         <outlet property="password" destination="xS1-h4-39o" id="gH4-VT-03J"/>
                         <outlet property="passwordConfirmation" destination="91A-1x-iwi" id="XvQ-Zu-5qv"/>
@@ -1875,7 +1835,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59g-xZ-aP9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="search" image="search" id="f2K-Zx-aSk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="yhC-Cc-jr7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="yhC-Cc-jr7">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2240,58 +2200,49 @@
                                 <rect key="frame" x="40" y="71" width="240" height="426"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2R-w7-cX5">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cy5-zP-i1l">
-                                        <rect key="frame" x="0.0" y="48" width="240" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="62" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-GO-7Gg">
-                                        <rect key="frame" x="0.0" y="96.5" width="240" height="40"/>
+                                        <rect key="frame" x="0.0" y="124" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeW-0R-S32">
-                                        <rect key="frame" x="0.0" y="144.5" width="240" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="186" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance companies" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YbQ-Lr-e4u">
-                                        <rect key="frame" x="0.0" y="193" width="240" height="40"/>
+                                        <rect key="frame" x="0.0" y="248" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="38j-75-xsn" id="9ya-1G-kIa"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nyb-Lr-aaX">
-                                        <rect key="frame" x="0.0" y="241" width="240" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="310" width="240" height="54"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="38j-75-xsn" id="hUa-p9-1b4"/>
+                                        </connections>
                                     </textField>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1N-qv-Hh8">
-                                        <rect key="frame" x="0.0" y="289.5" width="240" height="40"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="38j-75-xsn" id="oMh-jg-tpU"/>
-                                            <outlet property="delegate" destination="38j-75-xsn" id="AR9-4R-plf"/>
-                                        </connections>
-                                    </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzj-9r-vOJ">
-                                        <rect key="frame" x="0.0" y="337.5" width="240" height="40.5"/>
-                                        <color key="tintColor" red="0.33725490200000002" green="0.8980392157" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="38j-75-xsn" id="nzY-zj-imn"/>
-                                            <outlet property="delegate" destination="38j-75-xsn" id="egV-JO-O0W"/>
-                                        </connections>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmQ-Pf-e09">
-                                        <rect key="frame" x="0.0" y="386" width="240" height="40"/>
+                                        <rect key="frame" x="0.0" y="372" width="240" height="54"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SAVE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2301,15 +2252,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Uzj-9r-vOJ" firstAttribute="top" secondItem="L1N-qv-Hh8" secondAttribute="bottom" constant="8" id="60H-sE-Ygz"/>
-                                    <constraint firstItem="Uzj-9r-vOJ" firstAttribute="leading" secondItem="XKl-3m-xgV" secondAttribute="leading" id="GJe-gl-TPO"/>
-                                    <constraint firstItem="L1N-qv-Hh8" firstAttribute="leading" secondItem="XKl-3m-xgV" secondAttribute="leading" id="Vwe-85-WOM"/>
-                                    <constraint firstAttribute="trailing" secondItem="L1N-qv-Hh8" secondAttribute="trailing" id="iju-LB-2tq"/>
-                                    <constraint firstItem="NmQ-Pf-e09" firstAttribute="top" secondItem="Uzj-9r-vOJ" secondAttribute="bottom" constant="8" id="l4T-eq-6CR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Uzj-9r-vOJ" secondAttribute="trailing" id="ouB-J8-ZB4"/>
-                                    <constraint firstItem="L1N-qv-Hh8" firstAttribute="top" secondItem="Nyb-Lr-aaX" secondAttribute="bottom" constant="8" id="qDY-ZG-RmK"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2336,14 +2278,12 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="BtnSave" destination="NmQ-Pf-e09" id="m4T-He-WhY"/>
-                        <outlet property="PickerViewGender" destination="Uzj-9r-vOJ" id="kQr-nH-HZJ"/>
-                        <outlet property="PickerViewIC" destination="L1N-qv-Hh8" id="vuV-a6-gZV"/>
-                        <outlet property="TxtFieldGender" destination="Nyb-Lr-aaX" id="U3T-Kc-pWV"/>
                         <outlet property="TxtViewDOB" destination="oeW-0R-S32" id="KIE-fF-8BP"/>
                         <outlet property="TxtViewEmail" destination="hsf-GO-7Gg" id="1tg-Kh-Tji"/>
-                        <outlet property="TxtViewIC" destination="YbQ-Lr-e4u" id="rVG-4d-P9J"/>
                         <outlet property="TxtViewMob" destination="cy5-zP-i1l" id="kTf-OU-0qZ"/>
                         <outlet property="TxtViewName" destination="H2R-w7-cX5" id="TfC-Ls-jp5"/>
+                        <outlet property="ganderTxtField" destination="Nyb-Lr-aaX" id="Blc-xt-H4R"/>
+                        <outlet property="insuranceCompanies" destination="YbQ-Lr-e4u" id="70K-ay-Ld0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kv-dR-Azo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2427,7 +2367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1d-pg-Bwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="4167"/>
+            <point key="canvasLocation" x="-902" y="4168"/>
         </scene>
         <!--home-->
         <scene sceneID="FmO-y2-e2e">
@@ -3460,7 +3400,6 @@
         <image name="doctor-icon" width="18" height="19"/>
         <image name="doctor-speciality" width="19" height="19"/>
         <image name="fee" width="22" height="13"/>
-        <image name="gray-downarrow" width="20" height="12"/>
         <image name="locations-map" width="10" height="14"/>
         <image name="logo" width="90" height="84"/>
         <image name="more" width="29" height="29"/>
@@ -3483,6 +3422,6 @@
         <image name="white-user" width="18" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6i8-d4-QWU"/>
+        <segue reference="DYw-fY-41Y"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -39,6 +39,8 @@
 		96B38C1D224B0195000C132B /* EditMyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C1C224B0195000C132B /* EditMyProfileVC.swift */; };
 		96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C1E224B01C5000C132B /* changePasswordVC.swift */; };
 		96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38C20224B0550000C132B /* ApprovalListVC.swift */; };
+		96B478382273471800AB1990 /* searchDoctorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B478362273471800AB1990 /* searchDoctorResults.swift */; };
+		96B478392273471800AB1990 /* searchDoctorResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B478372273471800AB1990 /* searchDoctorResults.xib */; };
 		96D419F522380198001B0411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F422380198001B0411 /* AppDelegate.swift */; };
 		96D419F722380199001B0411 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F622380199001B0411 /* firstVC.swift */; };
 		96D419FA22380199001B0411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D419F822380199001B0411 /* Main.storyboard */; };
@@ -97,6 +99,8 @@
 		96B38C1C224B0195000C132B /* EditMyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyProfileVC.swift; sourceTree = "<group>"; };
 		96B38C1E224B01C5000C132B /* changePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordVC.swift; sourceTree = "<group>"; };
 		96B38C20224B0550000C132B /* ApprovalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListVC.swift; sourceTree = "<group>"; };
+		96B478362273471800AB1990 /* searchDoctorResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchDoctorResults.swift; sourceTree = "<group>"; };
+		96B478372273471800AB1990 /* searchDoctorResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchDoctorResults.xib; sourceTree = "<group>"; };
 		96D419F122380198001B0411 /* Galen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D419F422380198001B0411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D419F622380199001B0411 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
@@ -279,6 +283,15 @@
 			path = Favorits;
 			sourceTree = "<group>";
 		};
+		96B47835227346B500AB1990 /* serachDoctorResults */ = {
+			isa = PBXGroup;
+			children = (
+				96B478362273471800AB1990 /* searchDoctorResults.swift */,
+				96B478372273471800AB1990 /* searchDoctorResults.xib */,
+			);
+			path = serachDoctorResults;
+			sourceTree = "<group>";
+		};
 		96D419E822380198001B0411 = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +390,7 @@
 		96D41A1D22380369001B0411 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				96B47835227346B500AB1990 /* serachDoctorResults */,
 				96B38C03224AAA87000C132B /* SearchByAreaAndSpeciality */,
 				96B38C04224AAACE000C132B /* PatiantSearchForDoctor */,
 				96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */,
@@ -464,6 +478,7 @@
 			files = (
 				96D41A022238019B001B0411 /* LaunchScreen.storyboard in Resources */,
 				96D419FF2238019B001B0411 /* Assets.xcassets in Resources */,
+				96B478392273471800AB1990 /* searchDoctorResults.xib in Resources */,
 				96D419FA22380199001B0411 /* Main.storyboard in Resources */,
 				9677423C2265D796004CF27A /* Hospital.storyboard in Resources */,
 			);
@@ -542,6 +557,7 @@
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
 				96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */,
 				9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */,
+				96B478382273471800AB1990 /* searchDoctorResults.swift in Sources */,
 				9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
