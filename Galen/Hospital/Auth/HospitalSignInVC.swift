@@ -47,28 +47,43 @@ class HospitalSignInVC: UIViewController {
             self.showAlert(title: title, message: messages)
             return
         }
-        
-        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "") { (error: Error?, success: Bool, data) in
-            if success {
-                if data == "trueLogin" {
-                    
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-                    self.present(newViewController, animated: true, completion: nil)
-                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-                    
-                }else {
-                    self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                }
-                //
+
+        API_Auth.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "", completion: { (error:Error?, success: Bool, data , user :Client) in
+            if data == "trueLogin" {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+                self.present(newViewController, animated: true, completion: nil)
+                // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
             }else {
-                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                print(error as Any)
+                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
             }
-            
+            //
+        }) { (error:Error?, success: Bool, data) in
+            print(error)
         }
-        
     }
+        
+//        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "", completion: (error?, access, Data?, User) -> Void) { (error: Error?, success: Bool, data , user : Client)  in
+//            if success {
+//                if data != nil {
+//
+//                    helper.saveAPIUser(User: user)
+//
+//                    let storyBoard: UIStoryboard = UIStoryboard(name: "Hospital", bundle: nil)
+//                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "FirstVC")
+//                    self.present(newViewController, animated: true, completion: nil)
+//                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
+//
+//                }else {
+//                    self.showAlert(title: "Login Filed", message: "\( "Login Faild")")
+//                }
+//
+//            }else {
+//                self.showAlert(title: "Login Filed", message: "\( "login Faild")")
+//                print(error as Any)
+//            }
+//        }
+    
     
     func imageText() {
         

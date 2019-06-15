@@ -11,7 +11,6 @@ import UIKit
 class HospitalFirstVC: UIViewController {
 
     @IBOutlet weak var imageLogo: UIImageView!
-    @IBOutlet weak var SignInOutletBTN: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +30,16 @@ class HospitalFirstVC: UIViewController {
         // Sign in BTN
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = SignInOutletBTN.bounds
+        gradientLayer.frame = Signin.bounds
         
         gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
         
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
-        SignInOutletBTN.layer.insertSublayer(gradientLayer, at: 0)
-        SignInOutletBTN.layer.cornerRadius = Signin.frame.height/2
-        SignInOutletBTN.clipsToBounds = true
+        Signin.layer.insertSublayer(gradientLayer, at: 0)
+        
+        Signin.layer.cornerRadius = Signin.frame.height/2
+        Signin.clipsToBounds = true
     }
 }

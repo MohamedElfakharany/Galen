@@ -10,7 +10,7 @@ import Foundation
 
 struct URLsPatient {
     
-    static let main = "http://microtec1.egytag.com:30001/api/"
+    static let main = "http://microtec1.egytag.com/api/"
     
     static let register           = main + "register/add"
     static let login                = main + "user/login"

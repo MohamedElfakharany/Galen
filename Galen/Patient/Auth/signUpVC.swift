@@ -18,6 +18,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     var VarSelectedGander=0
     var selectedTxtField = UITextField()
    
+    @IBOutlet weak var imageuser: UIImageView!
     @IBOutlet weak var patientCode: UITextField!
     @IBOutlet weak var patientName: UITextField!
     @IBOutlet  weak var phoneNumber: UITextField!
@@ -36,12 +37,49 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
        
         GetInsurnaceCompany()
         imageText()
+        imageuser.roundedImage()
         gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
        
+    }
+    
+    var picker_imag: UIImage? {
+        didSet{
+            guard let image = picker_imag else {return}
+            imageuser.isHidden = false
+            self.imageuser.image = image
+        }
+    }
+    
+    
+    @IBAction func selectImage(_ sender: Any) {
+        
+        let piker = UIImagePickerController()
+        piker.allowsEditing = true
+        piker.sourceType = .photoLibrary
+        piker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Chose A Source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                piker.sourceType = .camera
+                self.present(piker, animated: true, completion: nil)
+            }else {
+                print("notFound")
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            piker.sourceType = .photoLibrary
+            self.present(piker, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+        
+        
     }
     
     func GetInsurnaceCompany(){
@@ -62,7 +100,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             "accessToken" : "8462a029bb221e63e98d2653cf985ade"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com:30001/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request("http://microtec1.egytag.com/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
             switch (response.result){
             case .success(let Value):
             let json = JSON(Value)
@@ -86,21 +124,21 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         
         
         //patient name
-        guard let patientNames = patientName.text, !patientNames.isEmpty else {
+        guard let patientNames = patientName.text?.trimmed, !patientNames.isEmpty else {
             let messages = NSLocalizedString("enter your name", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
             return
         }
         // patient mubile number
-        guard let phoneNumbers = phoneNumber.text, !phoneNumbers.isEmpty else {
+        guard let phoneNumbers = phoneNumber.text?.trimmed, !phoneNumbers.isEmpty else {
             let messages = NSLocalizedString("enter your phone number", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
             return
         }
         // email adress
-        guard let emailAdresses = emailAdress.text, !emailAdresses.isEmpty else {
+        guard let emailAdresses = emailAdress.text?.trimmed, !emailAdresses.isEmpty else {
             let messages = NSLocalizedString("enter your email adress", comment: "hhhh")
             let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
@@ -120,13 +158,8 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             self.showAlert(title: title, message: messages)
             return
         }
-        // password & password Confirmation are match
-        guard  password == passwordConfirmation else {
-            let messages = NSLocalizedString("Passwords not match", comment: "hhhh")
-            let title = NSLocalizedString("Register Filed", comment: "hhhh")
-            self.showAlert(title: title, message: messages)
-            return
-        }
+
+        guard  password == passwordConfirmation else {return}
         
         // date of birth
         guard let dateOfBirths = dateOfBirth.text, !dateOfBirths.isEmpty else {
@@ -158,37 +191,21 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
                           password_confirmation: passwordConfirmation.text ?? "",
                           date_of_birth: dateOfBirth.text ?? "",
                           insurance_companies: insuranceCompanies.text ?? "",
-                          gander: ganderTxtField.text ?? "")    {
+                          gander: ganderTxtField.text ?? "",
+                          image: imageuser.image ?? #imageLiteral(resourceName: "1"))    {
                             (error:Error?, success: Bool, data) in
             
-            if success {
-                if data != nil {
-                    print("success")
-                    API_Auth.login(email: data?[0] ?? "" , password: data?[1] ?? "") { (error: Error?, success: Bool, data) in
-                        if success {
-                            if data == "trueLogin" {
-                                
-                                self.performSegue(withIdentifier: "TrueLoginAfterSignup", sender: nil )
-                                
-                            }else {
-                                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                            }
-                            //
-                        }else {
-                            self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                            print(error ?? "")
-                        }
-                        
-                    }
-                }else {
-                    self.showAlert(title: "Register Filed", message: "\(data![0] ) Sorry Try again")
-                }
-                
-            }else {
-                self.showAlert(title: "Register Filed", message: "\(data![0] ) Sorry Try again")
-            }
         }
     }
+    
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
     
     
     //////////////// Text Fields Views ////////////////
@@ -286,8 +303,9 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             VarSelectedGander=row
             return ICsNames[row]
         }else {
-            return ""
+            
         }
+        return nil
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -338,6 +356,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         }
     }
     
+
     // keyboard down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -348,3 +367,21 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         return true
     }
 }
+
+
+extension signUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.picker_imag = editedImage
+        }else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            self.picker_imag = originalImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+

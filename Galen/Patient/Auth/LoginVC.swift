@@ -41,28 +41,51 @@ class LoginVC: UIViewController {
             return
         }
         
-        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "") { (error: Error?, success: Bool, data) in
-            if success {
-                if data == "trueLogin" {
-                    
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-                    self.present(newViewController, animated: true, completion: nil)
-                   // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-                    
-                }else {
-                    self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                }
-                //
+        API_Auth.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "", completion: { (error:Error?, success: Bool, data , user :Client) in
+            if data == "trueLogin" {
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+                self.present(newViewController, animated: true, completion: nil)
+                // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
             }else {
-                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                print(error as Any)
+                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
             }
-            
+            //
+        }) { (error:Error?, success: Bool, data) in
+            print(error)
         }
-        
     }
+//        
+//        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "") { (error: Error?, success: Bool, data,user : Client) in
+//            if success {
+//                if data == "trueLogin" {
+//                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+//                    self.present(newViewController, animated: true, completion: nil)
+//                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
+//                }else {
+//                    self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
+//                }
+//                //
+//            }else {
+//                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
+//                print(error as Any)
+//            }
+//        }
+//   
+//
+//        API_Auth.Login(email: userName, password: passwords) { (error, success,acctoken, role, massage, done) in
+//            if success {
+//                if done == true{
+//                    print(acctoken ?? "")
+//                    print(role ?? "")
+//                }else {
+//                    self.showAlert(title: "login fiald", message: massage ?? "")
+//                }
+//            }
+//        }
     
+
     func imageText() {
         
         if let myImage = UIImage(named: "user"){
@@ -80,7 +103,7 @@ class LoginVC: UIViewController {
             TxtFieldPassword.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
            
         }
-    }
+    }//EndImageText
     
     @IBOutlet weak var SignInBtnOutlet: UIButton!
     
@@ -103,20 +126,20 @@ class LoginVC: UIViewController {
         
         SignInBtnOutlet.layer.cornerRadius = 17.5
         SignInBtnOutlet.clipsToBounds = true
-    }
+    }//EndGrad
     
     @IBAction func backBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
-    }
+    }//ENDBack
     
     // keybord disappair
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         
-    }
+    }//EndDisappair
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
         
-    }
-}
+    }//EndShouldReturn
+}//EndClass

@@ -98,9 +98,16 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         // patient insurance companies
         if let myImage = UIImage(named: "insurance-companies"){
             
-           insuranceCompanies.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            insuranceCompanies.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
             insuranceCompanies.MakeRoundeEdges(insuranceCompanies)
             insuranceCompanies.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        // patient Gander
+        if let myImage = UIImage(named: "gander"){
+            
+            ganderTxtField.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            ganderTxtField.MakeRoundeEdges(ganderTxtField)
+            ganderTxtField.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
     }
     
@@ -153,21 +160,12 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             selectedTxtField.inputView  = pickerView
         }
     }
-    
-    // keybord down
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
+
     @IBAction func ActBtnSave(_ sender: Any) {
         
         let url = URLsPatient.EditProfile
         let AccessToken = helper.getAPIToken()
-        let userid = helper.getUserId()
+        let userid = helper.getAPIToken().token ?? ""
         
         var parameters : Parameters = [
             "patient_name" : TxtViewName.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
@@ -175,8 +173,7 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             "patient_email" :   TxtViewEmail.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
             "patient_birth_date" : TxtViewDOB.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
             "patient_insurance" : insuranceCompanies.text?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "",
-            "accessToken": AccessToken?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
-            "id": userid?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
+            "accessToken": userid.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? "" ,
             ]
         
         for (key, value) in parameters {
@@ -186,7 +183,7 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
             
             print("myresponse")
             print(response)
@@ -197,12 +194,12 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
                 print(error)
                 //self.showAlert(title: "Error", message: "\(error)")
                 
-            case .success(let value):
-                let json = JSON(value)
+            case .success(let data):
+                let json = JSON(data)
                 //print(value)
-                if let user_token = json["message"]["userToken"].string {
+                if let UserData = try? JSONDecoder().decode(Client.self, from:data ){
                     //print("user token \(user_token)")
-                    helper.saveAPIToken(token: user_token)
+                    helper.saveAPIUser(User: UserData)
                     
                 }else {
                     // let data. = json["message"].string
@@ -236,5 +233,14 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
         dismiss(animated: true , completion : nil)
     }
     
+    // keybord down
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
 }

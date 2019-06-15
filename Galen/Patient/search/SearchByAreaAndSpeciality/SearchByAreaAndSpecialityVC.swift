@@ -19,15 +19,10 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
     var VarSelectedpicker=0
     var selectedTxtField = UITextField()
     
-    @IBOutlet weak var BtnAutoLocate: UIButton!
-    @IBOutlet weak var BtnSelectGovernate: UIButton!
-    
     @IBOutlet weak var TextFieldCityName: UITextField!
-    
     @IBOutlet weak var AllGovernorates: UITextField!
     @IBOutlet weak var Specialties: UITextField!
     @IBOutlet weak var InsuranceCompanies: UITextField!
-    
     @IBOutlet weak var BtnSearch: UIButton!
     
     override func viewDidLoad() {

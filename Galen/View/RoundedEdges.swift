@@ -29,7 +29,7 @@ extension UITextField {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = CGSize(width: 1 , height: 1)
         self.layer.shadowOpacity = 0.1
-        //self.backgroundColor = .white
+        self.backgroundColor = .white
         
     }
 }

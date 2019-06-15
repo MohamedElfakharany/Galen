@@ -48,7 +48,7 @@ class moreVC: UIViewController {
     
     @IBAction func logoutBtnAction(_ sender: Any) {
         
-        let url = "http://microtec1.egytag.com:30001/api/user/logout"
+        let url = "http://microtec1.egytag.com/api/user/logout"
         
         let accessTokenObject = ["access_token" : helper.getAPIToken()]
         
@@ -57,7 +57,7 @@ class moreVC: UIViewController {
             ]
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (DataResponse) in
-            print( DataResponse.response )
+            print( DataResponse.response as Any )
          
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
