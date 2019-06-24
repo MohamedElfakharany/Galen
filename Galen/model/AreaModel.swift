@@ -10,8 +10,8 @@ import Foundation
 
 struct Area: Codable {
     
-    let name : String
-    let id : Int
+    let name : String?
+    let id : Int?
     
     init(_name : String , _id : Int ) {
         name = _name

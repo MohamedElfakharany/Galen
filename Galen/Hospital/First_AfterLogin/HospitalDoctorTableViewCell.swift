@@ -130,7 +130,7 @@ extension HospitalDoctorTableViewCell : UICollectionViewDataSource {
             cell.EditCell(
                 Day: NextTicket.selectedTime?.day?.name ?? "" ,
                 Date: NextTicket.date ?? "" ,
-                Time: "\(NextTicket.selectedTime?.from?.hour ?? 00 ) \(NextTicket.selectedTime?.from?.minute ?? 00 ) to \(NextTicket.selectedTime?.to?.hour ?? 00 ) \(NextTicket.selectedTime?.to?.minute ?? 00)",
+                Time: "\(String(describing: NextTicket.selectedTime?.from)) to \(String(describing: NextTicket.selectedTime?.to)) ",
                 Statues: NextTicket.status?.nameEn ?? "",
                 StatuesColor: StatuesColor)
             self.CollectionView.reloadData()

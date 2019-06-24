@@ -24,7 +24,7 @@ class PopUpViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     
         // Do any additional setup after loading
-        self.LblPatianetName.text = TicketArr[0].addUserInfo?.name
+        self.LblPatianetName.text = TicketArr[0].selectedDoctor!.name
         self.LblTicketDate.text = TicketArr[0].date
         
         
@@ -35,7 +35,7 @@ class PopUpViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToUpdate" {
+        if segue.identifier == "GoUpdate" {
             let SelectedTicket = TicketArr.first
             let controller = segue.destination as! TicketUpdateViewController
             controller.TicketArrUpdate.insert(SelectedTicket!, at: 0) //error
@@ -44,15 +44,15 @@ class PopUpViewController: UIViewController {
     
     
     @IBAction func BtnReportAction(_ sender: Any) {
-          //self.performSegue(withIdentifier: "ToUpdate", sender: nil)
+          self.performSegue(withIdentifier: "GoUpdate", sender: nil)
       
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Doctor", bundle: nil)
-          let SelectedTicket = TicketArr.first
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "TicketUpdateViewController") as? TicketUpdateViewController
-        newViewController?.TicketArrUpdate.insert(SelectedTicket!, at: 0)
-        self.navigationController?.pushViewController(newViewController!, animated: true)
-      //  self.present(newViewController!, animated: true, completion: nil)
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Doctor", bundle: nil)
+//          let SelectedTicket = TicketArr.first
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "TicketUpdateViewController") as? TicketUpdateViewController
+//        newViewController?.TicketArrUpdate.insert(SelectedTicket!, at: 0)
+//        self.navigationController?.pushViewController(newViewController!, animated: true)
+//      //  self.present(newViewController!, animated: true, completion: nil)
         
         
         

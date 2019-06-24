@@ -15,7 +15,7 @@ class hospitalSearchToEditDoctor: UIViewController {
     @IBOutlet weak var TxtFieldDocCode: UITextField!
     @IBOutlet weak var TxtFieldDocName: UITextField!
     
-    var ResultDoc : SDoctor?
+    var ResultDoc : Doctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class hospitalSearchToEditDoctor: UIViewController {
     
     //http://microtec1.egytag.com:30001/api/doctors/view
     
-    func SearchForDoctor(DoctorId : Int) -> SDoctor {
+    func SearchForDoctor(DoctorId : Int) -> Doctor {
         
         let header : [String: String] = [
             "Authorization" : helper.getAPIToken().token ?? "",
@@ -62,7 +62,7 @@ class hospitalSearchToEditDoctor: UIViewController {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)
                 if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.ResultDoc =  resData as? SDoctor
+                    self.ResultDoc =  resData as? Doctor
                     ///HandlingDoctor
                 }
             }
@@ -72,8 +72,8 @@ class hospitalSearchToEditDoctor: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowRecantlySearchedDoctor" {
-            let controller = segue.destination as! hospitalEditedDoctorData
-            controller.CurrentDoctor = self.ResultDoc!
+         //   let controller = segue.destination as! hospitalEditedDoctorData
+            //controller.CurrentDoctor = self.ResultDoc!
         }
     }
     

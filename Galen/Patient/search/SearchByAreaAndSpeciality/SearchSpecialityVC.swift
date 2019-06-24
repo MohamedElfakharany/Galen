@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+class SearchSpecialityVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
 
     var pickerView = UIPickerView()
     var ICsNames:[String] = []
@@ -19,10 +19,8 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
     var VarSelectedpicker=0
     var selectedTxtField = UITextField()
     
-    @IBOutlet weak var TextFieldCityName: UITextField!
-    @IBOutlet weak var AllGovernorates: UITextField!
     @IBOutlet weak var Specialties: UITextField!
-    @IBOutlet weak var InsuranceCompanies: UITextField!
+
     @IBOutlet weak var BtnSearch: UIButton!
     
     override func viewDidLoad() {
@@ -48,23 +46,7 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
         
     }
     func imageText() {
-        // city name
-        if let myImage = UIImage(named: "search"){
-            
-            TextFieldCityName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            
-            TextFieldCityName.MakeRoundeEdges(TextFieldCityName)
-            TextFieldCityName.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
 
-        // All Governorates
-        if let myImage = UIImage(named: "selectbox-downarrow"){
-            
-            AllGovernorates.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            
-            AllGovernorates.MakeRoundeEdges(AllGovernorates)
-            AllGovernorates.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         // Specialties
         if let myImage = UIImage(named: "selectbox-downarrow"){
             
@@ -73,14 +55,7 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
             Specialties.MakeRoundeEdges(Specialties)
             Specialties.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
-        // InsuranceCompanies
-        if let myImage = UIImage(named: "selectbox-downarrow"){
-            
-            InsuranceCompanies.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            
-            InsuranceCompanies.MakeRoundeEdges(InsuranceCompanies)
-            InsuranceCompanies.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
+       
     }
     
     func gradBTNS() {
@@ -108,9 +83,10 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if selectedTxtField == AllGovernorates {
-            return Governorates.count
-        }else if selectedTxtField == Specialties{
+//        if selectedTxtField == AllGovernorates {
+//            return Governorates.count
+//        }
+         if selectedTxtField == Specialties{
             return DocSpecialties.count
         }else  {
             return ICsNames.count
@@ -118,10 +94,11 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if selectedTxtField == AllGovernorates{
-            VarSelectedpicker = row
-            return Governorates[row]
-        }else if selectedTxtField == Specialties {
+//        if selectedTxtField == Governorates{
+//            VarSelectedpicker = row
+//            return Governorates[row]
+//        }else
+        if selectedTxtField == Specialties {
             VarSelectedpicker = row
             return DocSpecialties[row]
         }else{
@@ -131,14 +108,15 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if  selectedTxtField == AllGovernorates {
-            AllGovernorates.text = Governorates[row]
-            self.view.endEditing(true)
-        }else if selectedTxtField == Specialties {
+//        if  selectedTxtField == Governorates {
+//            Governorates.text = Governorates[row]
+//            self.view.endEditing(true)
+//        }else
+        if selectedTxtField == Specialties {
             Specialties.text = DocSpecialties[row]
             self.view.endEditing(true)
         }else {
-            InsuranceCompanies.text = ICsNames[row]
+           // InsuranceCompanies.text = ICsNames[row]
             self.view.endEditing(true)
         }
     }
@@ -147,9 +125,10 @@ class SearchByAreaAndSpecialityViewController: UIViewController,UIPickerViewDele
         self.pickerView.delegate = self
         self.pickerView.dataSource  = self
         selectedTxtField = textField
-        if selectedTxtField == AllGovernorates{
-            selectedTxtField.inputView = pickerView
-        }else if selectedTxtField == Specialties {
+//        if selectedTxtField == Governorates{
+//            selectedTxtField.inputView = pickerView
+//        }else
+        if selectedTxtField == Specialties {
             selectedTxtField.inputView  = pickerView
         }else {
             selectedTxtField.inputView  = pickerView

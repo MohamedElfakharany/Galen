@@ -29,7 +29,7 @@ class HospitalDashbored: UIViewController , UITableViewDelegate , UITableViewDat
         var CurrentDoctorAppoinments = [Ticket]()
         
         for wticket in TicketsArray {
-            if wticket.selectedDoctor?.name == CurrentDoctor {
+            if (wticket.selectedDoctor?.name)! == CurrentDoctor {
                 CurrentSpeciality = wticket.selectedSpecialty?.name ?? ""
             }
         }
@@ -67,16 +67,10 @@ class HospitalDashbored: UIViewController , UITableViewDelegate , UITableViewDat
         UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
         UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
         ])
-        
         GetTickets()
-        
-      
         self.TableView.delegate = self
         self.TableView.dataSource = self
         TableView.addSubview(Refresher)
-        
-      
-        
     }
     
     
@@ -84,36 +78,37 @@ class HospitalDashbored: UIViewController , UITableViewDelegate , UITableViewDat
         self.Refresher.endRefreshing()
         let url = "http://microtec1.egytag.com/api/tickets/all"
         
-        Alamofire.request(url, method: .post, encoding: URLEncoding.default, headers: nil) .responseData { response in
-            print(response)
+//        let parameters: Parameters = [
+//            "where":
+//                [
+//                    "selected_hospital.id" : 20
+//            ]
+//        ]
+//
+        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+            print(response.result)
+            print(response.request)
             switch response.result
             {
             case .success(let value):
                 let json = JSON(value).dictionary
-               // print(json)
                 do {
                     let datas = try json!["list"]?.rawData()
-                  //  print("datas = \(datas)")
+                    print(datas)
                     do {
-                        let TicketData = try? newJSONDecoder().decode([Ticket].self, from: datas!)
-                        self.TicketsArray = TicketData!
-                       // print("FirstTicket\(self.TicketsArray )")
-                      //  self.CollectionView.reloadData()
-                        
-                      //  NotificationCenter.default.post(name: NSNotification.Name("load"), object: nil)
-                       // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-                        
+                    //    let TicketData = try? newJSONDecoder().decode([Ticket].self, from: datas!)
+                      //  self.TicketsArray = TicketData!
                         NotificationCenter.default.post(name:
                             NSNotification.Name("hello"), object: nil)
                         
                         self.TableView.reloadData()
                         
-                        for wticket in self.TicketsArray {
-                            if self.DoctorArray.contains(wticket.selectedDoctor?.name ?? "") {
-                            }else{
-                                self.DoctorArray.append(wticket.selectedDoctor?.name ?? "")
-                            }
-                        }
+//                        for wticket in self.TicketsArray {
+//                            if self.DoctorArray.contains(wticket.selectedDoctor?.name ?? "") {
+//                            }else{
+//                                self.DoctorArray.append(wticket.selectedDoctor?.name ?? "")
+//                            }
+//                        }
                         
                   
                       print(self.DoctorArray)

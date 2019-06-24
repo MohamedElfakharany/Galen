@@ -17,7 +17,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     var selectedTxtField = UITextField()
     
     var ICsNames = [ICsName]()
-    var CitiesArray = [City]()
+    var GovArray = [Gov]()
     var AreaArray = [Area]()
     var SpecailityArray = [Speciality]()
 
@@ -33,12 +33,12 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     @IBOutlet weak var TxtFieldSpecialities: UITextField!
     @IBOutlet weak var TxtFieldInsurnaceCompany: UITextField!
     
-    var TestCityArray =  [[String:AnyObject]]()
+    var TestGovArray =  [[String:AnyObject]]()
     var TestAreaArray =  [[String:AnyObject]]()
     var TestSpecailityArray =  [[String:AnyObject]]()
     var ChosenGovId : Int?
     var ChosenArea : Area?
-    var ChosenCity : City?
+    var ChosenGov : Gov?
     var ChosenSpeciality : Speciality?
     
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             ])
         
         Fetchspecialty()
-        FetchCities()
+        FetchGov()
        imageText()
     }
     
@@ -58,48 +58,43 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     //FetchSpecialities
     
     func Fetchspecialty() {
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "",
-            "Content-Type" : "application/json"
-        ]
-        
-        Alamofire.request("http://microtec1.egytag.com/api/medical_specialties/view", method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.TestSpecailityArray =  resData as! [[String:AnyObject]]
-                    for NextSpecaility in self.TestSpecailityArray {
-                        let ReceivedSpecaility = Speciality.init(
-                            _name: NextSpecaility["name"] as! String
-                            , _id: NextSpecaility["id"] as! Int )
-                        self.SpecailityArray.append(ReceivedSpecaility)
+        let url = "http://intmicrotec.neat-url.com:6566/api/medical_specialties/all"
+         Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+            switch response.result
+            {
+            case .success(let value):
+                let json = JSON(value).dictionary
+                do {
+                    let datas = try json!["list"]?.rawData()
+                    do {
+                        let SepcialityData = try? newJSONDecoder().decode([Speciality].self, from: datas!)
+                        self.SpecailityArray = SepcialityData!
                     }
-                }
+                } catch  {
+                    }
+            case .failure(_):
+               print("error  = \(String(describing: response.result.error))")
             }
         }
     }
     ////
-    
-    ///FetchCities(Governates)
-    
-    func FetchCities() {
+    func FetchGov() {
         let header : [String: String] = [
             "Authorization" : helper.getAPIToken().token ?? "" ,
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/goves/view", method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request("http://microtec1.egytag.com/api/goves/all", method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.TestCityArray =  resData as! [[String:AnyObject]]
-                    for NextCity in self.TestCityArray {
-                        let ReceivedCity = City.init(
+             //   print("swiftyforcities\(swiftyJsonVar)")
+                if let resData = swiftyJsonVar["list"].arrayObject {
+                    self.TestGovArray =  resData as! [[String:AnyObject]]
+                    for NextCity in self.TestGovArray {
+                        let ReceivedCity = Gov.init(
                             _name: NextCity["name"] as! String
                             , _id: NextCity["id"] as! Int )
-                        self.CitiesArray.append(ReceivedCity)
+                        self.GovArray.append(ReceivedCity)
                     }
                 }
             }
@@ -108,20 +103,24 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     
     /////FetchAreas(Cities)
     func FetchArea(ChosenGovernateID: Int) {
+        print(ChosenGovernateID)
         let header : [String: String] = [
             "Authorization" : helper.getAPIToken().token ?? "",
             "Content-Type" : "application/json"
         ]
         
-        let parameters : [String: Int] = [
-            "id" : ChosenGovernateID ,
+        let parameters: Parameters = [
+            "where":
+                [
+                    "gov.id"  : ChosenGovernateID
             ]
-        
-        Alamofire.request("http://microtec1.egytag.com/api/cities/view", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        ]
+        Alamofire.request("http://microtec1.egytag.com/api/cities/all", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+            print(responseData)
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
+                if let resData = swiftyJsonVar["list"].arrayObject {
                     self.TestAreaArray =  resData as! [[String:AnyObject]]
                     for NextArea in self.TestAreaArray {
                         let ReceivedArea = Area.init(
@@ -130,62 +129,77 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
                         self.AreaArray.append(ReceivedArea)
                     }
                 }
+                print(self.AreaArray)
             }
         }
     }
     /////////
     
+    func UpdateMyHospital(){
     
-    ///FuncModigyHospital
+    }
     
-    func ModifyHospital( name : String, website : String ,  specialty : Speciality , gov : City , code : Int ,city : Area , address : String , phone : String , email : String , insurnaceCompinies : String , completion: @escaping (_ error: Error?, _ success: Bool)->Void) {
-        
-        
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "",
-            "Content-Type" : "application/json"
-        ]
-        
-        let parameters : [String: Any] = [
+    
+    ///FuncModifyHospital
+    
+    func ModifyHospital( id : Int ,name : String, website : String ,  specialty : Int, gov : Int ,city : Int , address : String , phone : String , email : String , insurnaceCompinies : String , completion: @escaping (_ error: Error?, _ success: Bool)->Void) {
+
+    let url = "http://intmicrotec.neat-url.com:6566/api/hospitals/update"
+        var parameters : Parameters = [
+            "hospitalID" : id ,
             "name" : name ,
-            "code" : code ,
             "specialty" : specialty ,
             "gov" : gov ,
             "city" : city ,
             "address" : address ,
-            "phone" : phone ,
+            "mobile" : phone ,
             "email" : email ,
             "insurnaceCompinies" : insurnaceCompinies ,
             "website" : website
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/hospitals/update", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if swiftyJsonVar["data"].arrayObject != nil {
-                    //HandlingJsonToSaveTheHospitalAsHospitalModel
-                    //let RecivedDoctor : Doctor?
-                    completion(Error.self as? Error,true)
+        for par in parameters {
+            if par.key == "name" || par.key == "website" || par.key == "address" || par.key == "phone" || par.key == "email" || par.key == "insurnaceCompinies"{
+                let parStringValue = String(describing: par.value)
+                if parStringValue.isEmpty {
+                    parameters.removeValue(forKey: par.key)
+                }
+            }else{
+                let parIntValue = par.value as? Int
+                if parIntValue == 0 {
+                    parameters.removeValue(forKey: par.key)
                 }
             }
         }
         
-        
+        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+            switch response.result
+            {
+            case .success(let value):
+                do {
+                     let swiftyJsonVar = JSON(response.result.value!)
+                    if swiftyJsonVar["done"] == true {
+                    self.UpdateMyHospital()
+                    }
+                } catch  {
+                }
+            case .failure(_):
+                print("Failure")
+            }
+        }
     }
     
     
     @IBAction func BtnActSave(_ sender: Any) {
         
-        ModifyHospital( name : TxtFieldFullName.text!
+        ModifyHospital( id: 20, name : TxtFieldFullName.text!
                      , website : TxtFieldWebSite.text!
-                     , specialty : ChosenSpeciality!
-                     , gov : ChosenCity!
-                     , code : Int(TxtFieldHospitalCode!.text!)!
-                     , city : ChosenArea!
-                     , address : TxtFieldAddress.text!
-                     , phone : TxtFieldPhoneNumber.text!
-                     , email : TxtFieldEmail.text!
+            , specialty : ChosenSpeciality?.specialityID ?? 0
+                     , gov : ChosenGov?.id ?? 0
+            , city : ChosenArea?.id ?? 0
+            , address : TxtFieldAddress.text ?? ""
+                     , phone : TxtFieldPhoneNumber.text ?? ""
+                     , email : TxtFieldEmail.text ?? ""
                      , insurnaceCompinies : TxtFieldInsurnaceCompany.text! )
             { (error: Error?, success: Bool) in
                     if success {
@@ -320,14 +334,15 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             return SpecailityArray.count
         } else if selectedTxtField == TxtFeildArea {
             if (self.ChosenGovId == nil ){
-                return self.CitiesArray.count
-            }else{
-                return self.AreaArray.count
+                return 0
+            }else if selectedTxtField == TxtFieldGovernates {
+                return self.GovArray.count
             }
         }else if selectedTxtField == TxtFieldInsurnaceCompany {
             return self.ICsNames.count
         }
-        else {return 0 }
+        else {return 0}
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -335,12 +350,14 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             return SpecailityArray[row].name
         } else if selectedTxtField == TxtFieldGovernates {
             if (self.ChosenGovId == nil ){
-                return self.CitiesArray[row].name
+                return self.GovArray[row].name
             }else{
-                return self.AreaArray[row].name
+                return self.GovArray[row].name
             }
         } else if selectedTxtField == TxtFieldInsurnaceCompany  {
             return self.ICsNames[row].name
+        } else if selectedTxtField == TxtFeildArea {
+            return self.AreaArray[row].name
         }
         else {return nil }
     }
@@ -348,10 +365,10 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if selectedTxtField == TxtFieldSpecialities {
             TxtFieldSpecialities.text = SpecailityArray[row].name
-        } else if pickerView ===  TxtFieldGovernates {
+        } else if selectedTxtField ===  TxtFieldGovernates {
             if (self.ChosenGovId == nil ){
-                TxtFieldGovernates.text = CitiesArray[row].name
-                FetchArea(ChosenGovernateID: CitiesArray[row].id)
+                TxtFieldGovernates.text = GovArray[row].name
+                FetchArea(ChosenGovernateID: GovArray[row].id ?? 0)
             }else{
                 TxtFeildArea.text = AreaArray[row].name
             }

@@ -33,7 +33,7 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
     @IBOutlet weak var TxtFieldDiscount: UITextField!
     @IBOutlet weak var TxtViewDocInfo: UITextView!
     
-    var CurrentDoctor : SDoctor?
+    var CurrentDoctor : Doctor?
     
     var SpecailityArray = [Speciality]()
     var TestSpecailityArray =  [[String:AnyObject]]()
@@ -149,22 +149,27 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/medical_specialties/view", method: HTTPMethod.post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.TestSpecailityArray =  resData as! [[String:AnyObject]]
-                    for NextSpecaility in self.TestSpecailityArray {
-                        let ReceivedSpecaility = Speciality.init(
-                            _name: NextSpecaility["name"] as! String
-                            , _id: NextSpecaility["id"] as! Int )
-                        self.SpecailityArray.append(ReceivedSpecaility)
+        Alamofire.request("intmicrotec.neat-url.com:6566/api/medical_specialties/all", method: HTTPMethod.post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) -> Void in
+            switch response.result
+            {
+                case .success(let value):
+                let json = JSON(value).dictionary
+                do {
+                    let datas = try json!["list"]?.rawData()
+                    print(datas)
+                    do {
+                 let SpecData = try? newJSONDecoder().decode([Speciality].self, from: datas!)
+                        print(SpecData)
+                        self.SpecailityArray = SpecData!
                     }
+                } catch  {
                 }
+                case .failure(_):
+                print("Failure")
+            }
             }
         }
-    }
+    
     
     func EditDoctor(DocID : Int){
         let header : [String: String] = [
@@ -243,7 +248,7 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
     
     @IBAction func BtnActSaveEditied(_ sender: Any) {
         
-        self.EditDoctor(DocID: CurrentDoctor!.code)
+       // self.EditDoctor(DocID: CurrentDoctor!.doctor?.id)
         
     }
     

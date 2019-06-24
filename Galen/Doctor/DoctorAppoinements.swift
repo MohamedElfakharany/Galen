@@ -35,8 +35,8 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(DoctorAppoinements.dateChanged(datePicker:)), for: .valueChanged)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DoctorAppoinements.viewTapped(gestureRecognizer:)))
-        view.addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DoctorAppoinements.viewTapped(gestureRecognizer:)))
+//        view.addGestureRecognizer(tapGesture)
         TxtFieldPickDate.inputView = datePicker
         
         self.navigationController?.navigationBar.setGradientBackground(colors: [
@@ -51,6 +51,9 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         CollectionView.dataSource = self
         
         CollectionView.addSubview(Refresher)
+        
+        CollectionView.backgroundColor = .clear
+        CollectionView.alwaysBounceVertical = true
         
         CollectionView.register(UINib.init(nibName: "searchDoctorResults", bundle: nil), forCellWithReuseIdentifier: "AppoinmemntCell")
         gradBTNS()
@@ -88,24 +91,31 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
     
     @objc private func GetTickets(){
         self.Refresher.endRefreshing()
-        
+    
         let url = "http://microtec1.egytag.com/api/tickets/all"
+//
+//        let parameters: Parameters = [
+//            "where":
+//                [
+//                    "date" : "08/06/2019" ,
+//                    "selected_doctor.id" : 50
+//                ]
+//        ]
         
-        Alamofire.request(url, method: .post, encoding: URLEncoding.default, headers: nil) .responseData { response in
-            print(response)
+        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+            
+            print(response.request)
             switch response.result
             {
             case .success(let value):
                 let json = JSON(value).dictionary
                 do {
                     let datas = try json!["list"]?.rawData()
-                    //let datam = try json!["list"]
                     print(datas)
                     do {
-                        let TicketData = try? newJSONDecoder().decode([Ticket].self, from: datas!)
-                        self.TicketsArray = TicketData!
-                       // print("TicketData\(TicketData)")
-                        print("FirstTicket\(self.TicketsArray )")
+                        let ticketData = try? newJSONDecoder().decode([Ticket].self, from: datas!)
+                        self.TicketsArray = ticketData!
+                        print("FirstTicket\(self.TicketsArray.count )")
                         self.CollectionView.reloadData()
                     }
                 } catch  {
@@ -139,7 +149,7 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
             cell.EditCell(
                 Day: NextTicket.selectedTime?.day?.name ?? "" ,
                 Date: NextTicket.date ?? "" ,
-                Time: "From \(NextTicket.selectedTime?.from?.hour ?? 00 ):\(NextTicket.selectedTime?.from?.minute ?? 00 ) to \(NextTicket.selectedTime?.to?.hour ?? 00 ):\(NextTicket.selectedTime?.to?.minute ?? 00)",
+                Time: "From \(NextTicket.selectedTime?.from?.hour ?? 00) To \(NextTicket.selectedTime?.to?.hour ?? 00)",
                 Statues: NextTicket.status?.nameEn ?? "",
                 StatuesColor: StatuesColor)
         return cell
@@ -168,14 +178,14 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let screenWidth = UIScreen.main.bounds.width
-        if screenWidth < 400 {
+        if screenWidth < 350 {
             var width = ( screenWidth - 30 ) / 2
             width = width > 200 ? 200 : width
-            return CGSize.init(width: width , height: 100 )
+            return CGSize.init(width: width , height: 120 )
         }else{
             var width = ( screenWidth - 40 ) / 3
             width = width > 200 ? 200 : width
-            return CGSize.init(width: width , height: 100 )
+            return CGSize.init(width: width , height: width )
         }
     }
 }

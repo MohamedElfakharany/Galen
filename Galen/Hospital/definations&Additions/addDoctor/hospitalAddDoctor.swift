@@ -40,7 +40,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
     @IBOutlet weak var TxtFieldDocUserName: UITextField!
     @IBOutlet weak var TxtFieldDocPassWord: UITextField!
   
-    var CitiesArray = [City]()
+    var CitiesArray = [Gov]()
     var TestCityArray =  [[String:AnyObject]]()
     var AreaArray = [Area]()
     var TestAreaArray =  [[String:AnyObject]]()
@@ -48,9 +48,9 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
     var TestSpecailityArray =  [[String:AnyObject]]()
     var ChosenGovId : Int = 0
     var ChosenArea : Area?
-    var ChosenCity : City?
+    var ChosenCity : Gov?
     var ChosenSpeciality : Speciality?
-    var ChosenDoctor : SDoctor?
+    var ChosenDoctor : Doctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,19 +152,8 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         ]
         
         Alamofire.request("http://microtec1.egytag.com/api/medical_specialties/view", method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.TestSpecailityArray =  resData as! [[String:AnyObject]]
-                    for NextSpecaility in self.TestSpecailityArray {
-                        let ReceivedSpecaility = Speciality.init(
-                            _name: NextSpecaility["name"] as! String
-                            , _id: NextSpecaility["id"] as! Int )
-                    
-                    self.SpecailityArray.append(ReceivedSpecaility)
-                    }
-                }
+            if((responseData.result.value) != nil){
+                
             }
         }
     }
@@ -183,7 +172,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
                 if let resData = swiftyJsonVar["data"].arrayObject {
                     self.TestCityArray =  resData as! [[String:AnyObject]]
                     for NextCity in self.TestCityArray {
-                        let ReceivedCity = City.init(
+                        let ReceivedCity = Gov.init(
                             _name: NextCity["name"] as! String
                             , _id: NextCity["id"] as! Int )
                     
@@ -226,7 +215,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         
     
     
-    func AddDoctor( name : String, nathional_id : String, active : String ,  specialty : Speciality , gov : City , city : Area , address : String , phone : String , mobile : String , whatsapp : String , email : String , notes : String ,  img : UIImage , username : String , password : String , completion: @escaping (_ error: Error?, _ success: Bool, _ data: SDoctor?)->Void) {
+    func AddDoctor( name : String, nathional_id : String, active : String ,  specialty : Speciality , gov : Gov , city : Area , address : String , phone : String , mobile : String , whatsapp : String , email : String , notes : String ,  img : UIImage , username : String , password : String , completion: @escaping (_ error: Error?, _ success: Bool, _ data: Doctor?)->Void) {
         
         
         let header : [String: String] = [
@@ -294,8 +283,8 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowRecantlyCreatedDoctor" {
-                let controller = segue.destination as! hospitalDoctorData
-                controller.CurrentDoctor = ChosenDoctor
+          //      let controller = segue.destination as! hospitalDoctorData
+             //   controller.CurrentDoctor = ChosenDoctor
             }
         }
     

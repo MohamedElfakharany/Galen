@@ -43,10 +43,17 @@ class LoginVC: UIViewController {
         
         API_Auth.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "", completion: { (error:Error?, success: Bool, data , user :Client) in
             if data == "trueLogin" {
+                
+                if user.user?.type == "doctor"{
+                let storyboard = UIStoryboard(name: "Doctor", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "DocAppoinment") as! DoctorAppoinements
+                self.present(vc, animated: true, completion: nil)
+                }else{
+
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-                self.present(newViewController, animated: true, completion: nil)
-                // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
+                    self.present(newViewController, animated: true, completion: nil) }
+                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
             }else {
                 self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
             }

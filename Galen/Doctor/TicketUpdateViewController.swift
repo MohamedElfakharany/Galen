@@ -36,12 +36,12 @@ class TicketUpdateViewController: UIViewController , UINavigationControllerDeleg
       //  self.navigationController?.delegate = self
         
         let CurrentTicket = TicketArrUpdate.first
-        self.LblDoctorCode.text = "\(CurrentTicket?.selectedDoctor?.selectedDoctorID ?? 0 )"
-        self.LblDoctorName.text = CurrentTicket?.selectedDoctor?.name
-        self.LblPatianName.text = CurrentTicket?.addUserInfo?.name
-        self.LblPatiantCode.text = "\(CurrentTicket?.addUserInfo?.id ?? 0 )"
-        self.LblDetecationNumber.text = "\(CurrentTicket?.ticketID ?? 0)"
-        self.LblDetecationDate.text = " \(CurrentTicket?.date ?? "")  \(CurrentTicket?.selectedTime?.from?.hour ?? 00 ) : \(CurrentTicket?.selectedTime?.from?.minute ?? 00 )"
+//        self.LblDoctorCode.text = "\(CurrentTicket?.selectedDoctor?.id ?? 0 )"
+//        self.LblDoctorName.text = CurrentTicket?.selectedDoctor?.name
+//        self.LblPatianName.text = CurrentTicket?.status?.nameEn
+//        self.LblPatiantCode.text = "\(CurrentTicket?.selectedClinic?.id ?? 0 )"
+//        self.LblDetecationNumber.text = "\(CurrentTicket?.id ?? "")"
+//        self.LblDetecationDate.text = " \(CurrentTicket?.date ?? "")  \(CurrentTicket?.selectedTime?.from?.en ?? "" ) "
          self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         print("medirepo\(MedicalReport)")
@@ -77,8 +77,8 @@ class TicketUpdateViewController: UIViewController , UINavigationControllerDeleg
         let url = "http://microtec1.egytag.com/api/tickets/update"
         
         let parametersx : Parameters = [
-            "id" : 57 ,
-            "notes" : "MyTest33"  ,
+            "id" : 58 ,
+            "notes" : "TESTonTicket58"  ,
             "accessToken" : "00476995c1052d4b5dd62f117c9ae1a2"
         ]
         Alamofire.request(url, method: .post, parameters: parametersx, encoding: URLEncoding.default, headers: nil).responseJSON { (respone) in
