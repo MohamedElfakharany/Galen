@@ -44,8 +44,6 @@ class hospitalSearchToEditDoctor: UIViewController {
         }
     }
     
-    //http://microtec1.egytag.com:30001/api/doctors/view
-    
     func SearchForDoctor(DoctorId : Int) -> Doctor {
         
         let header : [String: String] = [
@@ -57,7 +55,7 @@ class hospitalSearchToEditDoctor: UIViewController {
             "id" : DoctorId ,
             ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/doctors/view", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.viewDoctor, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)

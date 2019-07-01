@@ -76,8 +76,6 @@ class HospitalDashbored: UIViewController , UITableViewDelegate , UITableViewDat
     
     @objc func GetTickets(){
         self.Refresher.endRefreshing()
-        let url = "http://microtec1.egytag.com/api/tickets/all"
-        
 //        let parameters: Parameters = [
 //            "where":
 //                [
@@ -85,7 +83,7 @@ class HospitalDashbored: UIViewController , UITableViewDelegate , UITableViewDat
 //            ]
 //        ]
 //
-        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+        Alamofire.request(URLs.allTickets, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
             print(response.result)
             print(response.request)
             switch response.result

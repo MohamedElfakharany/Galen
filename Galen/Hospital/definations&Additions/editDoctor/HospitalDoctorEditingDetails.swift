@@ -149,7 +149,7 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("intmicrotec.neat-url.com:6566/api/medical_specialties/all", method: HTTPMethod.post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) -> Void in
+        Alamofire.request(URLs.allSpeciality, method: HTTPMethod.post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) -> Void in
             switch response.result
             {
                 case .success(let value):
@@ -210,7 +210,7 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
         },
                          
                          usingThreshold:UInt64.init(),
-                         to:"/http://microtec1.egytag.com/api/doctors/update",
+                         to:URLs.updateDoctors,
                          method:.post,
                          headers : header,
                          encodingCompletion: { encodingResult in

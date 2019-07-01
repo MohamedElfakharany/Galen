@@ -48,15 +48,13 @@ class moreVC: UIViewController {
     
     @IBAction func logoutBtnAction(_ sender: Any) {
         
-        let url = "http://microtec1.egytag.com/api/user/logout"
-        
         let accessTokenObject = ["access_token" : helper.getAPIToken()]
         
         let parameters : Parameters = [
             "Cookie" : accessTokenObject
             ]
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (DataResponse) in
+        Alamofire.request(URLs.logOut, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (DataResponse) in
             print( DataResponse.response as Any )
          
             

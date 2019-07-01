@@ -56,7 +56,7 @@ class HospitalBlockPatient: UIViewController {
             "id" : PataintCode ,
             ]
         
-        Alamofire.request("//http://microtec1.egytag.com/api/patients/delete", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.deletePatient, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)

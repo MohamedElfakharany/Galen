@@ -74,14 +74,13 @@ class TicketUpdateViewController: UIViewController , UINavigationControllerDeleg
     
     
     func UpdateTicket(testpar:String){
-        let url = "http://microtec1.egytag.com/api/tickets/update"
         
         let parametersx : Parameters = [
             "id" : 58 ,
             "notes" : "TESTonTicket58"  ,
             "accessToken" : "00476995c1052d4b5dd62f117c9ae1a2"
         ]
-        Alamofire.request(url, method: .post, parameters: parametersx, encoding: URLEncoding.default, headers: nil).responseJSON { (respone) in
+        Alamofire.request(URLs.ticketUpdate, method: .post, parameters: parametersx, encoding: URLEncoding.default, headers: nil).responseJSON { (respone) in
             print("respose\(respone)")
         }
         

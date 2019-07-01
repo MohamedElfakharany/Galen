@@ -10,25 +10,18 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearchSpecialityVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+class SearchSpecialityVC: UIViewController{
 
-    var pickerView = UIPickerView()
-    var ICsNames:[String] = []
-    var Governorates:[String] = []
     var DocSpecialties:[String] = []
-    var VarSelectedpicker=0
-    var selectedTxtField = UITextField()
     
     @IBOutlet weak var Specialties: UITextField!
-
     @IBOutlet weak var BtnSearch: UIButton!
+    
+    var selectedSpecialit = [String]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Governorates = ["dahab","cairo","alex","kfs","ismailia","suez","por said","sharm","hurghada"]
-        ICsNames = ["one","two","three","four","five","six"]
-        DocSpecialties = ["General Surgery","Neurosurgery","Radiology","Emergency Medicine","Optometrists"]
         
         imageText()
         gradBTNS()
@@ -76,63 +69,6 @@ class SearchSpecialityVC: UIViewController,UIPickerViewDelegate,UIPickerViewData
     
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        if selectedTxtField == AllGovernorates {
-//            return Governorates.count
-//        }
-         if selectedTxtField == Specialties{
-            return DocSpecialties.count
-        }else  {
-            return ICsNames.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if selectedTxtField == Governorates{
-//            VarSelectedpicker = row
-//            return Governorates[row]
-//        }else
-        if selectedTxtField == Specialties {
-            VarSelectedpicker = row
-            return DocSpecialties[row]
-        }else{
-            VarSelectedpicker = row
-            return ICsNames[row]
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if  selectedTxtField == Governorates {
-//            Governorates.text = Governorates[row]
-//            self.view.endEditing(true)
-//        }else
-        if selectedTxtField == Specialties {
-            Specialties.text = DocSpecialties[row]
-            self.view.endEditing(true)
-        }else {
-           // InsuranceCompanies.text = ICsNames[row]
-            self.view.endEditing(true)
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.pickerView.delegate = self
-        self.pickerView.dataSource  = self
-        selectedTxtField = textField
-//        if selectedTxtField == Governorates{
-//            selectedTxtField.inputView = pickerView
-//        }else
-        if selectedTxtField == Specialties {
-            selectedTxtField.inputView  = pickerView
-        }else {
-            selectedTxtField.inputView  = pickerView
-        }
     }
     
     

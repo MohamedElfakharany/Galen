@@ -18,6 +18,11 @@ class searchResultsVC: UIViewController {
     
      var ResultedDoctors = [Doctor]()
     
+    var SpecialityIDToSearch = 0
+    var CityIDToSearch = 0
+    var AreaIDToSearch = 0
+    var DocNameToSearch = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +33,7 @@ class searchResultsVC: UIViewController {
         
         ////TESTFORRESULTES
         
-        GetDoctors(name: "gaber", Speciality: 0, governate: 0, City: 0)
+        GetDoctors(name: DocNameToSearch , Speciality: SpecialityIDToSearch , governate: CityIDToSearch , City: AreaIDToSearch)
         
         ///
         
@@ -38,8 +43,6 @@ class searchResultsVC: UIViewController {
     }
     
     func GetDoctors(name : String , Speciality : Int , governate :  Int , City : Int){
-        
-        let url = "http://intmicrotec.neat-url.com:6566/api/hospitals/all"
         
         var myparameters : Parameters  = ["":""]
         
@@ -83,24 +86,25 @@ class searchResultsVC: UIViewController {
             
             print(myparameters)
 
-            Alamofire.request(url, method: .post, parameters: myparameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
+            Alamofire.request(URLs.allHospital, method: .post, parameters: myparameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
                 switch response.result
                 {
                 case .success(let value):
                     let json = JSON(value).dictionary
                     do {
                         let datas = try json!["list"]?.rawData()
-                        print(datas)
                         do {
                              let ResultedHospitals = try? newJSONDecoder().decode([Hospital].self, from: datas!)
-                            print("RESultedhospital \(ResultedHospitals)")
                             for iHospital in ResultedHospitals!{
                                 for doc in iHospital.doctorList! {
-                                    print("DOC      \(doc)")
-                                    self.ResultedDoctors.append(doc)
+                                    let BEDoc = doc.doctor
+            
+                                    self.ResultedDoctors.append(BEDoc!)
                                 }
                             }
-                            print(self.ResultedDoctors)
+                            for Docbxx in self.ResultedDoctors {
+                            print(Docbxx.name)
+                        }
                         }
                     } catch  {
                     }

@@ -8,13 +8,29 @@
 
 import Foundation
 
-struct URLsPatient {
+struct URLs {
     
-    static let main = "http://microtec1.egytag.com/api/"
+    static let main = "http://intmicrotec.neat-url.com:6566/api/"
     
     static let register           = main + "register/add"
     static let login                = main + "user/login"
     static let restPassword  = main + "restPassword"
-    static let EditProfile       = main + "patients/update"
+    static let editProfile       = main + "patients/update"
+    static let allSpeciality    = main + "medical_specialties/all"
+    static let allGovs            = main + "goves/all"
+    static let allCities           = main + "cities/all"
+    static let ticketUpdate = main + "tickets/update"
+    static let logOut            = main + "user/logout"
+    static let allInsuranceCompanies = main + "medical_insurance_companies/all"
+    static let viewCities = main + "cities/view"
+    static let viewGovs = main + "goves/view"
+    static let deletePatient = main + "patients/delete"
+    static let allTickets                   = main + "tickets/all"
+    static let hospitalUpdate         = main + "hospitals/update"
+    static let allHospital                 = main + "hospitals/all"
+    static let addDoctor = main + "doctors/add"
+    static let viewDoctor = main + "doctors/view"
+    static let updateDoctors = main + "doctors/update"
+    
     
 }

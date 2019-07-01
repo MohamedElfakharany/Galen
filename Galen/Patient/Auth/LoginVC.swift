@@ -116,9 +116,8 @@ class LoginVC: UIViewController {
     
     func gradBTNS() {
         
-        let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)
-        let LiftGradientColor = #colorLiteral(red: 0.337254902, green: 0.8980392157, blue: 0.6549019608, alpha: 1)
-        
+        let RightGradientColor =  #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)
+        let LiftGradientColor =  #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)
         // Sign in BTN
         let gradientLayer = CAGradientLayer()
         

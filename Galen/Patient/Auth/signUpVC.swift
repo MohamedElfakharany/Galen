@@ -100,7 +100,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             "accessToken" : "8462a029bb221e63e98d2653cf985ade"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
             switch (response.result){
             case .success(let Value):
             let json = JSON(Value)

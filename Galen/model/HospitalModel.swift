@@ -28,7 +28,7 @@ struct Hospital: Codable {
     let userInfo: UserInfoClass?
     let hospitalName, hospitalMobile, hospitalUserName, hospitalPassword: String?
     let addUserInfo: UserInfo?
-    let doctorList: [Doctor]?
+    let doctorList: [FluffyDoctorList]?
     let nurseList, insuranceCompanyList: [List]?
     let active: Bool?
     let latitude, longitude: String?
@@ -303,7 +303,7 @@ struct FluffyClinic: Codable {
 
 // MARK: - FluffyDoctorList
 struct FluffyDoctorList: Codable {
-    let doctor: DoctorElement?
+    let doctor: Doctor?
 }
 
 //

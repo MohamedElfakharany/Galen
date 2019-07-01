@@ -46,7 +46,7 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             "accessToken" : helper.getAPIToken()
         ]
         
-        Alamofire.request("http://microtec1.egytag.com:30001/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
             switch (response.result){
             case .success(let Value):
                 let json = JSON(Value)
@@ -163,7 +163,7 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
 
     @IBAction func ActBtnSave(_ sender: Any) {
         
-        let url = URLsPatient.EditProfile
+        let url = URLs.editProfile
         let AccessToken = helper.getAPIToken()
         let userid = helper.getAPIToken().token ?? ""
         

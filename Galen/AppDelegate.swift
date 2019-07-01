@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SearchResults")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC")
 
         let navigationController = UINavigationController.init(rootViewController: initialViewController)
         

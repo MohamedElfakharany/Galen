@@ -151,7 +151,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/medical_specialties/view", method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.allSpeciality, method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil){
                 
             }
@@ -165,7 +165,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/goves/view", method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.viewGovs, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)
@@ -195,7 +195,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
                 "id" : ChosenGovernateID ,
             ]
             
-            Alamofire.request("http://microtec1.egytag.com/api/cities/view", method: .post , parameters: parameters , encoding: JSONEncoding.default , headers: header ).responseJSON { (responseData) -> Void in
+            Alamofire.request(URLs.viewCities, method: .post , parameters: parameters , encoding: JSONEncoding.default , headers: header ).responseJSON { (responseData) -> Void in
                 if((responseData.result.value) != nil) {
                     let swiftyJsonVar = JSON(responseData.result.value!)
                     print(swiftyJsonVar)
@@ -241,7 +241,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
             "password" : password
             ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/doctors/add", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.addDoctor, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print(swiftyJsonVar)

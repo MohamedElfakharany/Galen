@@ -52,16 +52,14 @@ class API_Auth: NSObject {
 //    }
 //    func completion<Result>(onResult: @escaping (Result) -> Void, onError: @escaping (Error) -> Void) -> ((Result?, Error?) -> Void) { return { (maybeResult, maybeError) in
     class func login(email: String,password: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?,_ User : Client )->Void,completionError: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
-        
-        let url = URLsPatient.login
-        print(url)
+
         let parameters = [
             "email": email,
             "password": password
         ]
         
         print(parameters)
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
+        Alamofire.request(URLs.login, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
             print(response)
             switch response.result
             {
@@ -84,7 +82,7 @@ class API_Auth: NSObject {
                     }
                     
                 }else{
-                    Alamofire.request("http://microtec1.egytag.com/api/user/logout", method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
+                    Alamofire.request(URLs.logOut, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
                     let data = json["message"].string
                     print(data ?? "no")
                     completionError(nil, true, nil)
@@ -115,7 +113,7 @@ class API_Auth: NSObject {
     
     class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String,gander:String,image: UIImage , completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
         
-        let url = URLsPatient.register
+        let url = URLs.register
         
         let parameters : Parameters = [
             "patient_name" : patient_name.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? patient_name ,
@@ -171,7 +169,7 @@ class API_Auth: NSObject {
     
     func restPassword(email: String, completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
         
-        let url = URLsPatient.restPassword
+        let url = URLs.restPassword
         print(url)
         let parameters = [
             "email": email

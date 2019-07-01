@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		96150D04227C847B0012D6D4 /* ICsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96150D03227C847B0012D6D4 /* ICsNames.swift */; };
+		961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51822C1E00800634B53 /* ChoseCityViewController.swift */; };
+		961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */; };
 		9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E8D5229C057C003E1BDC /* AppointmentDetailsVC.swift */; };
 		9635E8DA229C0736003E1BDC /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E8D9229C0736003E1BDC /* ShadowView.swift */; };
 		9635E8DC229C2E6E003E1BDC /* DoctorAndAppointment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9635E8DB229C2E6E003E1BDC /* DoctorAndAppointment.xib */; };
@@ -42,6 +44,7 @@
 		968EBEA722AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBEA622AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift */; };
 		969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A9994229020F20066BF36 /* ExJsonToString.swift */; };
 		96A22810228B60F400A988AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A2280F228B60F400A988AA /* User.swift */; };
+		96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6516222C102D10014556F /* specialityTableViewCell.swift */; };
 		96AE090F229818C300EEC5AC /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AE090E229818C300EEC5AC /* Doctor.storyboard */; };
 		96AE091222981A0C00EEC5AC /* DoctorAppoinements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE091122981A0C00EEC5AC /* DoctorAppoinements.swift */; };
 		96AE0914229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE0913229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift */; };
@@ -66,6 +69,7 @@
 		96B81F0C227659D500E82CFC /* roundedTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B81F0B227659D500E82CFC /* roundedTF.swift */; };
 		96BE84A5228A1682001A1B59 /* circleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE84A4228A1682001A1B59 /* circleImage.swift */; };
 		96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC56D122BFF2D300FB2223 /* searchCityGovVC.swift */; };
+		96CC56D622C0CACD00FB2223 /* SearchSpecialityResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC56D522C0CACD00FB2223 /* SearchSpecialityResultVC.swift */; };
 		96D419F522380198001B0411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F422380198001B0411 /* AppDelegate.swift */; };
 		96D419F722380199001B0411 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F622380199001B0411 /* firstVC.swift */; };
 		96D419FA22380199001B0411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D419F822380199001B0411 /* Main.storyboard */; };
@@ -94,6 +98,8 @@
 		41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.debug.xcconfig"; sourceTree = "<group>"; };
 		943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.release.xcconfig"; sourceTree = "<group>"; };
 		96150D03227C847B0012D6D4 /* ICsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICsNames.swift; sourceTree = "<group>"; };
+		961AD51822C1E00800634B53 /* ChoseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityViewController.swift; sourceTree = "<group>"; };
+		961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAreaTableViewCell.swift; sourceTree = "<group>"; };
 		9635E8D5229C057C003E1BDC /* AppointmentDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsVC.swift; sourceTree = "<group>"; };
 		9635E8D9229C0736003E1BDC /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9635E8DB229C2E6E003E1BDC /* DoctorAndAppointment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorAndAppointment.xib; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		968EBEA622AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTicketDetailsViewController.swift; sourceTree = "<group>"; };
 		969A9994229020F20066BF36 /* ExJsonToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExJsonToString.swift; sourceTree = "<group>"; };
 		96A2280F228B60F400A988AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		96A6516222C102D10014556F /* specialityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = specialityTableViewCell.swift; sourceTree = "<group>"; };
 		96AE090E229818C300EEC5AC /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
 		96AE091122981A0C00EEC5AC /* DoctorAppoinements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAppoinements.swift; sourceTree = "<group>"; };
 		96AE0913229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppoinemnetCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +159,7 @@
 		96B81F0B227659D500E82CFC /* roundedTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTF.swift; sourceTree = "<group>"; };
 		96BE84A4228A1682001A1B59 /* circleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleImage.swift; sourceTree = "<group>"; };
 		96CC56D122BFF2D300FB2223 /* searchCityGovVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCityGovVC.swift; sourceTree = "<group>"; };
+		96CC56D522C0CACD00FB2223 /* SearchSpecialityResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpecialityResultVC.swift; sourceTree = "<group>"; };
 		96D419F122380198001B0411 /* Galen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D419F422380198001B0411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D419F622380199001B0411 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
@@ -334,11 +342,15 @@
 			isa = PBXGroup;
 			children = (
 				96D41A2422380400001B0411 /* SearchSpecialityVC.swift */,
+				96A6516222C102D10014556F /* specialityTableViewCell.swift */,
 				96B38C05224AAAF6000C132B /* searchResultsVC.swift */,
 				96B38C0E224AC47E000C132B /* doctorDataVC.swift */,
 				96B38C10224AFF82000C132B /* ConfirmReservationVC.swift */,
 				96B38C12224AFFCA000C132B /* CompleteTheBookingVC.swift */,
 				96CC56D122BFF2D300FB2223 /* searchCityGovVC.swift */,
+				96CC56D522C0CACD00FB2223 /* SearchSpecialityResultVC.swift */,
+				961AD51822C1E00800634B53 /* ChoseCityViewController.swift */,
+				961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */,
 			);
 			path = SearchByAreaAndSpeciality;
 			sourceTree = "<group>";
@@ -645,6 +657,7 @@
 				9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */,
 				9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */,
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
+				96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */,
 				969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */,
 				96B81F0C227659D500E82CFC /* roundedTF.swift in Sources */,
 				968EBEA522AC2700004AB3EB /* TicketUpdateViewController.swift in Sources */,
@@ -653,6 +666,7 @@
 				966ED99B2281B613005578B1 /* Extention+Strings.swift in Sources */,
 				96D41A2522380400001B0411 /* SearchSpecialityVC.swift in Sources */,
 				96AFFD102265E2E600135291 /* HospitalSignInVC.swift in Sources */,
+				96CC56D622C0CACD00FB2223 /* SearchSpecialityResultVC.swift in Sources */,
 				9663BBF0226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift in Sources */,
 				9663BBD8226FC24B00CA5900 /* hospitalAddDoctor.swift in Sources */,
 				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,
@@ -671,12 +685,14 @@
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
 				96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */,
+				961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */,
 				96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */,
 				96D41A1B22380345001B0411 /* RoundedEdges.swift in Sources */,
 				96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */,
 				96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */,
 				96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
+				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
 				96D41A192238032D001B0411 /* gradintColor.swift in Sources */,
 				9635E8DA229C0736003E1BDC /* ShadowView.swift in Sources */,
@@ -859,7 +875,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -879,7 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

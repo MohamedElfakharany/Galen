@@ -58,8 +58,8 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     //FetchSpecialities
     
     func Fetchspecialty() {
-        let url = "http://intmicrotec.neat-url.com:6566/api/medical_specialties/all"
-         Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+       
+         Alamofire.request(URLs.allSpeciality, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
             switch response.result
             {
             case .success(let value):
@@ -84,7 +84,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             "Content-Type" : "application/json"
         ]
         
-        Alamofire.request("http://microtec1.egytag.com/api/goves/all", method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.allGovs, method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
              //   print("swiftyforcities\(swiftyJsonVar)")
@@ -115,7 +115,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
                     "gov.id"  : ChosenGovernateID
             ]
         ]
-        Alamofire.request("http://microtec1.egytag.com/api/cities/all", method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
+        Alamofire.request(URLs.allCities, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
             print(responseData)
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
@@ -144,7 +144,6 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     
     func ModifyHospital( id : Int ,name : String, website : String ,  specialty : Int, gov : Int ,city : Int , address : String , phone : String , email : String , insurnaceCompinies : String , completion: @escaping (_ error: Error?, _ success: Bool)->Void) {
 
-    let url = "http://intmicrotec.neat-url.com:6566/api/hospitals/update"
         var parameters : Parameters = [
             "hospitalID" : id ,
             "name" : name ,
@@ -172,7 +171,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             }
         }
         
-        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
+        Alamofire.request(URLs.hospitalUpdate, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
             switch response.result
             {
             case .success(let value):
@@ -306,7 +305,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
                 "accessToken" : helper.dleteAPIToken()
             ]
             
-            Alamofire.request("http://microtec1.egytag.com/api/medical_insurance_companies/all", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
                 switch (response.result){
                 case .success(let Value):
                     let json = JSON(Value)
