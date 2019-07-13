@@ -21,7 +21,6 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
 
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var BtnSearch: UIButton!
     @IBOutlet weak var SpecialitySearch: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()

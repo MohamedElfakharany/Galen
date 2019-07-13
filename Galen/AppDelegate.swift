@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Patient", bundle: nil)
 
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC2")
 
         let navigationController = UINavigationController.init(rootViewController: initialViewController)
         
@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if helper.getAPIToken().role == "patients_admin" {
             let tab = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
             window?.rootViewController = tab
+        
         }
         
         return true

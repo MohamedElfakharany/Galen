@@ -10,6 +10,8 @@ import UIKit
 
 class firstVC: UIViewController{
 
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var Signin: UIButton!
     
     @IBOutlet weak var SignUP: UIButton!
@@ -19,9 +21,45 @@ class firstVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.Signin.center.y += 30
+        self.SignUP.center.y += 30
+        self.NotNow.center.y += 30
+        
        gradBTNS()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backgroundImage.alpha = 0.0
+        Signin.alpha = 0.0
+        SignUP.alpha = 0.0
+        NotNow.alpha = 0.0
+        self.Signin.center.y += 30
+        self.SignUP.center.y += 30
+        self.NotNow.center.y += 30
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5, delay : 0.0, options :[] ,  animations: {
+            self.backgroundImage.alpha = 1.0
+        } ,completion : nil)
+        
+        UIView.animate( withDuration: 1, animations: {
+            
+            self.Signin.alpha = 1.0
+            self.Signin.center.y -= 30
+            self.SignUP.alpha = 1.0
+            self.SignUP.center.y -= 30
+            self.NotNow.alpha = 1.0
+            self.NotNow.center.y -= 30
+            
+        } ,completion : nil)
+    }
+    
+    
+    
     func gradBTNS() {
         
     let RightGradientColor = #colorLiteral(red: 0.337254902, green: 0.6941176471, blue: 1, alpha: 1)

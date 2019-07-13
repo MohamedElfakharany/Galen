@@ -92,26 +92,57 @@ class API_Auth: NSObject {
         }
         
     }
-    //            if response.result.isSuccess{
-    //                let data:JSON = JSON(response.result.value!)
-    //                print(data)
-    //                do {
-    //                    let json = JSON(data)
-    //                        if data["error"] != "Login Error , You Are Loged " {
-    //                        print("thereisauser")
-    //                        print("jsondata =   \(response.data)")
-    //                        let patientLogin = try? JSONDecoder().decode(User.self, from: response.data!)
-    //                        print("THE USER : \(patientLogin)")
-    //                    completion(nil, true , "trueLogin")
-    //                    }
-    //                }catch{
-    //
-    //                }
-    //            }else{
-    //
-    //            }
+
     
-    class func register(patient_code: String, patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String,gander:String,image: UIImage , completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
+    class func SignUpPatient(
+        patient_name: String
+        ,phone_number: String
+        ,email_adress: String
+        , password: String
+        ,password_confirmation: String
+        ,date_of_birth: String
+        ,insurance_company:InsurnaceCompanies
+        ,Gov : Governate
+        ,City : City
+        ,gender:String
+        ,genderID: Int
+        ,countryName : String
+        ,image: String
+        , completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
+        
+        let url = "http://intmicrotec.neat-url.com:6566/api/register/add"
+        
+        var parameters = [
+            "patient_name" :  patient_name   ,
+            "patient_mobile" : phone_number  ,
+            "patient_user_name" : email_adress  ,
+            "patient_password" : password   ,
+            "birth_date_day" : date_of_birth ,
+            "gender" : [
+                "name" : gender ,
+                "id" : genderID
+            ] , // GENDER DECT
+            "insurance_company" : [
+                "id": insurance_company.insurnaceCompaniesID as Any ,
+                "name": insurance_company.name as Any ,
+            ] ,// IC DECT
+            "gov" : [
+                "id" : Gov.governateID as Any,
+                "name" : Gov.name as Any
+            ] ,// GOV DEC
+            "city" : [
+                "id" : City.cityID as Any ,
+                "name" : City.name as Any
+            ], //CITY DEC
+            "country" : [
+                "name" : countryName
+            ], //COUNTRY DEC
+            "image_url" : image
+            ]   as [String : Any]  //END PARAMETERS
+        print(parameters)
+    }
+    
+    class func register( patient_name: String,phone_number: String,email_adress: String, password: String,password_confirmation: String,date_of_birth: String ,insurance_companies:String,gander:String,image: UIImage , completion: @escaping (_ error: Error?, _ success: Bool, _ data: String?)->Void) {
         
         let url = URLs.register
         

@@ -1,0 +1,530 @@
+/* Class = "UILabel"; text = " 4.0"; ObjectID = "0Vd-cp-crg"; */
+"0Vd-cp-crg.text" = " 4.0";
+
+/* Class = "UIViewController"; title = "My Appoinments"; ObjectID = "0cv-8C-UyC"; */
+"0cv-8C-UyC.title" = "My Appoinments";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussien"; ObjectID = "17B-Ic-3kX"; */
+"17B-Ic-3kX.text" = "Dr. Mohamed Ahmed Hussien";
+
+/* Class = "UINavigationItem"; title = "Choose Your Doctor"; ObjectID = "1CL-6y-Htq"; */
+"1CL-6y-Htq.title" = "Choose Your Doctor";
+
+/* Class = "UIViewController"; title = "Edit My Profile"; ObjectID = "38j-75-xsn"; */
+"38j-75-xsn.title" = "Edit My Profile";
+
+/* Class = "UILabel"; text = "Nasr City"; ObjectID = "3GV-MC-Ypo"; */
+"3GV-MC-Ypo.text" = "Nasr City";
+
+/* Class = "UIButton"; normalTitle = "Detected"; ObjectID = "3vD-OS-h7y"; */
+"3vD-OS-h7y.normalTitle" = "Detected";
+
+/* Class = "UINavigationItem"; title = "Change Password"; ObjectID = "43H-eL-XHf"; */
+"43H-eL-XHf.title" = "Change Password";
+
+/* Class = "UIViewController"; title = "Doctor Data"; ObjectID = "4MC-Q6-yp8"; */
+"4MC-Q6-yp8.title" = "Doctor Data";
+
+/* Class = "UINavigationItem"; title = "Complete The Booking"; ObjectID = "5MG-AL-6He"; */
+"5MG-AL-6He.title" = "Complete The Booking";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "5O3-n1-8P6"; */
+"5O3-n1-8P6.title" = "Item";
+
+/* Class = "UILabel"; text = "Sepciality Of Neurosurgery"; ObjectID = "6Mv-I2-bHf"; */
+"6Mv-I2-bHf.text" = "Sepciality Of Neurosurgery";
+
+/* Class = "UITextField"; placeholder = "Country"; ObjectID = "6e9-HL-IHC"; */
+"6e9-HL-IHC.placeholder" = "Country";
+
+/* Class = "UILabel"; text = "International Medicine - Cardilogy NC , United State "; ObjectID = "6m3-Vm-HNm"; */
+"6m3-Vm-HNm.text" = "International Medicine - Cardilogy NC , United State ";
+
+/* Class = "UILabel"; text = "Al Azaby Pharmacy"; ObjectID = "7gA-6f-RpN"; */
+"7gA-6f-RpN.text" = "Al Azaby Pharmacy";
+
+/* Class = "UILabel"; text = "Detection Price"; ObjectID = "8Hg-93-7SI"; */
+"8Hg-93-7SI.text" = "Detection Price";
+
+/* Class = "UILabel"; text = "Monday 17 Dec 2018"; ObjectID = "8I1-6S-o8U"; */
+"8I1-6S-o8U.text" = "Monday 17 Dec 2018";
+
+/* Class = "UIButton"; normalTitle = "  SEARCH BY AREA & SPECIALTY"; ObjectID = "8Tg-E9-9qR"; */
+"8Tg-E9-9qR.normalTitle" = "  SEARCH BY AREA & SPECIALTY";
+
+/* Class = "UIButton"; normalTitle = "   Sign Out"; ObjectID = "8aw-K6-3um"; */
+"8aw-K6-3um.normalTitle" = "   Sign Out";
+
+/* Class = "UILabel"; text = "Doctor Information"; ObjectID = "8uc-Zn-w6N"; */
+"8uc-Zn-w6N.text" = "Doctor Information";
+
+/* Class = "UITextField"; placeholder = "confirm Password"; ObjectID = "91A-1x-iwi"; */
+"91A-1x-iwi.placeholder" = "confirm Password";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "9Qh-kY-c0G"; */
+"9Qh-kY-c0G.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Appointments"; ObjectID = "9Yj-2V-Zgv"; */
+"9Yj-2V-Zgv.title" = "Appointments";
+
+/* Class = "UILabel"; text = " 4.0"; ObjectID = "AFc-36-zD9"; */
+"AFc-36-zD9.text" = " 4.0";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "AGP-7j-Hbf"; */
+"AGP-7j-Hbf.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "AMJ-L4-GMS"; */
+"AMJ-L4-GMS.title" = "Item";
+
+/* Class = "UIViewController"; title = "TrueLogin"; ObjectID = "Ad3-sl-dk8"; */
+"Ad3-sl-dk8.title" = "TrueLogin";
+
+/* Class = "UITextField"; placeholder = "Doctor Name"; ObjectID = "Akl-YC-mSY"; */
+"Akl-YC-mSY.placeholder" = "Doctor Name";
+
+/* Class = "UINavigationItem"; title = "Sign Up"; ObjectID = "BKL-J5-xlN"; */
+"BKL-J5-xlN.title" = "Sign Up";
+
+/* Class = "UILabel"; text = "Neurogist"; ObjectID = "BLb-WH-QxL"; */
+"BLb-WH-QxL.text" = "Neurogist";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "BXh-6i-3kA"; */
+"BXh-6i-3kA.text" = "English";
+
+/* Class = "UILabel"; text = "Saturday 20 Nov 2018"; ObjectID = "BfN-8i-O80"; */
+"BfN-8i-O80.text" = "Saturday 20 Nov 2018";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Bgc-ZI-ioT"; */
+"Bgc-ZI-ioT.title" = "Item";
+
+/* Class = "UILabel"; text = "Setting"; ObjectID = "Bus-J4-VWJ"; */
+"Bus-J4-VWJ.text" = "Setting";
+
+/* Class = "UITabBarItem"; title = "Favorits"; ObjectID = "Chn-U2-fOC"; */
+"Chn-U2-fOC.title" = "Favorits";
+
+/* Class = "UILabel"; text = "International Medicine - Cardilogy NC , United State "; ObjectID = "Cw6-aq-Nri"; */
+"Cw6-aq-Nri.text" = "International Medicine - Cardilogy NC , United State ";
+
+/* Class = "UITabBarController"; title = "home"; ObjectID = "DLl-AC-Ipi"; */
+"DLl-AC-Ipi.title" = "home";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussien"; ObjectID = "E1K-cg-Brm"; */
+"E1K-cg-Brm.text" = "Dr. Mohamed Ahmed Hussien";
+
+/* Class = "UILabel"; text = "Detection Price : "; ObjectID = "EAX-El-lMU"; */
+"EAX-El-lMU.text" = "Detection Price : ";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "EaQ-1U-Uon"; */
+"EaQ-1U-Uon.placeholder" = "Full Name";
+
+/* Class = "UIButton"; normalTitle = "      UPDATE MY DATA"; ObjectID = "FDF-S7-3Qe"; */
+"FDF-S7-3Qe.normalTitle" = "      UPDATE MY DATA";
+
+/* Class = "UILabel"; text = "About Galen"; ObjectID = "FYO-Bx-Q8E"; */
+"FYO-Bx-Q8E.text" = "About Galen";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussien"; ObjectID = "Fh4-It-1oi"; */
+"Fh4-It-1oi.text" = "Dr. Mohamed Ahmed Hussien";
+
+/* Class = "UITextField"; placeholder = "Date of birth"; ObjectID = "GkK-L9-avz"; */
+"GkK-L9-avz.placeholder" = "Date of birth";
+
+/* Class = "UILabel"; text = "Map Location"; ObjectID = "Gmc-77-uBp"; */
+"Gmc-77-uBp.text" = "Map Location";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "H2R-w7-cX5"; */
+"H2R-w7-cX5.placeholder" = "Full Name";
+
+/* Class = "UILabel"; text = "Detection Price"; ObjectID = "HMe-sU-fm9"; */
+"HMe-sU-fm9.text" = "Detection Price";
+
+/* Class = "UILabel"; text = "Availbale From Sunday Nov 20"; ObjectID = "HbS-7E-xlJ"; */
+"HbS-7E-xlJ.text" = "Availbale From Sunday Nov 20";
+
+/* Class = "UILabel"; text = "Accepts The Discount Code"; ObjectID = "Iy4-Nm-tQg"; */
+"Iy4-Nm-tQg.text" = "Accepts The Discount Code";
+
+/* Class = "UILabel"; text = "Search Criteria"; ObjectID = "J39-2b-KP4"; */
+"J39-2b-KP4.text" = "Search Criteria";
+
+/* Class = "UILabel"; text = "FEES"; ObjectID = "Jew-gO-10s"; */
+"Jew-gO-10s.text" = "FEES";
+
+/* Class = "UINavigationItem"; title = "Edit My Profile"; ObjectID = "K0G-bI-yBK"; */
+"K0G-bI-yBK.title" = "Edit My Profile";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "KW0-pg-LpB"; */
+"KW0-pg-LpB.title" = "Search";
+
+/* Class = "UINavigationItem"; title = "Doctor Data"; ObjectID = "KWP-6n-foO"; */
+"KWP-6n-foO.title" = "Doctor Data";
+
+/* Class = "UILabel"; text = "DOCTOR INFORMATION"; ObjectID = "Kpr-cB-CIl"; */
+"Kpr-cB-CIl.text" = "DOCTOR INFORMATION";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "LCX-bn-dV1"; */
+"LCX-bn-dV1.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Accepts The Discount Code"; ObjectID = "LK3-16-fPd"; */
+"LK3-16-fPd.text" = "Accepts The Discount Code";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "LSn-N3-1PM"; */
+"LSn-N3-1PM.normalTitle" = "SIGN IN";
+
+/* Class = "UILabel"; text = "LOCTION"; ObjectID = "LfK-sN-ndG"; */
+"LfK-sN-ndG.text" = "LOCTION";
+
+/* Class = "UIButton"; normalTitle = "  Map Location"; ObjectID = "Lx6-BI-dWW"; */
+"Lx6-BI-dWW.normalTitle" = "  Map Location";
+
+/* Class = "UIViewController"; title = "Search Results"; ObjectID = "MAT-Ot-fcn"; */
+"MAT-Ot-fcn.title" = "Search Results";
+
+/* Class = "UILabel"; text = "Ain Shams Universty                Neurosurgery Specialiest      Follow The Amrican Acadamy Of Neurosurgery"; ObjectID = "MHz-Kn-2f3"; */
+"MHz-Kn-2f3.text" = "Ain Shams Universty                Neurosurgery Specialiest      Follow The Amrican Acadamy Of Neurosurgery";
+
+/* Class = "UIButton"; normalTitle = "Confirm Booking"; ObjectID = "MkZ-i5-V1b"; */
+"MkZ-i5-V1b.normalTitle" = "Confirm Booking";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "N1Q-vO-7T7"; */
+"N1Q-vO-7T7.normalTitle" = "SEND";
+
+/* Class = "UILabel"; text = "Accepts The Discount Code"; ObjectID = "N5T-zb-bQz"; */
+"N5T-zb-bQz.text" = "Accepts The Discount Code";
+
+/* Class = "UIButton"; normalTitle = "Did You Forget your Password?"; ObjectID = "NHO-3e-71S"; */
+"NHO-3e-71S.normalTitle" = "Did You Forget your Password?";
+
+/* Class = "UILabel"; text = "Sepicaliset Of Neurosurgery - Ain Shams Universty"; ObjectID = "NhB-4C-Zn6"; */
+"NhB-4C-Zn6.text" = "Sepicaliset Of Neurosurgery - Ain Shams Universty";
+
+/* Class = "UIButton"; normalTitle = "   CHANGE PASSWORD"; ObjectID = "Nl8-FV-2AP"; */
+"Nl8-FV-2AP.normalTitle" = "   CHANGE PASSWORD";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "NmQ-Pf-e09"; */
+"NmQ-Pf-e09.normalTitle" = "SAVE";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "Nyb-Lr-aaX"; */
+"Nyb-Lr-aaX.placeholder" = "Gender";
+
+/* Class = "UILabel"; text = "Lagon Life Insurnace"; ObjectID = "OFC-Mn-kp0"; */
+"OFC-Mn-kp0.text" = "Lagon Life Insurnace";
+
+/* Class = "UILabel"; text = "Thursday , Janurary 22nd 2019"; ObjectID = "OFw-ZR-cO2"; */
+"OFw-ZR-cO2.text" = "Thursday , Janurary 22nd 2019";
+
+/* Class = "UIButton"; normalTitle = "send"; ObjectID = "OTT-xl-tTI"; */
+"OTT-xl-tTI.normalTitle" = "send";
+
+/* Class = "UILabel"; text = "0029855362"; ObjectID = "OaM-KI-kYq"; */
+"OaM-KI-kYq.text" = "0029855362";
+
+/* Class = "UILabel"; text = "From 5 pm to 6 pm"; ObjectID = "OsA-tK-v1G"; */
+"OsA-tK-v1G.text" = "From 5 pm to 6 pm";
+
+/* Class = "UILabel"; text = " 4.0"; ObjectID = "P12-xm-zSY"; */
+"P12-xm-zSY.text" = " 4.0";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussein"; ObjectID = "P7m-ln-3hU"; */
+"P7m-ln-3hU.text" = "Dr. Mohamed Ahmed Hussein";
+
+/* Class = "UIViewController"; title = "Forget your password?"; ObjectID = "PjJ-Es-yaI"; */
+"PjJ-Es-yaI.title" = "Forget your password?";
+
+/* Class = "UIButton"; normalTitle = "My Appoinments"; ObjectID = "Prp-QX-r4O"; */
+"Prp-QX-r4O.normalTitle" = "My Appoinments";
+
+/* Class = "UIViewController"; title = "Setting"; ObjectID = "QF0-EO-SOd"; */
+"QF0-EO-SOd.title" = "Setting";
+
+/* Class = "UILabel"; text = "200 LE"; ObjectID = "QFT-tF-4rI"; */
+"QFT-tF-4rI.text" = "200 LE";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QOo-y8-elp"; */
+"QOo-y8-elp.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "More"; ObjectID = "QY4-w7-vP9"; */
+"QY4-w7-vP9.title" = "More";
+
+/* Class = "UILabel"; text = "From 5 pm to 6 pm"; ObjectID = "Qnl-ck-yCh"; */
+"Qnl-ck-yCh.text" = "From 5 pm to 6 pm";
+
+/* Class = "UITextField"; placeholder = "Select Your Gander ..."; ObjectID = "Qv5-ac-z4B"; */
+"Qv5-ac-z4B.placeholder" = "Select Your Gander ...";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussien"; ObjectID = "R5A-c7-KKr"; */
+"R5A-c7-KKr.text" = "Dr. Mohamed Ahmed Hussien";
+
+/* Class = "UIViewController"; title = "Change Password"; ObjectID = "Rnb-ek-Rcc"; */
+"Rnb-ek-Rcc.title" = "Change Password";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussien"; ObjectID = "RwL-in-5CJ"; */
+"RwL-in-5CJ.text" = "Dr. Mohamed Ahmed Hussien";
+
+/* Class = "UILabel"; text = "Text Massage And Email Will Sent With All Reservation Details"; ObjectID = "RyI-7e-Wcw"; */
+"RyI-7e-Wcw.text" = "Text Massage And Email Will Sent With All Reservation Details";
+
+/* Class = "UITextField"; placeholder = "E-mail Adress"; ObjectID = "UQ4-t2-28R"; */
+"UQ4-t2-28R.placeholder" = "E-mail Adress";
+
+/* Class = "UIButton"; normalTitle = "REGISTER NOW"; ObjectID = "UgR-UX-JnN"; */
+"UgR-UX-JnN.normalTitle" = "REGISTER NOW";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "VSK-FD-oZK"; */
+"VSK-FD-oZK.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "Mohamed Ahmed Hussein"; ObjectID = "WAG-l2-bX3"; */
+"WAG-l2-bX3.text" = "Mohamed Ahmed Hussein";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Wqi-3c-IgI"; */
+"Wqi-3c-IgI.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Governorate"; ObjectID = "WyF-zK-qVL"; */
+"WyF-zK-qVL.placeholder" = "Governorate";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "X5F-Mh-h77"; */
+"X5F-Mh-h77.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Details"; ObjectID = "XVw-oV-4Td"; */
+"XVw-oV-4Td.normalTitle" = "Details";
+
+/* Class = "UILabel"; text = "Sepciality Of Neurosurgery"; ObjectID = "YKg-mM-o0N"; */
+"YKg-mM-o0N.text" = "Sepciality Of Neurosurgery";
+
+/* Class = "UITextField"; placeholder = "Insurance companies"; ObjectID = "YbQ-Lr-e4u"; */
+"YbQ-Lr-e4u.placeholder" = "Insurance companies";
+
+/* Class = "UINavigationItem"; title = "Favourit Doctors"; ObjectID = "Yg3-fE-SLf"; */
+"Yg3-fE-SLf.title" = "Favourit Doctors";
+
+/* Class = "UIButton"; normalTitle = "Enter Discount Code"; ObjectID = "YgG-KT-fGA"; */
+"YgG-KT-fGA.normalTitle" = "Enter Discount Code";
+
+/* Class = "UIButton"; normalTitle = "   SEARCH BY DOCTOR NAME"; ObjectID = "ZNj-bD-8mt"; */
+"ZNj-bD-8mt.normalTitle" = "   SEARCH BY DOCTOR NAME";
+
+/* Class = "UIViewController"; title = "Complete The Booking"; ObjectID = "ZRY-BV-mDA"; */
+"ZRY-BV-mDA.title" = "Complete The Booking";
+
+/* Class = "UILabel"; text = "Sepciality Of Neurosurgery"; ObjectID = "Zfn-ln-qgt"; */
+"Zfn-ln-qgt.text" = "Sepciality Of Neurosurgery";
+
+/* Class = "UILabel"; text = "Call Number : 035"; ObjectID = "a9y-eR-Aow"; */
+"a9y-eR-Aow.text" = "Call Number : 035";
+
+/* Class = "UITextField"; placeholder = "City Name"; ObjectID = "aOT-eT-oKw"; */
+"aOT-eT-oKw.placeholder" = "City Name";
+
+/* Class = "UILabel"; text = "11 B New Queens Bulidng , Sydniy"; ObjectID = "aeL-Kq-Pve"; */
+"aeL-Kq-Pve.text" = "11 B New Queens Bulidng , Sydniy";
+
+/* Class = "UIViewController"; title = "Confirm Reservation"; ObjectID = "aig-9c-2pI"; */
+"aig-9c-2pI.title" = "Confirm Reservation";
+
+/* Class = "UITextField"; placeholder = "Mobile Number/ Email Adress"; ObjectID = "aqj-ex-xUp"; */
+"aqj-ex-xUp.placeholder" = "Mobile Number/ Email Adress";
+
+/* Class = "UITabBarItem"; title = "search"; ObjectID = "b9X-aH-II0"; */
+"b9X-aH-II0.title" = "search";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP AS PATIENT"; ObjectID = "bHg-wW-rur"; */
+"bHg-wW-rur.normalTitle" = "SIGN UP AS PATIENT";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "cAz-KR-aYh"; */
+"cAz-KR-aYh.title" = "Item";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussein"; ObjectID = "cb3-Ja-Ml9"; */
+"cb3-Ja-Ml9.text" = "Dr. Mohamed Ahmed Hussein";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "cf9-qs-iMu"; */
+"cf9-qs-iMu.normalTitle" = "Search";
+
+/* Class = "UINavigationItem"; title = "Search Results"; ObjectID = "crb-57-VkY"; */
+"crb-57-VkY.title" = "Search Results";
+
+/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "cy5-zP-i1l"; */
+"cy5-zP-i1l.placeholder" = "Mobile Number";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "dO2-hX-2bM"; */
+"dO2-hX-2bM.title" = "Item";
+
+/* Class = "UILabel"; text = "Please confirm your mobile number and a temporary passwordwill be sent to allow you to re-enter again"; ObjectID = "dj4-HF-6AZ"; */
+"dj4-HF-6AZ.text" = "Please confirm your mobile number and a temporary passwordwill be sent to allow you to re-enter again";
+
+/* Class = "UIButton"; normalTitle = "    Book "; ObjectID = "eE4-B2-y8M"; */
+"eE4-B2-y8M.normalTitle" = "    Book ";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "eIP-xf-izc"; */
+"eIP-xf-izc.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "eQZ-Ek-k2y"; */
+"eQZ-Ek-k2y.placeholder" = "New Password";
+
+/* Class = "UILabel"; text = "Available Appointments"; ObjectID = "eR3-nC-njY"; */
+"eR3-nC-njY.text" = "Available Appointments";
+
+/* Class = "UITextField"; placeholder = "Mobile number"; ObjectID = "eXd-RU-6TF"; */
+"eXd-RU-6TF.placeholder" = "Mobile number";
+
+/* Class = "UILabel"; text = "200 LE"; ObjectID = "eri-S0-5op"; */
+"eri-S0-5op.text" = "200 LE";
+
+/* Class = "UILabel"; text = "Application languegue"; ObjectID = "f1v-hL-mQg"; */
+"f1v-hL-mQg.text" = "Application languegue";
+
+/* Class = "UINavigationItem"; title = "Approval List"; ObjectID = "f2k-u0-nIB"; */
+"f2k-u0-nIB.title" = "Approval List";
+
+/* Class = "UILabel"; text = "200 LE"; ObjectID = "f5K-9H-Fbq"; */
+"f5K-9H-Fbq.text" = "200 LE";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "fRN-P9-Mod"; */
+"fRN-P9-Mod.text" = "Contact Us";
+
+/* Class = "UIViewController"; title = "patientSignup"; ObjectID = "fUT-OZ-VzR"; */
+"fUT-OZ-VzR.title" = "patientSignup";
+
+/* Class = "UIButton"; normalTitle = "Reject"; ObjectID = "g3D-mf-y8e"; */
+"g3D-mf-y8e.normalTitle" = "Reject";
+
+/* Class = "UILabel"; text = "Sepciality Of Neurosurgery"; ObjectID = "g7B-ZG-LJv"; */
+"g7B-ZG-LJv.text" = "Sepciality Of Neurosurgery";
+
+/* Class = "UIButton"; normalTitle = "NOT NOW"; ObjectID = "gd4-Sa-REd"; */
+"gd4-Sa-REd.normalTitle" = "NOT NOW";
+
+/* Class = "UITextField"; placeholder = "Old Password"; ObjectID = "giz-yG-Ysq"; */
+"giz-yG-Ysq.placeholder" = "Old Password";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "h8y-g5-9kg"; */
+"h8y-g5-9kg.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "My Appointments"; ObjectID = "hBq-sI-Xum"; */
+"hBq-sI-Xum.normalTitle" = "My Appointments";
+
+/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "hMC-Qm-Ugh"; */
+"hMC-Qm-Ugh.placeholder" = "Mobile Number";
+
+/* Class = "UILabel"; text = "Accepts The Discount Code"; ObjectID = "hdH-x5-kQQ"; */
+"hdH-x5-kQQ.text" = "Accepts The Discount Code";
+
+/* Class = "UITextField"; placeholder = "E-mail Adress"; ObjectID = "hsf-GO-7Gg"; */
+"hsf-GO-7Gg.placeholder" = "E-mail Adress";
+
+/* Class = "UILabel"; text = "APPOINTMENTS"; ObjectID = "ieF-L1-NlE"; */
+"ieF-L1-NlE.text" = "APPOINTMENTS";
+
+/* Class = "UIButton"; normalTitle = "    Book "; ObjectID = "jDA-VB-Z4Q"; */
+"jDA-VB-Z4Q.normalTitle" = "    Book ";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "l3g-vk-LoL"; */
+"l3g-vk-LoL.title" = "Settings";
+
+/* Class = "UILabel"; text = "Booking Succesful"; ObjectID = "lP8-1U-S9a"; */
+"lP8-1U-S9a.text" = "Booking Succesful";
+
+/* Class = "UILabel"; text = "International Medicine - Cardilogy NC , United State "; ObjectID = "lzB-6w-ele"; */
+"lzB-6w-ele.text" = "International Medicine - Cardilogy NC , United State ";
+
+/* Class = "UILabel"; text = "Monday 17 Dec 2018"; ObjectID = "mfk-9m-kC6"; */
+"mfk-9m-kC6.text" = "Monday 17 Dec 2018";
+
+/* Class = "UINavigationItem"; title = "My Appoinments"; ObjectID = "mpC-Dd-0Rg"; */
+"mpC-Dd-0Rg.title" = "My Appoinments";
+
+/* Class = "UILabel"; text = "200 LE"; ObjectID = "mzp-re-V2I"; */
+"mzp-re-V2I.text" = "200 LE";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "n4q-21-vws"; */
+"n4q-21-vws.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "  Cancel"; ObjectID = "nfr-fY-RD2"; */
+"nfr-fY-RD2.normalTitle" = "  Cancel";
+
+/* Class = "UILabel"; text = "Sepciality Of Neurosurgery"; ObjectID = "ngP-Fi-JXu"; */
+"ngP-Fi-JXu.text" = "Sepciality Of Neurosurgery";
+
+/* Class = "UINavigationItem"; title = "Confirm Reservation"; ObjectID = "oDF-6I-wdW"; */
+"oDF-6I-wdW.title" = "Confirm Reservation";
+
+/* Class = "UILabel"; text = "Availbale From Sunday Nov 20"; ObjectID = "ocC-7S-LyK"; */
+"ocC-7S-LyK.text" = "Availbale From Sunday Nov 20";
+
+/* Class = "UILabel"; text = "Detection Price"; ObjectID = "od7-Zf-iTL"; */
+"od7-Zf-iTL.text" = "Detection Price";
+
+/* Class = "UITextField"; placeholder = "Date of birth"; ObjectID = "oeW-0R-S32"; */
+"oeW-0R-S32.placeholder" = "Date of birth";
+
+/* Class = "UILabel"; text = "Approval List"; ObjectID = "p2e-oa-9DK"; */
+"p2e-oa-9DK.text" = "Approval List";
+
+/* Class = "UIViewController"; title = "Choose Your Doctor"; ObjectID = "peZ-Af-v1h"; */
+"peZ-Af-v1h.title" = "Choose Your Doctor";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "pgW-HG-kM2"; */
+"pgW-HG-kM2.title" = "Item";
+
+/* Class = "UILabel"; text = "INSURANCE COMPINIES"; ObjectID = "pgd-cc-6rj"; */
+"pgd-cc-6rj.text" = "INSURANCE COMPINIES";
+
+/* Class = "UINavigationItem"; title = "Sign In"; ObjectID = "pl8-s5-XGY"; */
+"pl8-s5-XGY.title" = "Sign In";
+
+/* Class = "UILabel"; text = " 4.0"; ObjectID = "pp5-tN-vcV"; */
+"pp5-tN-vcV.text" = " 4.0";
+
+/* Class = "UILabel"; text = "From 8 pm to 9 pm"; ObjectID = "q8E-8y-ivc"; */
+"q8E-8y-ivc.text" = "From 8 pm to 9 pm";
+
+/* Class = "UILabel"; text = "Sepicaliset Of Neurosurgery - Ain Shams Universty"; ObjectID = "q8X-vO-GQQ"; */
+"q8X-vO-GQQ.text" = "Sepicaliset Of Neurosurgery - Ain Shams Universty";
+
+/* Class = "UILabel"; text = "Please Enter New Password"; ObjectID = "r76-l4-8Go"; */
+"r76-l4-8Go.text" = "Please Enter New Password";
+
+/* Class = "UILabel"; text = "17 Makram Ebid St , Nasr City"; ObjectID = "s3o-Vo-dNS"; */
+"s3o-Vo-dNS.text" = "17 Makram Ebid St , Nasr City";
+
+/* Class = "UILabel"; text = "Dr. Mohamed Ahmed Hussein"; ObjectID = "sIh-xz-a0A"; */
+"sIh-xz-a0A.text" = "Dr. Mohamed Ahmed Hussein";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "swf-UD-qUd"; */
+"swf-UD-qUd.title" = "Item";
+
+/* Class = "UIViewController"; title = "Search Results"; ObjectID = "tbv-Ns-6zC"; */
+"tbv-Ns-6zC.title" = "Search Results";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "uHn-Fz-lSa"; */
+"uHn-Fz-lSa.title" = "Item";
+
+/* Class = "UILabel"; text = "From 8 pm to 9 pm"; ObjectID = "ucr-sJ-AOA"; */
+"ucr-sJ-AOA.text" = "From 8 pm to 9 pm";
+
+/* Class = "UILabel"; text = "LOCATION"; ObjectID = "uvK-8x-Cq5"; */
+"uvK-8x-Cq5.text" = "LOCATION";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "uvN-Nf-I7b"; */
+"uvN-Nf-I7b.normalTitle" = "SIGN IN";
+
+/* Class = "UILabel"; text = "Cancelled Appoinment"; ObjectID = "vIY-fW-G34"; */
+"vIY-fW-G34.text" = "Cancelled Appoinment";
+
+/* Class = "UILabel"; text = "SPECIALITY"; ObjectID = "vg3-7Q-bbv"; */
+"vg3-7Q-bbv.text" = "SPECIALITY";
+
+/* Class = "UITabBarItem"; title = "more"; ObjectID = "xQv-Au-sip"; */
+"xQv-Au-sip.title" = "more";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "xS1-h4-39o"; */
+"xS1-h4-39o.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Insurance companies ..."; ObjectID = "xi1-t4-gkr"; */
+"xi1-t4-gkr.placeholder" = "Insurance companies ...";
+
+/* Class = "UILabel"; text = "Arabic"; ObjectID = "xqN-zB-hhy"; */
+"xqN-zB-hhy.text" = "Arabic";
+
+/* Class = "UIButton"; normalTitle = "Visitors Review"; ObjectID = "zbv-Lj-Mwg"; */
+"zbv-Lj-Mwg.normalTitle" = "Visitors Review";

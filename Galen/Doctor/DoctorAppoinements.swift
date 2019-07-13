@@ -32,11 +32,11 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         
         
         datePicker = UIDatePicker()
+        
         datePicker?.datePickerMode = .date
+        
         datePicker?.addTarget(self, action: #selector(DoctorAppoinements.dateChanged(datePicker:)), for: .valueChanged)
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DoctorAppoinements.viewTapped(gestureRecognizer:)))
-//        view.addGestureRecognizer(tapGesture)
         TxtFieldPickDate.inputView = datePicker
         
         self.navigationController?.navigationBar.setGradientBackground(colors: [

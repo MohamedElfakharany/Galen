@@ -9,6 +9,7 @@ target 'Galen' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
+  pod  'ADCountryPicker', '~> 2.1.0'
   # Pods for Galen
 
 end

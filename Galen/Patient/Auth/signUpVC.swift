@@ -9,41 +9,88 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ADCountryPicker
 
-class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
+class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate ,ADCountryPickerDelegate  {
     
     var pickerView = UIPickerView()
-    var ICsNames:[String] = []
-    var gender:[String] = []
-    var VarSelectedGander=0
+    var ICs:[InsurnaceCompanies] = []
+    var Govs:[Governate] = []
+    var Cities:[City] = []
+    var genders = ["Male","Female"]
     var selectedTxtField = UITextField()
-   
+    var ICIndex = Int()
+    var SelectedGender = String()
+    var SelectedGenderID = Int()
+    var GovIndex = Int()
+    var CityIndex = Int()
+    var SelectedCountryName = String()
+    var SelectedImageUrl = String()
+     let Conpicker = ADCountryPicker()
+    
     @IBOutlet weak var imageuser: UIImageView!
-    @IBOutlet weak var patientCode: UITextField!
     @IBOutlet weak var patientName: UITextField!
-    @IBOutlet  weak var phoneNumber: UITextField!
-    @IBOutlet  weak var emailAdress: UITextField!
+    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet  weak var passwordConfirmation: UITextField!
-    @IBOutlet  weak var dateOfBirth: UITextField!
-    @IBOutlet  weak var insuranceCompanies: UITextField!
+    @IBOutlet weak var passwordConfirmation: UITextField!
+    @IBOutlet weak var dateOfBirth: UITextField!
+    @IBOutlet weak var insuranceCompanies: UITextField!
     @IBOutlet weak var ganderTxtField: UITextField!
+    @IBOutlet weak var CountryTxtfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gender = ["male","female"]
-        ICsNames = ["one","two","three","four","five","six"]
-       
+//        gender = ["male","female"]
+//        ICsNames = ["one","two","three","four","five","six"]
+        self.CountryTxtfield.delegate = self
         GetInsurnaceCompany()
+        FetchGoves()
+        FetchCities(ChosenGovernateID: 1)
         imageText()
         imageuser.roundedImage()
+        UploadImageToGetUrl(imaghe: imageuser.image ?? #imageLiteral(resourceName: "doctor-icon"))
         gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
+        
        
+        let pickerNavigationController = UINavigationController(rootViewController: Conpicker)
+        Conpicker.delegate = self
+        Conpicker.showCallingCodes = true
+        Conpicker.showFlags = true
+        Conpicker.pickerTitle = "Select a Country"
+        Conpicker.defaultCountryCode = "EG"
+        Conpicker.forceDefaultCountryCode = false
+        Conpicker.alphabetScrollBarTintColor = UIColor.black
+        Conpicker.alphabetScrollBarBackgroundColor = UIColor.clear
+        Conpicker.closeButtonTintColor = UIColor.black
+        Conpicker.font = UIFont(name: "Helvetica Neue", size: 15)
+        Conpicker.flagHeight = 40
+        Conpicker.hidesNavigationBarWhenPresentingSearch = true
+        Conpicker.searchBarBackgroundColor = UIColor.lightGray
+    }
+    
+    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String) {
+        print(code)
+        let flagImage =  Conpicker.getFlag(countryCode: code)
+        self.phoneNumber.text = Conpicker.getDialCode(countryCode: code)
+        self.CountryTxtfield.text = (Conpicker.getCountryName(countryCode: code))
+        if  let myImage =  flagImage{
+        CountryTxtfield.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            }
+        Conpicker.navigationController?.popToRootViewController(animated: true)
+    }
+  
+    
+    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String, dialCode: String) {
+        print(dialCode)
+        let dialingCode =  picker.getDialCode(countryCode: code)
+        CountryTxtfield.endEditing(true)
+        
     }
     
     var picker_imag: UIImage? {
@@ -53,7 +100,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             self.imageuser.image = image
         }
     }
-    
     
     @IBAction func selectImage(_ sender: Any) {
         
@@ -79,50 +125,118 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
         
-        
     }
     
-    func GetInsurnaceCompany(){
-        /*
-        //////
-        API_Auth.login(email: "gaber.hosny.fci.scu@gmail.com" , password: "0663403457" ) { (error: Error?, success: Bool, data) in
-            if success {
-            print("FakeLoginDone")
-            }else {
-                self.showAlert(title: "Login Filed", message: "\(data ?? "")")
-                print(error as Any)
+    func UploadImageToGetUrl(imaghe:UIImage) {
+        
+        let parameters : Parameters = [:]
+        let imageData = (UIImage(named: "doctor-icon"))?.jpegData(compressionQuality: 0.8)
+        print("Thereisanimage\(imageData)")
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData!, withName: "PatientPicture", fileName: "ProfilePicture.png", mimeType: "image/png")
+        }, to:"http://intmicrotec.neat-url.com:6566/api/upload/image/default")
+        { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (Progress) in
+                    print("Upload Progress: \(Progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON { response in
+                    //self.delegate?.showSuccessAlert()
+                    print(response.request)  // original URL request
+                    print(response.response) // URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
+                    //                        self.showSuccesAlert()
+                    //self.removeImage("frame", fileExtension: "txt")
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                    }
+                }
+                
+            case .failure(let encodingError):
+                //self.delegate?.showFailAlert()
+                print(encodingError)
             }
             
-        }*/
-        //////
-        
-        let parameters : Parameters = [
-            "accessToken" : "8462a029bb221e63e98d2653cf985ade"
-        ]
-        
-        Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+        }
+    }
+    
+    
+    ///////
+    func GetInsurnaceCompany(){
+        Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: nil , encoding: URLEncoding.default, headers: nil).responseData { response in
             switch (response.result){
             case .success(let Value):
-            let json = JSON(Value)
-                print("json =   \(json)")
-            let ICs = json["list"].arrayObject as! [[String : Any]]
-            for IC in ICs {
-               if let ICName = IC["name"] {
-                self.ICsNames.append(ICName as! String)
-                 }
-                print("Array OF ICsNames \(self.ICsNames)")
+                let json = JSON(Value).dictionary
+                do{
+                    let datas = try json!["list"]?.rawData()
+                    print("datas\(datas)")
+                    let insurnaceCompanies = try? newJSONDecoder().decode([InsurnaceCompanies].self, from: datas!)
+                    self.ICs = insurnaceCompanies!
+                    print("ICS \(self.ICs)")
+                }catch{
+                    
                 }
             case .failure(_):
                 print("error  = \(String(describing: response.result.error))")
             }
         }
     }
+    ////
+    
+    ////
+    func FetchGoves() {
+        
+        Alamofire.request(URLs.allGovs, method: .post, encoding: JSONEncoding.default, headers: nil).responseData { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!).dictionary
+                do {
+                    let resData = try swiftyJsonVar?["list"]!.rawData() 
+                    let ReturnedGoves = try? newJSONDecoder().decode([Governate].self, from: resData!)
+                    self.Govs = ReturnedGoves!
+                    print("Govs\(self.Govs)")
+                    }catch{
+                        
+                    }
+                }
+            }
+        }
+    
+    
+    /////FetchAreas(Cities)
+    func FetchCities(ChosenGovernateID: Int) {
+        
+        let parameters: Parameters = [
+            "where":
+                [
+                    "gov.id"  : 1
+            ]
+        ]
+        Alamofire.request(URLs.allCities, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseData { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!).dictionary
+                do {
+                    let resData = try swiftyJsonVar?["list"]!.rawData()
+                    let ReturnedCities = try? newJSONDecoder().decode([City].self, from: resData!)
+                    self.Cities = ReturnedCities!
+                    print("Citites\(self.Cities)")
+                }catch{
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
+  
     
     
     @IBAction func RegisterBTN(_ sender: Any) {
-        // patient code
-        
-        
+      
         //patient name
         guard let patientNames = patientName.text?.trimmed, !patientNames.isEmpty else {
             let messages = NSLocalizedString("enter your name", comment: "hhhh")
@@ -188,19 +302,32 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             return
         }
         
-        API_Auth.register(patient_code: patientCode.text ?? "",
-                          patient_name: patientName.text ?? "",
-                          phone_number: phoneNumber.text ?? "",
-                          email_adress: emailAdress.text ?? "",
-                          password: password.text ?? "",
-                          password_confirmation: passwordConfirmation.text ?? "",
-                          date_of_birth: dateOfBirth.text ?? "",
-                          insurance_companies: insuranceCompanies.text ?? "",
-                          gander: ganderTxtField.text ?? "",
-                          image: imageuser.image ?? #imageLiteral(resourceName: "1"))    {
-                            (error:Error?, success: Bool, data) in
-            
+        if ( SelectedGender == "Male" ){
+            self.SelectedGenderID = 1
+        } else {
+            self.SelectedGenderID = 2
         }
+        
+        API_Auth.SignUpPatient(
+        patient_name: patientNames,
+        phone_number: phoneNumbers,
+        email_adress:emailAdresses,
+        password: passwords,
+        password_confirmation: passwordConfirmations,
+        date_of_birth: dateOfBirths,
+        insurance_company: ICs[ICIndex],
+        Gov: Govs[GovIndex],
+        City: Cities[CityIndex],
+        gender: SelectedGender,
+        genderID: SelectedGenderID,
+        countryName: SelectedCountryName,
+        image: SelectedImageUrl) {
+         (error: Error?, success: Bool, data) in
+            print("Done")
+        }
+        
+        
+        
     }
     
     
@@ -215,13 +342,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     
     //////////////// Text Fields Views ////////////////
     func imageText() {
-        // patient code
-        if let myImage = UIImage(named: "user"){
-            
-            patientCode.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            patientCode.MakeRoundeEdges(patientCode)
-            patientCode.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
+
         // patient name
         if let myImage = UIImage(named: "user"){
             
@@ -229,6 +350,13 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             patientName.MakeRoundeEdges(patientName)
             patientName.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
+        //patient country
+        if let myImage = UIImage(named: "status"){
+            
+            CountryTxtfield.MakeRoundeEdges(CountryTxtfield)
+            CountryTxtfield.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        
         //patient phone number
         if let myImage = UIImage(named: "phone-call"){
             
@@ -236,7 +364,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             phoneNumber.MakeRoundeEdges(phoneNumber)
             phoneNumber.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
-        // patient email adress
+        // patient email address
         if let myImage = UIImage(named: "user"){
             
             emailAdress.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
@@ -284,17 +412,23 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
     }
-    // Picker Views
     
+    @IBAction func BtnCountrySearch(_ sender: Any) {
+        navigationController?.pushViewController(Conpicker, animated: true)
+        
+    }
+    
+    // Picker Views
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if  selectedTxtField == ganderTxtField {
-            return gender.count
+            return genders.count
         } else if selectedTxtField == insuranceCompanies {
-            return self.ICsNames.count
+            return self.ICs.count
         }else{
             return 0
         }
@@ -302,11 +436,9 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if selectedTxtField == ganderTxtField {
-            VarSelectedGander=row
-            return gender[row]
+            return genders[row]
         } else if selectedTxtField == insuranceCompanies {
-            VarSelectedGander=row
-            return ICsNames[row]
+            return ICs[row].name
         }else {
             
         }
@@ -315,11 +447,13 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if  selectedTxtField == ganderTxtField {
-            ganderTxtField.text = gender[row]
+            ganderTxtField.text = genders[row]
+            self.SelectedGender = genders[row]
             self.view.endEditing(true)
         } else if selectedTxtField == insuranceCompanies {
-             insuranceCompanies.text = ICsNames[row]
-            self.view.endEditing(true)
+             insuranceCompanies.text = ICs[row].name
+            self.ICIndex = row
+//            self.view.endEditing(true)
         }else {
             return
         }
@@ -348,17 +482,26 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         RegisterBtnOutlet.layer.cornerRadius = RegisterBtnOutlet.frame.height/2
         RegisterBtnOutlet.clipsToBounds = true
       
+        // Select Country
+        
+//        BtnCountrySearchOutlet.layer.cornerRadius = BtnCountrySearchOutlet.frame.height/2
+//        BtnCountrySearchOutlet.clipsToBounds = true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.pickerView.delegate = self
         self.pickerView.dataSource  = self
+        self.Conpicker.delegate = self
         selectedTxtField = textField
         if selectedTxtField == ganderTxtField{
             selectedTxtField.inputView = pickerView
         }else if selectedTxtField == insuranceCompanies{
             selectedTxtField.inputView  = pickerView
+        }else if selectedTxtField === CountryTxtfield {
+            print("hamouda")
+            self.navigationController?.pushViewController(Conpicker, animated: true)
         }
+        
     }
     
 
