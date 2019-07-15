@@ -872,13 +872,6 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9l-ap-3tf">
-                                <rect key="frame" x="90" y="505" width="195" height="30"/>
-                                <color key="backgroundColor" red="0.1065247431397438" green="0.45399695634841919" blue="0.71816891431808472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="ابحث"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -886,19 +879,13 @@
                             <constraint firstItem="ypd-kx-e02" firstAttribute="top" secondItem="F7r-8G-9f1" secondAttribute="bottom" constant="26" id="9Uu-DH-4EK"/>
                             <constraint firstItem="F7r-8G-9f1" firstAttribute="centerX" secondItem="CCf-Rq-Fim" secondAttribute="centerX" id="GtU-nD-u8M"/>
                             <constraint firstItem="F7r-8G-9f1" firstAttribute="top" secondItem="cxd-PC-PVX" secondAttribute="top" id="RXN-DS-Ut1"/>
-                            <constraint firstItem="t9l-ap-3tf" firstAttribute="top" secondItem="ypd-kx-e02" secondAttribute="bottom" constant="50" id="buo-UH-TTA"/>
-                            <constraint firstItem="t9l-ap-3tf" firstAttribute="leading" secondItem="cxd-PC-PVX" secondAttribute="leading" constant="90" id="eBN-8K-HPb"/>
                             <constraint firstItem="ypd-kx-e02" firstAttribute="leading" secondItem="cxd-PC-PVX" secondAttribute="leading" constant="30" id="nGT-rd-7Ud"/>
                             <constraint firstItem="F7r-8G-9f1" firstAttribute="height" secondItem="CCf-Rq-Fim" secondAttribute="height" multiplier="0.3" id="u1B-n1-8QV"/>
-                            <constraint firstItem="cxd-PC-PVX" firstAttribute="trailing" secondItem="t9l-ap-3tf" secondAttribute="trailing" constant="90" id="vK6-ko-eg5"/>
                             <constraint firstItem="F7r-8G-9f1" firstAttribute="width" secondItem="CCf-Rq-Fim" secondAttribute="width" multiplier="0.5" id="xJ1-TN-oXm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cxd-PC-PVX"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="newItem5" id="7ZI-W4-Skb"/>
-                    <connections>
-                        <outlet property="BtnSearchNow" destination="t9l-ap-3tf" id="Oxd-W3-1km"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQN-zF-vhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1273,14 +1260,7 @@
                         <viewLayoutGuide key="safeArea" id="0oY-2h-ND7"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Search" id="fDR-OI-jHt">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="qFh-6h-Zf9">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="BtnBack:" destination="SCD-st-Lo1" id="A34-rx-3hm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search" id="fDR-OI-jHt"/>
                     <connections>
                         <outlet property="InsuranceSearch" destination="uM2-wg-hIy" id="Map-jX-eFZ"/>
                         <outlet property="tableView" destination="sxs-uP-8Kw" id="bNs-2Z-8ty"/>
@@ -1360,10 +1340,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="c7d-o0-YXh" id="Q3b-N3-RqK"/>
-                                    <outlet property="delegate" destination="c7d-o0-YXh" id="ugv-M2-1fI"/>
-                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="ابحث عن المحافظة" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvO-8h-prw">
                                 <rect key="frame" x="19" y="74" width="337.5" height="46.5"/>
@@ -1373,9 +1349,6 @@
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="c7d-o0-YXh" id="Wd8-py-pF2"/>
-                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1392,16 +1365,10 @@
                         <viewLayoutGuide key="safeArea" id="f0s-c1-XEc"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Search" id="LmE-ru-lfj">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="xyg-fp-J3O">
-                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="BtnBack:" destination="c7d-o0-YXh" id="AaR-Ga-E42"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search" id="LmE-ru-lfj"/>
                     <connections>
                         <outlet property="InsuranceSearch" destination="dvO-8h-prw" id="bbj-z3-xQT"/>
+                        <outlet property="tableView" destination="qTs-f1-6GA" id="4lr-CU-j3U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBG-qj-dTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1410,7 +1377,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="30" height="20"/>
         <image name="checkActive" width="14" height="14"/>
         <image name="checkInactive" width="15" height="15"/>
         <image name="chevronLeft" width="8" height="14"/>
@@ -1429,6 +1395,6 @@
         <segue reference="UKm-Bo-PPT"/>
         <segue reference="yX4-7g-Cxz"/>
         <segue reference="42e-r1-SPI"/>
-        <segue reference="sdn-qT-0UY"/>
+        <segue reference="tII-d3-4PD"/>
     </inferredMetricsTieBreakers>
 </document>

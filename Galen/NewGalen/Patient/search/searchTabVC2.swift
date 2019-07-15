@@ -10,13 +10,13 @@ import UIKit
 
 class searchTabVC2: UIViewController {
     
-    @IBOutlet weak var BtnSearchNow: UIButton!
+//    @IBOutlet weak var BtnSearchNow: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        BtnSearchNow.layer.cornerRadius = 5
-        BtnSearchNow.clipsToBounds = true
+//        BtnSearchNow.layer.cornerRadius = 5
+//        BtnSearchNow.clipsToBounds = true
         
     }
     
