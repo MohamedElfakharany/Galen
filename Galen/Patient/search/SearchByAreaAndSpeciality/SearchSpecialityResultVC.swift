@@ -22,6 +22,7 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SpecialitySearch: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +73,7 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
     func DawnloadImage(url : String) -> UIImage   {
         
         let url = URL(string: "intmicrotec.neat-url.com:6566\(url)")
-        let data = NSData(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        let data = NSData(contentsOf: url!) 
         return UIImage(data: data! as Data) ?? #imageLiteral(resourceName: "calendar-times")
     }
     

@@ -83,13 +83,42 @@ class SignUpVC2: UIViewController {
             iconClick2 = true
         }
     }
-    
-    @IBAction func BtnMale(_ sender: Any) {
+    /*
+     @IBAction func BtnRememberMe(_ sender: UIButton) {
+     
+     UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+     , animations: {
+     sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+     }) { (success) in
+     sender.isSelected = !sender.isSelected
+     UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+     sender.transform = .identity
+     }, completion: nil)
+     }
+     */
+    @IBAction func BtnMale(_ sender: UIButton) {
         
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+            , animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }) { (success) in
+            sender.isSelected = !sender.isSelected
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                sender.transform = .identity
+            }, completion: nil)
+        }
     }
     
-    @IBAction func BtnFemale(_ sender: Any) {
-        
+    @IBAction func BtnFemale(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+            , animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }) { (success) in
+            sender.isSelected = !sender.isSelected
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                sender.transform = .identity
+            }, completion: nil)
+        }
     }
     
     @objc func dateChanged(datePicker: UIDatePicker){
