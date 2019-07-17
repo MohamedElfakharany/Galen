@@ -33,6 +33,8 @@
 		964058A122DCCB4E00C32DD1 /* searchTabVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A022DCCB4E00C32DD1 /* searchTabVC2.swift */; };
 		964058A322DCD39700C32DD1 /* SearchGovernatesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A222DCD39700C32DD1 /* SearchGovernatesVC2.swift */; };
 		964058A522DCD63200C32DD1 /* SelectGovsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */; };
+		964058A722DEAC9E00C32DD1 /* SearchDocNameVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */; };
+		964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */; };
 		965B746922BF447700431BA1 /* GovModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746822BF447700431BA1 /* GovModel.swift */; };
 		965B746B22BF6CE200431BA1 /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746A22BF6CE200431BA1 /* HospitalModel.swift */; };
 		9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */; };
@@ -148,6 +150,8 @@
 		964058A022DCCB4E00C32DD1 /* searchTabVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTabVC2.swift; sourceTree = "<group>"; };
 		964058A222DCD39700C32DD1 /* SearchGovernatesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGovernatesVC2.swift; sourceTree = "<group>"; };
 		964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGovsTableViewCell.swift; sourceTree = "<group>"; };
+		964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocNameVC2.swift; sourceTree = "<group>"; };
+		964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocNameTableViewCell.swift; sourceTree = "<group>"; };
 		965B746822BF447700431BA1 /* GovModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovModel.swift; sourceTree = "<group>"; };
 		965B746A22BF6CE200431BA1 /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
 		9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorSearchResultCell.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				9640589E22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift */,
 				964058A222DCD39700C32DD1 /* SearchGovernatesVC2.swift */,
 				964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */,
+				964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */,
+				964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9663BBD6226FBF3B00CA5900 /* hospitalDefination.swift in Sources */,
+				964058A722DEAC9E00C32DD1 /* SearchDocNameVC2.swift in Sources */,
 				9603F28522D9D4A200D85B52 /* SignInVC2.swift in Sources */,
 				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
 				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
@@ -759,6 +766,7 @@
 				963C61662275C6D900FB000A /* SpecialityModel.swift in Sources */,
 				96A22810228B60F400A988AA /* User.swift in Sources */,
 				9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */,
+				964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */,
 				962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
