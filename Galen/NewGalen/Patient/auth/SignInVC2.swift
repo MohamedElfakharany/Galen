@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SignInVC2: UIViewController {
 
@@ -24,7 +25,7 @@ class SignInVC2: UIViewController {
     
     @IBAction func showHideAction(_ sender: Any) {
         
-        let userPassword = TxtfieldPassword.text!;
+        _ = TxtfieldPassword.text!;
         
         if(iconClick == true) {
             TxtfieldPassword.isSecureTextEntry = false
@@ -38,12 +39,12 @@ class SignInVC2: UIViewController {
     
     @IBAction func BtnRememberMe(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+        UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear
             , animations: {
                 sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }) { (success) in
             sender.isSelected = !sender.isSelected
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion: nil)
         }

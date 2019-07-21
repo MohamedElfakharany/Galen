@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
-class SignUpVC2: UIViewController {
-
+class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
+    
+    @IBOutlet weak var imageuser: UIImageView!
+    
     @IBOutlet weak var TxtfieldCode: UITextField!
     
     @IBOutlet weak var TxtfieldName: UITextField!
@@ -35,6 +38,11 @@ class SignUpVC2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UINavigationBar.appearance().barTintColor = .init(red: 13.0/255, green: 197.0/255, blue: 183.0/255, alpha: 1.0)
+        UINavigationBar.appearance().isTranslucent = false
+        
+        imageuser.roundedImage()
+        
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(SignUpVC2.dateChanged(datePicker:)), for: .valueChanged)
@@ -42,24 +50,42 @@ class SignUpVC2: UIViewController {
         
         iconClick = true
         iconClick2 = true
-        imageText()
     }
     
-    func imageText() {
+    @IBAction func selectImage(_ sender: Any) {
         
-        // patient name
-        if let myImage = UIImage(named: "chevronLeft"){
-            
-            TxtfieldInsuranceCompanies.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-        }
+        let piker = UIImagePickerController()
+        piker.allowsEditing = true
+        piker.sourceType = .photoLibrary
+        piker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Chose A Source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                piker.sourceType = .camera
+                self.present(piker, animated: true, completion: nil)
+            }else {
+                print("notFound")
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            piker.sourceType = .photoLibrary
+            self.present(piker, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+        
     }
+    
     @IBAction func BtnSignUp(_ sender: Any) {
         
     }
     
+    
     @IBAction func showHideAction(_ sender: Any) {
         
-        let userPassword = TxtfieldPassword.text!;
+        _ = TxtfieldPassword.text!;
         
         if(iconClick == true) {
             TxtfieldPassword.isSecureTextEntry = false
@@ -73,7 +99,7 @@ class SignUpVC2: UIViewController {
     
     @IBAction func showHideAction2(_ sender: Any) {
         
-        let userPassword = TxtfieldPassConfirmation.text!;
+        _ = TxtfieldPassConfirmation.text!;
         
         if(iconClick2 == true) {
             TxtfieldPassConfirmation.isSecureTextEntry = false
@@ -83,39 +109,27 @@ class SignUpVC2: UIViewController {
             iconClick2 = true
         }
     }
-    /*
-     @IBAction func BtnRememberMe(_ sender: UIButton) {
-     
-     UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
-     , animations: {
-     sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-     }) { (success) in
-     sender.isSelected = !sender.isSelected
-     UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
-     sender.transform = .identity
-     }, completion: nil)
-     }
-     */
+    
     @IBAction func BtnMale(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+        UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear
             , animations: {
                 sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }) { (success) in
             sender.isSelected = !sender.isSelected
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion: nil)
         }
     }
     
     @IBAction func BtnFemale(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear
+        UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear
             , animations: {
                 sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }) { (success) in
             sender.isSelected = !sender.isSelected
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion: nil)
         }

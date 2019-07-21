@@ -14,12 +14,6 @@
       "idiom" : "universal",
       "filename" : "manLaptop@3x.png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "manLaptop.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {

@@ -14,12 +14,6 @@
       "idiom" : "universal",
       "filename" : "manHello@3x.png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "manHello.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {

@@ -50,7 +50,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         FetchCities(ChosenGovernateID: 1)
         imageText()
         imageuser.roundedImage()
-        UploadImageToGetUrl(imaghe: imageuser.image ?? #imageLiteral(resourceName: "doctor-icon"))
+        UploadImageToGetUrl(imaghe: imageuser.image ?? #imageLiteral(resourceName: "userImage"))
         gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,

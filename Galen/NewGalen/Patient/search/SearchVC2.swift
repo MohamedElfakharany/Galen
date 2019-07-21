@@ -20,12 +20,24 @@ class SearchVC2: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         Speciality = ["طب الباطنة","طب الاسنان","طب الجراحة ","طب العيون","طب الاورام","طب الروماتزم"]
         PickerSpeciality = UIPickerView()
         TxtfieldSearchSpeciality.inputView = PickerSpeciality
         
         
+    }
+    
+    @IBAction func BtnAutoSelect(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear
+            , animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }) { (success) in
+            sender.isSelected = !sender.isSelected
+            UIView.animate(withDuration: 0.25, delay: 0.1, options: .curveLinear, animations: {
+                sender.transform = .identity
+            }, completion: nil)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

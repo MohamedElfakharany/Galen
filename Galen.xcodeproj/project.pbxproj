@@ -86,6 +86,8 @@
 		96B478392273471800AB1990 /* searchDoctorResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B478372273471800AB1990 /* searchDoctorResults.xib */; };
 		96B81F0C227659D500E82CFC /* roundedTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B81F0B227659D500E82CFC /* roundedTF.swift */; };
 		96BE84A5228A1682001A1B59 /* circleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE84A4228A1682001A1B59 /* circleImage.swift */; };
+		96C8290A22DFC30B00C3E27F /* SearchDocsResultsVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8290922DFC30B00C3E27F /* SearchDocsResultsVC2.swift */; };
+		96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C8290B22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift */; };
 		96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC56D122BFF2D300FB2223 /* searchCityGovVC.swift */; };
 		96CC56D622C0CACD00FB2223 /* SearchSpecialityResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC56D522C0CACD00FB2223 /* SearchSpecialityResultVC.swift */; };
 		96D419F522380198001B0411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D419F422380198001B0411 /* AppDelegate.swift */; };
@@ -203,6 +205,8 @@
 		96B478372273471800AB1990 /* searchDoctorResults.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchDoctorResults.xib; sourceTree = "<group>"; };
 		96B81F0B227659D500E82CFC /* roundedTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedTF.swift; sourceTree = "<group>"; };
 		96BE84A4228A1682001A1B59 /* circleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleImage.swift; sourceTree = "<group>"; };
+		96C8290922DFC30B00C3E27F /* SearchDocsResultsVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocsResultsVC2.swift; sourceTree = "<group>"; };
+		96C8290B22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocsResultsTableViewCell.swift; sourceTree = "<group>"; };
 		96CC56D122BFF2D300FB2223 /* searchCityGovVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCityGovVC.swift; sourceTree = "<group>"; };
 		96CC56D522C0CACD00FB2223 /* SearchSpecialityResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpecialityResultVC.swift; sourceTree = "<group>"; };
 		96D419F122380198001B0411 /* Galen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +276,8 @@
 				964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */,
 				964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */,
 				964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */,
+				96C8290922DFC30B00C3E27F /* SearchDocsResultsVC2.swift */,
+				96C8290B22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				964058A722DEAC9E00C32DD1 /* SearchDocNameVC2.swift in Sources */,
 				9603F28522D9D4A200D85B52 /* SignInVC2.swift in Sources */,
 				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
+				96C8290A22DFC30B00C3E27F /* SearchDocsResultsVC2.swift in Sources */,
 				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				964058A322DCD39700C32DD1 /* SearchGovernatesVC2.swift in Sources */,
@@ -816,6 +823,7 @@
 				96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */,
 				96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */,
 				96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */,
+				96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
