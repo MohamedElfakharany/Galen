@@ -10,6 +10,8 @@ import UIKit
 
 class SearchDocNameTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var LblDocName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

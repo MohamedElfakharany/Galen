@@ -13,6 +13,9 @@
 		9603F29122DB56CE00D85B52 /* SearchVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F29022DB56CE00D85B52 /* SearchVC2.swift */; };
 		9603F29322DB739900D85B52 /* SearchInsuranceResultVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F29222DB739900D85B52 /* SearchInsuranceResultVC2.swift */; };
 		96150D04227C847B0012D6D4 /* ICsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96150D03227C847B0012D6D4 /* ICsNames.swift */; };
+		96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0A22E6447D00ABABBD /* DocDataVC2.swift */; };
+		96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */; };
+		96198A0F22E79FD600ABABBD /* DocRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */; };
 		961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51822C1E00800634B53 /* ChoseCityViewController.swift */; };
 		961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */; };
 		962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */; };
@@ -123,6 +126,9 @@
 		9603F29022DB56CE00D85B52 /* SearchVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC2.swift; sourceTree = "<group>"; };
 		9603F29222DB739900D85B52 /* SearchInsuranceResultVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInsuranceResultVC2.swift; sourceTree = "<group>"; };
 		96150D03227C847B0012D6D4 /* ICsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICsNames.swift; sourceTree = "<group>"; };
+		96198A0A22E6447D00ABABBD /* DocDataVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocDataVC2.swift; sourceTree = "<group>"; };
+		96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorRatingVC2.swift; sourceTree = "<group>"; };
+		96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocRatingTableViewCell.swift; sourceTree = "<group>"; };
 		961AD51822C1E00800634B53 /* ChoseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityViewController.swift; sourceTree = "<group>"; };
 		961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAreaTableViewCell.swift; sourceTree = "<group>"; };
 		962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAnimation.swift; sourceTree = "<group>"; };
@@ -278,6 +284,9 @@
 				964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */,
 				96C8290922DFC30B00C3E27F /* SearchDocsResultsVC2.swift */,
 				96C8290B22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift */,
+				96198A0A22E6447D00ABABBD /* DocDataVC2.swift */,
+				96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */,
+				96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -768,13 +777,16 @@
 				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
 				96C8290A22DFC30B00C3E27F /* SearchDocsResultsVC2.swift in Sources */,
 				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
+				96198A0F22E79FD600ABABBD /* DocRatingTableViewCell.swift in Sources */,
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				964058A322DCD39700C32DD1 /* SearchGovernatesVC2.swift in Sources */,
 				963C61662275C6D900FB000A /* SpecialityModel.swift in Sources */,
 				96A22810228B60F400A988AA /* User.swift in Sources */,
 				9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */,
+				96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */,
 				964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */,
 				962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */,
+				96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
 				963C61642275C6D900FB000A /* AreaModel.swift in Sources */,

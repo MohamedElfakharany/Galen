@@ -38,7 +38,7 @@ class SearchDocNameVC2: UIViewController ,UITableViewDataSource , UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MyCell = tableView.dequeueReusableCell(withIdentifier: "GovesCell", for: indexPath) as? InsuranceCompanyTableViewCell
+        let MyCell = tableView.dequeueReusableCell(withIdentifier: "DocNameCell", for: indexPath) as? InsuranceCompanyTableViewCell
         
     //    MyCell?.inittiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: DocsArray[indexPath.row].name! )
         return MyCell!
@@ -69,11 +69,6 @@ extension SearchDocNameVC2: UISearchBarDelegate {
             self.tableView.reloadData()
         }
         
-        tableView.reloadData()
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searching = false
-        searchBar.text = ""
         tableView.reloadData()
     }
 }

@@ -74,10 +74,4 @@ extension SearchInsuranceResultVC2: UISearchBarDelegate {
         
         tableView.reloadData()
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searching = false
-        searchBar.text = ""
-        tableView.reloadData()
-    }
-    
 }
