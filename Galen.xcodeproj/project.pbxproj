@@ -16,6 +16,7 @@
 		96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0A22E6447D00ABABBD /* DocDataVC2.swift */; };
 		96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */; };
 		96198A0F22E79FD600ABABBD /* DocRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */; };
+		96198A1122E7B9D400ABABBD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96198A1022E7B9D400ABABBD /* CustomTabBarController.swift */; };
 		961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51822C1E00800634B53 /* ChoseCityViewController.swift */; };
 		961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */; };
 		962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */; };
@@ -129,6 +130,7 @@
 		96198A0A22E6447D00ABABBD /* DocDataVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocDataVC2.swift; sourceTree = "<group>"; };
 		96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorRatingVC2.swift; sourceTree = "<group>"; };
 		96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocRatingTableViewCell.swift; sourceTree = "<group>"; };
+		96198A1022E7B9D400ABABBD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		961AD51822C1E00800634B53 /* ChoseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityViewController.swift; sourceTree = "<group>"; };
 		961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAreaTableViewCell.swift; sourceTree = "<group>"; };
 		962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAnimation.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				96198A0A22E6447D00ABABBD /* DocDataVC2.swift */,
 				96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */,
 				96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */,
+				96198A1022E7B9D400ABABBD /* CustomTabBarController.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				96AE091222981A0C00EEC5AC /* DoctorAppoinements.swift in Sources */,
 				9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */,
 				9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */,
+				96198A1122E7B9D400ABABBD /* CustomTabBarController.swift in Sources */,
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
 				96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */,
 				969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */,
