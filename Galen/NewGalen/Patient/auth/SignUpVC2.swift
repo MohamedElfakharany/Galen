@@ -38,6 +38,9 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        RegisterBtnOutlet.layer.cornerRadius = 5
+        RegisterBtnOutlet.clipsToBounds = true
+        
         UINavigationBar.appearance().barTintColor = .init(red: 13.0/255, green: 197.0/255, blue: 183.0/255, alpha: 1.0)
         UINavigationBar.appearance().isTranslucent = false
         

@@ -16,9 +16,13 @@ class SearchVC2: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource 
     var selectedSpeciality = String()
     var Speciality:[String] = []
     @IBOutlet weak var TxtfieldSearchSpeciality: UITextField!
+    @IBOutlet weak var BtnSearchOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        BtnSearchOutlet.layer.cornerRadius = 5
+        BtnSearchOutlet.clipsToBounds = true
         
         Speciality = ["طب الباطنة","طب الاسنان","طب الجراحة ","طب العيون","طب الاورام","طب الروماتزم"]
         PickerSpeciality = UIPickerView()

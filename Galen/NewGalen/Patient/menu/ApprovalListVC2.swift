@@ -1,5 +1,5 @@
 //
-//  SelectAreaVC2.swift
+//  ApprovalListVC2.swift
 //  Galen
 //
 //  Created by elfakharany on 7/24/19.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class SelectAreaVC2: UIViewController {
-    
+class ApprovalListVC2: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var GovesSearch: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
-    
+
+
 }

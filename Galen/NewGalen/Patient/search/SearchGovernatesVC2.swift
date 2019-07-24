@@ -25,9 +25,6 @@ class SearchGovernatesVC2: UIViewController , UITableViewDelegate,UITableViewDat
         self.tableView.dataSource = self
         
     }
-    @IBAction func BtnBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

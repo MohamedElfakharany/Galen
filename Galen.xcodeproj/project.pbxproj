@@ -69,6 +69,11 @@
 		967B322922E848F000A138C5 /* AuthSelectAreaVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B322822E848F000A138C5 /* AuthSelectAreaVC2.swift */; };
 		967B322B22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B322A22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift */; };
 		967B322D22E849F600A138C5 /* ReservationDoneVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B322C22E849F600A138C5 /* ReservationDoneVC2.swift */; };
+		967B322F22E8563500A138C5 /* ApprovalListVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B322E22E8563500A138C5 /* ApprovalListVC2.swift */; };
+		967B323122E8566600A138C5 /* ApprovalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323022E8566600A138C5 /* ApprovalListTableViewCell.swift */; };
+		967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323222E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift */; };
+		967B323522E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */; };
+		967B323722E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */; };
 		96847ECB22D3D70300C13396 /* FirstVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECA22D3D70300C13396 /* FirstVC2.swift */; };
 		96847ECD22D3D8CC00C13396 /* SignUpVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */; };
 		96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */; };
@@ -124,6 +129,9 @@
 		96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */; };
 		96EFBEDF22A1C70000DAA5AC /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EFBEDE22A1C70000DAA5AC /* PopUpViewController.swift */; };
 		96F49D972265E8890095D09E /* HospitalResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F49D962265E8890095D09E /* HospitalResetPasswordVC.swift */; };
+		96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B322E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift */; };
+		96F6E2B622E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */; };
+		96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */; };
 		D081CD13F3D2FC0E0F32E277 /* Pods_Galen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17438C3606885CCECC8DA425 /* Pods_Galen.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +210,11 @@
 		967B322822E848F000A138C5 /* AuthSelectAreaVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectAreaVC2.swift; sourceTree = "<group>"; };
 		967B322A22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReservationFromDocDataVC2.swift; sourceTree = "<group>"; };
 		967B322C22E849F600A138C5 /* ReservationDoneVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDoneVC2.swift; sourceTree = "<group>"; };
+		967B322E22E8563500A138C5 /* ApprovalListVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListVC2.swift; sourceTree = "<group>"; };
+		967B323022E8566600A138C5 /* ApprovalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListTableViewCell.swift; sourceTree = "<group>"; };
+		967B323222E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectCountryVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectGovsVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectAreaVC2TableViewCell.swift; sourceTree = "<group>"; };
 		96847ECA22D3D70300C13396 /* FirstVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC2.swift; sourceTree = "<group>"; };
 		96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC2.swift; sourceTree = "<group>"; };
 		96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +272,9 @@
 		96D41A2622380421001B0411 /* PatiantSearchForDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatiantSearchForDoctorVC.swift; sourceTree = "<group>"; };
 		96EFBEDE22A1C70000DAA5AC /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		96F49D962265E8890095D09E /* HospitalResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalResetPasswordVC.swift; sourceTree = "<group>"; };
+		96F6E2B322E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectCountryTableViewCell.swift; sourceTree = "<group>"; };
+		96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectGovsTableViewCell.swift; sourceTree = "<group>"; };
+		96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectAreaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,8 +306,11 @@
 				96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */,
 				9603F28622DB27CE00D85B52 /* ResetPasswordVC2.swift */,
 				967B322422E848C400A138C5 /* AuthSelectCountryVC2.swift */,
+				967B323222E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift */,
 				967B322622E848E100A138C5 /* AuthSelectGovsVC2.swift */,
+				967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */,
 				967B322822E848F000A138C5 /* AuthSelectAreaVC2.swift */,
+				967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -325,8 +344,13 @@
 				96198A1322E840FB00ABABBD /* UpdatePasswordVC2.swift */,
 				96198A1522E8411800ABABBD /* UpdateInfoVC2.swift */,
 				96198A1722E8468600ABABBD /* SelectCountryVC2.swift */,
+				96F6E2B322E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift */,
 				96198A1922E8469A00ABABBD /* SelectGovsVC2.swift */,
+				96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */,
 				96198A1B22E846AC00ABABBD /* SelectAreaVC2.swift */,
+				96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */,
+				967B322E22E8563500A138C5 /* ApprovalListVC2.swift */,
+				967B323022E8566600A138C5 /* ApprovalListTableViewCell.swift */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -828,9 +852,11 @@
 				9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */,
 				96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */,
 				967B322522E848C400A138C5 /* AuthSelectCountryVC2.swift in Sources */,
+				96F6E2B622E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift in Sources */,
 				964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */,
 				962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */,
 				96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */,
+				96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
 				963C61642275C6D900FB000A /* AreaModel.swift in Sources */,
@@ -842,12 +868,14 @@
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
 				96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */,
 				969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */,
+				967B323522E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift in Sources */,
 				96B81F0C227659D500E82CFC /* roundedTF.swift in Sources */,
 				9603F29322DB739900D85B52 /* SearchInsuranceResultVC2.swift in Sources */,
 				968EBEA522AC2700004AB3EB /* TicketUpdateViewController.swift in Sources */,
 				9635E8DE229DD9D6003E1BDC /* HospitalDoctorTableViewCell.swift in Sources */,
 				96B38C00224A5393000C132B /* moreVC.swift in Sources */,
 				9603F28722DB27CE00D85B52 /* ResetPasswordVC2.swift in Sources */,
+				967B322F22E8563500A138C5 /* ApprovalListVC2.swift in Sources */,
 				966ED99B2281B613005578B1 /* Extention+Strings.swift in Sources */,
 				9603F29122DB56CE00D85B52 /* SearchVC2.swift in Sources */,
 				96D41A2522380400001B0411 /* SearchSpecialityVC.swift in Sources */,
@@ -866,6 +894,7 @@
 				96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */,
 				96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */,
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
+				967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */,
 				96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */,
 				9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */,
 				967B322922E848F000A138C5 /* AuthSelectAreaVC2.swift in Sources */,
@@ -886,6 +915,7 @@
 				96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
+				96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */,
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
 				96D41A192238032D001B0411 /* gradintColor.swift in Sources */,
 				9635E8DA229C0736003E1BDC /* ShadowView.swift in Sources */,
@@ -900,6 +930,7 @@
 				96D41A21223803AC001B0411 /* restPasswordVC.swift in Sources */,
 				9663BBE0226FC33600CA5900 /* hospitalEditedDoctorData.swift in Sources */,
 				962925AC22CD032800F6C1A4 /* City.swift in Sources */,
+				967B323722E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift in Sources */,
 				96AE0914229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift in Sources */,
 				965B746B22BF6CE200431BA1 /* HospitalModel.swift in Sources */,
 				9663BBE7226FD59700CA5900 /* hospitalDoctorAppointments.swift in Sources */,
@@ -919,6 +950,7 @@
 				96198A1A22E8469A00ABABBD /* SelectGovsVC2.swift in Sources */,
 				9640589F22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift in Sources */,
 				968EBEA722AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift in Sources */,
+				967B323122E8566600A138C5 /* ApprovalListTableViewCell.swift in Sources */,
 				96D419F522380198001B0411 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
