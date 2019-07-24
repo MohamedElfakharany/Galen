@@ -25,6 +25,15 @@ class ApprovalListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // BTN reservation
+        BtnConfirmationOutlet.layer.cornerRadius = 5
+        BtnConfirmationOutlet.clipsToBounds = true
+        
+        BtnRejectOutlet.layer.cornerRadius = 5
+        BtnRejectOutlet.clipsToBounds = true
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,8 +42,10 @@ class ApprovalListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func BtnConfirmation(_ sender: Any) {
+        
     }
     
     @IBAction func BtnReject(_ sender: Any) {
+        
     }
 }

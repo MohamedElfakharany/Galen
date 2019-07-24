@@ -12,6 +12,8 @@ class SearchDocsResultsVC2: UIViewController {
     
     @IBOutlet weak var LblLocation: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

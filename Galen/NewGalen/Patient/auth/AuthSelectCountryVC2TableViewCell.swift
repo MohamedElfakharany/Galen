@@ -9,7 +9,10 @@
 import UIKit
 
 class AuthSelectCountryVC2TableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var LblCountry: UILabel!
+    @IBOutlet weak var BtnCheckOutlet: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

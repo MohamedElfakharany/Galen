@@ -74,6 +74,12 @@
 		967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323222E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift */; };
 		967B323522E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */; };
 		967B323722E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */; };
+		967F9BAB22E88A8F00E7008C /* FavoriteVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BAA22E88A8F00E7008C /* FavoriteVC2.swift */; };
+		967F9BAD22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BAC22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift */; };
+		967F9BAF22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BAE22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift */; };
+		967F9BB122E897D900E7008C /* menuInsuranceCompaniesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB022E897D900E7008C /* menuInsuranceCompaniesVC2.swift */; };
+		967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB222E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift */; };
+		967F9BB522E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB422E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift */; };
 		96847ECB22D3D70300C13396 /* FirstVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECA22D3D70300C13396 /* FirstVC2.swift */; };
 		96847ECD22D3D8CC00C13396 /* SignUpVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */; };
 		96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */; };
@@ -132,6 +138,7 @@
 		96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B322E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift */; };
 		96F6E2B622E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */; };
 		96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */; };
+		96F6E2BE22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2BD22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift */; };
 		D081CD13F3D2FC0E0F32E277 /* Pods_Galen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17438C3606885CCECC8DA425 /* Pods_Galen.framework */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +222,12 @@
 		967B323222E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectCountryVC2TableViewCell.swift; sourceTree = "<group>"; };
 		967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectGovsVC2TableViewCell.swift; sourceTree = "<group>"; };
 		967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSelectAreaVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967F9BAA22E88A8F00E7008C /* FavoriteVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC2.swift; sourceTree = "<group>"; };
+		967F9BAC22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967F9BAE22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInsuranceCompaniesVC2.swift; sourceTree = "<group>"; };
+		967F9BB022E897D900E7008C /* menuInsuranceCompaniesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuInsuranceCompaniesVC2.swift; sourceTree = "<group>"; };
+		967F9BB222E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuInsuranceCompaniesVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967F9BB422E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInsuranceCompaniesVC2TableViewCell.swift; sourceTree = "<group>"; };
 		96847ECA22D3D70300C13396 /* FirstVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC2.swift; sourceTree = "<group>"; };
 		96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC2.swift; sourceTree = "<group>"; };
 		96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +288,7 @@
 		96F6E2B322E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectCountryTableViewCell.swift; sourceTree = "<group>"; };
 		96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectGovsTableViewCell.swift; sourceTree = "<group>"; };
 		96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectAreaTableViewCell.swift; sourceTree = "<group>"; };
+		96F6E2BD22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocDataVC2CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +325,8 @@
 				967B323422E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift */,
 				967B322822E848F000A138C5 /* AuthSelectAreaVC2.swift */,
 				967B323622E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift */,
+				967F9BAE22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift */,
+				967F9BB422E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -329,6 +345,7 @@
 				96C8290922DFC30B00C3E27F /* SearchDocsResultsVC2.swift */,
 				96C8290B22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift */,
 				96198A0A22E6447D00ABABBD /* DocDataVC2.swift */,
+				96F6E2BD22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift */,
 				96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */,
 				96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */,
 				967B322A22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift */,
@@ -351,6 +368,8 @@
 				96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */,
 				967B322E22E8563500A138C5 /* ApprovalListVC2.swift */,
 				967B323022E8566600A138C5 /* ApprovalListTableViewCell.swift */,
+				967F9BB022E897D900E7008C /* menuInsuranceCompaniesVC2.swift */,
+				967F9BB222E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -468,6 +487,8 @@
 				96198A1222E840C900ABABBD /* menu */,
 				9603F28C22DB55D900D85B52 /* auth */,
 				9603F28D22DB55FC00D85B52 /* search */,
+				967F9BAA22E88A8F00E7008C /* FavoriteVC2.swift */,
+				967F9BAC22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -842,6 +863,7 @@
 				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
 				96C8290A22DFC30B00C3E27F /* SearchDocsResultsVC2.swift in Sources */,
 				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
+				967F9BB122E897D900E7008C /* menuInsuranceCompaniesVC2.swift in Sources */,
 				967B322D22E849F600A138C5 /* ReservationDoneVC2.swift in Sources */,
 				96198A0F22E79FD600ABABBD /* DocRatingTableViewCell.swift in Sources */,
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
@@ -865,6 +887,7 @@
 				9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */,
 				967B322722E848E100A138C5 /* AuthSelectGovsVC2.swift in Sources */,
 				96198A1122E7B9D400ABABBD /* CustomTabBarController.swift in Sources */,
+				96F6E2BE22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift in Sources */,
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
 				96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */,
 				969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */,
@@ -904,6 +927,7 @@
 				963C61682275D8AC00FB000A /* CameraHandler.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
+				967F9BB522E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift in Sources */,
 				96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */,
 				961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */,
 				96847ECB22D3D70300C13396 /* FirstVC2.swift in Sources */,
@@ -913,7 +937,9 @@
 				96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */,
 				96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */,
 				96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */,
+				967F9BAF22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
+				967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
 				96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */,
 				96D419F722380199001B0411 /* firstVC.swift in Sources */,
@@ -924,6 +950,7 @@
 				96BE84A5228A1682001A1B59 /* circleImage.swift in Sources */,
 				963C61652275C6D900FB000A /* CityModel.swift in Sources */,
 				96150D04227C847B0012D6D4 /* ICsNames.swift in Sources */,
+				967F9BAB22E88A8F00E7008C /* FavoriteVC2.swift in Sources */,
 				96D41A15223802D0001B0411 /* config.swift in Sources */,
 				9663BBDE226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift in Sources */,
 				9663BBE2226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift in Sources */,
@@ -945,6 +972,7 @@
 				96B38C18224B00D2000C132B /* MyAppoinmentsVC.swift in Sources */,
 				96198A1422E840FB00ABABBD /* UpdatePasswordVC2.swift in Sources */,
 				96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */,
+				967F9BAD22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift in Sources */,
 				965B746922BF447700431BA1 /* GovModel.swift in Sources */,
 				96D41A23223803CB001B0411 /* signUpVC.swift in Sources */,
 				96198A1A22E8469A00ABABBD /* SelectGovsVC2.swift in Sources */,

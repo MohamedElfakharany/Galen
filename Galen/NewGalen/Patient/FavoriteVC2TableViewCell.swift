@@ -1,15 +1,15 @@
 //
-//  SearchDocsResultsTableViewCell.swift
+//  FavoriteVC2TableViewCell.swift
 //  Galen
 //
-//  Created by elfakharany on 7/17/19.
+//  Created by elfakharany on 7/24/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class SearchDocsResultsTableViewCell: UITableViewCell {
-
+class FavoriteVC2TableViewCell: UITableViewCell {
+    
     @IBOutlet weak var DocImage: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
     @IBOutlet weak var LblDocRate: UILabel!
@@ -35,5 +35,5 @@ class SearchDocsResultsTableViewCell: UITableViewCell {
     }
     @IBAction func BtnReservation(_ sender: Any) {
     }
-    
+
 }

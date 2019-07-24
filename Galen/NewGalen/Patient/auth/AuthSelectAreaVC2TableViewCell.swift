@@ -10,6 +10,9 @@ import UIKit
 
 class AuthSelectAreaVC2TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var LblArea: UILabel!
+    @IBOutlet weak var BtnCheckOutlet: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

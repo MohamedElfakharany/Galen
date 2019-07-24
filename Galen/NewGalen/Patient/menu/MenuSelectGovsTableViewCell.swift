@@ -10,6 +10,10 @@ import UIKit
 
 class MenuSelectGovsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var LblGoves: UILabel!
+    @IBOutlet weak var BtnCheckOutlet: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

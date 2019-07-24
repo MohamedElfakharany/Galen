@@ -10,6 +10,9 @@ import UIKit
 
 class AuthSelectGovsVC2TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var LblGovs: UILabel!
+    @IBOutlet weak var BtnCheckOutlet: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

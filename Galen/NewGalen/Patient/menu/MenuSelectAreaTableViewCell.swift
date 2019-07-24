@@ -9,7 +9,9 @@
 import UIKit
 
 class MenuSelectAreaTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var LblArea: UILabel!
+    @IBOutlet weak var BtnCheckOutlet: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

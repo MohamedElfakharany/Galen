@@ -1,14 +1,14 @@
 //
-//  SearchSpecialityResultVC2.swift
+//  menuInsuranceCompaniesVC2.swift
 //  Galen
 //
-//  Created by elfakharany on 7/14/19.
+//  Created by elfakharany on 7/24/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class SearchInsuranceResultVC2: UIViewController ,UITableViewDelegate , UITableViewDataSource{
+class menuInsuranceCompaniesVC2: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
     
     var InsuranceArray:[InsurnaceCompanies] = []
@@ -38,7 +38,7 @@ class SearchInsuranceResultVC2: UIViewController ,UITableViewDelegate , UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MyCell = tableView.dequeueReusableCell(withIdentifier: "GovesCell", for: indexPath) as? InsuranceCompanyTableViewCell
+        let MyCell = tableView.dequeueReusableCell(withIdentifier: "menuInsuranceCell", for: indexPath) as? menuInsuranceCompaniesVC2TableViewCell
         
         MyCell?.inittiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: InsuranceArray[indexPath.row].name! )
         return MyCell!
@@ -55,7 +55,7 @@ class SearchInsuranceResultVC2: UIViewController ,UITableViewDelegate , UITableV
     }
 }
 
-extension SearchInsuranceResultVC2: UISearchBarDelegate {
+extension menuInsuranceCompaniesVC2: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //  SelectedSpetiality = SpecailityArray.filter{$0.name?.range(of: searchText, options: [.anchored, .caseInsensitive]) != nil }
         SelectedInsurance.removeAll()
@@ -72,3 +72,4 @@ extension SearchInsuranceResultVC2: UISearchBarDelegate {
         tableView.reloadData()
     }
 }
+

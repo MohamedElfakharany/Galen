@@ -1,5 +1,5 @@
 //
-//  ReservationDoneVC2.swift
+//  FavoriteVC2.swift
 //  Galen
 //
 //  Created by elfakharany on 7/24/19.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-class ReservationDoneVC2: UIViewController {
+class FavoriteVC2: UIViewController {
 
-    @IBOutlet weak var LblDocName: UILabel!
-    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
-    
     
 }

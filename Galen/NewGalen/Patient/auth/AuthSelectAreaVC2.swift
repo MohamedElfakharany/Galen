@@ -10,6 +10,10 @@ import UIKit
 
 class AuthSelectAreaVC2: UIViewController {
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var AreaSearch: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

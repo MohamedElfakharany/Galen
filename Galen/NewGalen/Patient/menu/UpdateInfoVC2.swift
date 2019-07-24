@@ -82,7 +82,6 @@ class UpdateInfoVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate
         
     }
     
-    
     @IBAction func showHideAction(_ sender: Any) {
         
         _ = TxtfieldPassword.text!;

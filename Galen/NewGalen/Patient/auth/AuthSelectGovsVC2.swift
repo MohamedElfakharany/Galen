@@ -10,6 +10,9 @@ import UIKit
 
 class AuthSelectGovsVC2: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var GovsSearch: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
