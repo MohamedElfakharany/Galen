@@ -777,6 +777,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 96D419E822380198001B0411;
 			productRefGroup = 96D419F222380198001B0411 /* Products */;
@@ -1131,7 +1132,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P53K27M38;
+				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1151,7 +1152,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P53K27M38;
+				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
