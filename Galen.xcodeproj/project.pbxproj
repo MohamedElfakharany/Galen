@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D00835322E8F2CE008B5DF7 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925B822D2CF4100F6C1A4 /* Cairo-Black.ttf */; };
+		2D00835422E8F2CE008B5DF7 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925B922D2CF4400F6C1A4 /* Cairo-Bold.ttf */; };
+		2D00835522E8F2CE008B5DF7 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BA22D2CF4800F6C1A4 /* Cairo-ExtraLight.ttf */; };
+		2D00835622E8F2CE008B5DF7 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BB22D2CF4C00F6C1A4 /* Cairo-Light.ttf */; };
+		2D00835722E8F2CE008B5DF7 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BC22D2CF4E00F6C1A4 /* Cairo-Regular.ttf */; };
+		2D00835822E8F2CE008B5DF7 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BD22D2CF5200F6C1A4 /* Cairo-SemiBold.ttf */; };
 		9603F28522D9D4A200D85B52 /* SignInVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28422D9D4A200D85B52 /* SignInVC2.swift */; };
 		9603F28722DB27CE00D85B52 /* ResetPasswordVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28622DB27CE00D85B52 /* ResetPasswordVC2.swift */; };
 		9603F28B22DB35DF00D85B52 /* CheckBoxBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28A22DB35DF00D85B52 /* CheckBoxBtn.swift */; };
@@ -794,6 +800,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D00835322E8F2CE008B5DF7 /* Cairo-Black.ttf in Resources */,
+				2D00835422E8F2CE008B5DF7 /* Cairo-Bold.ttf in Resources */,
+				2D00835522E8F2CE008B5DF7 /* Cairo-ExtraLight.ttf in Resources */,
+				2D00835622E8F2CE008B5DF7 /* Cairo-Light.ttf in Resources */,
+				2D00835722E8F2CE008B5DF7 /* Cairo-Regular.ttf in Resources */,
+				2D00835822E8F2CE008B5DF7 /* Cairo-SemiBold.ttf in Resources */,
 				96D41A022238019B001B0411 /* LaunchScreen.storyboard in Resources */,
 				962925B022D2C91000F6C1A4 /* Patient.storyboard in Resources */,
 				96AE090F229818C300EEC5AC /* Doctor.storyboard in Resources */,
