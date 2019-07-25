@@ -15,6 +15,8 @@ class FavoriteVC2: UIViewController {
         super.viewDidLoad()
         
         
+        
+        
     }
     
 }
