@@ -19,6 +19,7 @@ class FavoriteVC2TableViewCell: UITableViewCell {
     @IBOutlet weak var LblDocAvilability: UILabel!
     @IBOutlet weak var BtnReservationOutlet: UIButton!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
