@@ -38,8 +38,8 @@ class UpdateInfoVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UINavigationBar.appearance().barTintColor = .init(red: 13.0/255, green: 197.0/255, blue: 183.0/255, alpha: 1.0)
-        UINavigationBar.appearance().isTranslucent = false
+        RegisterBtnOutlet.clipsToBounds = true
+        RegisterBtnOutlet.layer.cornerRadius = 5
         
         imageuser.roundedImage()
         

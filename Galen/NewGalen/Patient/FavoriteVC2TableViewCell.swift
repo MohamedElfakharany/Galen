@@ -23,7 +23,7 @@ class FavoriteVC2TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        BtnReservationOutlet.layer.borderWidth = 5
+        BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
         
     }

@@ -14,6 +14,15 @@ class DocDataVC2CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var LblTicketPeriod: UILabel!
     @IBOutlet weak var BtnReservationOutlet: UIButton!
     
+    
+    override func awakeFromNib() {
+        self.awakeFromNib()
+        
+        BtnReservationOutlet.layer.cornerRadius = 5
+        BtnReservationOutlet.clipsToBounds = true
+        
+    }
+    
     @IBAction func BtnReservation(_ sender: Any) {
     }
 }

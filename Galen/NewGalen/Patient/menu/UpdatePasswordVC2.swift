@@ -17,11 +17,13 @@ class UpdatePasswordVC2: UIViewController {
     
     @IBOutlet weak var TxtfieldPassConfirmation: UITextField!
     
+    @IBOutlet weak var BtnSaveOutlet:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        BtnSaveOutlet.layer.cornerRadius = 5
+        BtnSaveOutlet.clipsToBounds = true
         
         iconClick = true
         iconClick2 = true
@@ -53,4 +55,9 @@ class UpdatePasswordVC2: UIViewController {
                 iconClick2 = true
             }
         }
+    
+    @IBAction func BtnSave(_ sender : Any){
+        
+    }
+    
     }

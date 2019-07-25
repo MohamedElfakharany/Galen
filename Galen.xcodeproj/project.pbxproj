@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D00835322E8F2CE008B5DF7 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925B822D2CF4100F6C1A4 /* Cairo-Black.ttf */; };
+		2D00835422E8F2CE008B5DF7 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925B922D2CF4400F6C1A4 /* Cairo-Bold.ttf */; };
+		2D00835522E8F2CE008B5DF7 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BA22D2CF4800F6C1A4 /* Cairo-ExtraLight.ttf */; };
+		2D00835622E8F2CE008B5DF7 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BB22D2CF4C00F6C1A4 /* Cairo-Light.ttf */; };
+		2D00835722E8F2CE008B5DF7 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BC22D2CF4E00F6C1A4 /* Cairo-Regular.ttf */; };
+		2D00835822E8F2CE008B5DF7 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 962925BD22D2CF5200F6C1A4 /* Cairo-SemiBold.ttf */; };
 		9603F28522D9D4A200D85B52 /* SignInVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28422D9D4A200D85B52 /* SignInVC2.swift */; };
 		9603F28722DB27CE00D85B52 /* ResetPasswordVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28622DB27CE00D85B52 /* ResetPasswordVC2.swift */; };
 		9603F28B22DB35DF00D85B52 /* CheckBoxBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9603F28A22DB35DF00D85B52 /* CheckBoxBtn.swift */; };
@@ -46,6 +52,7 @@
 		964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */; };
 		965B746922BF447700431BA1 /* GovModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746822BF447700431BA1 /* GovModel.swift */; };
 		965B746B22BF6CE200431BA1 /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746A22BF6CE200431BA1 /* HospitalModel.swift */; };
+		9662803522E9DDE60003E01B /* MyDatesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662803422E9DDE60003E01B /* MyDatesVC2.swift */; };
 		9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */; };
 		9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */; };
 		9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */; };
@@ -80,6 +87,9 @@
 		967F9BB122E897D900E7008C /* menuInsuranceCompaniesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB022E897D900E7008C /* menuInsuranceCompaniesVC2.swift */; };
 		967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB222E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift */; };
 		967F9BB522E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB422E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift */; };
+		967F9BB722E8EAB700E7008C /* MyDatesVC2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB622E8EAB700E7008C /* MyDatesVC2TableViewCell.swift */; };
+		967F9BB922E8EAD500E7008C /* MyDatesVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BB822E8EAD500E7008C /* MyDatesVC2.swift */; };
+		967F9BBB22E8F7A300E7008C /* EnterPersentageCodeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9BBA22E8F7A300E7008C /* EnterPersentageCodeVC2.swift */; };
 		96847ECB22D3D70300C13396 /* FirstVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECA22D3D70300C13396 /* FirstVC2.swift */; };
 		96847ECD22D3D8CC00C13396 /* SignUpVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */; };
 		96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */; };
@@ -194,6 +204,7 @@
 		964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocNameTableViewCell.swift; sourceTree = "<group>"; };
 		965B746822BF447700431BA1 /* GovModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovModel.swift; sourceTree = "<group>"; };
 		965B746A22BF6CE200431BA1 /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
+		9662803422E9DDE60003E01B /* MyDatesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDatesVC2.swift; path = "/Users/elfakharany/Desktop/newestGalen/Galen /Galen/NewGalen/Patient/MyDatesVC2.swift"; sourceTree = "<absolute>"; };
 		9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorSearchResultCell.swift; sourceTree = "<group>"; };
 		9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalFirstAfterLogin.swift; sourceTree = "<group>"; };
 		9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDashbored.swift; sourceTree = "<group>"; };
@@ -228,6 +239,9 @@
 		967F9BB022E897D900E7008C /* menuInsuranceCompaniesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuInsuranceCompaniesVC2.swift; sourceTree = "<group>"; };
 		967F9BB222E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuInsuranceCompaniesVC2TableViewCell.swift; sourceTree = "<group>"; };
 		967F9BB422E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInsuranceCompaniesVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967F9BB622E8EAB700E7008C /* MyDatesVC2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatesVC2TableViewCell.swift; sourceTree = "<group>"; };
+		967F9BB822E8EAD500E7008C /* MyDatesVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDatesVC2.swift; path = "/Users/elfakharany/Desktop/newestGalen/Galen /Galen/NewGalen/Patient/MyDatesVC2.swift"; sourceTree = "<absolute>"; };
+		967F9BBA22E8F7A300E7008C /* EnterPersentageCodeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPersentageCodeVC2.swift; sourceTree = "<group>"; };
 		96847ECA22D3D70300C13396 /* FirstVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC2.swift; sourceTree = "<group>"; };
 		96847ECC22D3D8CC00C13396 /* SignUpVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC2.swift; sourceTree = "<group>"; };
 		96879080225D87D2006FAE95 /* HomeTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +363,7 @@
 				96198A0C22E79E8B00ABABBD /* DoctorRatingVC2.swift */,
 				96198A0E22E79FD600ABABBD /* DocRatingTableViewCell.swift */,
 				967B322A22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift */,
+				967F9BBA22E8F7A300E7008C /* EnterPersentageCodeVC2.swift */,
 				967B322C22E849F600A138C5 /* ReservationDoneVC2.swift */,
 			);
 			path = search;
@@ -489,6 +504,9 @@
 				9603F28D22DB55FC00D85B52 /* search */,
 				967F9BAA22E88A8F00E7008C /* FavoriteVC2.swift */,
 				967F9BAC22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift */,
+				967F9BB822E8EAD500E7008C /* MyDatesVC2.swift */,
+				9662803422E9DDE60003E01B /* MyDatesVC2.swift */,
+				967F9BB622E8EAB700E7008C /* MyDatesVC2TableViewCell.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -777,6 +795,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 96D419E822380198001B0411;
 			productRefGroup = 96D419F222380198001B0411 /* Products */;
@@ -793,6 +812,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D00835322E8F2CE008B5DF7 /* Cairo-Black.ttf in Resources */,
+				2D00835422E8F2CE008B5DF7 /* Cairo-Bold.ttf in Resources */,
+				2D00835522E8F2CE008B5DF7 /* Cairo-ExtraLight.ttf in Resources */,
+				2D00835622E8F2CE008B5DF7 /* Cairo-Light.ttf in Resources */,
+				2D00835722E8F2CE008B5DF7 /* Cairo-Regular.ttf in Resources */,
+				2D00835822E8F2CE008B5DF7 /* Cairo-SemiBold.ttf in Resources */,
 				96D41A022238019B001B0411 /* LaunchScreen.storyboard in Resources */,
 				962925B022D2C91000F6C1A4 /* Patient.storyboard in Resources */,
 				96AE090F229818C300EEC5AC /* Doctor.storyboard in Resources */,
@@ -867,6 +892,7 @@
 				967B322D22E849F600A138C5 /* ReservationDoneVC2.swift in Sources */,
 				96198A0F22E79FD600ABABBD /* DocRatingTableViewCell.swift in Sources */,
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
+				967F9BB922E8EAD500E7008C /* MyDatesVC2.swift in Sources */,
 				964058A322DCD39700C32DD1 /* SearchGovernatesVC2.swift in Sources */,
 				96198A1C22E846AC00ABABBD /* SelectAreaVC2.swift in Sources */,
 				963C61662275C6D900FB000A /* SpecialityModel.swift in Sources */,
@@ -934,10 +960,12 @@
 				96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */,
 				96D41A1B22380345001B0411 /* RoundedEdges.swift in Sources */,
 				96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */,
+				967F9BB722E8EAB700E7008C /* MyDatesVC2TableViewCell.swift in Sources */,
 				96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */,
 				96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */,
 				96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */,
 				967F9BAF22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift in Sources */,
+				9662803522E9DDE60003E01B /* MyDatesVC2.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
@@ -954,6 +982,7 @@
 				96D41A15223802D0001B0411 /* config.swift in Sources */,
 				9663BBDE226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift in Sources */,
 				9663BBE2226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift in Sources */,
+				967F9BBB22E8F7A300E7008C /* EnterPersentageCodeVC2.swift in Sources */,
 				96D41A21223803AC001B0411 /* restPasswordVC.swift in Sources */,
 				9663BBE0226FC33600CA5900 /* hospitalEditedDoctorData.swift in Sources */,
 				962925AC22CD032800F6C1A4 /* City.swift in Sources */,
@@ -1131,7 +1160,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P53K27M38;
+				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1151,7 +1180,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P53K27M38;
+				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
