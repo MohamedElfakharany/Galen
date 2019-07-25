@@ -147,6 +147,10 @@
 		96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */; };
 		96F6E2BE22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6E2BD22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift */; };
 		D081CD13F3D2FC0E0F32E277 /* Pods_Galen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17438C3606885CCECC8DA425 /* Pods_Galen.framework */; };
+		DC2B336C22EA523C00ACC9B7 /* PatientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */; };
+		DC2B336E22EA52B100ACC9B7 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336D22EA52B100ACC9B7 /* Patient.swift */; };
+		DC2B337022EA52CA00ACC9B7 /* PatientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */; };
+		DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD6EBB22EA51E60031A855 /* PatientService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -297,6 +301,10 @@
 		96F6E2B522E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectGovsTableViewCell.swift; sourceTree = "<group>"; };
 		96F6E2B722E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectAreaTableViewCell.swift; sourceTree = "<group>"; };
 		96F6E2BD22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocDataVC2CollectionViewCell.swift; sourceTree = "<group>"; };
+		DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/PatientResponse.swift; sourceTree = "<group>"; };
+		DC2B336D22EA52B100ACC9B7 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Patient.swift; sourceTree = "<group>"; };
+		DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/PatientPresenter.swift; sourceTree = "<group>"; };
+		DCFD6EBB22EA51E60031A855 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/PatientService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,6 +635,7 @@
 		96D419F322380198001B0411 /* Galen */ = {
 			isa = PBXGroup;
 			children = (
+				DCFD6EB622EA51870031A855 /* Networking */,
 				96847EC822D3D6C100C13396 /* NewGalen */,
 				962925B522D2CE7100F6C1A4 /* Fontes */,
 				96AE0910229819E200EEC5AC /* Doctor */,
@@ -740,6 +749,49 @@
 				17438C3606885CCECC8DA425 /* Pods_Galen.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCFD6EB622EA51870031A855 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DCFD6EBA22EA51BA0031A855 /* Presenters */,
+				DCFD6EB922EA51B20031A855 /* Responses */,
+				DCFD6EB822EA51AB0031A855 /* Models */,
+				DCFD6EB722EA51A30031A855 /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DCFD6EB722EA51A30031A855 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DCFD6EBB22EA51E60031A855 /* PatientService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DCFD6EB822EA51AB0031A855 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B336D22EA52B100ACC9B7 /* Patient.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DCFD6EB922EA51B20031A855 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		DCFD6EBA22EA51BA0031A855 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -887,6 +939,7 @@
 				964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */,
 				962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */,
 				96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */,
+				DC2B336E22EA52B100ACC9B7 /* Patient.swift in Sources */,
 				96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
@@ -916,6 +969,7 @@
 				96CC56D622C0CACD00FB2223 /* SearchSpecialityResultVC.swift in Sources */,
 				9603F28B22DB35DF00D85B52 /* CheckBoxBtn.swift in Sources */,
 				9663BBF0226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift in Sources */,
+				DC2B336C22EA523C00ACC9B7 /* PatientResponse.swift in Sources */,
 				9663BBD8226FC24B00CA5900 /* hospitalAddDoctor.swift in Sources */,
 				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,
 				96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */,
@@ -926,6 +980,7 @@
 				96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */,
 				96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */,
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
+				DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */,
 				967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */,
 				96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */,
 				9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */,
@@ -989,6 +1044,7 @@
 				9640589F22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift in Sources */,
 				968EBEA722AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift in Sources */,
 				967B323122E8566600A138C5 /* ApprovalListTableViewCell.swift in Sources */,
+				DC2B337022EA52CA00ACC9B7 /* PatientPresenter.swift in Sources */,
 				96D419F522380198001B0411 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
