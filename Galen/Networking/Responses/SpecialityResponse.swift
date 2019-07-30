@@ -1,18 +1,18 @@
 //
-//  PatientResponse.swift
+//  SpecialityResponse.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/25/19.
+//  Created by Eslam Shaker  on 7/31/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class AllPatientsResponse: Mappable {
-   
+class AllSpecialitiesResponse: Mappable {
+    
     var done: Bool!
-    var list: [Patient]?
+    var list: [Speciality]?
     var count: Int!
     
     required init?(map: Map) {}

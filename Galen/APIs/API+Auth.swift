@@ -101,8 +101,8 @@ class API_Auth: NSObject {
         , password: String
         ,password_confirmation: String
         ,date_of_birth: String
-        ,insurance_company:InsurnaceCompanies
-        ,Gov : Governate
+        ,insurance_company:InsuranceCompany
+        ,Gov : City
         ,City : City
         ,gender:String
         ,genderID: Int

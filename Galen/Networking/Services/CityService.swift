@@ -1,27 +1,28 @@
 //
-//  PatientService.swift
+//  CityService.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/25/19.
+//  Created by Eslam Shaker  on 7/30/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum PatientService {
-    case allPatients
+enum CityService {
+    case allCities
+    case citiesForGov(govID: Int)
 }
 
-extension PatientService: TargetType {
+extension CityService: TargetType {
     
     
-    var baseURL: URL { return URL(string: "\(URLs.main)patients")! }
+    var baseURL: URL { return URL(string: "\(URLs.main)cities")! }
     
     
     var path: String {
         switch self {
-        case .allPatients:
+        case .allCities, .citiesForGov:
             return "/all"
         }
     }
@@ -29,15 +30,22 @@ extension PatientService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .allPatients:
+        case .allCities, .citiesForGov:
             return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .allPatients:
+        case .allCities:
             return .requestPlain
+        case .citiesForGov(let govID):
+            return .requestParameters(parameters: [
+                "where":
+                    [
+                    "gov.id"  : govID
+                    ]
+                ], encoding: JSONEncoding.default)
         }
     }
     

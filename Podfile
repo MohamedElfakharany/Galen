@@ -4,8 +4,7 @@ inhibit_all_warnings!
 
 target 'Galen' do
   
-  pod 'Moya'
-  pod 'Alamofire'
+  pod 'Moya-ObjectMapper', '~> 2.8'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'ADCountryPicker'

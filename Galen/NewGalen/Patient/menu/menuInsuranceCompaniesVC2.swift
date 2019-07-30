@@ -11,8 +11,8 @@ import UIKit
 class menuInsuranceCompaniesVC2: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
     
-    var InsuranceArray:[InsurnaceCompanies] = []
-    var SelectedInsurance:[InsurnaceCompanies] = []
+    var InsuranceArray:[InsuranceCompany] = []
+    var SelectedInsurance:[InsuranceCompany] = []
     var searching = false
     
     @IBOutlet weak var tableView: UITableView!

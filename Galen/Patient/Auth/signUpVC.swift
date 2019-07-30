@@ -14,8 +14,8 @@ import ADCountryPicker
 class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate ,ADCountryPickerDelegate  {
     
     var pickerView = UIPickerView()
-    var ICs:[InsurnaceCompanies] = []
-    var Govs:[Governate] = []
+    var ICs:[InsuranceCompany] = []
+    var Govs:[City] = []
     var Cities:[City] = []
     var genders = ["Male","Female"]
     var selectedTxtField = UITextField()
@@ -174,7 +174,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
                 do{
                     let datas = try json!["list"]?.rawData()
                     print("datas\(datas)")
-                    let insurnaceCompanies = try? newJSONDecoder().decode([InsurnaceCompanies].self, from: datas!)
+                    let insurnaceCompanies = try? newJSONDecoder().decode([InsuranceCompany].self, from: datas!)
                     self.ICs = insurnaceCompanies!
                     print("ICS \(self.ICs)")
                 }catch{
@@ -195,7 +195,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
                 let swiftyJsonVar = JSON(responseData.result.value!).dictionary
                 do {
                     let resData = try swiftyJsonVar?["list"]!.rawData() 
-                    let ReturnedGoves = try? newJSONDecoder().decode([Governate].self, from: resData!)
+                    let ReturnedGoves = try? newJSONDecoder().decode([City].self, from: resData!)
                     self.Govs = ReturnedGoves!
                     print("Govs\(self.Govs)")
                     }catch{

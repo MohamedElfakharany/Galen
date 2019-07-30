@@ -11,8 +11,8 @@ import UIKit
 class SearchGovernatesVC2: UIViewController , UITableViewDelegate,UITableViewDataSource{
 
     
-    var GovesArray:[InsurnaceCompanies] = []
-    var SelectedGoves:[InsurnaceCompanies] = []
+    var GovesArray:[InsuranceCompany] = []
+    var SelectedGoves:[InsuranceCompany] = []
     var searching = false
     
     @IBOutlet weak var tableView: UITableView!

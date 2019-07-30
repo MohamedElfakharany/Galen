@@ -40,25 +40,28 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
     @IBOutlet weak var TxtFieldDocUserName: UITextField!
     @IBOutlet weak var TxtFieldDocPassWord: UITextField!
   
-    var CitiesArray = [Gov]()
+    var CitiesArray = [City]()
     var TestCityArray =  [[String:AnyObject]]()
     var AreaArray = [Area]()
     var TestAreaArray =  [[String:AnyObject]]()
     var SpecailityArray = [Speciality]()
-    var TestSpecailityArray =  [[String:AnyObject]]()
     var ChosenGovId : Int = 0
     var ChosenArea : Area?
-    var ChosenCity : Gov?
+    var ChosenCity : City?
     var ChosenSpeciality : Speciality?
     var ChosenDoctor : Doctor?
+    
+    var specialityPresenter: SpecialityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        specialityPresenter = SpecialityPresenter(delegate: self)
+        
         DocStatusPicker = ["active","unactive"]
         DocSpecialties = ["General Surgery","Neurosurgery","Radiology","Emergency Medicine","Optometrists"]
         imageText()
-        Fetchspecialty()
+        specialityPresenter.getAllSpecialities()
         FetchCities()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
@@ -145,19 +148,6 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         }
     }
     
-    func Fetchspecialty() {
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "",
-            "Content-Type" : "application/json"
-        ]
-        
-        Alamofire.request(URLs.allSpeciality, method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil){
-                
-            }
-        }
-    }
-    
     
     func FetchCities() {
         let header : [String: String] = [
@@ -172,7 +162,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
                 if let resData = swiftyJsonVar["data"].arrayObject {
                     self.TestCityArray =  resData as! [[String:AnyObject]]
                     for NextCity in self.TestCityArray {
-                        let ReceivedCity = Gov.init(
+                        let ReceivedCity = City.init(
                             _name: NextCity["name"] as! String
                             , _id: NextCity["id"] as! Int )
                     
@@ -215,7 +205,7 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         
     
     
-    func AddDoctor( name : String, nathional_id : String, active : String ,  specialty : Speciality , gov : Gov , city : Area , address : String , phone : String , mobile : String , whatsapp : String , email : String , notes : String ,  img : UIImage , username : String , password : String , completion: @escaping (_ error: Error?, _ success: Bool, _ data: Doctor?)->Void) {
+    func AddDoctor( name : String, nathional_id : String, active : String ,  specialty : Speciality , gov : City , city : Area , address : String , phone : String , mobile : String , whatsapp : String , email : String , notes : String ,  img : UIImage , username : String , password : String , completion: @escaping (_ error: Error?, _ success: Bool, _ data: Doctor?)->Void) {
         
         
         let header : [String: String] = [
@@ -349,5 +339,19 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
         }
     }
     
+}
+
+
+
+extension hospitalAddDoctor : SpecialityDelegate {
+    
+    func getAllSpecialitiesDidSuccess() {
+        SpecailityArray = specialityPresenter.specialities
+    }
+    
+    func getAllSpecialitiesDidFail(_ message: String) {
+        print(message)
+    }
+
 }
 

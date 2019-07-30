@@ -31,18 +31,12 @@
 		961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51822C1E00800634B53 /* ChoseCityViewController.swift */; };
 		961AD51B22C2055800634B53 /* CityAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */; };
 		962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */; };
-		962925AC22CD032800F6C1A4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925AB22CD032800F6C1A4 /* City.swift */; };
-		962925AE22CD034300F6C1A4 /* insurnanceCompineis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925AD22CD034300F6C1A4 /* insurnanceCompineis.swift */; };
 		962925B022D2C91000F6C1A4 /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962925AF22D2C91000F6C1A4 /* Patient.storyboard */; };
 		962925B422D2CE6800F6C1A4 /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962925B322D2CE6800F6C1A4 /* UIFont+Additions.swift */; };
 		9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E8D5229C057C003E1BDC /* AppointmentDetailsVC.swift */; };
 		9635E8DA229C0736003E1BDC /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E8D9229C0736003E1BDC /* ShadowView.swift */; };
 		9635E8DC229C2E6E003E1BDC /* DoctorAndAppointment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9635E8DB229C2E6E003E1BDC /* DoctorAndAppointment.xib */; };
 		9635E8DE229DD9D6003E1BDC /* HospitalDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635E8DD229DD9D6003E1BDC /* HospitalDoctorTableViewCell.swift */; };
-		963C61632275C6D900FB000A /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C615F2275C6D900FB000A /* DoctorModel.swift */; };
-		963C61642275C6D900FB000A /* AreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C61602275C6D900FB000A /* AreaModel.swift */; };
-		963C61652275C6D900FB000A /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C61612275C6D900FB000A /* CityModel.swift */; };
-		963C61662275C6D900FB000A /* SpecialityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C61622275C6D900FB000A /* SpecialityModel.swift */; };
 		963C61682275D8AC00FB000A /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C61672275D8AC00FB000A /* CameraHandler.swift */; };
 		9640589F22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640589E22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift */; };
 		964058A122DCCB4E00C32DD1 /* searchTabVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A022DCCB4E00C32DD1 /* searchTabVC2.swift */; };
@@ -50,8 +44,6 @@
 		964058A522DCD63200C32DD1 /* SelectGovsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */; };
 		964058A722DEAC9E00C32DD1 /* SearchDocNameVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */; };
 		964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */; };
-		965B746922BF447700431BA1 /* GovModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746822BF447700431BA1 /* GovModel.swift */; };
-		965B746B22BF6CE200431BA1 /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B746A22BF6CE200431BA1 /* HospitalModel.swift */; };
 		9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */; };
 		9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */; };
 		9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */; };
@@ -93,13 +85,11 @@
 		968EBEA522AC2700004AB3EB /* TicketUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBEA422AC2700004AB3EB /* TicketUpdateViewController.swift */; };
 		968EBEA722AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EBEA622AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift */; };
 		969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A9994229020F20066BF36 /* ExJsonToString.swift */; };
-		96A22810228B60F400A988AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A2280F228B60F400A988AA /* User.swift */; };
 		96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6516222C102D10014556F /* specialityTableViewCell.swift */; };
 		96AE090F229818C300EEC5AC /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AE090E229818C300EEC5AC /* Doctor.storyboard */; };
 		96AE091222981A0C00EEC5AC /* DoctorAppoinements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE091122981A0C00EEC5AC /* DoctorAppoinements.swift */; };
 		96AE0914229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE0913229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift */; };
 		96AE091622982BAA00EEC5AC /* SearchNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE091522982BAA00EEC5AC /* SearchNib.xib */; };
-		96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE091722982FC400EEC5AC /* TicketModel.swift */; };
 		96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AFFD0D2265E1C100135291 /* HospitalFirstVC.swift */; };
 		96AFFD102265E2E600135291 /* HospitalSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AFFD0F2265E2E600135291 /* HospitalSignInVC.swift */; };
 		96B38C00224A5393000C132B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B38BFF224A5393000C132B /* moreVC.swift */; };
@@ -150,6 +140,27 @@
 		DC2B336C22EA523C00ACC9B7 /* PatientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */; };
 		DC2B336E22EA52B100ACC9B7 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336D22EA52B100ACC9B7 /* Patient.swift */; };
 		DC2B337022EA52CA00ACC9B7 /* PatientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */; };
+		DC493CFF22F0CB0E0086B64B /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493CFE22F0CB0E0086B64B /* InsuranceCompany.swift */; };
+		DC493D0122F0D0540086B64B /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0022F0D0540086B64B /* CityService.swift */; };
+		DC493D0322F0D0730086B64B /* GovernorateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0222F0D0730086B64B /* GovernorateService.swift */; };
+		DC493D0522F0D1520086B64B /* CityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0422F0D1520086B64B /* CityResponse.swift */; };
+		DC493D0722F0D1980086B64B /* GovernorateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0622F0D1980086B64B /* GovernorateResponse.swift */; };
+		DC493D0922F0D2720086B64B /* CityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0822F0D2720086B64B /* CityPresenter.swift */; };
+		DC493D0B22F0D2860086B64B /* GovernoratePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0A22F0D2860086B64B /* GovernoratePresenter.swift */; };
+		DC493D0D22F0D2E10086B64B /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0C22F0D2E10086B64B /* Area.swift */; };
+		DC493D0F22F0D35B0086B64B /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D0E22F0D35B0086B64B /* test.swift */; };
+		DC493D1122F10C230086B64B /* SpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D1022F10C230086B64B /* SpecialityService.swift */; };
+		DC493D1322F10C810086B64B /* SpecialityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D1222F10C810086B64B /* SpecialityResponse.swift */; };
+		DC493D1522F10CBA0086B64B /* SpecialityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC493D1422F10CBA0086B64B /* SpecialityPresenter.swift */; };
+		DC67723622ECEE9F00EF79E1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723522ECEE9F00EF79E1 /* UserInfo.swift */; };
+		DC67723822ECFEB200EF79E1 /* Specialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723722ECFEB200EF79E1 /* Specialty.swift */; };
+		DC67723A22ED01E600EF79E1 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723922ED01E600EF79E1 /* Review.swift */; };
+		DC67723C22ED042500EF79E1 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723B22ED042500EF79E1 /* Hospital.swift */; };
+		DC69D47422EA5FAE000BA5BD /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47322EA5FAE000BA5BD /* Role.swift */; };
+		DC69D47622ECBFB1000BA5BD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47522ECBFB1000BA5BD /* Profile.swift */; };
+		DC69D47822ECC56A000BA5BD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47722ECC56A000BA5BD /* Gender.swift */; };
+		DC69D47C22ECC6F7000BA5BD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47B22ECC6F7000BA5BD /* City.swift */; };
+		DC69D47E22ECD078000BA5BD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47D22ECD078000BA5BD /* Doctor.swift */; };
 		DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD6EBB22EA51E60031A855 /* PatientService.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,8 +186,6 @@
 		961AD51822C1E00800634B53 /* ChoseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseCityViewController.swift; sourceTree = "<group>"; };
 		961AD51A22C2055800634B53 /* CityAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAreaTableViewCell.swift; sourceTree = "<group>"; };
 		962925A922CB8E2A00F6C1A4 /* launchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchAnimation.swift; sourceTree = "<group>"; };
-		962925AB22CD032800F6C1A4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		962925AD22CD034300F6C1A4 /* insurnanceCompineis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insurnanceCompineis.swift; sourceTree = "<group>"; };
 		962925AF22D2C91000F6C1A4 /* Patient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Patient.storyboard; sourceTree = "<group>"; };
 		962925B322D2CE6800F6C1A4 /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		962925B822D2CF4100F6C1A4 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
@@ -192,10 +201,6 @@
 		9635E8D9229C0736003E1BDC /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9635E8DB229C2E6E003E1BDC /* DoctorAndAppointment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorAndAppointment.xib; sourceTree = "<group>"; };
 		9635E8DD229DD9D6003E1BDC /* HospitalDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDoctorTableViewCell.swift; sourceTree = "<group>"; };
-		963C615F2275C6D900FB000A /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
-		963C61602275C6D900FB000A /* AreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaModel.swift; sourceTree = "<group>"; };
-		963C61612275C6D900FB000A /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
-		963C61622275C6D900FB000A /* SpecialityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialityModel.swift; sourceTree = "<group>"; };
 		963C61672275D8AC00FB000A /* CameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		9640589E22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyTableViewCell.swift; sourceTree = "<group>"; };
 		964058A022DCCB4E00C32DD1 /* searchTabVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTabVC2.swift; sourceTree = "<group>"; };
@@ -203,8 +208,6 @@
 		964058A422DCD63200C32DD1 /* SelectGovsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGovsTableViewCell.swift; sourceTree = "<group>"; };
 		964058A622DEAC9E00C32DD1 /* SearchDocNameVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocNameVC2.swift; sourceTree = "<group>"; };
 		964058A822DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDocNameTableViewCell.swift; sourceTree = "<group>"; };
-		965B746822BF447700431BA1 /* GovModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovModel.swift; sourceTree = "<group>"; };
-		965B746A22BF6CE200431BA1 /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
 		9662E62A226B7CD500145A62 /* doctorSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorSearchResultCell.swift; sourceTree = "<group>"; };
 		9663BBCE226FBE1100CA5900 /* HospitalFirstAfterLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalFirstAfterLogin.swift; sourceTree = "<group>"; };
 		9663BBD0226FBE5200CA5900 /* HospitalDashbored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDashbored.swift; sourceTree = "<group>"; };
@@ -246,13 +249,11 @@
 		968EBEA422AC2700004AB3EB /* TicketUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketUpdateViewController.swift; sourceTree = "<group>"; };
 		968EBEA622AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTicketDetailsViewController.swift; sourceTree = "<group>"; };
 		969A9994229020F20066BF36 /* ExJsonToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExJsonToString.swift; sourceTree = "<group>"; };
-		96A2280F228B60F400A988AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		96A6516222C102D10014556F /* specialityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = specialityTableViewCell.swift; sourceTree = "<group>"; };
 		96AE090E229818C300EEC5AC /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
 		96AE091122981A0C00EEC5AC /* DoctorAppoinements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAppoinements.swift; sourceTree = "<group>"; };
 		96AE0913229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppoinemnetCollectionViewCell.swift; sourceTree = "<group>"; };
 		96AE091522982BAA00EEC5AC /* SearchNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNib.xib; sourceTree = "<group>"; };
-		96AE091722982FC400EEC5AC /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 		96AFFD0D2265E1C100135291 /* HospitalFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalFirstVC.swift; sourceTree = "<group>"; };
 		96AFFD0F2265E2E600135291 /* HospitalSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalSignInVC.swift; sourceTree = "<group>"; };
 		96B38BFF224A5393000C132B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
@@ -304,6 +305,27 @@
 		DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/PatientResponse.swift; sourceTree = "<group>"; };
 		DC2B336D22EA52B100ACC9B7 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Patient.swift; sourceTree = "<group>"; };
 		DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/PatientPresenter.swift; sourceTree = "<group>"; };
+		DC493CFE22F0CB0E0086B64B /* InsuranceCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsuranceCompany.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/InsuranceCompany.swift; sourceTree = "<group>"; };
+		DC493D0022F0D0540086B64B /* CityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/CityService.swift; sourceTree = "<group>"; };
+		DC493D0222F0D0730086B64B /* GovernorateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GovernorateService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/GovernorateService.swift; sourceTree = "<group>"; };
+		DC493D0422F0D1520086B64B /* CityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/CityResponse.swift; sourceTree = "<group>"; };
+		DC493D0622F0D1980086B64B /* GovernorateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GovernorateResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/GovernorateResponse.swift; sourceTree = "<group>"; };
+		DC493D0822F0D2720086B64B /* CityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/CityPresenter.swift; sourceTree = "<group>"; };
+		DC493D0A22F0D2860086B64B /* GovernoratePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GovernoratePresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/GovernoratePresenter.swift; sourceTree = "<group>"; };
+		DC493D0C22F0D2E10086B64B /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Area.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Area.swift; sourceTree = "<group>"; };
+		DC493D0E22F0D35B0086B64B /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = test.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/test.swift; sourceTree = "<group>"; };
+		DC493D1022F10C230086B64B /* SpecialityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecialityService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/SpecialityService.swift; sourceTree = "<group>"; };
+		DC493D1222F10C810086B64B /* SpecialityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecialityResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/SpecialityResponse.swift; sourceTree = "<group>"; };
+		DC493D1422F10CBA0086B64B /* SpecialityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecialityPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/SpecialityPresenter.swift; sourceTree = "<group>"; };
+		DC67723522ECEE9F00EF79E1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/UserInfo.swift; sourceTree = "<group>"; };
+		DC67723722ECFEB200EF79E1 /* Specialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Specialty.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Specialty.swift; sourceTree = "<group>"; };
+		DC67723922ED01E600EF79E1 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Review.swift; sourceTree = "<group>"; };
+		DC67723B22ED042500EF79E1 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Hospital.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Hospital.swift; sourceTree = "<group>"; };
+		DC69D47322EA5FAE000BA5BD /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Role.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Role.swift; sourceTree = "<group>"; };
+		DC69D47522ECBFB1000BA5BD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Profile.swift; sourceTree = "<group>"; };
+		DC69D47722ECC56A000BA5BD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gender.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Gender.swift; sourceTree = "<group>"; };
+		DC69D47B22ECC6F7000BA5BD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = City.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/City.swift; sourceTree = "<group>"; };
+		DC69D47D22ECD078000BA5BD /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Doctor.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Doctor.swift; sourceTree = "<group>"; };
 		DCFD6EBB22EA51E60031A855 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/PatientService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -510,23 +532,6 @@
 			path = Patient;
 			sourceTree = "<group>";
 		};
-		96A2280E228B5D6900A988AA /* model */ = {
-			isa = PBXGroup;
-			children = (
-				963C61602275C6D900FB000A /* AreaModel.swift */,
-				963C61612275C6D900FB000A /* CityModel.swift */,
-				963C615F2275C6D900FB000A /* DoctorModel.swift */,
-				963C61622275C6D900FB000A /* SpecialityModel.swift */,
-				96A2280F228B60F400A988AA /* User.swift */,
-				96AE091722982FC400EEC5AC /* TicketModel.swift */,
-				965B746822BF447700431BA1 /* GovModel.swift */,
-				965B746A22BF6CE200431BA1 /* HospitalModel.swift */,
-				962925AB22CD032800F6C1A4 /* City.swift */,
-				962925AD22CD034300F6C1A4 /* insurnanceCompineis.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
 		96AE0910229819E200EEC5AC /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,7 +644,6 @@
 				96847EC822D3D6C100C13396 /* NewGalen */,
 				962925B522D2CE7100F6C1A4 /* Fontes */,
 				96AE0910229819E200EEC5AC /* Doctor */,
-				96A2280E228B5D6900A988AA /* model */,
 				9662E625226B75BA00145A62 /* cellsClass */,
 				96D41A0C2238021F001B0411 /* URLs */,
 				96D41A0A22380204001B0411 /* Extentions */,
@@ -766,6 +770,9 @@
 			isa = PBXGroup;
 			children = (
 				DCFD6EBB22EA51E60031A855 /* PatientService.swift */,
+				DC493D0022F0D0540086B64B /* CityService.swift */,
+				DC493D0222F0D0730086B64B /* GovernorateService.swift */,
+				DC493D1022F10C230086B64B /* SpecialityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -774,6 +781,18 @@
 			isa = PBXGroup;
 			children = (
 				DC2B336D22EA52B100ACC9B7 /* Patient.swift */,
+				DC69D47322EA5FAE000BA5BD /* Role.swift */,
+				DC69D47522ECBFB1000BA5BD /* Profile.swift */,
+				DC69D47722ECC56A000BA5BD /* Gender.swift */,
+				DC69D47B22ECC6F7000BA5BD /* City.swift */,
+				DC69D47D22ECD078000BA5BD /* Doctor.swift */,
+				DC67723522ECEE9F00EF79E1 /* UserInfo.swift */,
+				DC67723722ECFEB200EF79E1 /* Specialty.swift */,
+				DC67723922ED01E600EF79E1 /* Review.swift */,
+				DC67723B22ED042500EF79E1 /* Hospital.swift */,
+				DC493CFE22F0CB0E0086B64B /* InsuranceCompany.swift */,
+				DC493D0C22F0D2E10086B64B /* Area.swift */,
+				DC493D0E22F0D35B0086B64B /* test.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -782,6 +801,9 @@
 			isa = PBXGroup;
 			children = (
 				DC2B336B22EA523C00ACC9B7 /* PatientResponse.swift */,
+				DC493D0422F0D1520086B64B /* CityResponse.swift */,
+				DC493D0622F0D1980086B64B /* GovernorateResponse.swift */,
+				DC493D1222F10C810086B64B /* SpecialityResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -790,6 +812,9 @@
 			isa = PBXGroup;
 			children = (
 				DC2B336F22EA52CA00ACC9B7 /* PatientPresenter.swift */,
+				DC493D0822F0D2720086B64B /* CityPresenter.swift */,
+				DC493D0A22F0D2860086B64B /* GovernoratePresenter.swift */,
+				DC493D1422F10CBA0086B64B /* SpecialityPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -922,6 +947,7 @@
 				964058A722DEAC9E00C32DD1 /* SearchDocNameVC2.swift in Sources */,
 				9603F28522D9D4A200D85B52 /* SignInVC2.swift in Sources */,
 				9663BBEA226FD62D00CA5900 /* hospitalView_ModifyDoctorAppointments.swift in Sources */,
+				DC69D47E22ECD078000BA5BD /* Doctor.swift in Sources */,
 				96C8290A22DFC30B00C3E27F /* SearchDocsResultsVC2.swift in Sources */,
 				9663BBEC226FD66E00CA5900 /* hospitalDoctorAppointmentsAfterModify.swift in Sources */,
 				967F9BB122E897D900E7008C /* menuInsuranceCompaniesVC2.swift in Sources */,
@@ -930,10 +956,10 @@
 				96D41A1F22380396001B0411 /* LoginVC.swift in Sources */,
 				964058A322DCD39700C32DD1 /* SearchGovernatesVC2.swift in Sources */,
 				96198A1C22E846AC00ABABBD /* SelectAreaVC2.swift in Sources */,
-				963C61662275C6D900FB000A /* SpecialityModel.swift in Sources */,
-				96A22810228B60F400A988AA /* User.swift in Sources */,
 				9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */,
 				96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */,
+				DC493D1522F10CBA0086B64B /* SpecialityPresenter.swift in Sources */,
+				DC493D1322F10C810086B64B /* SpecialityResponse.swift in Sources */,
 				967B322522E848C400A138C5 /* AuthSelectCountryVC2.swift in Sources */,
 				96F6E2B622E85C280091AEC9 /* MenuSelectGovsTableViewCell.swift in Sources */,
 				964058A922DEB1B000C32DD1 /* SearchDocNameTableViewCell.swift in Sources */,
@@ -943,19 +969,22 @@
 				96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
 				96D41A13223802AF001B0411 /* showAlert.swift in Sources */,
-				963C61642275C6D900FB000A /* AreaModel.swift in Sources */,
 				96AE091222981A0C00EEC5AC /* DoctorAppoinements.swift in Sources */,
+				DC493D0D22F0D2E10086B64B /* Area.swift in Sources */,
 				9663BBCF226FBE1100CA5900 /* HospitalFirstAfterLogin.swift in Sources */,
 				9663BBD4226FBEFE00CA5900 /* hospitalAdminPage.swift in Sources */,
 				967B322722E848E100A138C5 /* AuthSelectGovsVC2.swift in Sources */,
 				96198A1122E7B9D400ABABBD /* CustomTabBarController.swift in Sources */,
 				96F6E2BE22E862CE0091AEC9 /* DocDataVC2CollectionViewCell.swift in Sources */,
 				96879081225D87D2006FAE95 /* HomeTabbarViewController.swift in Sources */,
+				DC493D0922F0D2720086B64B /* CityPresenter.swift in Sources */,
 				96A6516322C102D10014556F /* specialityTableViewCell.swift in Sources */,
 				969A9995229020F20066BF36 /* ExJsonToString.swift in Sources */,
 				967B323522E8588300A138C5 /* AuthSelectGovsVC2TableViewCell.swift in Sources */,
 				96B81F0C227659D500E82CFC /* roundedTF.swift in Sources */,
 				9603F29322DB739900D85B52 /* SearchInsuranceResultVC2.swift in Sources */,
+				DC69D47422EA5FAE000BA5BD /* Role.swift in Sources */,
+				DC67723C22ED042500EF79E1 /* Hospital.swift in Sources */,
 				968EBEA522AC2700004AB3EB /* TicketUpdateViewController.swift in Sources */,
 				9635E8DE229DD9D6003E1BDC /* HospitalDoctorTableViewCell.swift in Sources */,
 				96B38C00224A5393000C132B /* moreVC.swift in Sources */,
@@ -967,10 +996,13 @@
 				967B322B22E849CE00A138C5 /* ConfirmReservationFromDocDataVC2.swift in Sources */,
 				96AFFD102265E2E600135291 /* HospitalSignInVC.swift in Sources */,
 				96CC56D622C0CACD00FB2223 /* SearchSpecialityResultVC.swift in Sources */,
+				DC493D0522F0D1520086B64B /* CityResponse.swift in Sources */,
 				9603F28B22DB35DF00D85B52 /* CheckBoxBtn.swift in Sources */,
+				DC67723822ECFEB200EF79E1 /* Specialty.swift in Sources */,
 				9663BBF0226FD6D000CA5900 /* HospitalCreateAccountDoctor.swift in Sources */,
 				DC2B336C22EA523C00ACC9B7 /* PatientResponse.swift in Sources */,
 				9663BBD8226FC24B00CA5900 /* hospitalAddDoctor.swift in Sources */,
+				DC69D47C22ECC6F7000BA5BD /* City.swift in Sources */,
 				96B38C21224B0550000C132B /* ApprovalListVC.swift in Sources */,
 				96B38C13224AFFCA000C132B /* CompleteTheBookingVC.swift in Sources */,
 				96EFBEDF22A1C70000DAA5AC /* PopUpViewController.swift in Sources */,
@@ -982,6 +1014,7 @@
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
 				DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */,
 				967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */,
+				DC493D0F22F0D35B0086B64B /* test.swift in Sources */,
 				96AFFD0E2265E1C100135291 /* HospitalFirstVC.swift in Sources */,
 				9663BBD1226FBE5200CA5900 /* HospitalDashbored.swift in Sources */,
 				967B322922E848F000A138C5 /* AuthSelectAreaVC2.swift in Sources */,
@@ -998,11 +1031,15 @@
 				96B38C1F224B01C5000C132B /* changePasswordVC.swift in Sources */,
 				96D41A1B22380345001B0411 /* RoundedEdges.swift in Sources */,
 				96B38C0F224AC47E000C132B /* doctorDataVC.swift in Sources */,
+				DC493D1122F10C230086B64B /* SpecialityService.swift in Sources */,
+				DC493D0722F0D1980086B64B /* GovernorateResponse.swift in Sources */,
+				DC69D47622ECBFB1000BA5BD /* Profile.swift in Sources */,
 				967F9BB722E8EAB700E7008C /* MyDatesVC2TableViewCell.swift in Sources */,
 				96CC56D222BFF2D300FB2223 /* searchCityGovVC.swift in Sources */,
-				96AE091822982FC400EEC5AC /* TicketModel.swift in Sources */,
+				DC493D0122F0D0540086B64B /* CityService.swift in Sources */,
 				96C8290C22DFC32D00C3E27F /* SearchDocsResultsTableViewCell.swift in Sources */,
 				967F9BAF22E897B100E7008C /* AuthInsuranceCompaniesVC2.swift in Sources */,
+				DC493D0B22F0D2860086B64B /* GovernoratePresenter.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
@@ -1013,35 +1050,34 @@
 				962925B422D2CE6800F6C1A4 /* UIFont+Additions.swift in Sources */,
 				96198A1622E8411800ABABBD /* UpdateInfoVC2.swift in Sources */,
 				96BE84A5228A1682001A1B59 /* circleImage.swift in Sources */,
-				963C61652275C6D900FB000A /* CityModel.swift in Sources */,
 				96150D04227C847B0012D6D4 /* ICsNames.swift in Sources */,
 				96D41A15223802D0001B0411 /* config.swift in Sources */,
 				9663BBDE226FC2CB00CA5900 /* hospitalSearchToEditDoctor.swift in Sources */,
 				9663BBE2226FC3DB00CA5900 /* HospitalDoctorEditingDetails.swift in Sources */,
 				967F9BBB22E8F7A300E7008C /* EnterPersentageCodeVC2.swift in Sources */,
 				96D41A21223803AC001B0411 /* restPasswordVC.swift in Sources */,
+				DC493D0322F0D0730086B64B /* GovernorateService.swift in Sources */,
 				9663BBE0226FC33600CA5900 /* hospitalEditedDoctorData.swift in Sources */,
-				962925AC22CD032800F6C1A4 /* City.swift in Sources */,
 				967B323722E8589100A138C5 /* AuthSelectAreaVC2TableViewCell.swift in Sources */,
+				DC69D47822ECC56A000BA5BD /* Gender.swift in Sources */,
 				96AE0914229821E200EEC5AC /* AppoinemnetCollectionViewCell.swift in Sources */,
-				965B746B22BF6CE200431BA1 /* HospitalModel.swift in Sources */,
 				9663BBE7226FD59700CA5900 /* hospitalDoctorAppointments.swift in Sources */,
 				96198A1822E8468600ABABBD /* SelectCountryVC2.swift in Sources */,
+				DC67723622ECEE9F00EF79E1 /* UserInfo.swift in Sources */,
 				964058A522DCD63200C32DD1 /* SelectGovsTableViewCell.swift in Sources */,
 				9663BBE5226FD57C00CA5900 /* DefinitionOfWorkingHours.swift in Sources */,
+				DC493CFF22F0CB0E0086B64B /* InsuranceCompany.swift in Sources */,
 				9663BBDA226FC26200CA5900 /* hospitalDoctorData.swift in Sources */,
 				96D41A11223802A0001B0411 /* helper.swift in Sources */,
-				962925AE22CD034300F6C1A4 /* insurnanceCompineis.swift in Sources */,
-				963C61632275C6D900FB000A /* DoctorModel.swift in Sources */,
 				9663BBEE226FD69900CA5900 /* HospitalBlockPatient.swift in Sources */,
 				96B38C18224B00D2000C132B /* MyAppoinmentsVC.swift in Sources */,
 				96198A1422E840FB00ABABBD /* UpdatePasswordVC2.swift in Sources */,
 				96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */,
 				967F9BAD22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift in Sources */,
-				965B746922BF447700431BA1 /* GovModel.swift in Sources */,
 				96D41A23223803CB001B0411 /* signUpVC.swift in Sources */,
 				96198A1A22E8469A00ABABBD /* SelectGovsVC2.swift in Sources */,
 				9640589F22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift in Sources */,
+				DC67723A22ED01E600EF79E1 /* Review.swift in Sources */,
 				968EBEA722AC41DF004AB3EB /* UpdateTicketDetailsViewController.swift in Sources */,
 				967B323122E8566600A138C5 /* ApprovalListTableViewCell.swift in Sources */,
 				DC2B337022EA52CA00ACC9B7 /* PatientPresenter.swift in Sources */,
@@ -1132,6 +1168,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1187,6 +1224,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

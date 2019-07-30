@@ -1,14 +1,14 @@
 //
-//  CityModel.swift
+//  Area.swift
 //  Galen
 //
-//  Created by Amr Ali on 4/25/19.
+//  Created by Eslam Shaker  on 7/30/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 
-struct Gov: Codable {
+struct Area: Codable {
     
     let name : String?
     let id : Int?

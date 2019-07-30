@@ -1,27 +1,27 @@
 //
-//  PatientService.swift
+//  SpecialityService.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/25/19.
+//  Created by Eslam Shaker  on 7/31/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum PatientService {
-    case allPatients
+enum SpecialityService {
+    case allSpecialities
 }
 
-extension PatientService: TargetType {
+extension SpecialityService: TargetType {
     
     
-    var baseURL: URL { return URL(string: "\(URLs.main)patients")! }
+    var baseURL: URL { return URL(string: "\(URLs.main)medical_specialties")! }
     
     
     var path: String {
         switch self {
-        case .allPatients:
+        case .allSpecialities:
             return "/all"
         }
     }
@@ -29,14 +29,14 @@ extension PatientService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .allPatients:
+        case .allSpecialities:
             return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .allPatients:
+        case .allSpecialities:
             return .requestPlain
         }
     }

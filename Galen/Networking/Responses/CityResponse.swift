@@ -1,18 +1,18 @@
 //
-//  PatientResponse.swift
+//  CityResponse.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/25/19.
+//  Created by Eslam Shaker  on 7/30/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class AllPatientsResponse: Mappable {
-   
+class AllCitiesResponse: Mappable {
+    
     var done: Bool!
-    var list: [Patient]?
+    var list: [City]?
     var count: Int!
     
     required init?(map: Map) {}

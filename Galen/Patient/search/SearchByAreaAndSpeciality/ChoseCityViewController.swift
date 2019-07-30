@@ -7,74 +7,31 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-class ChoseCityViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !CityAlreadyChosed {
-            print(CityArray.count)
-            return CityArray.count
-        } else {
-            return AreaArray.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if !CityAlreadyChosed {
-            print("incitycreate")
-            let Citycell =  tableView.dequeueReusableCell(withIdentifier: "CityAreaCell") as! CityAreaTableViewCell
-            Citycell.ConfigurationCell(name: CityArray[indexPath.row].name ?? "")
-            return Citycell
-        } else {
-            let AreaCell =  tableView.dequeueReusableCell(withIdentifier: "CityAreaCell") as! CityAreaTableViewCell
-              AreaCell.ConfigurationCell(name: AreaArray[indexPath.row].name ?? "")
-            return AreaCell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if CityAlreadyChosed == true {
-           //   self.TxtFieldGov.isHidden = false
-            SelectedAreaId =  AreaArray[indexPath.row].id ?? 0
-          //self.TxtFieldGov.isHidden = false
-            TxtFieldGov.text = AreaArray[indexPath.row].name ?? ""
-            TxtFieldGov.endEditing(true)
-          
-        } else {
-            SelectedCityId =  CityArray[indexPath.row].id ?? 0
-            CityAlreadyChosed = true
-            self.TxtFieldCityName.text = CityArray[indexPath.row].name ?? ""
-            FetchArea(ChosenGovernateID: SelectedCityId)
-            TxtFieldCityName.endEditing(true)
-           // TxtFieldGov.isHidden = true
-            
-        }
-    }
-    
-
+class ChoseCityViewController: UIViewController {
+   
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var TxtFieldCityName: UITextField!
     @IBOutlet weak var TxtFieldGov: UITextField!
     @IBOutlet weak var DoneBtnOutlet: UIButton!
     
     var SelectedSpecaility = [Speciality]()
-    var CityArray = [Gov]()
-    var AreaArray = [Area]()
-    
-    var CityAlreadyChosed : Bool = false
-    
-    var TestAreaArray = [[String:AnyObject]]()
-    var TestGovArray  = [[String:AnyObject]]()
-    
+    var CityArray = [City]()
+    var AreaArray = [City]()
+    var CityAlreadyChosed = false
     var SelectedCityId = 0
     var SelectedAreaId  = 0
+    var govPresenter: GovernoratePresenter!
+    var cityPresenter: CityPresenter!
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        govPresenter = GovernoratePresenter(delegate: self)
+        cityPresenter = CityPresenter(delegate: self)
+        
         print(SelectedSpecaility)
-       let  selectedSpecialityID = SelectedSpecaility[0].specialityID
+        let selectedSpecialityID = SelectedSpecaility[0].specialityID
         
         imageText()
         gradBTNS()
@@ -84,75 +41,13 @@ class ChoseCityViewController: UIViewController , UITableViewDelegate , UITableV
         
         tableview.delegate = self
         tableview.dataSource = self
-        FetchCity()
-        tableview.reloadData()
+        govPresenter.getAllGovs()
         
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
         
-    }
-    
-    ////
-    func FetchCity() {
-        
-        Alamofire.request(URLs.allGovs, method: .post, encoding: JSONEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-            //    print(responseData)
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                //   print("swiftyforcities\(swiftyJsonVar)")
-                if let resData = swiftyJsonVar["list"].arrayObject {
-                    print(resData)
-                    self.TestGovArray =  resData as! [[String:AnyObject]]
-                    for NextCity in self.TestGovArray {
-                        let ReceivedCity = Gov.init(
-                            _name: NextCity["name"] as! String
-                            , _id: NextCity["id"] as! Int )
-                        self.CityArray.append(ReceivedCity)
-                        self.tableview.reloadData()
-                    }
-                    self.tableview.reloadData()
-                    print(self.CityArray)
-                    //self.TxtFieldGov.isHidden = false
-                }
-            }
-        }
-    }
-    
-    /////FetchAreas(Cities)
-    func FetchArea(ChosenGovernateID: Int) {
-        print(ChosenGovernateID)
-//        let header : [String: String] = [
-//            "Authorization" : helper.getAPIToken().token ?? "",
-//            "Content-Type" : "application/json"
-//        ]
-        
-        let parameters: Parameters = [
-            "where":
-                [
-                    "gov.id"  : ChosenGovernateID
-            ]
-        ]
-        Alamofire.request(URLs.allCities, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (responseData) -> Void in
-            print(responseData)
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["list"].arrayObject {
-                    self.TestAreaArray =  resData as! [[String:AnyObject]]
-                    for NextArea in self.TestAreaArray {
-                        let ReceivedArea = Area.init(
-                            _name: NextArea["name"] as! String
-                            , _id: NextArea["id"] as! Int )
-                        self.AreaArray.append(ReceivedArea)
-                        self.tableview.reloadData()
-                    }
-                    self.tableview.reloadData()
-                }
-                print(self.AreaArray)
-            }
-        }
     }
     
     /////////textfield images/////////
@@ -211,17 +106,68 @@ class ChoseCityViewController: UIViewController , UITableViewDelegate , UITableV
     }
     
 }
+
+
+extension ChoseCityViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !CityAlreadyChosed {
+            print(CityArray.count)
+            return CityArray.count
+        } else {
+            return AreaArray.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if !CityAlreadyChosed {
+            print("incitycreate")
+            let Citycell =  tableView.dequeueReusableCell(withIdentifier: "CityAreaCell") as! CityAreaTableViewCell
+            Citycell.ConfigurationCell(name: CityArray[indexPath.row].name ?? "")
+            return Citycell
+        } else {
+            let AreaCell =  tableView.dequeueReusableCell(withIdentifier: "CityAreaCell") as! CityAreaTableViewCell
+            AreaCell.ConfigurationCell(name: AreaArray[indexPath.row].name ?? "")
+            return AreaCell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if CityAlreadyChosed == true {
+            //   self.TxtFieldGov.isHidden = false
+            SelectedAreaId = AreaArray[indexPath.row].cityID ?? 0
+            //self.TxtFieldGov.isHidden = false
+            TxtFieldGov.text = AreaArray[indexPath.row].name ?? ""
+            TxtFieldGov.endEditing(true)
+            
+        } else {
+            SelectedCityId =  CityArray[indexPath.row].cityID ?? 0
+            CityAlreadyChosed = true
+            self.TxtFieldCityName.text = CityArray[indexPath.row].name ?? ""
+            cityPresenter.getCitiesForGov(SelectedCityId)
+            TxtFieldCityName.endEditing(true)
+            // TxtFieldGov.isHidden = true
+            
+        }
+    }
+    
+    
+}
+
+
 extension ChoseCityViewController: UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField === TxtFieldGov{
             AreaArray.removeAll()
-            FetchArea(ChosenGovernateID: SelectedCityId)
+            cityPresenter.getCitiesForGov(SelectedCityId)
             tableview.reloadData()
         } else if textField === TxtFieldCityName {
             print("incitydidselect")
             CityArray.removeAll()
             AreaArray.removeAll()
-            FetchCity()
+            govPresenter.getAllGovs()
             CityAlreadyChosed = false
         }
         
@@ -245,4 +191,36 @@ extension ChoseCityViewController: UITextFieldDelegate {
         textField.resignFirstResponder();
         return true
     }
+}
+
+
+extension ChoseCityViewController : GovernorateDelegate {
+    
+    func getAllGovsDidSuccess() {
+        CityArray = govPresenter.govs
+        tableview.reloadData()
+    }
+    
+    func getAllGovsDidFail(_ message: String) {
+        print(message)
+    }
+    
+}
+
+
+extension ChoseCityViewController : CityDelegate {
+    
+    func getAllCitiesDidSuccess() {}
+    
+    func getAllCitiesDidFail(_ message: String) {}
+    
+    func getCitiesForGovDidSuccess() {
+        AreaArray = cityPresenter.cities
+        tableview.reloadData()
+    }
+    
+    func getCitiesForGovDidFail(_ message: String) {
+        print(message)
+    }
+    
 }

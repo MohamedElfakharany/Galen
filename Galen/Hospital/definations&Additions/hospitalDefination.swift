@@ -17,8 +17,8 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     var selectedTxtField = UITextField()
     
     var ICsNames = [ICsName]()
-    var GovArray = [Gov]()
-    var AreaArray = [Area]()
+    var GovArray = [City]()
+    var AreaArray = [City]()
     var SpecailityArray = [Speciality]()
 
     
@@ -33,16 +33,21 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     @IBOutlet weak var TxtFieldSpecialities: UITextField!
     @IBOutlet weak var TxtFieldInsurnaceCompany: UITextField!
     
-    var TestGovArray =  [[String:AnyObject]]()
-    var TestAreaArray =  [[String:AnyObject]]()
+
     var TestSpecailityArray =  [[String:AnyObject]]()
     var ChosenGovId : Int?
     var ChosenArea : Area?
-    var ChosenGov : Gov?
+    var ChosenGov : City?
     var ChosenSpeciality : Speciality?
+    
+    var govPresenter: GovernoratePresenter!
+    var cityPresenter: CityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        govPresenter = GovernoratePresenter(delegate: self)
+        cityPresenter = CityPresenter(delegate: self)
         
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
@@ -50,8 +55,8 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             ])
         
         Fetchspecialty()
-        FetchGov()
-       imageText()
+        govPresenter.getAllGovs()
+        imageText()
     }
     
     
@@ -77,62 +82,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             }
         }
     }
-    ////
-    func FetchGov() {
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "" ,
-            "Content-Type" : "application/json"
-        ]
-        
-        Alamofire.request(URLs.allGovs, method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-             //   print("swiftyforcities\(swiftyJsonVar)")
-                if let resData = swiftyJsonVar["list"].arrayObject {
-                    self.TestGovArray =  resData as! [[String:AnyObject]]
-                    for NextCity in self.TestGovArray {
-                        let ReceivedCity = Gov.init(
-                            _name: NextCity["name"] as! String
-                            , _id: NextCity["id"] as! Int )
-                        self.GovArray.append(ReceivedCity)
-                    }
-                }
-            }
-        }
-    }
-    
-    /////FetchAreas(Cities)
-    func FetchArea(ChosenGovernateID: Int) {
-        print(ChosenGovernateID)
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "",
-            "Content-Type" : "application/json"
-        ]
-        
-        let parameters: Parameters = [
-            "where":
-                [
-                    "gov.id"  : ChosenGovernateID
-            ]
-        ]
-        Alamofire.request(URLs.allCities, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            print(responseData)
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["list"].arrayObject {
-                    self.TestAreaArray =  resData as! [[String:AnyObject]]
-                    for NextArea in self.TestAreaArray {
-                        let ReceivedArea = Area.init(
-                            _name: NextArea["name"] as! String
-                            , _id: NextArea["id"] as! Int )
-                        self.AreaArray.append(ReceivedArea)
-                    }
-                }
-                print(self.AreaArray)
-            }
-        }
-    }
+  
     /////////
     
     func UpdateMyHospital(){
@@ -194,7 +144,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
         ModifyHospital( id: 20, name : TxtFieldFullName.text!
                      , website : TxtFieldWebSite.text!
             , specialty : ChosenSpeciality?.specialityID ?? 0
-                     , gov : ChosenGov?.id ?? 0
+                     , gov : ChosenGov?.cityID ?? 0
             , city : ChosenArea?.id ?? 0
             , address : TxtFieldAddress.text ?? ""
                      , phone : TxtFieldPhoneNumber.text ?? ""
@@ -367,7 +317,7 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
         } else if selectedTxtField ===  TxtFieldGovernates {
             if (self.ChosenGovId == nil ){
                 TxtFieldGovernates.text = GovArray[row].name
-                FetchArea(ChosenGovernateID: GovArray[row].id ?? 0)
+                cityPresenter.getCitiesForGov(GovArray[row].cityID ?? 0)
             }else{
                 TxtFeildArea.text = AreaArray[row].name
             }
@@ -391,6 +341,37 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
             }
         }
     }
+
+
+
+extension hospitalDefination : GovernorateDelegate {
+    
+    func getAllGovsDidSuccess() {
+        GovArray = govPresenter.govs
+    }
+    
+    func getAllGovsDidFail(_ message: String) {
+        print(message)
+    }
+    
+}
+
+
+extension hospitalDefination : CityDelegate {
+    
+    func getAllCitiesDidSuccess() {}
+    
+    func getAllCitiesDidFail(_ message: String) {}
+    
+    func getCitiesForGovDidSuccess() {
+        AreaArray = cityPresenter.cities
+    }
+    
+    func getCitiesForGovDidFail(_ message: String) {
+        print(message)
+    }
+    
+}
 
 
 
