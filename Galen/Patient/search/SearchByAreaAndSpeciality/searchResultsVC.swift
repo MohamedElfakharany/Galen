@@ -11,21 +11,23 @@ import SwiftyJSON
 import Alamofire
 
 class searchResultsVC: UIViewController {
+    
     @IBOutlet weak var citySearchCriteriaLabel: UILabel!
     @IBOutlet weak var specialitySearchCriteriaLabel: UILabel!
     @IBOutlet weak var ICSearchCriteriaLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-     var ResultedDoctors = [Doctor]()
-    
+    var ResultedDoctors = [Doctor]()
     var SpecialityIDToSearch = 0
     var CityIDToSearch = 0
     var AreaIDToSearch = 0
     var DocNameToSearch = ""
+    var hospitalPresenter: HospitalPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hospitalPresenter = HospitalPresenter(delegate: self)
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
@@ -83,38 +85,27 @@ class searchResultsVC: UIViewController {
             }
             
         }
-            
-            print(myparameters)
-
-            Alamofire.request(URLs.allHospital, method: .post, parameters: myparameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
-                switch response.result
-                {
-                case .success(let value):
-                    let json = JSON(value).dictionary
-                    do {
-                        let datas = try json!["list"]?.rawData()
-                        do {
-                             let ResultedHospitals = try? newJSONDecoder().decode([Hospital].self, from: datas!)
-                            for iHospital in ResultedHospitals!{
-                                for doc in iHospital.doctorList! {
-                                    let BEDoc = doc.doctor
-            
-                                    self.ResultedDoctors.append(BEDoc!)
-                                }
-                            }
-                            for Docbxx in self.ResultedDoctors {
-                            print(Docbxx.name)
-                        }
-                        }
-                    } catch  {
-                    }
-
-
-                case .failure(_):
-                    print("Failure")
-                }
-            }
+        
+        
+        hospitalPresenter.getAllHospitals(params: myparameters)
     }
     
+    
+}
+
+
+extension searchResultsVC: HospitalDelegate {
+    
+    func getAllHospitalsDidSuccess() {
+        for hospital in hospitalPresenter.hospitals {
+            for doc in hospital.doctorList! {
+                self.ResultedDoctors.append(doc)
+            }
+        }
+    }
+    
+    func getAllHospitalsDidFail(_ message: String) {
+        print(message)
+    }
     
 }

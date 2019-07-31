@@ -29,6 +29,7 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     let Conpicker = ADCountryPicker()
     var govPresenter: GovernoratePresenter!
     var cityPresenter: CityPresenter!
+    var insurancePresenter: InsurancePresenter!
     
     @IBOutlet weak var imageuser: UIImageView!
     @IBOutlet weak var patientName: UITextField!
@@ -49,9 +50,10 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         
         govPresenter = GovernoratePresenter(delegate: self)
         cityPresenter = CityPresenter(delegate: self)
+        insurancePresenter = InsurancePresenter(delegate: self)
         
         self.CountryTxtfield.delegate = self
-        GetInsurnaceCompany()
+        insurancePresenter.getAllCompanies()
         govPresenter.getAllGovs()
         cityPresenter.getCitiesForGov(1)
         imageText()
@@ -171,29 +173,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             
         }
     }
-    
-    
-    ///////
-    func GetInsurnaceCompany(){
-        Alamofire.request(URLs.allInsuranceCompanies, method: .post, parameters: nil , encoding: URLEncoding.default, headers: nil).responseData { response in
-            switch (response.result){
-            case .success(let Value):
-                let json = JSON(Value).dictionary
-                do{
-                    let datas = try json!["list"]?.rawData()
-                    print("datas\(datas)")
-                    let insurnaceCompanies = try? newJSONDecoder().decode([InsuranceCompany].self, from: datas!)
-                    self.ICs = insurnaceCompanies!
-                    print("ICS \(self.ICs)")
-                }catch{
-                    
-                }
-            case .failure(_):
-                print("error  = \(String(describing: response.result.error))")
-            }
-        }
-    }
-    ////
     
     
     @IBAction func RegisterBTN(_ sender: Any) {
@@ -505,9 +484,12 @@ extension signUpVC : GovernorateDelegate {
         print(message)
     }
     
+    func viewGovsDidSuccess() {}
+    func viewGovsDidFail(_ message: String) {}
+    
 }
 
-extension signUpVC: CityDelegate{
+extension signUpVC: CityDelegate {
     
     func getAllCitiesDidSuccess() {}
     
@@ -521,4 +503,17 @@ extension signUpVC: CityDelegate{
         print(message)
     }
     
+}
+
+
+extension signUpVC: InsuranceDelegate {
+    
+    func getAllCompaniesDidSuccess() {
+        ICs = insurancePresenter.companies
+    }
+    
+    func getAllCompaniesDidFail(_ message: String) {
+        print(message)
+    }
+
 }

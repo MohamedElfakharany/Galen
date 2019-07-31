@@ -1,31 +1,28 @@
 //
-//  GovernorateService.swift
+//  InsuranceCompanyService.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/30/19.
+//  Created by Eslam Shaker  on 7/31/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum GovernorateService {
-    case allGovs
-    case viewGovs
+enum InsuranceCompanyService {
+    case allCompanies
 }
 
-extension GovernorateService: TargetType {
+extension InsuranceCompanyService: TargetType {
     
     
-    var baseURL: URL { return URL(string: "\(URLs.main)goves")! }
+    var baseURL: URL { return URL(string: "\(URLs.main)medical_insurance_companies")! }
     
     
     var path: String {
         switch self {
-        case .allGovs:
+        case .allCompanies:
             return "/all"
-        case .viewGovs:
-            return "/view"
         }
     }
     
@@ -36,7 +33,7 @@ extension GovernorateService: TargetType {
     
     var task: Task {
         switch self {
-        case .allGovs, .viewGovs:
+        case .allCompanies:
             return .requestPlain
         }
     }
@@ -50,4 +47,3 @@ extension GovernorateService: TargetType {
                 "Authorization" : helper.getAPIToken().token ?? ""]
     }
 }
-

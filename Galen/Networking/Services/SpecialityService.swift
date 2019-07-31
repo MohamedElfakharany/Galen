@@ -28,10 +28,7 @@ extension SpecialityService: TargetType {
     
     
     var method: Moya.Method {
-        switch self {
-        case .allSpecialities:
-            return .post
-        }
+        return .post
     }
     
     var task: Task {

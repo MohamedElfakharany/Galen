@@ -12,6 +12,8 @@ import Moya
 protocol GovernorateDelegate: class {
     func getAllGovsDidSuccess()
     func getAllGovsDidFail(_ message: String)
+    func viewGovsDidSuccess()
+    func viewGovsDidFail(_ message: String)
 }
 
 
@@ -54,6 +56,38 @@ class GovernoratePresenter {
             case let .failure(error):
                 print("Request Failed. Error: ", error.localizedDescription)
                 self.delegate?.getAllGovsDidFail(error.localizedDescription)
+            }
+        }
+    }
+    
+    func viewGovs(){
+        provider.request(.viewGovs) { result in
+            switch result {
+            case let .success(response):
+                
+                let statusCode = response.statusCode
+                print("Status Code: ", statusCode)
+                
+                do {
+                    if let data = try response.mapJSON() as? AllCitiesResponse {
+                        if data.done == false {
+                            print("response status false")
+                            self.delegate?.viewGovsDidFail("Request failed")
+                        } else {
+                            print("Response:")
+                            dump(data)
+                            self.govs = data.list ?? []
+                            self.delegate?.viewGovsDidSuccess()
+                        }
+                    }
+                } catch {
+                    print("Error in parsing JSON")
+                    self.delegate?.viewGovsDidFail("Error in parsing JSON")
+                }
+                
+            case let .failure(error):
+                print("Request Failed. Error: ", error.localizedDescription)
+                self.delegate?.viewGovsDidFail(error.localizedDescription)
             }
         }
     }

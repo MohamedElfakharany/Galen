@@ -28,10 +28,7 @@ extension PatientService: TargetType {
     
     
     var method: Moya.Method {
-        switch self {
-        case .allPatients:
-            return .post
-        }
+        return .post
     }
     
     var task: Task {

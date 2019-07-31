@@ -1,31 +1,28 @@
 //
-//  GovernorateService.swift
+//  HospitalService.swift
 //  Galen
 //
-//  Created by Eslam Shaker  on 7/30/19.
+//  Created by Eslam Shaker  on 7/31/19.
 //  Copyright © 2019 Mohamed Elfakharany. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum GovernorateService {
-    case allGovs
-    case viewGovs
+enum HospitalService {
+    case allHospitals(params: [String: Any]?)
 }
 
-extension GovernorateService: TargetType {
+extension HospitalService: TargetType {
     
     
-    var baseURL: URL { return URL(string: "\(URLs.main)goves")! }
+    var baseURL: URL { return URL(string: "\(URLs.main)hospitals")! }
     
     
     var path: String {
         switch self {
-        case .allGovs:
+        case .allHospitals:
             return "/all"
-        case .viewGovs:
-            return "/view"
         }
     }
     
@@ -36,8 +33,12 @@ extension GovernorateService: TargetType {
     
     var task: Task {
         switch self {
-        case .allGovs, .viewGovs:
-            return .requestPlain
+        case .allHospitals(let params):
+            if params != nil {
+                return .requestParameters(parameters: params!, encoding: JSONEncoding.default)
+            } else {
+                return .requestPlain
+            }
         }
     }
     
@@ -50,4 +51,3 @@ extension GovernorateService: TargetType {
                 "Authorization" : helper.getAPIToken().token ?? ""]
     }
 }
-

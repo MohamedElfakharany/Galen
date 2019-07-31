@@ -205,6 +205,8 @@ extension ChoseCityViewController : GovernorateDelegate {
         print(message)
     }
     
+    func viewGovsDidSuccess() {}
+    func viewGovsDidFail(_ message: String) {}
 }
 
 

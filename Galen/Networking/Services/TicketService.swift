@@ -28,10 +28,7 @@ extension TicketService: TargetType {
     
     
     var method: Moya.Method {
-        switch self {
-        case .allTickets:
-            return .post
-        }
+        return .post
     }
     
     var task: Task {

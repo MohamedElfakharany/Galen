@@ -123,11 +123,11 @@ class API_Auth: NSObject {
                 "id" : genderID
             ] , // GENDER DECT
             "insurance_company" : [
-                "id": insurance_company.insurnaceCompaniesID as Any ,
+                "id": insurance_company.id as Any ,
                 "name": insurance_company.name as Any ,
             ] ,// IC DECT
             "gov" : [
-                "id" : Gov.governateID as Any,
+                "id" : Gov.cityID as Any,
                 "name" : Gov.name as Any
             ] ,// GOV DEC
             "city" : [

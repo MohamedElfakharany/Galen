@@ -41,7 +41,6 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
     @IBOutlet weak var TxtFieldDocPassWord: UITextField!
   
     var CitiesArray = [City]()
-    var TestCityArray =  [[String:AnyObject]]()
     var AreaArray = [Area]()
     var TestAreaArray =  [[String:AnyObject]]()
     var SpecailityArray = [Speciality]()
@@ -52,17 +51,21 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
     var ChosenDoctor : Doctor?
     
     var specialityPresenter: SpecialityPresenter!
+    var govPresenter: GovernoratePresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         specialityPresenter = SpecialityPresenter(delegate: self)
+        govPresenter = GovernoratePresenter(delegate: self)
         
         DocStatusPicker = ["active","unactive"]
         DocSpecialties = ["General Surgery","Neurosurgery","Radiology","Emergency Medicine","Optometrists"]
         imageText()
+       
         specialityPresenter.getAllSpecialities()
-        FetchCities()
+        govPresenter.viewGovs()
+        
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
@@ -147,32 +150,6 @@ class hospitalAddDoctor: UIViewController , UIPickerViewDataSource ,UIPickerView
             TxtFieldDiscount.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
     }
-    
-    
-    func FetchCities() {
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "" ,
-            "Content-Type" : "application/json"
-        ]
-        
-        Alamofire.request(URLs.viewGovs, method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                print(swiftyJsonVar)
-                if let resData = swiftyJsonVar["data"].arrayObject {
-                    self.TestCityArray =  resData as! [[String:AnyObject]]
-                    for NextCity in self.TestCityArray {
-                        let ReceivedCity = City.init(
-                            _name: NextCity["name"] as! String
-                            , _id: NextCity["id"] as! Int )
-                    
-                        self.CitiesArray.append(ReceivedCity)
-                    }
-                    
-                }
-                }
-            }
-        }
         
         
         func FetchArea(ChosenGovernateID: Int) {
@@ -353,5 +330,22 @@ extension hospitalAddDoctor : SpecialityDelegate {
         print(message)
     }
 
+}
+
+
+extension hospitalAddDoctor: GovernorateDelegate {
+    
+    func getAllGovsDidSuccess() {}
+    
+    func getAllGovsDidFail(_ message: String) {}
+    
+    func viewGovsDidSuccess() {
+        CitiesArray = govPresenter.govs
+    }
+    
+    func viewGovsDidFail(_ message: String) {
+        print(message)
+    }
+    
 }
 

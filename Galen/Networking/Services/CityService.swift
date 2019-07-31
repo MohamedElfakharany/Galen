@@ -29,10 +29,7 @@ extension CityService: TargetType {
     
     
     var method: Moya.Method {
-        switch self {
-        case .allCities, .citiesForGov:
-            return .post
-        }
+        return .post
     }
     
     var task: Task {
