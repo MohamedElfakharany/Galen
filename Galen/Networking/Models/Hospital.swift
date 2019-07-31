@@ -21,7 +21,8 @@ class Hospital: Mappable {
     var userInfo, addedUserInfo, addUserInfo, editUserInfo: UserInfo?
     var hospitalName, hospitalMobile, hospitalUserName, hospitalPassword: String?
     var doctorList: [Doctor]?
-    var nurseList, insuranceCompanyList: [String]?   /////// revise this later 
+    var insuranceCompanyList: [InsuranceCompany]?
+    var nurseList : [String]?   /////// revise this later
     var active: Bool?
     var latitude, longitude: String?
     var gov, city: City?

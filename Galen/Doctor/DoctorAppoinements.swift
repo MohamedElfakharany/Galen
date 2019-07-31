@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-   
-    private var datePicker : UIDatePicker?
+
+class DoctorAppoinements: UIViewController {
     
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var TxtFieldPickDate: UITextField!
@@ -21,20 +18,18 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
     lazy var Refresher : UIRefreshControl  = {
         let Refresher = UIRefreshControl()
         Refresher.addTarget(self, action: #selector(GetTickets), for: .valueChanged)
-        
         return Refresher
     }()
-    
+    private var datePicker : UIDatePicker?
     var TicketsArray = [Ticket]()
+    var ticketPresenter: TicketPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         datePicker = UIDatePicker()
-        
         datePicker?.datePickerMode = .date
-        
         datePicker?.addTarget(self, action: #selector(DoctorAppoinements.dateChanged(datePicker:)), for: .valueChanged)
         
         TxtFieldPickDate.inputView = datePicker
@@ -49,15 +44,15 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         
         CollectionView.delegate = self
         CollectionView.dataSource = self
-        
         CollectionView.addSubview(Refresher)
-        
         CollectionView.backgroundColor = .clear
         CollectionView.alwaysBounceVertical = true
-        
         CollectionView.register(UINib.init(nibName: "searchDoctorResults", bundle: nil), forCellWithReuseIdentifier: "AppoinmemntCell")
+        
         gradBTNS()
-        GetTickets()
+        
+        ticketPresenter = TicketPresenter(delegate: self)
+        ticketPresenter.getAllTickets()
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -69,6 +64,10 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         dateForamatter.dateFormat = "MM/dd/yyyy"
         TxtFieldPickDate.text = dateForamatter.string(from: datePicker.date)
 //        view.endEditing(true)
+    }
+    
+    @objc func GetTickets() {
+        ticketPresenter.getAllTickets()
     }
     
     
@@ -88,46 +87,21 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         BtnView.clipsToBounds = true
         
     }
-    
-    @objc private func GetTickets(){
-        self.Refresher.endRefreshing()
-    
-//        let parameters: Parameters = [
-//            "where":
-//                [
-//                    "date" : "08/06/2019" ,
-//                    "selected_doctor.id" : 50
-//                ]
-//        ]
-        
-        Alamofire.request(URLs.allTickets, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
-            
-            print(response.request)
-            switch response.result
-            {
-            case .success(let value):
-                let json = JSON(value).dictionary
-                do {
-                    let datas = try json!["list"]?.rawData()
-                    print(datas)
-                    do {
-                        let ticketData = try? newJSONDecoder().decode([Ticket].self, from: datas!)
-                        self.TicketsArray = ticketData!
-                        print("FirstTicket\(self.TicketsArray.count )")
-                        self.CollectionView.reloadData()
-                    }
-                } catch  {
-                }
-                
-               
-            case .failure(_):
-                print("Failure")
-            }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "hamouda" {
+            let indexPath  = self.CollectionView?.indexPathsForSelectedItems?.first
+            let SelectedTicket = TicketsArray[(indexPath?.row)!] //error
+            let controller = segue.destination as! PopUpViewController
+            controller.TicketArr.insert(SelectedTicket, at: 0)
         }
     }
+    
+}
 
 
-
+extension DoctorAppoinements: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return TicketsArray.count
     }
@@ -136,7 +110,7 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppoinmemntCell", for: indexPath) as? AppoinemnetCollectionViewCell
             else { return UICollectionViewCell () }
-    
+        
         for NextTicket in self.TicketsArray{
             var StatuesColor : UIColor
             if (NextTicket.status?.nameEn == "available") {
@@ -150,7 +124,7 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
                 Time: "From \(NextTicket.selectedTime?.from?.hour ?? 00) To \(NextTicket.selectedTime?.to?.hour ?? 00)",
                 Statues: NextTicket.status?.nameEn ?? "",
                 StatuesColor: StatuesColor)
-        return cell
+            return cell
         }
         return cell
     }
@@ -160,18 +134,6 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         self.performSegue(withIdentifier: "hamouda", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "hamouda" {
-            let indexPath  = self.CollectionView?.indexPathsForSelectedItems?.first
-            let SelectedTicket = TicketsArray[(indexPath?.row)!] //error
-            let controller = segue.destination as! PopUpViewController
-            controller.TicketArr.insert(SelectedTicket, at: 0)
-        }
-    }
-    
-
-
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
         UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -187,3 +149,21 @@ class DoctorAppoinements: UIViewController ,UICollectionViewDelegate,UICollectio
         }
     }
 }
+
+
+
+extension DoctorAppoinements: TicketDelegate {
+    
+    func getAllTicketsDidSuccess() {
+        Refresher.endRefreshing()
+        TicketsArray = ticketPresenter.tickets
+        CollectionView.reloadData()
+    }
+    
+    func getAllTicketsDidFail(_ message: String) {
+        Refresher.endRefreshing()
+        print(message)
+    }
+    
+}
+

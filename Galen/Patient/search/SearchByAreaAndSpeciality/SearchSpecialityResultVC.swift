@@ -7,21 +7,18 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-    
-    var DocSpecialties:[String] = []
-    var SpecailityArray:[Speciality] = []
-    
-    var SelectedSpetiality = [Speciality]()
-    var searching = false
-    
 
+class SearchSpecialityResultVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SpecialitySearch: UISearchBar!
+    
+    var DocSpecialties:[String] = []
+    var SpecailityArray:[Speciality] = []
+    var SelectedSpetiality = [Speciality]()
+    var searching = false
+    var specialityPresenter: SpecialityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +26,8 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
       //  tableView.delaysContentTouches = false
       //  tableView.allowsMultipleSelection = true
         
-        
-        Fetchspecialty()
+        specialityPresenter = SpecialityPresenter(delegate: self)
+        specialityPresenter.getAllSpecialities()
         
        self.tableView.delegate = self
        self.tableView.dataSource = self
@@ -46,29 +43,7 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
             destinationController.SelectedSpecaility.insert(self.SelectedSpetiality[0], at: 0)
         }
     }
-    
-    func Fetchspecialty() {
-        
-        Alamofire.request(URLs.allSpeciality, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
-            switch response.result
-            {
-            case .success(let value):
-                let json = JSON(value).dictionary
-                do {
-                    let datas = try json!["list"]?.rawData()
-                    do {
-                        let SpecialityData = try? newJSONDecoder().decode([Speciality].self, from: datas!)
-                        self.SpecailityArray = SpecialityData!
-                        self.tableView.reloadData()
-                        self.tableView.reloadData()
-                    }
-                } catch  {
-                }
-            case .failure(_):
-                print("error  = \(String(describing: response.result.error))")
-            }
-        }
-    }
+
     
     func DawnloadImage(url : String) -> UIImage   {
         
@@ -77,33 +52,7 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
         return UIImage(data: data! as Data) ?? #imageLiteral(resourceName: "calendar-times")
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-       return  1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return SelectedSpetiality.count
-        } else {
-            return SpecailityArray.count
-        }
-    }
-    
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-      //let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? TheEventTableViewCell
-       let Mycell = tableView.dequeueReusableCell(withIdentifier: "Speccell", for: indexPath) as? specialityTableViewCell
-       Mycell?.initiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: SpecailityArray[indexPath.row].name ?? "")
-        print(indexPath.row)
-        return Mycell!
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-         SpecialitySearch.text = SpecailityArray[indexPath.row].name
-        SelectedSpetiality.insert(SpecailityArray[indexPath.row], at: 0)
-        self.performSegue(withIdentifier: "GoToCitySelect", sender: nil)
-        
-    }
+   
     
     @IBAction func BackBTN(_ sender: Any) {
         dismiss(animated: true , completion : nil)
@@ -119,6 +68,44 @@ class SearchSpecialityResultVC: UIViewController ,UITableViewDelegate,UITableVie
         return true
     }
 }
+
+
+
+extension SearchSpecialityResultVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searching {
+            return SelectedSpetiality.count
+        } else {
+            return SpecailityArray.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? TheEventTableViewCell
+        let Mycell = tableView.dequeueReusableCell(withIdentifier: "Speccell", for: indexPath) as? specialityTableViewCell
+        Mycell?.initiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: SpecailityArray[indexPath.row].name ?? "")
+        print(indexPath.row)
+        return Mycell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        SpecialitySearch.text = SpecailityArray[indexPath.row].name
+        SelectedSpetiality.insert(SpecailityArray[indexPath.row], at: 0)
+        self.performSegue(withIdentifier: "GoToCitySelect", sender: nil)
+        
+    }
+    
+    
+    
+}
+
+
 
 extension SearchSpecialityResultVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -142,4 +129,16 @@ extension SearchSpecialityResultVC: UISearchBarDelegate {
         tableView.reloadData()
     }
     
+}
+
+
+extension SearchSpecialityResultVC : SpecialityDelegate {
+    
+    func getAllSpecialitiesDidSuccess() {
+        SpecailityArray = specialityPresenter.specialities
+    }
+    
+    func getAllSpecialitiesDidFail(_ message: String) {
+        print("message")
+    }
 }

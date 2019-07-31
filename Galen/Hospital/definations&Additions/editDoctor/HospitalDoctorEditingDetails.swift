@@ -33,15 +33,15 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
     @IBOutlet weak var TxtFieldDiscount: UITextField!
     @IBOutlet weak var TxtViewDocInfo: UITextView!
     
-    var CurrentDoctor : Doctor?
-    
+    var CurrentDoctor : Doctor?    
     var SpecailityArray = [Speciality]()
-    var TestSpecailityArray =  [[String:AnyObject]]()
     var StatuesArray = [String]()
-    
+    var specialityPresenter: SpecialityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        specialityPresenter = SpecialityPresenter(delegate: self)
         
         DocStatusPicker = ["active","unactive"]
         DocSpecialties = ["General Surgery","Neurosurgery","Radiology","Emergency Medicine","Optometrists"]
@@ -141,34 +141,6 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
             TxtFieldDiscount.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
         }
     }
-    
-    
-    func Fetchspecialty() {
-        let header : [String: String] = [
-            "Authorization" : helper.getAPIToken().token ?? "" ,
-            "Content-Type" : "application/json"
-        ]
-        
-        Alamofire.request(URLs.allSpeciality, method: HTTPMethod.post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) -> Void in
-            switch response.result
-            {
-                case .success(let value):
-                let json = JSON(value).dictionary
-                do {
-                    let datas = try json!["list"]?.rawData()
-                    print(datas)
-                    do {
-                 let SpecData = try? newJSONDecoder().decode([Speciality].self, from: datas!)
-                        print(SpecData)
-                        self.SpecailityArray = SpecData!
-                    }
-                } catch  {
-                }
-                case .failure(_):
-                print("Failure")
-            }
-            }
-        }
     
     
     func EditDoctor(DocID : Int){
@@ -313,4 +285,18 @@ class HospitalDoctorEditingDetails: UIViewController , UIPickerViewDelegate , UI
         }
     }
 ///EndOfPickerFunc
+}
+
+
+extension HospitalDoctorEditingDetails : SpecialityDelegate {
+    
+    func getAllSpecialitiesDidSuccess() {
+        SpecailityArray = specialityPresenter.specialities
+    }
+    
+    func getAllSpecialitiesDidFail(_ message: String) {
+        print(message)
+    }
+    
+    
 }

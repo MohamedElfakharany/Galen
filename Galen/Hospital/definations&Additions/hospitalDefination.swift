@@ -34,7 +34,6 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     @IBOutlet weak var TxtFieldInsurnaceCompany: UITextField!
     
 
-    var TestSpecailityArray =  [[String:AnyObject]]()
     var ChosenGovId : Int?
     var ChosenArea : Area?
     var ChosenGov : City?
@@ -42,45 +41,23 @@ class hospitalDefination: UIViewController , UIPickerViewDataSource , UITextFiel
     
     var govPresenter: GovernoratePresenter!
     var cityPresenter: CityPresenter!
+    var specialityPresenter: SpecialityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         govPresenter = GovernoratePresenter(delegate: self)
         cityPresenter = CityPresenter(delegate: self)
+        specialityPresenter = SpecialityPresenter(delegate: self)
         
         self.navigationController?.navigationBar.setGradientBackground(colors: [
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
         
-        Fetchspecialty()
+        specialityPresenter.getAllSpecialities()
         govPresenter.getAllGovs()
         imageText()
-    }
-    
-    
-    //FetchSpecialities
-    
-    func Fetchspecialty() {
-       
-         Alamofire.request(URLs.allSpeciality, method: .post, encoding: JSONEncoding.default, headers: nil) .responseData { response in
-            switch response.result
-            {
-            case .success(let value):
-                let json = JSON(value).dictionary
-                do {
-                    let datas = try json!["list"]?.rawData()
-                    do {
-                        let SepcialityData = try? newJSONDecoder().decode([Speciality].self, from: datas!)
-                        self.SpecailityArray = SepcialityData!
-                    }
-                } catch  {
-                    }
-            case .failure(_):
-               print("error  = \(String(describing: response.result.error))")
-            }
-        }
     }
   
     /////////
@@ -371,6 +348,19 @@ extension hospitalDefination : CityDelegate {
         print(message)
     }
     
+}
+
+
+extension hospitalDefination : SpecialityDelegate {
+   
+    func getAllSpecialitiesDidSuccess() {
+        SpecailityArray = specialityPresenter.specialities
+    }
+    
+    func getAllSpecialitiesDidFail(_ message: String) {
+        print(message)
+    }
+
 }
 
 

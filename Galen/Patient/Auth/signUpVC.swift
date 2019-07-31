@@ -26,7 +26,9 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
     var CityIndex = Int()
     var SelectedCountryName = String()
     var SelectedImageUrl = String()
-     let Conpicker = ADCountryPicker()
+    let Conpicker = ADCountryPicker()
+    var govPresenter: GovernoratePresenter!
+    var cityPresenter: CityPresenter!
     
     @IBOutlet weak var imageuser: UIImageView!
     @IBOutlet weak var patientName: UITextField!
@@ -44,10 +46,14 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         
 //        gender = ["male","female"]
 //        ICsNames = ["one","two","three","four","five","six"]
+        
+        govPresenter = GovernoratePresenter(delegate: self)
+        cityPresenter = CityPresenter(delegate: self)
+        
         self.CountryTxtfield.delegate = self
         GetInsurnaceCompany()
-        FetchGoves()
-        FetchCities(ChosenGovernateID: 1)
+        govPresenter.getAllGovs()
+        cityPresenter.getCitiesForGov(1)
         imageText()
         imageuser.roundedImage()
         UploadImageToGetUrl(imaghe: imageuser.image ?? #imageLiteral(resourceName: "userImage"))
@@ -56,8 +62,10 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             UIColor.init(cgColor: #colorLiteral(red: 0.3357163072, green: 0.6924583316, blue: 1, alpha: 1)).cgColor,
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
-        
-       
+        setupCountryPicker()
+    }
+    
+    func setupCountryPicker(){
         let pickerNavigationController = UINavigationController(rootViewController: Conpicker)
         Conpicker.delegate = self
         Conpicker.showCallingCodes = true
@@ -186,53 +194,6 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
         }
     }
     ////
-    
-    ////
-    func FetchGoves() {
-        
-        Alamofire.request(URLs.allGovs, method: .post, encoding: JSONEncoding.default, headers: nil).responseData { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!).dictionary
-                do {
-                    let resData = try swiftyJsonVar?["list"]!.rawData() 
-                    let ReturnedGoves = try? newJSONDecoder().decode([City].self, from: resData!)
-                    self.Govs = ReturnedGoves!
-                    print("Govs\(self.Govs)")
-                    }catch{
-                        
-                    }
-                }
-            }
-        }
-    
-    
-    /////FetchAreas(Cities)
-    func FetchCities(ChosenGovernateID: Int) {
-        
-        let parameters: Parameters = [
-            "where":
-                [
-                    "gov.id"  : 1
-            ]
-        ]
-        Alamofire.request(URLs.allCities, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseData { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!).dictionary
-                do {
-                    let resData = try swiftyJsonVar?["list"]!.rawData()
-                    let ReturnedCities = try? newJSONDecoder().decode([City].self, from: resData!)
-                    self.Cities = ReturnedCities!
-                    print("Citites\(self.Cities)")
-                }catch{
-                    
-                }
-            }
-        }
-    }
-    
-    
-    
-  
     
     
     @IBAction func RegisterBTN(_ sender: Any) {
@@ -532,3 +493,32 @@ extension signUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
 }
 
+
+
+extension signUpVC : GovernorateDelegate {
+    
+    func getAllGovsDidSuccess() {
+        Govs = govPresenter.govs
+    }
+    
+    func getAllGovsDidFail(_ message: String) {
+        print(message)
+    }
+    
+}
+
+extension signUpVC: CityDelegate{
+    
+    func getAllCitiesDidSuccess() {}
+    
+    func getAllCitiesDidFail(_ message: String) {}
+    
+    func getCitiesForGovDidSuccess() {
+        Cities = cityPresenter.cities
+    }
+    
+    func getCitiesForGovDidFail(_ message: String) {
+        print(message)
+    }
+    
+}
