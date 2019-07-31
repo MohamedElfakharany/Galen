@@ -162,7 +162,7 @@ extension DoctorAppoinements: TicketDelegate {
     
     func getAllTicketsDidFail(_ message: String) {
         Refresher.endRefreshing()
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }

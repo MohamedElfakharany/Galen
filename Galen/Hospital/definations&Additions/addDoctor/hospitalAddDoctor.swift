@@ -327,7 +327,7 @@ extension hospitalAddDoctor : SpecialityDelegate {
     }
     
     func getAllSpecialitiesDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
 
 }
@@ -336,7 +336,6 @@ extension hospitalAddDoctor : SpecialityDelegate {
 extension hospitalAddDoctor: GovernorateDelegate {
     
     func getAllGovsDidSuccess() {}
-    
     func getAllGovsDidFail(_ message: String) {}
     
     func viewGovsDidSuccess() {
@@ -344,7 +343,7 @@ extension hospitalAddDoctor: GovernorateDelegate {
     }
     
     func viewGovsDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }

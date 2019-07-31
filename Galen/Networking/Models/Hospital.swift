@@ -22,7 +22,7 @@ class Hospital: Mappable {
     var hospitalName, hospitalMobile, hospitalUserName, hospitalPassword: String?
     var doctorList: [Doctor]?
     var insuranceCompanyList: [InsuranceCompany]?
-    var nurseList : [String]?   /////// revise this later
+    var nurseList : [String]?   //TODO: check nurse model
     var active: Bool?
     var latitude, longitude: String?
     var gov, city: City?

@@ -105,7 +105,7 @@ extension searchResultsVC: HospitalDelegate {
     }
     
     func getAllHospitalsDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }

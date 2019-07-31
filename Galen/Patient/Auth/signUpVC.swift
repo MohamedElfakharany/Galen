@@ -481,7 +481,7 @@ extension signUpVC : GovernorateDelegate {
     }
     
     func getAllGovsDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
     func viewGovsDidSuccess() {}
@@ -492,7 +492,6 @@ extension signUpVC : GovernorateDelegate {
 extension signUpVC: CityDelegate {
     
     func getAllCitiesDidSuccess() {}
-    
     func getAllCitiesDidFail(_ message: String) {}
     
     func getCitiesForGovDidSuccess() {
@@ -500,7 +499,7 @@ extension signUpVC: CityDelegate {
     }
     
     func getCitiesForGovDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }
@@ -513,7 +512,7 @@ extension signUpVC: InsuranceDelegate {
     }
     
     func getAllCompaniesDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
 
 }

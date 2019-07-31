@@ -13,12 +13,12 @@ class HospitalSignInVC: UIViewController {
     @IBOutlet weak var TxtFieldPassword: UITextField!
     @IBOutlet weak var TxtfieldEmail: UITextField!
     
-    
-    
+    var userPresenter: UserPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userPresenter = UserPresenter(delegate: self)
         gradBTNS()
         imageText()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
@@ -26,8 +26,6 @@ class HospitalSignInVC: UIViewController {
             UIColor.init(cgColor: #colorLiteral(red: 0.3381540775, green: 0.899985373, blue: 0.6533825397, alpha: 1)).cgColor
             ])
     }
-    
-    
     
     
     
@@ -47,42 +45,9 @@ class HospitalSignInVC: UIViewController {
             self.showAlert(title: title, message: messages)
             return
         }
-
-        API_Auth.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "", completion: { (error:Error?, success: Bool, data , user :Client) in
-            if data == "trueLogin" {
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-                self.present(newViewController, animated: true, completion: nil)
-                // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-            }else {
-                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
-            }
-            //
-        }) { (error:Error?, success: Bool, data) in
-            print(error)
-        }
-    }
         
-//        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "", completion: (error?, access, Data?, User) -> Void) { (error: Error?, success: Bool, data , user : Client)  in
-//            if success {
-//                if data != nil {
-//
-//                    helper.saveAPIUser(User: user)
-//
-//                    let storyBoard: UIStoryboard = UIStoryboard(name: "Hospital", bundle: nil)
-//                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "FirstVC")
-//                    self.present(newViewController, animated: true, completion: nil)
-//                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-//
-//                }else {
-//                    self.showAlert(title: "Login Filed", message: "\( "Login Faild")")
-//                }
-//
-//            }else {
-//                self.showAlert(title: "Login Filed", message: "\( "login Faild")")
-//                print(error as Any)
-//            }
-//        }
+        userPresenter.login(email:  TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "")
+    }
     
     
     func imageText() {
@@ -100,13 +65,9 @@ class HospitalSignInVC: UIViewController {
             
             TxtFieldPassword.MakeRoundeEdges(TxtFieldPassword)
             TxtFieldPassword.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-            
         }
-        
-        
-        
-        
     }
+    
     
     @IBOutlet weak var SignInBtnOutlet: UIButton!
     
@@ -145,4 +106,22 @@ class HospitalSignInVC: UIViewController {
         return true
         
     }
+}
+
+
+extension HospitalSignInVC : UserDelegate {
+    
+    func loginDidSuccess() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+        present(newViewController, animated: true, completion: nil)
+    }
+    
+    func loginDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func logoutDidSuccess() {}
+    func logoutDidFail(_ message: String) {}
+    
 }

@@ -328,7 +328,7 @@ extension hospitalDefination : GovernorateDelegate {
     }
     
     func getAllGovsDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
     func viewGovsDidSuccess() {}
@@ -340,7 +340,6 @@ extension hospitalDefination : GovernorateDelegate {
 extension hospitalDefination : CityDelegate {
     
     func getAllCitiesDidSuccess() {}
-    
     func getAllCitiesDidFail(_ message: String) {}
     
     func getCitiesForGovDidSuccess() {
@@ -348,7 +347,7 @@ extension hospitalDefination : CityDelegate {
     }
     
     func getCitiesForGovDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }
@@ -361,7 +360,7 @@ extension hospitalDefination : SpecialityDelegate {
     }
     
     func getAllSpecialitiesDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
 
 }

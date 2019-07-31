@@ -14,9 +14,13 @@ class LoginVC: UIViewController {
     @IBOutlet weak var TxtFieldPassword: UITextField!
     @IBOutlet weak var TxtfieldEmail: UITextField!
     
+    var userPresenter: UserPresenter!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userPresenter = UserPresenter(delegate: self)
         imageText()
         gradBTNS()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
@@ -41,56 +45,9 @@ class LoginVC: UIViewController {
             return
         }
         
-        API_Auth.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "", completion: { (error:Error?, success: Bool, data , user :Client) in
-            if data == "trueLogin" {
-                
-                if user.user?.type == "doctor"{
-                let storyboard = UIStoryboard(name: "Doctor", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "DocAppoinment") as! DoctorAppoinements
-                self.present(vc, animated: true, completion: nil)
-                }else{
-
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-                    self.present(newViewController, animated: true, completion: nil) }
-                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-            }else {
-                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
-            }
-            //
-        }) { (error:Error?, success: Bool, data) in
-            print(error)
-        }
+        userPresenter.login(email: TxtfieldEmail.text ?? "", password: TxtFieldPassword.text ?? "")
     }
-//        
-//        API_Auth.login(email: TxtfieldEmail.text ?? "" , password: TxtFieldPassword.text ?? "") { (error: Error?, success: Bool, data,user : Client) in
-//            if success {
-//                if data == "trueLogin" {
-//                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
-//                    self.present(newViewController, animated: true, completion: nil)
-//                    // self.performSegue(withIdentifier: "TrueLogin", sender: nil )
-//                }else {
-//                    self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
-//                }
-//                //
-//            }else {
-//                self.showAlert(title: "Login Filed", message: "\(String(describing: data ))")
-//                print(error as Any)
-//            }
-//        }
-//   
-//
-//        API_Auth.Login(email: userName, password: passwords) { (error, success,acctoken, role, massage, done) in
-//            if success {
-//                if done == true{
-//                    print(acctoken ?? "")
-//                    print(role ?? "")
-//                }else {
-//                    self.showAlert(title: "login fiald", message: massage ?? "")
-//                }
-//            }
-//        }
+
     
 
     func imageText() {
@@ -148,4 +105,32 @@ class LoginVC: UIViewController {
         return true
         
     }//EndShouldReturn
-}//EndClass
+
+}
+
+
+extension LoginVC : UserDelegate {
+    
+    func loginDidSuccess() {
+        
+        //TODO: response user has no type in it
+        
+//        if user.user?.type == "doctor" {
+//            let storyboard = UIStoryboard(name: "Doctor", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "DocAppoinment") as! DoctorAppoinements
+//            self.present(vc, animated: true, completion: nil)
+//        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTabBar")
+            self.present(newViewController, animated: true, completion: nil)
+//        }
+    }
+    
+    func loginDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func logoutDidSuccess() {}
+    func logoutDidFail(_ message: String) {}
+    
+}

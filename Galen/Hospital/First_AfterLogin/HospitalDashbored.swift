@@ -103,7 +103,7 @@ extension HospitalDashbored: TicketDelegate {
     
     func getAllTicketsDidFail(_ message: String) {
         Refresher.endRefreshing()
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }

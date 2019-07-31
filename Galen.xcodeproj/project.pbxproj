@@ -157,6 +157,9 @@
 		DC62C88622F20FAF0050FA38 /* InsuranceCompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88522F20FAF0050FA38 /* InsuranceCompanyService.swift */; };
 		DC62C88822F210C30050FA38 /* InsuranceCompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88722F210C30050FA38 /* InsuranceCompanyResponse.swift */; };
 		DC62C88A22F212290050FA38 /* InsuranceCompanyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88922F212290050FA38 /* InsuranceCompanyPresenter.swift */; };
+		DC62C88C22F226490050FA38 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88B22F226490050FA38 /* UserService.swift */; };
+		DC62C88E22F229D90050FA38 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88D22F229D90050FA38 /* UserResponse.swift */; };
+		DC62C89022F22A480050FA38 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C88F22F22A480050FA38 /* UserPresenter.swift */; };
 		DC67723622ECEE9F00EF79E1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723522ECEE9F00EF79E1 /* UserInfo.swift */; };
 		DC67723822ECFEB200EF79E1 /* Specialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723722ECFEB200EF79E1 /* Specialty.swift */; };
 		DC67723A22ED01E600EF79E1 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67723922ED01E600EF79E1 /* Review.swift */; };
@@ -334,6 +337,9 @@
 		DC62C88522F20FAF0050FA38 /* InsuranceCompanyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsuranceCompanyService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/InsuranceCompanyService.swift; sourceTree = "<group>"; };
 		DC62C88722F210C30050FA38 /* InsuranceCompanyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsuranceCompanyResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/InsuranceCompanyResponse.swift; sourceTree = "<group>"; };
 		DC62C88922F212290050FA38 /* InsuranceCompanyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InsuranceCompanyPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/InsuranceCompanyPresenter.swift; sourceTree = "<group>"; };
+		DC62C88B22F226490050FA38 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Services/UserService.swift; sourceTree = "<group>"; };
+		DC62C88D22F229D90050FA38 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserResponse.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Responses/UserResponse.swift; sourceTree = "<group>"; };
+		DC62C88F22F22A480050FA38 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPresenter.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Presenters/UserPresenter.swift; sourceTree = "<group>"; };
 		DC67723522ECEE9F00EF79E1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/UserInfo.swift; sourceTree = "<group>"; };
 		DC67723722ECFEB200EF79E1 /* Specialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Specialty.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Specialty.swift; sourceTree = "<group>"; };
 		DC67723922ED01E600EF79E1 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = ../../../../../../../System/Volumes/Data/Users/binshakerr/Documents/Galen/Galen/Networking/Models/Review.swift; sourceTree = "<group>"; };
@@ -800,6 +806,7 @@
 				DCC728E122F1CE4A007C1919 /* TicketService.swift */,
 				DC62C87F22F207930050FA38 /* HospitalService.swift */,
 				DC62C88522F20FAF0050FA38 /* InsuranceCompanyService.swift */,
+				DC62C88B22F226490050FA38 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -837,6 +844,7 @@
 				DCC728DF22F1CE16007C1919 /* TicketResponse.swift */,
 				DC62C88122F207E00050FA38 /* HospitalResponse.swift */,
 				DC62C88722F210C30050FA38 /* InsuranceCompanyResponse.swift */,
+				DC62C88D22F229D90050FA38 /* UserResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -851,6 +859,7 @@
 				DCC728E322F1CEAB007C1919 /* TicketPresenter.swift */,
 				DC62C88322F208080050FA38 /* HospitalPresenter.swift */,
 				DC62C88922F212290050FA38 /* InsuranceCompanyPresenter.swift */,
+				DC62C88F22F22A480050FA38 /* UserPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -1066,6 +1075,7 @@
 				9662E62B226B7CD500145A62 /* doctorSearchResultCell.swift in Sources */,
 				964058A122DCCB4E00C32DD1 /* searchTabVC2.swift in Sources */,
 				963C61682275D8AC00FB000A /* CameraHandler.swift in Sources */,
+				DC62C89022F22A480050FA38 /* UserPresenter.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
 				967F9BB522E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift in Sources */,
@@ -1087,6 +1097,7 @@
 				DC493D0B22F0D2860086B64B /* GovernoratePresenter.swift in Sources */,
 				96B38C02224A5751000C132B /* settingVC.swift in Sources */,
 				967F9BB322E8980000E7008C /* menuInsuranceCompaniesVC2TableViewCell.swift in Sources */,
+				DC62C88C22F226490050FA38 /* UserService.swift in Sources */,
 				961AD51922C1E00800634B53 /* ChoseCityViewController.swift in Sources */,
 				96F6E2B822E85C350091AEC9 /* MenuSelectAreaTableViewCell.swift in Sources */,
 				DC62C88622F20FAF0050FA38 /* InsuranceCompanyService.swift in Sources */,
@@ -1121,6 +1132,7 @@
 				96198A1422E840FB00ABABBD /* UpdatePasswordVC2.swift in Sources */,
 				96B38C1B224B0112000C132B /* FavoritsVC.swift in Sources */,
 				967F9BAD22E88AEC00E7008C /* FavoriteVC2TableViewCell.swift in Sources */,
+				DC62C88E22F229D90050FA38 /* UserResponse.swift in Sources */,
 				96D41A23223803CB001B0411 /* signUpVC.swift in Sources */,
 				96198A1A22E8469A00ABABBD /* SelectGovsVC2.swift in Sources */,
 				9640589F22DBB0E200C32DD1 /* InsuranceCompanyTableViewCell.swift in Sources */,

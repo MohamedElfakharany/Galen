@@ -139,6 +139,6 @@ extension SearchSpecialityResultVC : SpecialityDelegate {
     }
     
     func getAllSpecialitiesDidFail(_ message: String) {
-        print("message")
+        showAlert(title: "Error", message: message)
     }
 }

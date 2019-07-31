@@ -202,7 +202,7 @@ extension ChoseCityViewController : GovernorateDelegate {
     }
     
     func getAllGovsDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
     func viewGovsDidSuccess() {}
@@ -222,7 +222,7 @@ extension ChoseCityViewController : CityDelegate {
     }
     
     func getCitiesForGovDidFail(_ message: String) {
-        print(message)
+        showAlert(title: "Error", message: message)
     }
     
 }
