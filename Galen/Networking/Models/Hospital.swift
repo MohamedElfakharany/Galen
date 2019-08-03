@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Hospital: Mappable {
    
@@ -28,42 +28,41 @@ class Hospital: Mappable {
     var gov, city: City?
     var hospitalLatitude, hospitalLongitude, address, website: String?
     
-    required init?(map: Map) {}
     
-    func mapping(map: Map) {
-        id <- map["_id"]
-        hospitalID <- map["id"]
-        name <- map["name"]
-        mobile <- map["mobile"]
-        username <- map["username"]
-        email <- map["email"]
-        password <- map["password"]
-        imageURL <- map["image_url"]
-        role <- map["role"]
-        type <- map["type"]
-        roles <- map["roles"]
-        profile <- map["profile"]
-        permissions <- map["permissions"]
-        userInfo <- map["user_info"]
-        addedUserInfo <- map["added_user_info"]
-        addUserInfo <- map["add_user_info"]
-        editUserInfo <- map["edit_user_info"]
-        hospitalName <- map["hospital_name"]
-        hospitalMobile <- map["hospital_mobile"]
-        hospitalUserName <- map["hospital_user_name"]
-        hospitalPassword <- map["hospital_password"]
-        gov <- map["gov"]
-        city <- map["city"]
-        active <- map["active"]
-        doctorList <- map["doctor_list"]
-        nurseList <- map["nurse_list"]
-        insuranceCompanyList <- map["insurance_company_list"]
-        latitude <- map["Latitude"]
-        longitude <- map["Longitude"]
-        hospitalLatitude <- map["latitude"]
-        hospitalLongitude <- map["longitude"]
-        address <- map["address"]
-        website <- map["website"]
+    required init(map: Mapper) throws {
+        id = map.optionalFrom("_id")
+        hospitalID = map.optionalFrom("id")
+        name = map.optionalFrom("name")
+        mobile = map.optionalFrom("mobile")
+        username = map.optionalFrom("username")
+        email = map.optionalFrom("email")
+        password = map.optionalFrom("password")
+        imageURL = map.optionalFrom("image_url")
+        role = map.optionalFrom("role")
+        type = map.optionalFrom("type")
+        roles = map.optionalFrom("roles")
+        profile = map.optionalFrom("profile")
+        permissions = map.optionalFrom("permissions")
+        userInfo = map.optionalFrom("user_info")
+        addedUserInfo = map.optionalFrom("added_user_info")
+        addUserInfo = map.optionalFrom("add_user_info")
+        editUserInfo = map.optionalFrom("edit_user_info")
+        hospitalName = map.optionalFrom("hospital_name")
+        hospitalMobile = map.optionalFrom("hospital_mobile")
+        hospitalUserName = map.optionalFrom("hospital_user_name")
+        hospitalPassword = map.optionalFrom("hospital_password")
+        gov = map.optionalFrom("gov")
+        city = map.optionalFrom("city")
+        active = map.optionalFrom("active")
+        doctorList = map.optionalFrom("doctor_list")
+        nurseList = map.optionalFrom("nurse_list")
+        insuranceCompanyList = map.optionalFrom("insurance_company_list")
+        latitude = map.optionalFrom("Latitude")
+        longitude = map.optionalFrom("Longitude")
+        hospitalLatitude = map.optionalFrom("latitude")
+        hospitalLongitude = map.optionalFrom("longitude")
+        address = map.optionalFrom("address")
+        website = map.optionalFrom("website")
     }
     
 }

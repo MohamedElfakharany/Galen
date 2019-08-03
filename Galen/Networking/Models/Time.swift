@@ -7,19 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Time : Mappable {
     
     var day: GalenDay!
     var from, to: GalenDate!
     
-    required init?(map: Map) {}
     
-    func mapping(map: Map) {
-        day <- map["day"]
-        from <- map["from"]
-        to <- map["to"]
+    required init(map: Mapper) throws {
+        try day = map.from("day")
+        try from = map.from("from")
+        try to = map.from("to")
     }
     
 }
@@ -31,12 +30,10 @@ struct GalenDate: Mappable {
     var hour,minute: Int?
     
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        date <- map["date"]
-        hour <- map["hour"]
-        minute <- map["minute"]
+    init(map: Mapper) throws {
+        date = map.optionalFrom("date")
+        hour = map.optionalFrom("hour")
+        minute = map.optionalFrom("minute")
     }
     
 }
@@ -48,15 +45,13 @@ struct GalenDay: Mappable {
     var code: Int?
     var name,en, ar: String?
     
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        code <- map["code"]
-        name <- map["name"]
-        en <- map["en"]
-        ar <- map["ar"]
+
+    init(map: Mapper) throws {
+        try id = map.from("id")
+        code = map.optionalFrom("code")
+        name = map.optionalFrom("name")
+        en = map.optionalFrom("en")
+        ar = map.optionalFrom("ar")
     }
     
 }

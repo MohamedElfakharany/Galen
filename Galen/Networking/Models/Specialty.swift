@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Speciality: Mappable {
    
@@ -18,16 +18,14 @@ struct Speciality: Mappable {
     var active: Bool?
     var addUserInfo: UserInfo?
     
-    init?(map: Map) {}
     
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        id <- map["_id"]
-        specialityID <- map["id"]
-        imageURL <- map["image_url"]
-        active <- map["active"]
-        addUserInfo <- map["add_user_info"]
+    init(map: Mapper) throws {
+        try name = map.from("name")
+        id = map.optionalFrom("_id")
+        specialityID = map.optionalFrom("id")
+        imageURL = map.optionalFrom("image_url")
+        active = map.optionalFrom("active")
+        addUserInfo = map.optionalFrom("add_user_info")
     }
     
 }

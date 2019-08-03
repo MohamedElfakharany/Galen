@@ -32,12 +32,14 @@ class helper: NSObject {
         restartApp()
     }
     
-    class func saveAPIUser(User: Client) {
-        let def = UserDefaults.standard
-        def.setValue(User, forKey: "user")
-        def.synchronize()
-        restartApp()
-    }
+    //TODO: re-enable this later
+    
+//    class func saveAPIUser(User: Client) {
+//        let def = UserDefaults.standard
+//        def.setValue(User, forKey: "user")
+//        def.synchronize()
+//        restartApp()
+//    }
     
     class func getAPIToken() -> (token: String?,role: String?) {
         let def = UserDefaults.standard

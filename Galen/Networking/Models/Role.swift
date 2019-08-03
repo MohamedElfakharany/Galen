@@ -7,15 +7,13 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Role: Mappable {
     
     var name: String!
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
+    init(map: Mapper) throws {
+        try name = map.from("name")
     }
 }

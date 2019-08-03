@@ -8,6 +8,8 @@
 
 import Foundation
 import Moya
+import Moya_ModelMapper
+
 
 protocol UserDelegate: class {
     func loginDidSuccess()
@@ -36,16 +38,21 @@ class UserPresenter {
                 print("Status Code: ", statusCode)
                 
                 do {
-                    if let data = try response.mapJSON() as? UserResponse {
-                        if data.done == false {
-                            print("response status false")
-                            self.delegate?.loginDidFail("Request failed")
-                        } else {
-                            print("Response:")
-                            dump(data)
-                            self.token = data.accessToken
-                            self.delegate?.loginDidSuccess()
-                        }
+                    let data = try response.map(to: UserResponse.self)
+                    
+                    if let error = data.error {
+                        self.delegate?.loginDidFail(error)
+                        return
+                    }
+                    
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.loginDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.token = data.accessToken
+                        self.delegate?.loginDidSuccess()
                     }
                 } catch {
                     print("Error in parsing JSON")
@@ -68,16 +75,15 @@ class UserPresenter {
                 print("Status Code: ", statusCode)
                 
                 do {
-                    if let data = try response.mapJSON() as? UserResponse {
-                        if data.done == false {
-                            print("response status false")
-                            self.delegate?.logoutDidFail("Request failed")
-                        } else {
-                            print("Response:")
-                            dump(data)
-                            self.token = nil
-                            self.delegate?.logoutDidSuccess()
-                        }
+                    let data = try response.map(to: UserResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.logoutDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.token = nil
+                        self.delegate?.logoutDidSuccess()
                     }
                 } catch {
                     print("Error in parsing JSON")

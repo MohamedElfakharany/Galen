@@ -7,17 +7,17 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Clinic: Mappable { //increase this model later
     
     var id: Int?
     var name: String?
     
-    required init?(map: Map) {}
     
-    func mapping(map: Map) {
-        id <- map["id"]
-        name <- map["name"]
+    required init(map: Mapper) throws {
+        id = map.optionalFrom("id")
+        name = map.optionalFrom("name")
     }
+    
 }

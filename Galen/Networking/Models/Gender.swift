@@ -7,17 +7,15 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Gender: Mappable {
    
     var name: String!
     var id: Int?
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        id <- map["id"]
+    init(map: Mapper) throws {
+        try name = map.from("name")
+        id = map.optionalFrom("id")
     }
 }

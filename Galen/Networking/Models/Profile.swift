@@ -7,18 +7,16 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Profile: Mappable {
+    
     var name, mobile: String!
     var imageURL: String?
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        mobile <- map["mobile"]
-        imageURL <- map["image_url"]
-
+    init(map: Mapper) throws {
+        try name = map.from("name")
+        try mobile = map.from("mobile")
+        imageURL = map.optionalFrom("image_url")
     }
 }

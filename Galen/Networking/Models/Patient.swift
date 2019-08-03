@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Patient: Mappable {
     
@@ -31,43 +31,40 @@ class Patient: Mappable {
     var favouriteList: [Doctor]?
     var phone, patientPasswordReturn: String?
     
-    
-    required init?(map: Map) {}
 
-
-    func mapping(map: Map) {
-        id <- map["_id"]
-        name <- map["name"]
-        mobile <- map["mobile"]
-        username <- map["username"]
-        email <- map["email"]
-        password <- map["password"]
-        imageURL <- map["image_url"]
-        role <- map["role"]
-        type <- map["type"]
-        roles <- map["roles"]
-        profile <- map["profile"]
-        permissions <- map["permissions"]
-        addedUserInfo <- map["added_user_info"]
-        userInfo <- map["user_info"]
-        patientName <- map["patient_name"]
-        patientMobile <- map["patient_mobile"]
-        patientUserName <- map["patient_user_name"]
-        patientPassword <- map["patient_password"]
-        birthDateDay <- map["birth_date_day"]
-        gender <- map["gender"]
-        insuranceCompany <- map["insurance_company"]
-        gov <- map["gov"]
-        city <- map["city"]
-        country <- map["country"]
-        code <- map["code"]
-        addUserInfo <- map["add_user_info"]
-        active <- map["active"]
-        listID <- map["id"]
-        editUserInfo <- map["edit_user_info"]
-        favouriteList <- map["favourite_list"]
-        phone <- map["phone"]
-        patientPasswordReturn <- map["patient_password_return"]
+    required init(map: Mapper) throws {
+        try id = map.from("_id")
+        try name =  map.from("name")
+        try mobile =  map.from("mobile")
+        try username =  map.from("username")
+        email =  map.optionalFrom("email")
+        password =  map.optionalFrom("password")
+        imageURL =  map.optionalFrom("image_url")
+        role =  map.optionalFrom("role")
+        type =  map.optionalFrom("type")
+        roles =  map.optionalFrom("roles")
+        profile =  map.optionalFrom("profile")
+        permissions =  map.optionalFrom("permissions")
+        addedUserInfo =  map.optionalFrom("added_user_info")
+        userInfo =  map.optionalFrom("user_info")
+        patientName =  map.optionalFrom("patient_name")
+        patientMobile =  map.optionalFrom("patient_mobile")
+        patientUserName =  map.optionalFrom("patient_user_name")
+        patientPassword =  map.optionalFrom("patient_password")
+        birthDateDay =  map.optionalFrom("birth_date_day")
+        gender =  map.optionalFrom("gender")
+        insuranceCompany =  map.optionalFrom("insurance_company")
+        gov =  map.optionalFrom("gov")
+        city =  map.optionalFrom("city")
+        country =  map.optionalFrom("country")
+        code =  map.optionalFrom("code")
+        addUserInfo =  map.optionalFrom("add_user_info")
+        try active =  map.from("active")
+        try listID =  map.from("id")
+        editUserInfo =  map.optionalFrom("edit_user_info")
+        favouriteList =  map.optionalFrom("favourite_list")
+        phone =  map.optionalFrom("phone")
+        patientPasswordReturn =  map.optionalFrom("patient_password_return")
     }
 
 }

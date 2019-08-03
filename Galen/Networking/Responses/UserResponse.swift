@@ -7,19 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct UserResponse: Mappable {
     
-    var done: Bool!
-    var accessToken: String!
+    var done: Bool?
+    var accessToken: String?
+    var error: String?
     
-    init?(map: Map) {}
-    
-    
-    mutating func mapping(map: Map) {
-        done <- map["done"]
-        accessToken <- map["accessToken"]
+     init(map: Mapper) throws {
+        done = map.optionalFrom("done")
+        accessToken = map.optionalFrom("accessToken")
+        error = map.optionalFrom("error")
     }
     
 }

@@ -8,6 +8,8 @@
 
 import Foundation
 import Moya
+import Moya_ModelMapper
+
 
 protocol PatientDelegate: class {
     func getAllPatientsDidSuccess()
@@ -35,16 +37,15 @@ class PatientPresenter {
                 print("Status Code: ", statusCode)
                 
                 do {
-                    if let data = try response.mapJSON() as? AllPatientsResponse {
-                        if data.done == false {
-                            print("response status false")
-                            self.delegate?.getAllPatientsDidFail("Request failed")
-                        } else {
-                            print("Response:")
-                            dump(data)
-                            self.patients = data.list ?? []
-                            self.delegate?.getAllPatientsDidSuccess()
-                        }
+                    let data = try response.map(to: AllPatientsResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.getAllPatientsDidFail("Request failed")
+                    } else {
+                        print("Response:")
+                        dump(data)
+                        self.patients = data.list ?? []
+                        self.delegate?.getAllPatientsDidSuccess()
                     }
                 } catch {
                     print("Error in parsing JSON")

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class AllInsuranceCompaniesResponse: Mappable {
     
@@ -15,13 +15,10 @@ class AllInsuranceCompaniesResponse: Mappable {
     var list: [InsuranceCompany]?
     var count: Int!
     
-    required init?(map: Map) {}
-    
-    
-    func mapping(map: Map) {
-        done <- map["done"]
-        list <- map["list"]
-        count <- map["count"]
+    required init(map: Mapper) throws {
+        try done = map.from("done")
+        list = map.optionalFrom("list")
+        try count = map.from("count")
     }
     
 }

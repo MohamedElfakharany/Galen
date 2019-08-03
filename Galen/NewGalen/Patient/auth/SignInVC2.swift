@@ -11,14 +11,16 @@ import IQKeyboardManagerSwift
 
 class SignInVC2: UIViewController {
 
-    var iconClick : Bool!
-    
     @IBOutlet weak var TxtfieldEmail: UITextField!
-    
     @IBOutlet weak var TxtfieldPassword: UITextField!
+    
+    var iconClick : Bool!
+    var userPresenter: UserPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         userPresenter = UserPresenter(delegate: self)
          iconClick = true
         
     }
@@ -56,7 +58,13 @@ class SignInVC2: UIViewController {
     }
     
     @IBAction func BtnSignIn(_ sender: Any) {
-    
+        if TxtfieldEmail.text!.count < 10 {
+            showAlert(title: "Error", message: "Please enter correct email address")
+        } else if TxtfieldPassword.text!.count < 6 {
+            showAlert(title: "Error", message: "Please enter correct password")
+        } else {
+            userPresenter.login(email: TxtfieldEmail.text!, password: TxtfieldPassword.text!)
+        }
     }
     
     // keyboard down
@@ -68,4 +76,20 @@ class SignInVC2: UIViewController {
         self.view.endEditing(true)
         return true
     }
+}
+
+
+extension SignInVC2 : UserDelegate {
+    
+    func loginDidSuccess() {
+        print("logged in succesfully")
+    }
+    
+    func loginDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func logoutDidSuccess() {}
+    func logoutDidFail(_ message: String) {}
+    
 }

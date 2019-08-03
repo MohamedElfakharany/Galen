@@ -7,19 +7,16 @@
 //
 
 import Foundation
-import ObjectMapper
-
+import Mapper
 
 struct InsuranceCompany: Mappable {
     
     var name: String!
     var id: String?
     
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        id <- map["id"]
+    init(map: Mapper) throws {
+        try name = map.from("name")
+        id = map.optionalFrom("id")
     }
     
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Ticket: Mappable {
     
@@ -28,27 +28,24 @@ class Ticket: Mappable {
     var ticketDate: TicketDate?
     
     
-    required init?(map: Map) {}
-    
-    
-    func mapping(map: Map) {
-        id <- map["_id"]
-        ticketID <- map["id"]
-        date <- map["date"]
-        code <- map["code"]
-        selectedTime <- map["selected_time"]
-        selectedShift <- map["selected_shift"]
-        selectedDoctor <- map["selected_doctor"]
-        selectedClinic <- map["selected_clinic"]
-        selectedSpecialty <- map["selected_specialty"]
-        selectedHospital <- map["selected_hospital"]
-        active <- map["active"]
-        status <- map["status"]
-        addUserInfo <- map["add_user_info"]
-        editUserInfo <- map["edit_user_info"]
-        imageURL <- map["image_url"]
-        patient <- map["patient"]
-        ticketDate <- map["ticket_date"]
+    required init(map: Mapper) throws {
+        try id = map.from("_id")
+        ticketID = map.optionalFrom("id")
+        date = map.optionalFrom("date")
+        code = map.optionalFrom("code")
+        selectedTime = map.optionalFrom("selected_time")
+        selectedShift = map.optionalFrom("selected_shift")
+        selectedDoctor = map.optionalFrom("selected_doctor")
+        selectedClinic = map.optionalFrom("selected_clinic")
+        selectedSpecialty = map.optionalFrom("selected_specialty")
+        selectedHospital = map.optionalFrom("selected_hospital")
+        active = map.optionalFrom("active")
+        status = map.optionalFrom("status")
+        addUserInfo = map.optionalFrom("add_user_info")
+        editUserInfo = map.optionalFrom("edit_user_info")
+        imageURL = map.optionalFrom("image_url")
+        patient = map.optionalFrom("patient")
+        ticketDate = map.optionalFrom("ticket_date")
     }
     
 }
@@ -59,10 +56,8 @@ struct TicketDate: Mappable {
     
     var date: String!
     
-    init?(map: Map) {}
-
-    mutating func mapping(map: Map) {
-        date <- map["date"]
+    init(map: Mapper) throws {
+        try date = map.from("date")
     }
     
 }
@@ -74,14 +69,13 @@ struct TicketStatus: Mappable {
     var code: Int?
     var name, nameEn, en, ar: String?
     
-    init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        code <- map["code"]
-        name <- map["name"]
-        en <- map["en"]
-        ar <- map["ar"]
-        nameEn <- map["name_en"]
+    init(map: Mapper) throws {
+        try id = map.from("id")
+        code = map.optionalFrom("code")
+        name = map.optionalFrom("name")
+        en = map.optionalFrom("en")
+        ar = map.optionalFrom("ar")
+        nameEn = map.optionalFrom("name_en")
     }
 }

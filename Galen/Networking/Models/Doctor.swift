@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Doctor: Mappable {
    
@@ -23,22 +23,20 @@ class Doctor: Mappable {
     var specialty: Speciality?
     var hospital: Hospital?
     
-    required init?(map: Map) {}
     
-    
-    func mapping(map: Map) {
-        name <- map["name"]
-        id <- map["id"]
-        imageURL <- map["image_url"]
-        rating <- map["rating"]
-        acceptDiscount <- map["accept_discount"]
-        reviewList <- map["review_list"]
-        fee <- map["fee"]
-        gender <- map["gender"]
-        notes <- map["notes"]
-        graduated <- map["graduated"]
-        specialty <- map["specialty"]
-        hospital <- map["hospital"]
+    required init(map: Mapper) throws {
+        try name = map.from("name")
+        try id = map.from("id")
+        imageURL = map.optionalFrom("image_url")
+        rating = map.optionalFrom("rating")
+        try acceptDiscount = map.from("accept_discount")
+        reviewList = map.optionalFrom("review_list")
+        fee = map.optionalFrom("fee")
+        try gender = map.from("gender")
+        notes = map.optionalFrom("notes")
+        graduated = map.optionalFrom("graduated")
+        specialty = map.optionalFrom("specialty")
+        hospital = map.optionalFrom("hospital")
     }
     
 }

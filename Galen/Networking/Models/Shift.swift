@@ -7,19 +7,17 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 class Shift: Mappable {
     
     var name: String!
     var timesList: [Time]?
     
-    required init?(map: Map) {}
     
-    
-    func mapping(map: Map) {
-        name <- map["name"]
-        timesList <- map["times_list"]
+    required init(map: Mapper) throws {
+        try name = map.from("name")
+        timesList = map.optionalFrom("times_list")
     }
     
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Review: Mappable {
     
@@ -15,14 +15,13 @@ struct Review: Mappable {
     var rate: Int?
     var date, patientName, patientImageURL: String?
     
-    init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
-        comment <- map["comment"]
-        rate <- map["rate"]
-        date <- map["date"]
-        patientName <- map["patient_name"]
-        patientImageURL <- map["patient_image_url"]
+    init(map: Mapper) throws {
+        comment = map.optionalFrom("comment")
+        rate = map.optionalFrom("rate")
+        date = map.optionalFrom("date")
+        patientName = map.optionalFrom("patient_name")
+        patientImageURL = map.optionalFrom("patient_image_url")
     }
     
 }

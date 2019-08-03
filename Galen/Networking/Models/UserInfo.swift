@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct UserInfo: Mappable {
     
@@ -17,14 +17,13 @@ struct UserInfo: Mappable {
     var ip: String?
     var name: String?
     
-    init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        email <- map["email"]
-        date <- map["date"]
-        ip <- map["ip"]
-        name <- map["name"]
+    init(map: Mapper) throws {
+        try id = map.from("id")
+        email = map.optionalFrom("email")
+        date = map.optionalFrom("date")
+        ip = map.optionalFrom("ip")
+        name = map.optionalFrom("name")
     }
     
 }

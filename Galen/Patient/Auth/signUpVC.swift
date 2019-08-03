@@ -248,23 +248,25 @@ class signUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource ,
             self.SelectedGenderID = 2
         }
         
-        API_Auth.SignUpPatient(
-        patient_name: patientNames,
-        phone_number: phoneNumbers,
-        email_adress:emailAdresses,
-        password: passwords,
-        password_confirmation: passwordConfirmations,
-        date_of_birth: dateOfBirths,
-        insurance_company: ICs[ICIndex],
-        Gov: Govs[GovIndex],
-        City: Cities[CityIndex],
-        gender: SelectedGender,
-        genderID: SelectedGenderID,
-        countryName: SelectedCountryName,
-        image: SelectedImageUrl) {
-         (error: Error?, success: Bool, data) in
-            print("Done")
-        }
+        //TODO: re-enable this
+        
+//        API_Auth.SignUpPatient(
+//        patient_name: patientNames,
+//        phone_number: phoneNumbers,
+//        email_adress:emailAdresses,
+//        password: passwords,
+//        password_confirmation: passwordConfirmations,
+//        date_of_birth: dateOfBirths,
+//        insurance_company: ICs[ICIndex],
+//        Gov: Govs[GovIndex],
+//        City: Cities[CityIndex],
+//        gender: SelectedGender,
+//        genderID: SelectedGenderID,
+//        countryName: SelectedCountryName,
+//        image: SelectedImageUrl) {
+//         (error: Error?, success: Bool, data) in
+//            print("Done")
+//        }
         
         
         

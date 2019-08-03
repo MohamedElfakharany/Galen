@@ -183,31 +183,33 @@ class EditMyProfileVC: UIViewController,UIPickerViewDelegate ,UIPickerViewDataSo
             }
         }
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
-            
-            print("myresponse")
-            print(response)
-            switch response.result
-            {
-            case .failure(let error):
-                
-                print(error)
-                //self.showAlert(title: "Error", message: "\(error)")
-                
-            case .success(let data):
-                let json = JSON(data)
-                //print(value)
-                if let UserData = try? JSONDecoder().decode(Client.self, from:data ){
-                    //print("user token \(user_token)")
-                    helper.saveAPIUser(User: UserData)
-                    
-                }else {
-                    // let data. = json["message"].string
-                    //print(data ?? "no")
-                    
-                }
-            }
-        }
+        //TODO: re-enable this later
+        
+//        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil) .responseData { response in
+//
+//            print("myresponse")
+//            print(response)
+//            switch response.result
+//            {
+//            case .failure(let error):
+//
+//                print(error)
+//                //self.showAlert(title: "Error", message: "\(error)")
+//
+//            case .success(let data):
+//                let json = JSON(data)
+//                //print(value)
+//                if let UserData = try? JSONDecoder().decode(Client.self, from:data ){
+//                    //print("user token \(user_token)")
+//                    helper.saveAPIUser(User: UserData)
+//
+//                }else {
+//                    // let data. = json["message"].string
+//                    //print(data ?? "no")
+//
+//                }
+//            }
+//        }
     }
     func gradBTNS() {
         

@@ -8,6 +8,8 @@
 
 import Foundation
 import Moya
+import Moya_ModelMapper
+
 
 protocol CityDelegate: class {
     func getAllCitiesDidSuccess()
@@ -37,16 +39,15 @@ class CityPresenter {
                 print("Status Code: ", statusCode)
                 
                 do {
-                    if let data = try response.mapJSON() as? AllCitiesResponse {
-                        if data.done == false {
-                            print("response status false")
-                            self.delegate?.getAllCitiesDidFail("Request failed")
-                        } else {
-                            print("Response:")
-                            dump(data)
-                            self.cities = data.list ?? []
-                            self.delegate?.getAllCitiesDidSuccess()
-                        }
+                    let data = try response.map(to: AllCitiesResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.getAllCitiesDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.cities = data.list ?? []
+                        self.delegate?.getAllCitiesDidSuccess()
                     }
                 } catch {
                     print("Error in parsing JSON")
@@ -70,16 +71,15 @@ class CityPresenter {
                 print("Status Code: ", statusCode)
                 
                 do {
-                    if let data = try response.mapJSON() as? AllCitiesResponse {
-                        if data.done == false {
-                            print("response status false")
-                            self.delegate?.getCitiesForGovDidFail("Request failed")
-                        } else {
-                            print("Response:")
-                            dump(data)
-                            self.cities = data.list ?? []
-                            self.delegate?.getCitiesForGovDidSuccess()
-                        }
+                    let data = try response.map(to: AllCitiesResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.getCitiesForGovDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.cities = data.list ?? []
+                        self.delegate?.getCitiesForGovDidSuccess()
                     }
                 } catch {
                     print("Error in parsing JSON")
