@@ -508,7 +508,7 @@ extension signUpVC: CityDelegate {
 
 
 extension signUpVC: InsuranceDelegate {
-    
+   
     func getAllCompaniesDidSuccess() {
         ICs = insurancePresenter.companies
     }
@@ -516,5 +516,8 @@ extension signUpVC: InsuranceDelegate {
     func getAllCompaniesDidFail(_ message: String) {
         showAlert(title: "Error", message: message)
     }
+    
+    func searchCompaniesDidSuccess() {}
+    func searchCompaniesDidFail(_ message: String) {}
 
 }

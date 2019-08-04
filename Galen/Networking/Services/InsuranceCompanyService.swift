@@ -11,6 +11,7 @@ import Moya
 
 enum InsuranceCompanyService {
     case allCompanies
+    case searchCompanies(text: String)
 }
 
 extension InsuranceCompanyService: TargetType {
@@ -21,7 +22,7 @@ extension InsuranceCompanyService: TargetType {
     
     var path: String {
         switch self {
-        case .allCompanies:
+        case .allCompanies, .searchCompanies:
             return "/all"
         }
     }
@@ -35,6 +36,8 @@ extension InsuranceCompanyService: TargetType {
         switch self {
         case .allCompanies:
             return .requestPlain
+        case .searchCompanies(let text):
+            return .requestParameters(parameters: ["where": ["name": text]], encoding: JSONEncoding.default)
         }
     }
     

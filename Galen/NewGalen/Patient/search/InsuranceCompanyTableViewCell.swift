@@ -18,7 +18,9 @@ class InsuranceCompanyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+     
+        imgInsuranceCompany.clipsToBounds = true
+        imgInsuranceCompany.layer.cornerRadius = imgInsuranceCompany.frame.width/2
     }
     
     func setupCell(company: InsuranceCompany){

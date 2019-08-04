@@ -12,9 +12,7 @@ class SearchInsuranceResultVC2: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var InsuranceSearch: UISearchBar!
-    
-    var InsuranceArray:[InsuranceCompany] = []
-    var SelectedInsurance:[InsuranceCompany] = []
+  
     var searching = false
     var presenter: InsurancePresenter!
 
@@ -22,8 +20,8 @@ class SearchInsuranceResultVC2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         presenter = InsurancePresenter(delegate: self)
         presenter.getAllCompanies()
     }
@@ -45,17 +43,22 @@ class SearchInsuranceResultVC2: UIViewController {
 extension SearchInsuranceResultVC2 : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return SelectedInsurance.count
-        }else {
-            return InsuranceArray.count
-        }
+        return searching ? presenter.searchedCompanies.count : presenter.companies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let MyCell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCompanyTableViewCell", for: indexPath) as? InsuranceCompanyTableViewCell
-        MyCell?.setupCell(company: InsuranceArray[indexPath.row])
+        let company = searching ? presenter.searchedCompanies[indexPath.row] : presenter.companies[indexPath.row]
+        MyCell?.setupCell(company: company)
         return MyCell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
@@ -64,33 +67,34 @@ extension SearchInsuranceResultVC2 : UITableViewDelegate , UITableViewDataSource
 
 extension SearchInsuranceResultVC2: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //  SelectedSpetiality = SpecailityArray.filter{$0.name?.range(of: searchText, options: [.anchored, .caseInsensitive]) != nil }
-        SelectedInsurance.removeAll()
-        for insurance in InsuranceArray {
-            if insurance.name?.contains(searchText) ?? false{
-                SelectedInsurance.append(insurance)
-                print(SelectedInsurance)
-                self.tableView.reloadData()
-            }
-            searching = true
-            self.tableView.reloadData()
-        }
-        
-        tableView.reloadData()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        presenter.searchCompanies(text: searchBar.text ?? "")
+        searching = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
     }
 }
 
 
 
 extension SearchInsuranceResultVC2: InsuranceDelegate {
-    
+   
     func getAllCompaniesDidSuccess() {
-        InsuranceArray = presenter.companies
         tableView.reloadData()
     }
     
     func getAllCompaniesDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func searchCompaniesDidSuccess() {
+        tableView.reloadData()
+    }
+    
+    func searchCompaniesDidFail(_ message: String) {
         showAlert(title: "Error", message: message)
     }
     

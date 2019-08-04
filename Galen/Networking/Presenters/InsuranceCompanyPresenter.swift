@@ -14,6 +14,8 @@ import Moya_ModelMapper
 protocol InsuranceDelegate: class {
     func getAllCompaniesDidSuccess()
     func getAllCompaniesDidFail(_ message: String)
+    func searchCompaniesDidSuccess()
+    func searchCompaniesDidFail(_ message: String)
 }
 
 
@@ -22,7 +24,7 @@ class InsurancePresenter {
     weak var delegate: InsuranceDelegate?
     let provider = MoyaProvider<InsuranceCompanyService>()
     var companies = [InsuranceCompany]()
-    
+    var searchedCompanies = [InsuranceCompany]()
     
     init(delegate: InsuranceDelegate) {
         self.delegate = delegate
@@ -55,6 +57,38 @@ class InsurancePresenter {
             case let .failure(error):
                 print("Request Failed. Error: ", error.localizedDescription)
                 self.delegate?.getAllCompaniesDidFail(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func searchCompanies(text: String){
+        provider.request(.searchCompanies(text: text)) { result in
+            switch result {
+            case let .success(response):
+                
+                let statusCode = response.statusCode
+                print("Status Code: ", statusCode)
+                
+                do {
+                    let data = try response.map(to: AllInsuranceCompaniesResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.searchCompaniesDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.searchedCompanies = data.list ?? []
+                        self.delegate?.searchCompaniesDidSuccess()
+                    }
+                } catch {
+                    print("Error in parsing JSON")
+                    self.delegate?.searchCompaniesDidFail("Error in parsing JSON")
+                }
+                
+            case let .failure(error):
+                print("Request Failed. Error: ", error.localizedDescription)
+                self.delegate?.searchCompaniesDidFail(error.localizedDescription)
             }
         }
     }

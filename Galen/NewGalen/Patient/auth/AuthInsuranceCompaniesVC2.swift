@@ -93,4 +93,6 @@ extension AuthInsuranceCompaniesVC2: InsuranceDelegate {
         showAlert(title: "Error", message: message)
     }
 
+    func searchCompaniesDidSuccess() {}
+    func searchCompaniesDidFail(_ message: String) {}
 }
