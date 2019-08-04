@@ -12,31 +12,25 @@ import IQKeyboardManagerSwift
 class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var imageuser: UIImageView!
-    
     @IBOutlet weak var TxtfieldCode: UITextField!
-    
     @IBOutlet weak var TxtfieldName: UITextField!
-    
     @IBOutlet weak var TxtfieldMobile: UITextField!
-    
     @IBOutlet weak var TxtfieldEmail: UITextField!
-    
     @IBOutlet weak var TxtfieldPassword: UITextField!
-    
     @IBOutlet weak var TxtfieldPassConfirmation: UITextField!
-    
     @IBOutlet weak var TxtfieldInsuranceCompanies: UITextField!
-    
     @IBOutlet weak var TxtfieldBirthDay: UITextField!
-
     @IBOutlet weak var RegisterBtnOutlet: UIButton!
     
     var iconClick : Bool!
     var iconClick2 : Bool!
     private var datePicker : UIDatePicker?
+    var presenter: RegisterPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = RegisterPresenter(delegate: self)
         
         RegisterBtnOutlet.layer.cornerRadius = 5
         RegisterBtnOutlet.clipsToBounds = true
@@ -82,7 +76,19 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
     }
     
     @IBAction func BtnSignUp(_ sender: Any) {
-        
+        if TxtfieldName.text!.isEmpty {
+            showAlert(title: "Error", message: "Please enter your name")
+        } else if TxtfieldMobile.text!.count < 10 {
+            showAlert(title: "Error", message: "Please enter a correct mobile number")
+        } else if TxtfieldEmail.text!.count < 10 {
+            showAlert(title: "Error", message: "Please enter a correct email")
+        } else if TxtfieldPassword.text!.count < 6 {
+            showAlert(title: "Error", message: "Password must be 6 charachters at least")
+        } else if TxtfieldPassword.text != TxtfieldPassConfirmation.text {
+            showAlert(title: "Error", message: "Passwords doesn't match")
+        } else {
+            presenter.registerNewPatient(name: TxtfieldName.text!, mobile: TxtfieldMobile.text!, username: TxtfieldEmail.text!, password: TxtfieldPassword.text!)
+        }
     }
     
     
@@ -155,4 +161,19 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
         self.view.endEditing(true)
         return true
     }
+}
+
+
+
+extension SignUpVC2 : RegisterDelegate {
+    
+    func registerNewPatientDidSuccess() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInVC2")
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func registerNewPatientDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
 }
