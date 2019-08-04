@@ -12,6 +12,7 @@ import Moya
 enum GovernorateService {
     case allGovs
     case viewGovs
+    case searchGovs(text: String)
 }
 
 extension GovernorateService: TargetType {
@@ -22,7 +23,7 @@ extension GovernorateService: TargetType {
     
     var path: String {
         switch self {
-        case .allGovs:
+        case .allGovs, .searchGovs:
             return "/all"
         case .viewGovs:
             return "/view"
@@ -38,6 +39,8 @@ extension GovernorateService: TargetType {
         switch self {
         case .allGovs, .viewGovs:
             return .requestPlain
+        case .searchGovs(let text):
+            return .requestParameters(parameters: ["where": ["name": text]], encoding: JSONEncoding.default)
         }
     }
     

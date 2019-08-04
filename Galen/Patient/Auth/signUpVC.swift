@@ -488,7 +488,8 @@ extension signUpVC : GovernorateDelegate {
     
     func viewGovsDidSuccess() {}
     func viewGovsDidFail(_ message: String) {}
-    
+    func searchGovsDidSuccess() {}
+    func searchGovsDidFail(_ message: String) {}
 }
 
 extension signUpVC: CityDelegate {

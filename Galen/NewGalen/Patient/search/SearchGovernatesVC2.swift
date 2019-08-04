@@ -8,42 +8,24 @@
 
 import UIKit
 
-class SearchGovernatesVC2: UIViewController , UITableViewDelegate,UITableViewDataSource{
+class SearchGovernatesVC2: UIViewController {
 
-    
-    var GovesArray:[InsuranceCompany] = []
-    var SelectedGoves:[InsuranceCompany] = []
-    var searching = false
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var GovesSearch: UISearchBar!
+    
+    var searching = false
+    var presenter: GovernoratePresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        presenter = GovernoratePresenter(delegate: self)
+        presenter.getAllGovs()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return SelectedGoves.count
-        }else {
-            return GovesArray.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MyCell = tableView.dequeueReusableCell(withIdentifier: "InsuranceCell", for: indexPath) as? InsuranceCompanyTableViewCell
-        
-        MyCell?.inittiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: GovesArray[indexPath.row].name! )
-        return MyCell!
-    }
     
     // keybord down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,20 +38,62 @@ class SearchGovernatesVC2: UIViewController , UITableViewDelegate,UITableViewDat
     }
 }
 
+
+extension SearchGovernatesVC2 : UITableViewDelegate,UITableViewDataSource {
+    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searching ? presenter.searchedGovs.count : presenter.govs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let MyCell = tableView.dequeueReusableCell(withIdentifier: "SelectGovsTableViewCell", for: indexPath) as? SelectGovsTableViewCell
+        let gov = searching ? presenter.searchedGovs[indexPath.row] : presenter.govs[indexPath.row]
+        MyCell?.setupCell(gov: gov)
+        return MyCell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
 extension SearchGovernatesVC2: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //  SelectedSpetiality = SpecailityArray.filter{$0.name?.range(of: searchText, options: [.anchored, .caseInsensitive]) != nil }
-        SelectedGoves.removeAll()
-        for Goves in GovesArray {
-            if Goves.name?.contains(searchText) ?? false{
-                SelectedGoves.append(Goves)
-                print(SelectedGoves)
-                self.tableView.reloadData()
-            }
-            searching = true
-            self.tableView.reloadData()
-        }
-        
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        presenter.searchGovs(text: searchBar.text ?? "")
+        searching = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+}
+
+
+
+extension SearchGovernatesVC2 : GovernorateDelegate {
+    
+    func getAllGovsDidSuccess() {
         tableView.reloadData()
     }
+    
+    func getAllGovsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func viewGovsDidSuccess() {}
+    func viewGovsDidFail(_ message: String) {}
+    
+    func searchGovsDidSuccess() {
+        tableView.reloadData()
+    }
+    
+    func searchGovsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    
 }

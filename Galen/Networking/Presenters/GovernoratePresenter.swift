@@ -16,6 +16,8 @@ protocol GovernorateDelegate: class {
     func getAllGovsDidFail(_ message: String)
     func viewGovsDidSuccess()
     func viewGovsDidFail(_ message: String)
+    func searchGovsDidSuccess()
+    func searchGovsDidFail(_ message: String)
 }
 
 
@@ -24,7 +26,7 @@ class GovernoratePresenter {
     weak var delegate: GovernorateDelegate?
     let provider = MoyaProvider<GovernorateService>()
     var govs = [City]()
-    
+    var searchedGovs = [City]()
     
     init(delegate: GovernorateDelegate) {
         self.delegate = delegate
@@ -88,6 +90,38 @@ class GovernoratePresenter {
             case let .failure(error):
                 print("Request Failed. Error: ", error.localizedDescription)
                 self.delegate?.viewGovsDidFail(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func searchGovs(text: String){
+        provider.request(.searchGovs(text: text)) { result in
+            switch result {
+            case let .success(response):
+                
+                let statusCode = response.statusCode
+                print("Status Code: ", statusCode)
+                
+                do {
+                    let data = try response.map(to: AllCitiesResponse.self)
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.searchGovsDidFail("Request failed")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.searchedGovs = data.list ?? []
+                        self.delegate?.searchGovsDidSuccess()
+                    }
+                } catch {
+                    print("Error in parsing JSON")
+                    self.delegate?.searchGovsDidFail("Error in parsing JSON")
+                }
+                
+            case let .failure(error):
+                print("Request Failed. Error: ", error.localizedDescription)
+                self.delegate?.searchGovsDidFail(error.localizedDescription)
             }
         }
     }

@@ -346,5 +346,8 @@ extension hospitalAddDoctor: GovernorateDelegate {
         showAlert(title: "Error", message: message)
     }
     
+    func searchGovsDidSuccess() {}
+    func searchGovsDidFail(_ message: String) {}
+    
 }
 
