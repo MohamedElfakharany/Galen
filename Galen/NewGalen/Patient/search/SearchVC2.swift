@@ -8,27 +8,26 @@
 
 import UIKit
 
-class SearchVC2: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource , UITextFieldDelegate{
+class SearchVC2: UIViewController {
+    
+    @IBOutlet weak var TxtfieldSearchSpeciality: UITextField!
+    @IBOutlet weak var BtnSearchOutlet: UIButton!
     
     var pickerView = UIPickerView()
     private var PickerSpeciality: UIPickerView?
     var selectedTxtField = UITextField()
     var selectedSpeciality = String()
-    var Speciality:[String] = []
-    @IBOutlet weak var TxtfieldSearchSpeciality: UITextField!
-    @IBOutlet weak var BtnSearchOutlet: UIButton!
+    var presenter: SpecialityPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         BtnSearchOutlet.layer.cornerRadius = 5
         BtnSearchOutlet.clipsToBounds = true
-        
-        Speciality = ["طب الباطنة","طب الاسنان","طب الجراحة ","طب العيون","طب الاورام","طب الروماتزم"]
+        presenter = SpecialityPresenter(delegate: self)
+        presenter.getAllSpecialities()
         PickerSpeciality = UIPickerView()
         TxtfieldSearchSpeciality.inputView = PickerSpeciality
-        
-        
     }
     
     @IBAction func BtnAutoSelect(_ sender: UIButton) {
@@ -44,36 +43,6 @@ class SearchVC2: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource 
         }
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Speciality.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if selectedTxtField == TxtfieldSearchSpeciality {
-            return Speciality[row]
-        }
-        return nil
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if selectedTxtField == TxtfieldSearchSpeciality {
-            TxtfieldSearchSpeciality.text = Speciality[row]
-            self.selectedSpeciality = Speciality[row]
-            self.view.endEditing(true)
-        }
-        return
-    }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.pickerView.delegate = self
-        self.pickerView.dataSource  = self
-        selectedTxtField = textField
-        if selectedTxtField == TxtfieldSearchSpeciality{
-            TxtfieldSearchSpeciality.inputView = pickerView
-        }
-    }
     // keyboard down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -83,4 +52,57 @@ class SearchVC2: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource 
         self.view.endEditing(true)
         return true
     }
+}
+
+
+extension SearchVC2: UIPickerViewDelegate ,UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return presenter.specialities.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if selectedTxtField == TxtfieldSearchSpeciality {
+            return presenter.specialities[row].name
+        }
+        return nil
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if selectedTxtField == TxtfieldSearchSpeciality {
+            TxtfieldSearchSpeciality.text = presenter.specialities[row].name
+            self.selectedSpeciality = presenter.specialities[row].name
+            self.view.endEditing(true)
+        }
+        return
+    }
+}
+
+
+extension SearchVC2 : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource  = self
+        selectedTxtField = textField
+        if selectedTxtField == TxtfieldSearchSpeciality{
+            TxtfieldSearchSpeciality.inputView = pickerView
+        }
+    }
+}
+
+
+extension SearchVC2 : SpecialityDelegate {
+    
+    func getAllSpecialitiesDidSuccess() {
+        pickerView.reloadAllComponents()
+    }
+    
+    func getAllSpecialitiesDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
 }
