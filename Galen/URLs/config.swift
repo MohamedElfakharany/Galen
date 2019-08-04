@@ -10,6 +10,7 @@ import Foundation
 
 struct URLs {
     
+    static let base = "http://intmicrotec.neat-url.com:6566"
     static let main = "http://intmicrotec.neat-url.com:6566/api/"
     
     static let register           = main + "register/add"

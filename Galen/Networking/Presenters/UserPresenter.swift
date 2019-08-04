@@ -52,6 +52,7 @@ class UserPresenter {
                         print("Response: ")
                         dump(data)
                         self.token = data.accessToken
+                        UserDefaults.standard.set(data.accessToken!, forKey: "accessToken")
                         self.delegate?.loginDidSuccess()
                     }
                 } catch {
@@ -83,6 +84,7 @@ class UserPresenter {
                         print("Response: ")
                         dump(data)
                         self.token = nil
+                        UserDefaults.standard.removeObject(forKey: "accessToken")
                         self.delegate?.logoutDidSuccess()
                     }
                 } catch {

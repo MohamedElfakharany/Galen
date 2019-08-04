@@ -47,7 +47,7 @@ extension GovernorateService: TargetType {
     
     var headers: [String: String]? {
         return ["Content-type": "application/json",
-                "Authorization" : helper.getAPIToken().token ?? ""]
+                "Authorization" : UserDefaults.standard.string(forKey: "accessToken") ?? ""]
     }
 }
 

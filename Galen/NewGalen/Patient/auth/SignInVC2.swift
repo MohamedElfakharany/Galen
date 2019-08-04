@@ -82,7 +82,8 @@ class SignInVC2: UIViewController {
 extension SignInVC2 : UserDelegate {
     
     func loginDidSuccess() {
-        print("logged in succesfully")
+        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "mainPatientTabbar")
+        navigationController?.pushViewController(tabbar!, animated: true)
     }
     
     func loginDidFail(_ message: String) {

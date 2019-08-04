@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InsuranceCompanyTableViewCell: UITableViewCell {
     
@@ -20,16 +21,18 @@ class InsuranceCompanyTableViewCell: UITableViewCell {
         
     }
     
+    func setupCell(company: InsuranceCompany){
+        
+        LblInsuranceCompanyName.text = company.name
+        
+        let url = URL(string: "\(URLs.base)\(company.imageURL ?? "")")  
+        imgInsuranceCompany.kf.indicatorType = .activity
+        imgInsuranceCompany.kf.setImage(with: url)
+    }
+    
     func inittiateCell(image:UIImage , label:String ){
         self.imgInsuranceCompany.image = image
         self.LblInsuranceCompanyName.text = label
-    }
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

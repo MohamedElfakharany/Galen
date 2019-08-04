@@ -8,26 +8,40 @@
 
 import UIKit
 
-class AuthInsuranceCompaniesVC2: UIViewController ,UITableViewDelegate , UITableViewDataSource{
-    
-    
-    var InsuranceArray:[InsuranceCompany] = []
-    var SelectedInsurance:[InsuranceCompany] = []
-    var searching = false
+class AuthInsuranceCompaniesVC2: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var InsuranceSearch: UISearchBar!
     
+    var InsuranceArray:[InsuranceCompany] = []
+    var SelectedInsurance:[InsuranceCompany] = []
+    var searching = false
+    var presenter: InsurancePresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
+                
+        tableView.delegate = self
+        tableView.dataSource = self
+        presenter = InsurancePresenter(delegate: self)
+        presenter.getAllCompanies()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+   
+    // keybord down
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+}
+
+
+extension AuthInsuranceCompaniesVC2: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
@@ -44,16 +58,10 @@ class AuthInsuranceCompaniesVC2: UIViewController ,UITableViewDelegate , UITable
         return MyCell!
     }
     
-    // keybord down
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
 }
+
+
+
 
 extension AuthInsuranceCompaniesVC2: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -71,4 +79,18 @@ extension AuthInsuranceCompaniesVC2: UISearchBarDelegate {
         
         tableView.reloadData()
     }
+}
+
+
+extension AuthInsuranceCompaniesVC2: InsuranceDelegate {
+    
+    func getAllCompaniesDidSuccess() {
+        InsuranceArray = presenter.companies
+        tableView.reloadData()
+    }
+    
+    func getAllCompaniesDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+
 }

@@ -5,6 +5,7 @@ inhibit_all_warnings!
 target 'Galen' do
   
   pod 'Moya-ModelMapper'
+  pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'ADCountryPicker'

@@ -2328,7 +2328,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Qr3-0e-tv5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="oN1-JD-6eK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainPatientTabbar" automaticallyAdjustsScrollViewInsets="NO" id="oN1-JD-6eK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="geT-KU-1cm">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -2338,9 +2338,6 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bu9-zn-EZu" kind="relationship" relationship="viewControllers" id="iSR-oW-r7t"/>
-                        <segue destination="Ehm-c6-Nm2" kind="relationship" relationship="viewControllers" id="0sz-LX-jMd"/>
-                        <segue destination="POU-9x-CP2" kind="relationship" relationship="viewControllers" id="0J6-dN-AOT"/>
                         <segue destination="Vpa-se-tst" kind="relationship" relationship="viewControllers" id="HpT-dW-ZGB"/>
                     </connections>
                 </tabBarController>
@@ -2357,7 +2354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9sQ-Xq-Loi">
-                                <rect key="frame" x="15" y="84" width="345" height="534"/>
+                                <rect key="frame" x="15" y="40" width="345" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="InsuranceCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="190" id="VvE-1J-98S" customClass="FavoriteVC2TableViewCell" customModule="Galen" customModuleProvider="target">
@@ -2541,13 +2538,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="برجاء ادخال كلمة السر الجديدة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qy-CN-8Uc">
-                                <rect key="frame" x="25" y="84" width="325" height="26.5"/>
+                                <rect key="frame" x="25" y="40" width="325" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32549019607843138" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-hf-Qre">
-                                <rect key="frame" x="15" y="130.5" width="345" height="143"/>
+                                <rect key="frame" x="15" y="86.5" width="345" height="143"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-xP-Zsl">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="58.5"/>
@@ -2667,7 +2664,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-Qq-3Xy">
-                                <rect key="frame" x="90" y="323.5" width="195" height="30"/>
+                                <rect key="frame" x="90" y="279.5" width="195" height="30"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.45490196078431372" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2729,7 +2726,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBu-lr-wWQ">
-                                <rect key="frame" x="15" y="84" width="345" height="583"/>
+                                <rect key="frame" x="15" y="40" width="345" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ApprovalListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="180" id="F5n-ZG-jO8" customClass="ApprovalListTableViewCell" customModule="Galen" customModuleProvider="target">
@@ -2910,7 +2907,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1at-I4-RYM">
-                                <rect key="frame" x="15" y="84" width="345" height="534"/>
+                                <rect key="frame" x="15" y="40" width="345" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyDatesVC2Cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="177" id="Y44-au-gum" customClass="MyDatesVC2TableViewCell" customModule="Galen" customModuleProvider="target">
@@ -3064,7 +3061,7 @@
                                 <rect key="frame" x="19" y="135.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="InsuranceCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2LV-D8-229" customClass="InsuranceCompanyTableViewCell" customModule="Galen" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsuranceCompanyTableViewCell" id="2LV-D8-229" customClass="InsuranceCompanyTableViewCell" customModule="Galen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2LV-D8-229" id="tMc-OH-Hb5">
@@ -3103,11 +3100,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="BtnCheckBox" destination="MA8-dc-P5k" id="sFE-xR-SBX"/>
-                                            <outlet property="LblInsuranceCompanyName" destination="EUU-PU-w1S" id="6gS-8y-BPj"/>
-                                            <outlet property="image" destination="fAk-Gd-yoq" id="Gg5-wX-EZU"/>
-                                            <outlet property="imgInsuranceCompany" destination="fAk-Gd-yoq" id="A9c-zi-mx7"/>
-                                            <outlet property="insuranceCompanyName" destination="EUU-PU-w1S" id="2ju-Te-0al"/>
+                                            <outlet property="BtnCheckBox" destination="MA8-dc-P5k" id="EuE-70-qRU"/>
+                                            <outlet property="LblInsuranceCompanyName" destination="EUU-PU-w1S" id="h8E-WE-QZz"/>
+                                            <outlet property="imgInsuranceCompany" destination="fAk-Gd-yoq" id="bT7-Ab-XlF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -4166,7 +4161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axP-9A-cbj">
-                                <rect key="frame" x="19" y="135.5" width="337.5" height="467"/>
+                                <rect key="frame" x="19" y="91.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuSelectGovsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jas-eP-FIl" customClass="MenuSelectGovsTableViewCell" customModule="Galen" customModuleProvider="target">
@@ -4213,7 +4208,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="اختار المحافظة" translatesAutoresizingMaskIntoConstraints="NO" id="2WP-oc-9eB">
-                                <rect key="frame" x="19" y="74" width="337.5" height="46.5"/>
+                                <rect key="frame" x="19" y="30" width="337.5" height="46.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -4255,7 +4250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gpr-zd-pYO">
-                                <rect key="frame" x="19" y="135.5" width="337.5" height="467"/>
+                                <rect key="frame" x="19" y="91.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuSelectCountryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TyN-an-RC0" customClass="MenuSelectCountryTableViewCell" customModule="Galen" customModuleProvider="target">
@@ -4302,7 +4297,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="اختار البلد" translatesAutoresizingMaskIntoConstraints="NO" id="aPj-9d-JRG">
-                                <rect key="frame" x="19" y="74" width="337.5" height="46.5"/>
+                                <rect key="frame" x="19" y="30" width="337.5" height="46.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -4344,7 +4339,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w2E-Et-OiU">
-                                <rect key="frame" x="19" y="135.5" width="337.5" height="467"/>
+                                <rect key="frame" x="19" y="91.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuSelectAreaCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VyK-rR-Dxu" customClass="MenuSelectAreaTableViewCell" customModule="Galen" customModuleProvider="target">
@@ -4391,7 +4386,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="اختار المنطقة" translatesAutoresizingMaskIntoConstraints="NO" id="beE-we-W5d">
-                                <rect key="frame" x="19" y="74" width="337.5" height="46.5"/>
+                                <rect key="frame" x="19" y="30" width="337.5" height="46.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -4433,7 +4428,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Bc-ba-POT">
-                                <rect key="frame" x="19" y="135.5" width="337.5" height="467"/>
+                                <rect key="frame" x="19" y="91.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="menuInsuranceCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="t1M-Zg-Www" customClass="menuInsuranceCompaniesVC2TableViewCell" customModule="Galen" customModuleProvider="target">
@@ -4489,7 +4484,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="ابحث عن شركة تأمين" translatesAutoresizingMaskIntoConstraints="NO" id="C0l-yd-e5w">
-                                <rect key="frame" x="19" y="74" width="337.5" height="46.5"/>
+                                <rect key="frame" x="19" y="30" width="337.5" height="46.5"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
