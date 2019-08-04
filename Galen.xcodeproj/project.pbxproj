@@ -176,6 +176,9 @@
 		DCC728E022F1CE16007C1919 /* TicketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728DF22F1CE16007C1919 /* TicketResponse.swift */; };
 		DCC728E222F1CE4A007C1919 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728E122F1CE4A007C1919 /* TicketService.swift */; };
 		DCC728E422F1CEAB007C1919 /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728E322F1CEAB007C1919 /* TicketPresenter.swift */; };
+		DCFA2A0822F71B0B007FB641 /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA2A0722F71B0B007FB641 /* DoctorService.swift */; };
+		DCFA2A0A22F71B2D007FB641 /* DoctorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA2A0922F71B2D007FB641 /* DoctorResponse.swift */; };
+		DCFA2A0C22F71B45007FB641 /* DoctorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA2A0B22F71B45007FB641 /* DoctorPresenter.swift */; };
 		DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD6EBB22EA51E60031A855 /* PatientService.swift */; };
 /* End PBXBuildFile section */
 
@@ -356,6 +359,9 @@
 		DCC728DF22F1CE16007C1919 /* TicketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketResponse.swift; sourceTree = "<group>"; };
 		DCC728E122F1CE4A007C1919 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		DCC728E322F1CEAB007C1919 /* TicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
+		DCFA2A0722F71B0B007FB641 /* DoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorService.swift; sourceTree = "<group>"; };
+		DCFA2A0922F71B2D007FB641 /* DoctorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorResponse.swift; sourceTree = "<group>"; };
+		DCFA2A0B22F71B45007FB641 /* DoctorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPresenter.swift; sourceTree = "<group>"; };
 		DCFD6EBB22EA51E60031A855 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -807,6 +813,7 @@
 				DC62C87F22F207930050FA38 /* HospitalService.swift */,
 				DC62C88522F20FAF0050FA38 /* InsuranceCompanyService.swift */,
 				DC62C88B22F226490050FA38 /* UserService.swift */,
+				DCFA2A0722F71B0B007FB641 /* DoctorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -845,6 +852,7 @@
 				DC62C88122F207E00050FA38 /* HospitalResponse.swift */,
 				DC62C88722F210C30050FA38 /* InsuranceCompanyResponse.swift */,
 				DC62C88D22F229D90050FA38 /* UserResponse.swift */,
+				DCFA2A0922F71B2D007FB641 /* DoctorResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -860,6 +868,7 @@
 				DC62C88322F208080050FA38 /* HospitalPresenter.swift */,
 				DC62C88922F212290050FA38 /* InsuranceCompanyPresenter.swift */,
 				DC62C88F22F22A480050FA38 /* UserPresenter.swift */,
+				DCFA2A0B22F71B45007FB641 /* DoctorPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -1004,6 +1013,7 @@
 				9635E8D6229C057C003E1BDC /* AppointmentDetailsVC.swift in Sources */,
 				DC62C88422F208080050FA38 /* HospitalPresenter.swift in Sources */,
 				96198A0D22E79E8B00ABABBD /* DoctorRatingVC2.swift in Sources */,
+				DCFA2A0822F71B0B007FB641 /* DoctorService.swift in Sources */,
 				DC493D1522F10CBA0086B64B /* SpecialityPresenter.swift in Sources */,
 				DC493D1322F10C810086B64B /* SpecialityResponse.swift in Sources */,
 				967B322522E848C400A138C5 /* AuthSelectCountryVC2.swift in Sources */,
@@ -1012,6 +1022,7 @@
 				962925AA22CB8E2A00F6C1A4 /* launchAnimation.swift in Sources */,
 				96198A0B22E6447D00ABABBD /* DocDataVC2.swift in Sources */,
 				DC2B336E22EA52B100ACC9B7 /* Patient.swift in Sources */,
+				DCFA2A0C22F71B45007FB641 /* DoctorPresenter.swift in Sources */,
 				96F6E2B422E85C130091AEC9 /* MenuSelectCountryTableViewCell.swift in Sources */,
 				DC62C88A22F212290050FA38 /* InsuranceCompanyPresenter.swift in Sources */,
 				96D41A0F22380270001B0411 /* API+Auth.swift in Sources */,
@@ -1064,6 +1075,7 @@
 				96847ECD22D3D8CC00C13396 /* SignUpVC2.swift in Sources */,
 				96B38C11224AFF82000C132B /* ConfirmReservationVC.swift in Sources */,
 				96B38C06224AAAF6000C132B /* searchResultsVC.swift in Sources */,
+				DCFA2A0A22F71B2D007FB641 /* DoctorResponse.swift in Sources */,
 				96D41A2722380421001B0411 /* PatiantSearchForDoctorVC.swift in Sources */,
 				DCFD6EBC22EA51E60031A855 /* PatientService.swift in Sources */,
 				967B323322E8586300A138C5 /* AuthSelectCountryVC2TableViewCell.swift in Sources */,

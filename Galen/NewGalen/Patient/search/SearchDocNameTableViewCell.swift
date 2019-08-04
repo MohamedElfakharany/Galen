@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchDocNameTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var doctorAvatar: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        doctorAvatar.clipsToBounds = true 
+        doctorAvatar.layer.cornerRadius = doctorAvatar.frame.width/2
+    }
+    
+    func setupCell(doctor: Doctor){
+        
+        LblDocName.text = doctor.name
+        
+        let url = URL(string: "\(URLs.base)\(doctor.imageURL ?? "")")
+        doctorAvatar.kf.indicatorType = .activity
+        doctorAvatar.kf.setImage(with: url)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

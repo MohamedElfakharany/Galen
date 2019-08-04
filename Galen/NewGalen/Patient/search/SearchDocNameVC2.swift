@@ -8,42 +8,24 @@
 
 import UIKit
 
-class SearchDocNameVC2: UIViewController ,UITableViewDataSource , UITableViewDelegate {
-    
-    var DocsArray:[String] = []
-    var SelectedDocs:[String] = []
-    var searching = false
+class SearchDocNameVC2: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var DocNameSearch: UISearchBar!
     
+    var searching = false
+    var presenter: DoctorPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        presenter = DoctorPresenter(delegate: self)
+        presenter.getAllDoctors()
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return SelectedDocs.count
-        }else {
-            return DocsArray.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MyCell = tableView.dequeueReusableCell(withIdentifier: "DocNameCell", for: indexPath) as? InsuranceCompanyTableViewCell
-        
-    //    MyCell?.inittiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: DocsArray[indexPath.row].name! )
-        return MyCell!
-    }
-    
+ 
     // keybord down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -55,20 +37,63 @@ class SearchDocNameVC2: UIViewController ,UITableViewDataSource , UITableViewDel
     }
 }
 
+
+extension SearchDocNameVC2 : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searching ? presenter.searchedDoctors.count : presenter.doctors.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let MyCell = tableView.dequeueReusableCell(withIdentifier: "SearchDocNameTableViewCell", for: indexPath) as? SearchDocNameTableViewCell
+        let doctor = searching ? presenter.searchedDoctors[indexPath.row] : presenter.doctors[indexPath.row]
+        MyCell!.setupCell(doctor: doctor)
+        return MyCell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
+
 extension SearchDocNameVC2: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //  SelectedSpetiality = SpecailityArray.filter{$0.name?.range(of: searchText, options: [.anchored, .caseInsensitive]) != nil }
-        SelectedDocs.removeAll()
-        for insurance in DocsArray {
-//            if insurance.name?.contains(searchText) ?? false{
-//                SelectedDocs.append(insurance)
-//                print(SelectedDocs)
-//                self.tableView.reloadData()
-//            }
-            searching = true
-            self.tableView.reloadData()
-        }
-        
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        presenter.searchDoctors(text: searchBar.text ?? "")
+        searching = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+}
+
+
+
+extension SearchDocNameVC2 : DoctorDelegate {
+    
+    func getAllDoctorsDidSuccess() {
         tableView.reloadData()
     }
+    
+    func getAllDoctorsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    func getSearchDoctorsDidSuccess() {
+        tableView.reloadData()
+    }
+    
+    func getSearchDoctorsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+    
+    
 }
