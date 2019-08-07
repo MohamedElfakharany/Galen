@@ -15,7 +15,7 @@ class SearchInsuranceResultVC2: UIViewController {
   
     var searching = false
     var presenter: InsurancePresenter!
-
+    weak var delegate: SearchDoctorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,8 @@ extension SearchInsuranceResultVC2 : UITableViewDelegate , UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let company = searching ? presenter.searchedCompanies[indexPath.row] : presenter.companies[indexPath.row]
+        delegate?.didChoseInsurance(company: company, viewController: self)
     }
     
 }

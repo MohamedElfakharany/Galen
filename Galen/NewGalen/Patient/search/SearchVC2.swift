@@ -12,12 +12,18 @@ class SearchVC2: UIViewController {
     
     @IBOutlet weak var TxtfieldSearchSpeciality: UITextField!
     @IBOutlet weak var BtnSearchOutlet: UIButton!
+    @IBOutlet weak var searchGovsBtn: UIButton!
+    @IBOutlet weak var searchInsuranceBtn: UIButton!
     
     var pickerView = UIPickerView()
     private var PickerSpeciality: UIPickerView?
     var selectedTxtField = UITextField()
-    var selectedSpeciality = String()
+    var selectedSpeciality : String?
     var presenter: SpecialityPresenter!
+    var hospitalPresenter: HospitalPresenter!
+    var chosenGov: City?
+    var chosenInsurance: InsuranceCompany?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +34,23 @@ class SearchVC2: UIViewController {
         presenter.getAllSpecialities()
         PickerSpeciality = UIPickerView()
         TxtfieldSearchSpeciality.inputView = PickerSpeciality
+        hospitalPresenter = HospitalPresenter(delegate: self)
     }
+    
+    
+    @IBAction func searchGovsBtnPressed(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchGovernatesVC2") as! SearchGovernatesVC2
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func searchInsuranceBtnPressed(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchInsuranceResultVC2") as! SearchInsuranceResultVC2
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     @IBAction func BtnAutoSelect(_ sender: UIButton) {
         
@@ -52,6 +74,31 @@ class SearchVC2: UIViewController {
         self.view.endEditing(true)
         return true
     }
+    
+    
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        calculateSearchParameters()
+    }
+    
+    
+    func calculateSearchParameters(){
+        
+        let parameters : [String : Any] = [
+            "where" : [
+                "gov": [
+                    "id": chosenGov?.cityID
+                ],
+                "insurance_company":[
+                    "id": chosenInsurance?.companyID
+                ]
+            ],
+            "search_doctor": selectedSpeciality
+            ]
+        
+        hospitalPresenter.getAllHospitals(params: parameters)
+    }
+    
+    
 }
 
 
@@ -105,4 +152,49 @@ extension SearchVC2 : SpecialityDelegate {
         showAlert(title: "Error", message: message)
     }
     
+}
+
+
+protocol SearchDoctorDelegate: class {
+    func didChoseGovernorate(gov: City, viewController: UIViewController)
+    func didChoseInsurance(company: InsuranceCompany, viewController: UIViewController)
+}
+
+
+extension SearchVC2: SearchDoctorDelegate {
+    
+    func didChoseGovernorate(gov: City, viewController: UIViewController) {
+        chosenGov = gov
+        searchGovsBtn.setTitle(chosenGov?.name, for: .normal)
+        viewController.navigationController?.popViewController(animated: true)
+    }
+    
+    func didChoseInsurance(company: InsuranceCompany, viewController: UIViewController) {
+        chosenInsurance = company
+        searchInsuranceBtn.setTitle(chosenInsurance?.name, for: .normal)
+        viewController.navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
+
+extension SearchVC2: HospitalDelegate {
+    
+    func getAllHospitalsDidSuccess() {
+        
+        var doctors = [Doctor]()
+        for hospital in hospitalPresenter.hospitals {
+            doctors.append(contentsOf: hospital.doctorList ?? [])
+        }
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchDocsResultsVC2") as! SearchDocsResultsVC2
+        vc.doctors = doctors
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func getAllHospitalsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
+
 }

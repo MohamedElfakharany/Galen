@@ -15,6 +15,7 @@ class SearchGovernatesVC2: UIViewController {
     
     var searching = false
     var presenter: GovernoratePresenter!
+    weak var delegate: SearchDoctorDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,8 @@ extension SearchGovernatesVC2 : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let gov = searching ? presenter.searchedGovs[indexPath.row] : presenter.govs[indexPath.row]
+        delegate?.didChoseGovernorate(gov: gov, viewController: self)
     }
 }
 
