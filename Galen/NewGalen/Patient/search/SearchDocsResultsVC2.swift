@@ -38,7 +38,10 @@ extension SearchDocsResultsVC2 : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchDocsResultsTableViewCell", for: indexPath) as! SearchDocsResultsTableViewCell
         cell.setupCell(doctors[indexPath.row])
         cell.makeReservation = { [weak self] in
-            
+            let doc = self?.doctors[indexPath.row]
+            let vc = self?.storyboard?.instantiateViewController(withIdentifier: "DocDataVC2") as! DocDataVC2
+            vc.passedDoctor = doc
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }
@@ -47,7 +50,4 @@ extension SearchDocsResultsVC2 : UITableViewDelegate, UITableViewDataSource {
         return 190
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }

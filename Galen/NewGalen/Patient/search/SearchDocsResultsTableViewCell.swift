@@ -29,6 +29,7 @@ class SearchDocsResultsTableViewCell: UITableViewCell {
         
         BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
+        selectionStyle = .none
     }
     
     func setupCell(_ doc: Doctor){

@@ -57,6 +57,10 @@ extension SearchDocNameVC2 : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let doctor = searching ? presenter.searchedDoctors[indexPath.row] : presenter.doctors[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DocDataVC2") as! DocDataVC2
+        vc.passedDoctor = doctor
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

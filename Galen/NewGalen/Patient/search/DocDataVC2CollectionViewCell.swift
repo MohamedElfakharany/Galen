@@ -9,6 +9,7 @@
 import UIKit
 
 class DocDataVC2CollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var LblTicketDay: UILabel!
     @IBOutlet weak var LblTicketDate: UILabel!
     @IBOutlet weak var LblTicketPeriod: UILabel!
@@ -24,5 +25,6 @@ class DocDataVC2CollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func BtnReservation(_ sender: Any) {
+        
     }
 }
