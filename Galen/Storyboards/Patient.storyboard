@@ -1297,7 +1297,7 @@
                                 <rect key="frame" x="16" y="140" width="343" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="InsuranceCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="190" id="Isf-Mo-gIe" customClass="SearchDocsResultsTableViewCell" customModule="Galen" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchDocsResultsTableViewCell" rowHeight="190" id="Isf-Mo-gIe" customClass="SearchDocsResultsTableViewCell" customModule="Galen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Isf-Mo-gIe" id="fdv-dg-iAZ">
@@ -1449,6 +1449,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gw5-6B-koz" id="Vnb-Ic-vSX"/>
+                                    <outlet property="delegate" destination="Gw5-6B-koz" id="UpW-39-wWK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

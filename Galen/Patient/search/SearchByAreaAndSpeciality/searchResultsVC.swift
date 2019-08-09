@@ -96,10 +96,14 @@ class searchResultsVC: UIViewController {
 
 extension searchResultsVC: HospitalDelegate {
     
-    func getAllHospitalsDidSuccess() {
+    func getAllHospitalsDidSuccess() {        
         for hospital in hospitalPresenter.hospitals {
-            for doc in hospital.doctorList! {
-                self.ResultedDoctors.append(doc)
+            if let doctorList = hospital.doctorList {
+                for list in doctorList {
+                    if let doctor = list.doctor {
+                        self.ResultedDoctors.append(doctor)
+                    }
+                }
             }
         }
     }

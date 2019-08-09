@@ -13,7 +13,7 @@ class Doctor: Mappable {
    
     var id: Int!
     var name: String!
-    var doctorID: String!
+    var doctorID: String?
     var imageURL: String?
     var rating: Int?
     var acceptDiscount: Bool?
@@ -23,6 +23,7 @@ class Doctor: Mappable {
     var notes, graduated: String?
     var specialty: Speciality?
     var hospital: Hospital?
+    var clinic: Clinic?
     
     
     required init(map: Mapper) throws {
@@ -39,6 +40,18 @@ class Doctor: Mappable {
         graduated = map.optionalFrom("graduated")
         specialty = map.optionalFrom("specialty")
         hospital = map.optionalFrom("hospital")
+        clinic = map.optionalFrom("clinic")
     }
     
+}
+
+
+
+class DoctorList: Mappable {
+   
+    var doctor: Doctor?
+    
+    required init(map: Mapper) throws {
+        doctor = map.optionalFrom("doctor")
+    }
 }

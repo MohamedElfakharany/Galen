@@ -86,15 +86,16 @@ class SearchVC2: UIViewController {
         let parameters : [String : Any] = [
             "where" : [
                 "gov": [
-                    "id": chosenGov?.cityID
+                    "id": 1 //chosenGov?.cityID
                 ],
                 "insurance_company":[
-                    "id": chosenInsurance?.companyID
+                    "id": nil //chosenInsurance?.companyID
                 ]
-            ],
-            "search_doctor": selectedSpeciality
+                ]
             ]
         
+//        "search_doctor": selectedSpeciality
+
         hospitalPresenter.getAllHospitals(params: parameters)
     }
     
@@ -185,7 +186,13 @@ extension SearchVC2: HospitalDelegate {
         
         var doctors = [Doctor]()
         for hospital in hospitalPresenter.hospitals {
-            doctors.append(contentsOf: hospital.doctorList ?? [])
+            if let doctorList = hospital.doctorList {
+                for list in doctorList {
+                    if let doctor = list.doctor {
+                        doctors.append(doctor)
+                    }
+                }
+            }
         }
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchDocsResultsVC2") as! SearchDocsResultsVC2

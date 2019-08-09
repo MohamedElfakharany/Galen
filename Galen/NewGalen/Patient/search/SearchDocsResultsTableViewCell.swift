@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchDocsResultsTableViewCell: UITableViewCell {
 
@@ -19,21 +20,33 @@ class SearchDocsResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var LblDocAvilability: UILabel!
     @IBOutlet weak var BtnReservationOutlet: UIButton!
     
+    
+    var makeReservation: (()->())?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
+    }
+    
+    func setupCell(_ doc: Doctor){
         
+        LblDocName.text = doc.name
+        LblDocRate.text = "\(doc.rating ?? 0)"
+        LblDocSpeciality.text = doc.specialty?.name
+        LblDocAddress.text = doc.clinic?.address
+        LblDocPrice.text = " سعر الكشف : \(doc.fee ?? 0)"
+//        LblDocAvilability.text = doc.
+        
+        let url = URL(string: "\(URLs.base)\(doc.imageURL ?? "")")
+        DocImage.kf.indicatorType = .activity
+        DocImage.kf.setImage(with: url)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+   
     @IBAction func BtnReservation(_ sender: Any) {
+        makeReservation?()
     }
     
 }

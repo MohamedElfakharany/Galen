@@ -20,9 +20,9 @@ class Hospital: Mappable {
     var permissions: [String]?
     var userInfo, addedUserInfo, addUserInfo, editUserInfo: UserInfo?
     var hospitalName, hospitalMobile, hospitalUserName, hospitalPassword: String?
-    var doctorList: [Doctor]?
+    var doctorList: [DoctorList]?
     var insuranceCompanyList: [InsuranceCompany]?
-    var nurseList : [String]?   //TODO: check nurse model
+    var nurseList : [NurseList]? 
     var active: Bool?
     var latitude, longitude: String?
     var gov, city: City?

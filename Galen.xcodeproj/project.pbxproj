@@ -169,6 +169,7 @@
 		DC69D47822ECC56A000BA5BD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47722ECC56A000BA5BD /* Gender.swift */; };
 		DC69D47C22ECC6F7000BA5BD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47B22ECC6F7000BA5BD /* City.swift */; };
 		DC69D47E22ECD078000BA5BD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47D22ECD078000BA5BD /* Doctor.swift */; };
+		DC9C4A8E22FDB60C004601F8 /* Nurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C4A8D22FDB60C004601F8 /* Nurse.swift */; };
 		DCC728D822F1C03D007C1919 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728D722F1C03D007C1919 /* Ticket.swift */; };
 		DCC728DA22F1C6E0007C1919 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728D922F1C6E0007C1919 /* Time.swift */; };
 		DCC728DC22F1CB9B007C1919 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728DB22F1CB9B007C1919 /* Shift.swift */; };
@@ -357,6 +358,7 @@
 		DC69D47722ECC56A000BA5BD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		DC69D47B22ECC6F7000BA5BD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		DC69D47D22ECD078000BA5BD /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		DC9C4A8D22FDB60C004601F8 /* Nurse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nurse.swift; sourceTree = "<group>"; };
 		DCC728D722F1C03D007C1919 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		DCC728D922F1C6E0007C1919 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		DCC728DB22F1CB9B007C1919 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
@@ -838,6 +840,7 @@
 				DC69D47722ECC56A000BA5BD /* Gender.swift */,
 				DC69D47B22ECC6F7000BA5BD /* City.swift */,
 				DC69D47D22ECD078000BA5BD /* Doctor.swift */,
+				DC9C4A8D22FDB60C004601F8 /* Nurse.swift */,
 				DC67723522ECEE9F00EF79E1 /* UserInfo.swift */,
 				DC67723722ECFEB200EF79E1 /* Specialty.swift */,
 				DC67723922ED01E600EF79E1 /* Review.swift */,
@@ -1106,6 +1109,7 @@
 				963C61682275D8AC00FB000A /* CameraHandler.swift in Sources */,
 				DC62C89022F22A480050FA38 /* UserPresenter.swift in Sources */,
 				96D41A17223802FF001B0411 /* textImage.swift in Sources */,
+				DC9C4A8E22FDB60C004601F8 /* Nurse.swift in Sources */,
 				96D419FD22380199001B0411 /* Galen.xcdatamodeld in Sources */,
 				967F9BB522E8981100E7008C /* AuthInsuranceCompaniesVC2TableViewCell.swift in Sources */,
 				96B38C15224B0035000C132B /* ChooseYourDoctorVC.swift in Sources */,
