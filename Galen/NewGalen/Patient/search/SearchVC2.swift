@@ -86,15 +86,14 @@ class SearchVC2: UIViewController {
         let parameters : [String : Any] = [
             "where" : [
                 "gov": [
-                    "id": 1 //chosenGov?.cityID
+                    "id": chosenGov?.cityID
                 ],
                 "insurance_company":[
-                    "id": nil //chosenInsurance?.companyID
+                    "id": chosenInsurance?.companyID
                 ]
-                ]
+                ],
+                "search_doctor": selectedSpeciality
             ]
-        
-//        "search_doctor": selectedSpeciality
 
         hospitalPresenter.getAllHospitals(params: parameters)
     }
