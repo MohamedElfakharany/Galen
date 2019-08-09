@@ -1801,8 +1801,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R7E-vI-BC2" customClass="DocDataVC2CollectionView" customModule="Galen" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="285.5" width="345" height="108.5"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Hk-KY-RnL">
+                                        <rect key="frame" x="15" y="285.5" width="345" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="ifJ-lL-3me"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Hk-KY-RnL">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1810,7 +1814,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DocDataVC2CollectionViewCell" id="sIH-bQ-Hxh" customClass="DocDataVC2CollectionViewCell" customModule="Galen" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="0.0" y="25" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1902,13 +1906,13 @@
                                         </cells>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات عن الطبيب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rP-Am-CuB">
-                                        <rect key="frame" x="100" y="424" width="251" height="24.5"/>
+                                        <rect key="frame" x="100" y="465.5" width="251" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="13"/>
                                         <color key="textColor" red="0.53725490200000003" green="0.53333333329999999" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-Z5-yfY">
-                                        <rect key="frame" x="15" y="456.5" width="345" height="202.5"/>
+                                        <rect key="frame" x="15" y="498" width="345" height="161"/>
                                         <string key="text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء.</string>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1917,7 +1921,6 @@
                                 <constraints>
                                     <constraint firstItem="8rP-Am-CuB" firstAttribute="leading" secondItem="PmM-wH-ZQZ" secondAttribute="leading" constant="100" id="4bD-3v-FP6"/>
                                     <constraint firstAttribute="trailing" secondItem="ei6-hE-8uR" secondAttribute="trailing" constant="15" id="71d-q3-nJX"/>
-                                    <constraint firstItem="R7E-vI-BC2" firstAttribute="height" secondItem="PmM-wH-ZQZ" secondAttribute="height" multiplier="0.13" id="8cD-f2-F56"/>
                                     <constraint firstAttribute="trailing" secondItem="ZSs-en-cfw" secondAttribute="trailing" constant="161.5" id="BCL-b3-fJY"/>
                                     <constraint firstItem="zVX-Z5-yfY" firstAttribute="leading" secondItem="PmM-wH-ZQZ" secondAttribute="leading" constant="15" id="Fgp-ai-Wy1"/>
                                     <constraint firstItem="CzL-M4-NAO" firstAttribute="top" secondItem="PmM-wH-ZQZ" secondAttribute="top" id="Iju-Qi-Itw"/>

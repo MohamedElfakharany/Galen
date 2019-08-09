@@ -24,6 +24,7 @@ class Doctor: Mappable {
     var specialty: Speciality?
     var hospital: Hospital?
     var clinic: Clinic?
+    var info: String?
     
     
     required init(map: Mapper) throws {
@@ -41,6 +42,7 @@ class Doctor: Mappable {
         specialty = map.optionalFrom("specialty")
         hospital = map.optionalFrom("hospital")
         clinic = map.optionalFrom("clinic")
+        info = map.optionalFrom("info")
     }
     
 }

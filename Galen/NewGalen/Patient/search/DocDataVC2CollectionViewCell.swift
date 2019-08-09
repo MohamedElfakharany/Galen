@@ -17,7 +17,7 @@ class DocDataVC2CollectionViewCell: UICollectionViewCell {
     
     
     override func awakeFromNib() {
-        self.awakeFromNib()
+        super.awakeFromNib()
         
         BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
