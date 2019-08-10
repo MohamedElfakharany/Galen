@@ -33,7 +33,7 @@ class DocDataVC2: UIViewController {
         
         let params = ["where" :
                         ["doctor_search" :
-                            ["id": 12]
+                            ["id": 12]  //replace with 12 to test full results //passedDoctor.id
                         ]
                      ]
         presenter = TicketPresenter(delegate: self)
@@ -69,9 +69,13 @@ extension DocDataVC2 : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DocDataVC2CollectionViewCell", for: indexPath) as! DocDataVC2CollectionViewCell
-        cell.setupCell(presenter.tickets[indexPath.item])
+        let ticket = presenter.tickets[indexPath.item]
+        cell.setupCell(ticket)
         cell.makeReservation = { [weak self] in
-            
+            let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ConfirmReservationFromDocDataVC2") as! ConfirmReservationFromDocDataVC2
+            vc.passedTicket = ticket
+            vc.passedDoctor = self?.passedDoctor
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }

@@ -18,9 +18,11 @@ class EnterPersentageCodeVC2: UIViewController {
         
         BtnSendOutlet.layer.cornerRadius = 5
         BtnSendOutlet.clipsToBounds = true
-        
     }
+    
+    
     @IBAction func BtnSend(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     

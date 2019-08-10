@@ -1869,7 +1869,6 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="BtnReservation:" destination="sIH-bQ-Hxh" eventType="touchUpInside" id="Qth-Sj-bsw"/>
-                                                                        <segue destination="slD-XI-v7s" kind="show" id="Qi4-4b-eEr"/>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من 5 م إلى 6 م" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nlo-ds-f2K">
@@ -1980,7 +1979,7 @@
         <!--Confirm Reservation From Doc DataVC2-->
         <scene sceneID="sBf-n5-SQh">
             <objects>
-                <viewController id="slD-XI-v7s" customClass="ConfirmReservationFromDocDataVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmReservationFromDocDataVC2" id="slD-XI-v7s" customClass="ConfirmReservationFromDocDataVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIg-MI-Jv7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2023,37 +2022,17 @@
                                                 <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2X0-5l-bNx">
-                                                <rect key="frame" x="137" y="138" width="101" height="18"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-vj-08C">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="18"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="iup-Dd-BOt">
-                                                        <rect key="frame" x="20" y="0.0" width="20.5" height="18"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="T8I-SR-P3G">
-                                                        <rect key="frame" x="40.5" y="0.0" width="20" height="18"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Nfj-sg-y3B">
-                                                        <rect key="frame" x="60.5" y="0.0" width="20.5" height="18"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CkB-y6-kTe">
-                                                        <rect key="frame" x="81" y="0.0" width="20" height="18"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dS2-OU-wAA">
-                                                <rect key="frame" x="15" y="168" width="109" height="23"/>
+                                                <rect key="frame" x="15" y="168" width="109" height="22.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سعر الكشف: 200 جنية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBy-Q3-HGV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="9"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneyWhite" translatesAutoresizingMaskIntoConstraints="NO" id="eck-wQ-TWb">
-                                                        <rect key="frame" x="98" y="0.0" width="11" height="23"/>
+                                                        <rect key="frame" x="98" y="0.0" width="11" height="22.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -2071,10 +2050,36 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iS-Z3-kq9" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="127.5" y="138" width="120" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" red="0.98431372549999996" green="0.70980392160000005" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                        <color key="value" red="0.98431372549999996" green="0.70980392160000005" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                        <color key="value" red="0.98431372549999996" green="0.70980392160000005" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1065247431" green="0.45399695629999998" blue="0.71816891429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="dS2-OU-wAA" firstAttribute="top" secondItem="2X0-5l-bNx" secondAttribute="bottom" constant="12" id="1rN-Dr-Q5V"/>
                                             <constraint firstAttribute="trailing" secondItem="cDw-32-VBC" secondAttribute="trailing" constant="15" id="3bq-fI-KfR"/>
                                             <constraint firstItem="Y5Y-vN-0Oa" firstAttribute="height" secondItem="dIj-ez-mV9" secondAttribute="height" multiplier="0.08" id="5hz-gg-xVF"/>
                                             <constraint firstItem="w5g-0z-fCU" firstAttribute="top" secondItem="EBh-dl-AkH" secondAttribute="bottom" id="Aoz-hI-wFE"/>
@@ -2086,22 +2091,21 @@
                                             <constraint firstItem="cDw-32-VBC" firstAttribute="leading" secondItem="0kn-Zp-1uH" secondAttribute="trailing" constant="10" id="Jwe-yo-JW0"/>
                                             <constraint firstItem="EBh-dl-AkH" firstAttribute="leading" secondItem="dIj-ez-mV9" secondAttribute="leading" constant="50" id="LfH-Oz-3yU"/>
                                             <constraint firstItem="z2e-sN-PJ6" firstAttribute="width" secondItem="dIj-ez-mV9" secondAttribute="width" multiplier="0.3" id="MiV-mY-u7C"/>
-                                            <constraint firstItem="0kn-Zp-1uH" firstAttribute="top" secondItem="2X0-5l-bNx" secondAttribute="bottom" constant="12" id="NlD-E7-UVK"/>
+                                            <constraint firstItem="1iS-Z3-kq9" firstAttribute="top" secondItem="w5g-0z-fCU" secondAttribute="bottom" constant="10" id="NTV-Iu-nk5"/>
                                             <constraint firstItem="dS2-OU-wAA" firstAttribute="width" secondItem="dIj-ez-mV9" secondAttribute="width" multiplier="0.29" id="O0r-l2-xJO"/>
                                             <constraint firstItem="Y5Y-vN-0Oa" firstAttribute="top" secondItem="dIj-ez-mV9" secondAttribute="top" constant="20" id="PDy-U9-GEP"/>
-                                            <constraint firstItem="cDw-32-VBC" firstAttribute="top" secondItem="2X0-5l-bNx" secondAttribute="bottom" constant="16" id="Q2w-6d-3jG"/>
                                             <constraint firstItem="z2e-sN-PJ6" firstAttribute="top" secondItem="dIj-ez-mV9" secondAttribute="top" constant="22" id="RDL-eu-NkX"/>
-                                            <constraint firstAttribute="trailing" secondItem="2X0-5l-bNx" secondAttribute="trailing" constant="137" id="Sb5-AQ-4PR"/>
+                                            <constraint firstItem="1iS-Z3-kq9" firstAttribute="centerX" secondItem="dIj-ez-mV9" secondAttribute="centerX" id="TP7-N4-HKI"/>
                                             <constraint firstItem="Y5Y-vN-0Oa" firstAttribute="leading" secondItem="dIj-ez-mV9" secondAttribute="leading" constant="15" id="VYV-1U-0dk"/>
                                             <constraint firstItem="0kn-Zp-1uH" firstAttribute="leading" secondItem="dS2-OU-wAA" secondAttribute="trailing" constant="30" id="ZOx-pq-xpH"/>
+                                            <constraint firstItem="dS2-OU-wAA" firstAttribute="top" secondItem="1iS-Z3-kq9" secondAttribute="bottom" constant="10" id="aiG-lN-woV"/>
                                             <constraint firstAttribute="trailing" secondItem="w5g-0z-fCU" secondAttribute="trailing" constant="30" id="dWy-iT-eN2"/>
                                             <constraint firstItem="w5g-0z-fCU" firstAttribute="leading" secondItem="dIj-ez-mV9" secondAttribute="leading" constant="30" id="dec-fq-dQG"/>
                                             <constraint firstAttribute="trailing" secondItem="EBh-dl-AkH" secondAttribute="trailing" constant="50" id="edG-0f-6T3"/>
-                                            <constraint firstItem="2X0-5l-bNx" firstAttribute="height" secondItem="dIj-ez-mV9" secondAttribute="height" multiplier="0.08" id="fqE-Lu-0IJ"/>
-                                            <constraint firstItem="2X0-5l-bNx" firstAttribute="top" secondItem="w5g-0z-fCU" secondAttribute="bottom" constant="10" id="ja6-CZ-lWf"/>
-                                            <constraint firstItem="2X0-5l-bNx" firstAttribute="leading" secondItem="dIj-ez-mV9" secondAttribute="leading" constant="137" id="l5p-sd-Tjh"/>
+                                            <constraint firstItem="0kn-Zp-1uH" firstAttribute="top" secondItem="1iS-Z3-kq9" secondAttribute="bottom" constant="10" id="izs-TN-RV0"/>
                                             <constraint firstAttribute="trailing" secondItem="z2e-sN-PJ6" secondAttribute="trailing" constant="15" id="lEs-mF-bEk"/>
                                             <constraint firstItem="cDw-32-VBC" firstAttribute="height" secondItem="dIj-ez-mV9" secondAttribute="height" multiplier="0.06" id="luX-Ft-sme"/>
+                                            <constraint firstItem="cDw-32-VBC" firstAttribute="top" secondItem="1iS-Z3-kq9" secondAttribute="bottom" constant="14" id="oXv-4q-RRZ"/>
                                             <constraint firstItem="dS2-OU-wAA" firstAttribute="height" secondItem="dIj-ez-mV9" secondAttribute="height" multiplier="0.1" id="xo0-pn-ps1"/>
                                             <constraint firstItem="dS2-OU-wAA" firstAttribute="leading" secondItem="dIj-ez-mV9" secondAttribute="leading" constant="15" id="ztA-P6-mIa"/>
                                         </constraints>
@@ -2194,8 +2198,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="تأكيد الحجز"/>
                                                 <connections>
-                                                    <action selector="BTN:" destination="slD-XI-v7s" eventType="touchUpInside" id="loC-rL-Wdr"/>
-                                                    <segue destination="1mA-QS-C2n" kind="show" id="tGk-rX-xRc"/>
+                                                    <action selector="BtnReservation:" destination="slD-XI-v7s" eventType="touchUpInside" id="149-H5-xZO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGU-3n-lcM">
@@ -2205,8 +2208,7 @@
                                                     <color key="titleColor" red="0.5450980392" green="0.76862745099999996" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="BtnPersentageCode:" destination="slD-XI-v7s" eventType="touchUpInside" id="xW9-hz-0lt"/>
-                                                    <segue destination="lRf-rS-Lt0" kind="show" id="gmA-ce-bo9"/>
+                                                    <action selector="BtnPersentageCode:" destination="slD-XI-v7s" eventType="touchUpInside" id="HFx-eO-vPl"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2257,7 +2259,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="BtnPersentageCodeOutlet" destination="MGU-3n-lcM" id="Xsa-zA-D0R"/>
+                        <outlet property="BtnPersentageCodeOutlet" destination="MGU-3n-lcM" id="Csi-mg-UMF"/>
                         <outlet property="BtnReservationOutlet" destination="WdJ-cU-tjr" id="mNs-nq-SPM"/>
                         <outlet property="DocImage" destination="M9T-08-ozi" id="uMO-W7-oMT"/>
                         <outlet property="LblDocAddress" destination="0kn-Zp-1uH" id="imw-ST-oUD"/>
@@ -2267,11 +2269,7 @@
                         <outlet property="LblTicketDate" destination="KQr-Q6-y2n" id="dKk-O2-LJe"/>
                         <outlet property="LblTicketDay" destination="9wx-JT-S9o" id="eUs-Qo-sVj"/>
                         <outlet property="LblTicketPeriod" destination="oHb-YZ-lX5" id="jYQ-ej-yvM"/>
-                        <outlet property="StarLeft1" destination="Ndw-vj-08C" id="vki-jQ-suB"/>
-                        <outlet property="StarLeft2" destination="iup-Dd-BOt" id="1ko-UI-hzx"/>
-                        <outlet property="StarLeft3" destination="T8I-SR-P3G" id="e4W-H5-uHG"/>
-                        <outlet property="StarLeft4" destination="Nfj-sg-y3B" id="4if-Gc-dgY"/>
-                        <outlet property="StarLeft5" destination="CkB-y6-kTe" id="Txr-Rc-XSK"/>
+                        <outlet property="ratingView" destination="1iS-Z3-kq9" id="ndz-be-Hl8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awm-Jj-ygZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2281,7 +2279,7 @@
         <!--Reservation DoneVC2-->
         <scene sceneID="K2j-Fg-jmr">
             <objects>
-                <viewController id="1mA-QS-C2n" customClass="ReservationDoneVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReservationDoneVC2" id="1mA-QS-C2n" customClass="ReservationDoneVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ekk-eV-2pC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4646,7 +4644,7 @@
         <!--Enter Persentage CodeVC2-->
         <scene sceneID="LwG-ui-Ijd">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="lRf-rS-Lt0" customClass="EnterPersentageCodeVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnterPersentageCodeVC2" modalTransitionStyle="flipHorizontal" id="lRf-rS-Lt0" customClass="EnterPersentageCodeVC2" customModule="Galen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkK-6s-g6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4695,7 +4693,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="BtnSend:" destination="lRf-rS-Lt0" eventType="touchUpInside" id="Hac-fq-WOU"/>
+                                    <action selector="BtnSend:" destination="lRf-rS-Lt0" eventType="touchUpInside" id="mqM-NJ-Y3x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -4718,15 +4716,14 @@
                         <viewLayoutGuide key="safeArea" id="ShZ-zb-DeX"/>
                     </view>
                     <connections>
-                        <outlet property="BtnSend" destination="ups-Lh-kxd" id="XBy-da-x0V"/>
-                        <outlet property="TxtfieldMobile" destination="SnF-Nb-v6e" id="0s0-8T-RBR"/>
+                        <outlet property="BtnSendOutlet" destination="ups-Lh-kxd" id="OXV-y7-otJ"/>
                         <outlet property="TxtfieldPercentageCode" destination="SnF-Nb-v6e" id="Kpf-Sm-j4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3r3-gm-dYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DLZ-Xr-juI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4942" y="4255"/>
+            <point key="canvasLocation" x="4927" y="4255"/>
         </scene>
     </scenes>
     <resources>
