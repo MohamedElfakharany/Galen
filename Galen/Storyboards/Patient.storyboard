@@ -1839,7 +1839,7 @@
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14-7-2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-t1-TsK">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14-7-2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-t1-TsK">
                                                                                     <rect key="frame" x="0.0" y="22" width="100" height="22"/>
                                                                                     <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1856,9 +1856,13 @@
                                                                         <constraint firstAttribute="bottom" secondItem="QU6-1R-agR" secondAttribute="bottom" id="mqj-hK-GLt"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-x9-SVJ">
-                                                                    <rect key="frame" x="29" y="82" width="42" height="18"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-x9-SVJ">
+                                                                    <rect key="frame" x="20" y="78" width="60" height="20"/>
                                                                     <color key="backgroundColor" red="0.1065247431" green="0.45399695629999998" blue="0.71816891429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="Ecj-rQ-kOH"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="hoI-oh-ykf"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                                     <state key="normal" title="احجز الآن">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1868,9 +1872,9 @@
                                                                         <segue destination="slD-XI-v7s" kind="show" id="Qi4-4b-eEr"/>
                                                                     </connections>
                                                                 </button>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من 5 م إلى 6 م" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlo-ds-f2K">
-                                                                    <rect key="frame" x="0.0" y="54" width="100" height="24.5"/>
-                                                                    <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من 5 م إلى 6 م" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nlo-ds-f2K">
+                                                                    <rect key="frame" x="0.0" y="54" width="100" height="22.5"/>
+                                                                    <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
                                                                     <color key="textColor" red="0.53725490196078429" green="0.53333333333333333" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1880,12 +1884,11 @@
                                                                 <constraint firstItem="It3-hr-XcG" firstAttribute="leading" secondItem="lNd-iq-E3h" secondAttribute="leading" id="CqN-gR-KkC"/>
                                                                 <constraint firstItem="It3-hr-XcG" firstAttribute="height" secondItem="lNd-iq-E3h" secondAttribute="height" multiplier="0.4375" id="Gsj-HD-Msu"/>
                                                                 <constraint firstAttribute="trailing" secondItem="It3-hr-XcG" secondAttribute="trailing" id="Msz-OH-m9F"/>
+                                                                <constraint firstItem="ZSn-x9-SVJ" firstAttribute="centerX" secondItem="lNd-iq-E3h" secondAttribute="centerX" id="Njz-5e-l6o"/>
                                                                 <constraint firstItem="nlo-ds-f2K" firstAttribute="top" secondItem="It3-hr-XcG" secondAttribute="bottom" constant="10" id="OLY-4a-k1W"/>
-                                                                <constraint firstAttribute="bottom" secondItem="ZSn-x9-SVJ" secondAttribute="bottom" id="TNI-LW-khe"/>
                                                                 <constraint firstItem="It3-hr-XcG" firstAttribute="top" secondItem="lNd-iq-E3h" secondAttribute="top" id="eEH-fX-raX"/>
-                                                                <constraint firstItem="ZSn-x9-SVJ" firstAttribute="leading" secondItem="lNd-iq-E3h" secondAttribute="leading" constant="29" id="fi9-E8-qjK"/>
                                                                 <constraint firstItem="nlo-ds-f2K" firstAttribute="leading" secondItem="lNd-iq-E3h" secondAttribute="leading" id="pTj-Ki-QnZ"/>
-                                                                <constraint firstAttribute="trailing" secondItem="ZSn-x9-SVJ" secondAttribute="trailing" constant="29" id="uVa-Am-DyK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ZSn-x9-SVJ" secondAttribute="bottom" constant="2" id="wjh-BA-NYY"/>
                                                                 <constraint firstAttribute="trailing" secondItem="nlo-ds-f2K" secondAttribute="trailing" id="wtO-tO-dil"/>
                                                             </constraints>
                                                         </view>

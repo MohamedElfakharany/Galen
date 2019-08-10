@@ -22,6 +22,7 @@ class DocDataVC2: UIViewController {
     @IBOutlet weak var TxtViewReview: UITextView!
     
     var passedDoctor: Doctor!
+    var presenter: TicketPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,14 @@ class DocDataVC2: UIViewController {
         CollectionView.delegate = self
         CollectionView.dataSource = self
         populateDoctorInfo()
+        
+        let params = ["where" :
+                        ["doctor_search" :
+                            ["id": 12]
+                        ]
+                     ]
+        presenter = TicketPresenter(delegate: self)
+        presenter.getAllTickets(params: params)
     }
     
     
@@ -55,11 +64,15 @@ class DocDataVC2: UIViewController {
 extension DocDataVC2 : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return presenter.tickets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DocDataVC2CollectionViewCell", for: indexPath) as! DocDataVC2CollectionViewCell
+        cell.setupCell(presenter.tickets[indexPath.item])
+        cell.makeReservation = { [weak self] in
+            
+        }
         return cell
     }
     
@@ -68,8 +81,19 @@ extension DocDataVC2 : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return CGSize(width: 100, height: 130)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    
+}
+
+
+
+extension DocDataVC2 : TicketDelegate {
+    
+    func getAllTicketsDidSuccess() {
+        CollectionView.reloadData()
+    }
+    
+    func getAllTicketsDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
     }
     
 }

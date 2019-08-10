@@ -28,8 +28,8 @@ class TicketPresenter {
         self.delegate = delegate
     }
     
-    func getAllTickets(){
-        provider.request(.allTickets) { result in
+    func getAllTickets(params : [String: Any]?){
+        provider.request(.allTickets(params: params)) { result in
             switch result {
             case let .success(response):
                 

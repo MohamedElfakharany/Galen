@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum TicketService {
-    case allTickets
+    case allTickets(params: [String: Any]?)
 }
 
 extension TicketService: TargetType {
@@ -33,8 +33,12 @@ extension TicketService: TargetType {
     
     var task: Task {
         switch self {
-        case .allTickets:
-            return .requestPlain
+        case let .allTickets(params):
+            if params == nil {
+                return .requestPlain
+            } else {
+                return .requestParameters(parameters: params!, encoding: JSONEncoding.default)
+            }
         }
     }
     

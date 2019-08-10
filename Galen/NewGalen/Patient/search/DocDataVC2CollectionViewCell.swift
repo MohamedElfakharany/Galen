@@ -15,16 +15,33 @@ class DocDataVC2CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var LblTicketPeriod: UILabel!
     @IBOutlet weak var BtnReservationOutlet: UIButton!
     
+    var makeReservation: (()->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
-        
     }
     
-    @IBAction func BtnReservation(_ sender: Any) {
+    
+    func setupCell(_ ticket: Ticket){
+        LblTicketDay.text = ticket.selectedTime?.day.ar
         
+        var date = ticket.date!
+        if let index = date.range(of: "T")?.lowerBound {
+            let substring = date[..<index]
+            date = String(substring)
+        }
+        LblTicketDate.text = date
+        
+        let from = "\(ticket.selectedTime?.from.hour ?? 0):\(ticket.selectedTime?.from.minute ?? 0)"
+        let to = "\(ticket.selectedTime?.to.hour ?? 0):\(ticket.selectedTime?.to.minute ?? 0)"
+        LblTicketPeriod.text = "من \(from) إلى \(to)"
+    }
+    
+    
+    @IBAction func BtnReservation(_ sender: Any) {
+        makeReservation?()
     }
 }

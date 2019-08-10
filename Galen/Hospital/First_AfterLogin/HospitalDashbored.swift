@@ -41,7 +41,7 @@ class HospitalDashbored: UIViewController {
     
     
     @objc func GetTickets(){
-        ticketPresenter.getAllTickets()
+        ticketPresenter.getAllTickets(params: nil)
     }
     
     

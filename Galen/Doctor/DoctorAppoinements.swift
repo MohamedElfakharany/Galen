@@ -52,7 +52,7 @@ class DoctorAppoinements: UIViewController {
         gradBTNS()
         
         ticketPresenter = TicketPresenter(delegate: self)
-        ticketPresenter.getAllTickets()
+        ticketPresenter.getAllTickets(params: nil)
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -67,7 +67,7 @@ class DoctorAppoinements: UIViewController {
     }
     
     @objc func GetTickets() {
-        ticketPresenter.getAllTickets()
+        ticketPresenter.getAllTickets(params: nil)
     }
     
     
