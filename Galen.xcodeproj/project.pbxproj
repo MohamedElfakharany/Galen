@@ -190,6 +190,7 @@
 
 /* Begin PBXFileReference section */
 		17438C3606885CCECC8DA425 /* Pods_Galen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Galen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DA0A8D622FED06E00BC4C7A /* Galen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Galen.entitlements; sourceTree = "<group>"; };
 		41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.debug.xcconfig"; sourceTree = "<group>"; };
 		943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Galen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Galen/Pods-Galen.release.xcconfig"; sourceTree = "<group>"; };
 		9603F28422D9D4A200D85B52 /* SignInVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC2.swift; sourceTree = "<group>"; };
@@ -688,6 +689,7 @@
 		96D419F322380198001B0411 /* Galen */ = {
 			isa = PBXGroup;
 			children = (
+				2DA0A8D622FED06E00BC4C7A /* Galen.entitlements */,
 				DCFD6EB622EA51870031A855 /* Networking */,
 				96847EC822D3D6C100C13396 /* NewGalen */,
 				962925B522D2CE7100F6C1A4 /* Fontes */,
@@ -925,6 +927,17 @@
 				TargetAttributes = {
 					96D419F022380198001B0411 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.ClassKit = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1330,6 +1343,7 @@
 			baseConfigurationReference = 41D394F0B9BEAB6BA1F50ADA /* Pods-Galen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Galen/Galen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
@@ -1338,7 +1352,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galen.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1350,6 +1364,7 @@
 			baseConfigurationReference = 943F9363C899EED1187A6E68 /* Pods-Galen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Galen/Galen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y29HJ2F46B;
 				INFOPLIST_FILE = Galen/Info.plist;
@@ -1358,7 +1373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.Galen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galen.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
