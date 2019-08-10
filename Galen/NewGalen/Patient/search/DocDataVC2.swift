@@ -8,17 +8,14 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
 
 class DocDataVC2: UIViewController {
     
     @IBOutlet weak var DocImage: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
     @IBOutlet weak var LblDocSpeciality: UILabel!
-    @IBOutlet weak var StarLeft1: UIImageView!
-    @IBOutlet weak var StarLeft2: UIImageView!
-    @IBOutlet weak var StarLeft3: UIImageView!
-    @IBOutlet weak var StarLeft4: UIImageView!
-    @IBOutlet weak var StarLeft5: UIImageView!
+    @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
     @IBOutlet weak var CollectionView: UICollectionView!
@@ -42,6 +39,7 @@ class DocDataVC2: UIViewController {
         LblDocAddress.text = passedDoctor!.clinic?.address
         LblDocPrice.text = " سعر الكشف : \(passedDoctor.fee ?? 0)"
         TxtViewReview.text = passedDoctor.info
+        ratingView.rating = Double(passedDoctor!.rating ?? 0)
         
         let url = URL(string: "\(URLs.base)\(passedDoctor.imageURL ?? "")")
         DocImage.kf.indicatorType = .activity

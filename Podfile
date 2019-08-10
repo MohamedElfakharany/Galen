@@ -6,6 +6,7 @@ target 'Galen' do
   
   pod 'Moya-ModelMapper'
   pod 'Kingfisher'
+  pod 'Cosmos'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'ADCountryPicker'
