@@ -53,6 +53,7 @@ class UserPresenter {
                         dump(data)
                         self.token = data.accessToken
                         UserDefaults.standard.set(data.accessToken!, forKey: "accessToken")
+                        UserDefaults.standard.set(data.user?.userID, forKey: "savedUserID")
                         self.delegate?.loginDidSuccess()
                     }
                 } catch {
@@ -85,6 +86,7 @@ class UserPresenter {
                         dump(data)
                         self.token = nil
                         UserDefaults.standard.removeObject(forKey: "accessToken")
+                        UserDefaults.standard.removeObject(forKey: "savedUserID")
                         self.delegate?.logoutDidSuccess()
                     }
                 } catch {

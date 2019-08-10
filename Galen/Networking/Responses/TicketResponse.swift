@@ -22,3 +22,15 @@ class AllTicketsResponse: Mappable {
     }
     
 }
+
+
+struct updateTicketResponse: Mappable {
+    
+    var done: Bool!
+    var error: String?
+    
+    init(map: Mapper) throws {
+        try done = map.from("done")
+        error = map.optionalFrom("error")
+    }
+}

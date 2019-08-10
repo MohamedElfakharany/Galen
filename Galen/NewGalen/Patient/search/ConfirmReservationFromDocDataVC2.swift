@@ -31,6 +31,7 @@ class ConfirmReservationFromDocDataVC2: UIViewController {
     
     var passedDoctor: Doctor!
     var passedTicket: Ticket!
+    var presenter: TicketPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class ConfirmReservationFromDocDataVC2: UIViewController {
         
         populateDoctorInfo()
         populateTicketInfo()
+        
+        presenter = TicketPresenter(delegate: self)
     }
     
     func populateDoctorInfo(){
@@ -80,7 +83,18 @@ class ConfirmReservationFromDocDataVC2: UIViewController {
     
     
     @IBAction func BtnReservation(_ sender: Any) {
-        //call ticket here
+        
+        let params = [
+            "id": passedTicket.ticketID!
+            ,"Status":[
+                "id":1, //1= book, 2 = cancel, 3= done
+                "name":"booked",
+                "en":"booked",
+                "ar":"محجوز"
+            ]
+            ,"patient":["id": UserDefaults.standard.integer(forKey: "savedUserID") ]
+            ] as [String : Any]
+        presenter.updateTicket(params: params)
     }
     
     @IBAction func BtnPersentageCode(_ sender: Any) {
@@ -89,5 +103,24 @@ class ConfirmReservationFromDocDataVC2: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+}
+
+
+
+extension ConfirmReservationFromDocDataVC2 : TicketDelegate {
+    
+    func getAllTicketsDidSuccess() {}
+    func getAllTicketsDidFail(_ message: String) {}
+    
+    func updateTicketDidSuccess() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ReservationDoneVC2") as! ReservationDoneVC2
+        vc.passedDoctor = passedDoctor
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func updateTicketDidFail(_ message: String) {
+        showAlert(title: "Error", message: message)
+    }
     
 }

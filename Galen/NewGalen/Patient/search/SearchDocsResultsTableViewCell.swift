@@ -26,10 +26,13 @@ class SearchDocsResultsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
+        selectionStyle = .none
+
         BtnReservationOutlet.layer.cornerRadius = 5
         BtnReservationOutlet.clipsToBounds = true
-        selectionStyle = .none
+        DocImage.clipsToBounds = true
+        DocImage.layer.cornerRadius = DocImage.frame.width/2
     }
     
     func setupCell(_ doc: Doctor){
@@ -43,7 +46,8 @@ class SearchDocsResultsTableViewCell: UITableViewCell {
         
         let url = URL(string: "\(URLs.base)\(doc.imageURL ?? "")")
         DocImage.kf.indicatorType = .activity
-        DocImage.kf.setImage(with: url)
+        let image = UIImage(named: "manChoose")
+        DocImage.kf.setImage(with: url, placeholder: image)
     }
    
     @IBAction func BtnReservation(_ sender: Any) {

@@ -165,5 +165,7 @@ extension DoctorAppoinements: TicketDelegate {
         showAlert(title: "Error", message: message)
     }
     
+    func updateTicketDidSuccess() {}
+    func updateTicketDidFail(_ message: String) {}
 }
 

@@ -28,7 +28,8 @@ class SearchDocNameTableViewCell: UITableViewCell {
         
         let url = URL(string: "\(URLs.base)\(doctor.imageURL ?? "")")
         doctorAvatar.kf.indicatorType = .activity
-        doctorAvatar.kf.setImage(with: url)
+        let image = UIImage(named: "manChoose")
+        doctorAvatar.kf.setImage(with: url, placeholder: image)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

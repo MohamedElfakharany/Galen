@@ -45,6 +45,7 @@ class RegisterPresenter {
                         print("Response: ")
                         dump(data)
                         self.user = data.user
+                        UserDefaults.standard.set(data.user?.userID, forKey: "savedUserID")
                         self.delegate?.registerNewPatientDidSuccess()
                     }
                 } catch {

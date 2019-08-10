@@ -12,10 +12,12 @@ class ReservationDoneVC2: UIViewController {
 
     @IBOutlet weak var LblDocName: UILabel!
     
+    var passedDoctor: Doctor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        LblDocName.text = "دكتور \(passedDoctor.name!)"
     }
     
     

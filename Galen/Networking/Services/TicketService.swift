@@ -11,6 +11,7 @@ import Moya
 
 enum TicketService {
     case allTickets(params: [String: Any]?)
+    case updateTicket(params: [String: Any])
 }
 
 extension TicketService: TargetType {
@@ -23,6 +24,8 @@ extension TicketService: TargetType {
         switch self {
         case .allTickets:
             return "/all"
+        case .updateTicket:
+            return "/update"
         }
     }
     
@@ -39,6 +42,8 @@ extension TicketService: TargetType {
             } else {
                 return .requestParameters(parameters: params!, encoding: JSONEncoding.default)
             }
+        case let .updateTicket(params):
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     

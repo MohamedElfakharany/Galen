@@ -14,6 +14,8 @@ import Moya_ModelMapper
 protocol TicketDelegate: class {
     func getAllTicketsDidSuccess()
     func getAllTicketsDidFail(_ message: String)
+    func updateTicketDidSuccess()
+    func updateTicketDidFail(_ message: String)
 }
 
 
@@ -55,6 +57,36 @@ class TicketPresenter {
             case let .failure(error):
                 print("Request Failed. Error: ", error.localizedDescription)
                 self.delegate?.getAllTicketsDidFail(error.localizedDescription)
+            }
+        }
+    }
+    
+    func updateTicket(params : [String: Any]){
+        provider.request(.updateTicket(params: params)) { result in
+            switch result {
+            case let .success(response):
+                
+                let statusCode = response.statusCode
+                print("Status Code: ", statusCode)
+                
+                do {
+                    let data = try response.map(to: updateTicketResponse.self) 
+                    if data.done == false {
+                        print("response status false")
+                        self.delegate?.updateTicketDidFail("Request failed. \(data.error ?? "")")
+                    } else {
+                        print("Response: ")
+                        dump(data)
+                        self.delegate?.updateTicketDidSuccess()
+                    }
+                } catch {
+                    print("Error in parsing JSON")
+                    self.delegate?.updateTicketDidFail("Error in parsing JSON")
+                }
+                
+            case let .failure(error):
+                print("Request Failed. Error: ", error.localizedDescription)
+                self.delegate?.updateTicketDidFail(error.localizedDescription)
             }
         }
     }

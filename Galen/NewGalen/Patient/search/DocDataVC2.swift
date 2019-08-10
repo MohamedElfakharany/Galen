@@ -33,7 +33,7 @@ class DocDataVC2: UIViewController {
         
         let params = ["where" :
                         ["doctor_search" :
-                            ["id": 12]  //replace with 12 to test full results //passedDoctor.id
+                            ["id": passedDoctor.id]  //replace with 12 to test full results //passedDoctor.id
                         ]
                      ]
         presenter = TicketPresenter(delegate: self)
@@ -91,7 +91,7 @@ extension DocDataVC2 : UICollectionViewDelegate, UICollectionViewDataSource, UIC
 
 
 extension DocDataVC2 : TicketDelegate {
-    
+   
     func getAllTicketsDidSuccess() {
         CollectionView.reloadData()
     }
@@ -100,6 +100,8 @@ extension DocDataVC2 : TicketDelegate {
         showAlert(title: "Error", message: message)
     }
     
+    func updateTicketDidSuccess() {}
+    func updateTicketDidFail(_ message: String) {}
 }
 
 
