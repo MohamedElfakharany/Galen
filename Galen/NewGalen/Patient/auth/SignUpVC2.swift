@@ -199,8 +199,8 @@ class SignUpVC2: UIViewController , UITextFieldDelegate{
 extension SignUpVC2 : RegisterDelegate {
     
     func registerNewPatientDidSuccess() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInVC2")
-        navigationController?.pushViewController(vc!, animated: true)
+        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "mainPatientTabbar")
+        navigationController?.pushViewController(tabbar!, animated: true)
     }
     
     func registerNewPatientDidFail(_ message: String) {

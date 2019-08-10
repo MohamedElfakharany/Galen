@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Patient", bundle: nil)
         
-        if UserDefaults.standard.string(forKey: "accessToken") != nil {
+        if UserDefaults.standard.string(forKey: "accessToken") != nil || UserDefaults.standard.integer(forKey: "savedUserID") != 0 {
             let tabbar = storyboard.instantiateViewController(withIdentifier: "mainPatientTabbar")
             let nav = UINavigationController.init(rootViewController: tabbar)
             self.window?.rootViewController = nav
