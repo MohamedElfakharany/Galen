@@ -170,6 +170,7 @@
 		DC69D47C22ECC6F7000BA5BD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47B22ECC6F7000BA5BD /* City.swift */; };
 		DC69D47E22ECD078000BA5BD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D47D22ECD078000BA5BD /* Doctor.swift */; };
 		DC9C4A8E22FDB60C004601F8 /* Nurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C4A8D22FDB60C004601F8 /* Nurse.swift */; };
+		DCA9A34522FF6107004E2E7F /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA9A34422FF6107004E2E7F /* AuthenticationServices.framework */; };
 		DCC728D822F1C03D007C1919 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728D722F1C03D007C1919 /* Ticket.swift */; };
 		DCC728DA22F1C6E0007C1919 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728D922F1C6E0007C1919 /* Time.swift */; };
 		DCC728DC22F1CB9B007C1919 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC728DB22F1CB9B007C1919 /* Shift.swift */; };
@@ -360,6 +361,7 @@
 		DC69D47B22ECC6F7000BA5BD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		DC69D47D22ECD078000BA5BD /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		DC9C4A8D22FDB60C004601F8 /* Nurse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nurse.swift; sourceTree = "<group>"; };
+		DCA9A34422FF6107004E2E7F /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		DCC728D722F1C03D007C1919 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		DCC728D922F1C6E0007C1919 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		DCC728DB22F1CB9B007C1919 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA9A34522FF6107004E2E7F /* AuthenticationServices.framework in Frameworks */,
 				D081CD13F3D2FC0E0F32E277 /* Pods_Galen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,6 +803,7 @@
 		9FF6CA6E3B155ECAB8DA34C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCA9A34422FF6107004E2E7F /* AuthenticationServices.framework */,
 				17438C3606885CCECC8DA425 /* Pods_Galen.framework */,
 			);
 			name = Frameworks;
@@ -928,6 +932,9 @@
 					96D419F022380198001B0411 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.AutoFillCredentialProvider = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};

@@ -12,6 +12,9 @@ class AuthSelectCountryVC2: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var CountrySearch: UISearchBar!
+    
+    weak var delegate: signUpDelegate?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,7 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
+class SignUpVC2: UIViewController , UITextFieldDelegate{
     
     @IBOutlet weak var imageuser: UIImageView!
     @IBOutlet weak var TxtfieldCode: UITextField!
@@ -21,11 +21,15 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
     @IBOutlet weak var TxtfieldInsuranceCompanies: UITextField!
     @IBOutlet weak var TxtfieldBirthDay: UITextField!
     @IBOutlet weak var RegisterBtnOutlet: UIButton!
+    @IBOutlet weak var countryTextField: UITextField!
+    
     
     var iconClick : Bool!
     var iconClick2 : Bool!
     private var datePicker : UIDatePicker?
     var presenter: RegisterPresenter!
+    var countryPicker = UIPickerView()
+    let countries = ["السعودية", "مصر"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +51,10 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
         
         iconClick = true
         iconClick2 = true
+        
+        countryPicker.delegate = self
+        countryPicker.dataSource = self
+        countryTextField.inputView = countryPicker
     }
     
     @IBAction func selectImage(_ sender: Any) {
@@ -86,6 +94,8 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
             showAlert(title: "Error", message: "Password must be 6 charachters at least")
         } else if TxtfieldPassword.text != TxtfieldPassConfirmation.text {
             showAlert(title: "Error", message: "Passwords doesn't match")
+        } else if countryTextField.text!.isEmpty {
+            showAlert(title: "Error", message: "Please chose your country first")
         } else {
             presenter.registerNewPatient(name: TxtfieldName.text!, mobile: TxtfieldMobile.text!, username: TxtfieldEmail.text!, password: TxtfieldPassword.text!)
         }
@@ -161,6 +171,27 @@ class SignUpVC2: UIViewController ,UIPickerViewDelegate, UITextFieldDelegate{
         self.view.endEditing(true)
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openChoseInsurance" {
+            if let vc = segue.destination as? AuthInsuranceCompaniesVC2 {
+                vc.delegate = self
+            }
+        } else if segue.identifier == "openChoseCountry" {
+            if let vc = segue.destination as? AuthSelectCountryVC2 {
+                vc.delegate = self
+            }
+        } else if segue.identifier == "openChoseGov" {
+            if let vc = segue.destination as? AuthSelectGovsVC2 {
+                vc.delegate = self
+            }
+        } else if segue.identifier == "openChoseArea" {
+            if let vc = segue.destination as? AuthSelectAreaVC2 {
+                vc.delegate = self
+            }
+        }
+    }
+    
 }
 
 
@@ -175,5 +206,59 @@ extension SignUpVC2 : RegisterDelegate {
     func registerNewPatientDidFail(_ message: String) {
         showAlert(title: "Error", message: message)
     }
+    
+}
+
+
+extension SignUpVC2: UIPickerViewDelegate ,UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countries.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countries[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        countryTextField.text = countries[row]
+        self.view.endEditing(true)
+    }
+}
+
+
+
+
+
+///for opening 4 different screens(chose country, gov, area, insurance), hidden for now..
+
+protocol signUpDelegate: class {
+    func didChoseInsurance(company: InsuranceCompany, controller: UIViewController)
+    func didChoseGov(gov: City, controller: UIViewController)
+    func didChoseArea(area: Area, controller: UIViewController)
+    func didChoseCountry(country: City, controller: UIViewController)
+}
+
+extension SignUpVC2 : signUpDelegate {
+    
+    func didChoseInsurance(company: InsuranceCompany, controller: UIViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+    
+    func didChoseGov(gov: City, controller: UIViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+    
+    func didChoseArea(area: Area, controller: UIViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+    
+    func didChoseCountry(country: City, controller: UIViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+    
     
 }

@@ -17,6 +17,7 @@ class AuthInsuranceCompaniesVC2: UIViewController {
     var SelectedInsurance:[InsuranceCompany] = []
     var searching = false
     var presenter: InsurancePresenter!
+    weak var delegate: signUpDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ extension AuthInsuranceCompaniesVC2: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MyCell = tableView.dequeueReusableCell(withIdentifier: "AuthInsuranceCell", for: indexPath) as? AuthInsuranceCompaniesVC2TableViewCell
+        let MyCell = tableView.dequeueReusableCell(withIdentifier: "AuthInsuranceCompaniesVC2TableViewCell", for: indexPath) as? AuthInsuranceCompaniesVC2TableViewCell
         
         MyCell?.inittiateCell(image: #imageLiteral(resourceName: "calendar-times") , label: InsuranceArray[indexPath.row].name! )
         return MyCell!
