@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppoinmemntCell" id="JDO-RL-gdl" userLabel="AppoinmemntCellVC2" customClass="AppointmentCollectionViewCellVC2" customModule="Galen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="130" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-mc-gRW">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="114"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fA-Pi-EDf">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="102"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-j3-AMv">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="102"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-kn-5QB">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="51"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oFY-Lh-JtH">
+                                                        <rect key="frame" x="0.0" y="2" width="130" height="48"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الثلاثاء" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiB-uj-7jg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="24"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14-7-2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHN-t6-G97">
+                                                                <rect key="frame" x="0.0" y="24" width="130" height="24"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.32156862749999998" green="0.32549019610000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="oFY-Lh-JtH" firstAttribute="leading" secondItem="8P6-kn-5QB" secondAttribute="leading" id="6Iv-tp-y1f"/>
+                                                    <constraint firstItem="oFY-Lh-JtH" firstAttribute="top" secondItem="8P6-kn-5QB" secondAttribute="top" constant="2" id="Bb4-kN-UtK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oFY-Lh-JtH" secondAttribute="bottom" constant="1" id="HeI-OH-Q6V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oFY-Lh-JtH" secondAttribute="trailing" id="nNj-vD-tXK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-RR-seg">
+                                                <rect key="frame" x="0.0" y="51" width="130" height="51"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من 5 م إلى 6 م" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV3-G0-eVa">
+                                                        <rect key="frame" x="12.5" y="5" width="105" height="24"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
+                                                        <color key="textColor" red="0.53725490196078429" green="0.53333333333333333" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="UV3-G0-eVa" firstAttribute="top" secondItem="oRh-RR-seg" secondAttribute="top" constant="5" id="5xg-FY-0tt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UV3-G0-eVa" secondAttribute="trailing" constant="12.5" id="7kB-XE-ZrA"/>
+                                                    <constraint firstItem="UV3-G0-eVa" firstAttribute="height" secondItem="oRh-RR-seg" secondAttribute="height" multiplier="0.470588" id="BcS-Yg-IvH"/>
+                                                    <constraint firstItem="UV3-G0-eVa" firstAttribute="leading" secondItem="oRh-RR-seg" secondAttribute="leading" constant="12.5" id="a1E-4e-ACU"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bgS-j3-AMv" firstAttribute="leading" secondItem="4fA-Pi-EDf" secondAttribute="leading" id="2am-4F-epT"/>
+                                    <constraint firstAttribute="bottom" secondItem="bgS-j3-AMv" secondAttribute="bottom" id="KSv-Fl-Fcb"/>
+                                    <constraint firstAttribute="trailing" secondItem="bgS-j3-AMv" secondAttribute="trailing" id="cIh-lD-EcW"/>
+                                    <constraint firstItem="bgS-j3-AMv" firstAttribute="top" secondItem="4fA-Pi-EDf" secondAttribute="top" id="xtZ-kw-lwW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdh-4h-WBn">
+                                <rect key="frame" x="23.5" y="90" width="83" height="24"/>
+                                <color key="backgroundColor" red="0.54642635579999999" green="0.76919680830000003" blue="0.26024228329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="11"/>
+                                <state key="normal" title="تم الكشف">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnStatuesAction:" destination="JDO-RL-gdl" eventType="touchUpInside" id="DiV-Ox-72I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="4fA-Pi-EDf" firstAttribute="top" secondItem="XeQ-mc-gRW" secondAttribute="top" id="1Nl-uD-Vsk"/>
+                            <constraint firstAttribute="bottom" secondItem="Qdh-4h-WBn" secondAttribute="bottom" id="E0c-Jo-5fr"/>
+                            <constraint firstItem="4fA-Pi-EDf" firstAttribute="leading" secondItem="XeQ-mc-gRW" secondAttribute="leading" id="IZD-iX-Dt5"/>
+                            <constraint firstItem="Qdh-4h-WBn" firstAttribute="centerX" secondItem="4fA-Pi-EDf" secondAttribute="centerX" id="O3v-KW-fOb"/>
+                            <constraint firstItem="Qdh-4h-WBn" firstAttribute="top" secondItem="UV3-G0-eVa" secondAttribute="bottom" constant="10" id="P7w-26-06m"/>
+                            <constraint firstItem="Qdh-4h-WBn" firstAttribute="width" secondItem="XeQ-mc-gRW" secondAttribute="width" multiplier="0.636364" id="UTv-fx-mR4"/>
+                            <constraint firstAttribute="bottom" secondItem="4fA-Pi-EDf" secondAttribute="bottom" constant="12" id="jDH-1G-Uma"/>
+                            <constraint firstAttribute="trailing" secondItem="4fA-Pi-EDf" secondAttribute="trailing" id="whq-5u-mzv"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="XeQ-mc-gRW" firstAttribute="leading" secondItem="JDO-RL-gdl" secondAttribute="leading" id="53h-dU-g10"/>
+                <constraint firstItem="XeQ-mc-gRW" firstAttribute="top" secondItem="JDO-RL-gdl" secondAttribute="top" id="FFU-aa-esn"/>
+                <constraint firstAttribute="trailing" secondItem="XeQ-mc-gRW" secondAttribute="trailing" id="Qx3-xN-lBk"/>
+                <constraint firstAttribute="bottom" secondItem="XeQ-mc-gRW" secondAttribute="bottom" id="xCU-ve-6RG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ape-RU-cgC"/>
+            <size key="customSize" width="130" height="114"/>
+            <connections>
+                <outlet property="BtnStatuesOutlet" destination="Qdh-4h-WBn" id="tvg-Ll-VaL"/>
+                <outlet property="CellView" destination="4fA-Pi-EDf" id="yLG-J8-cax"/>
+                <outlet property="LblDate" destination="NHN-t6-G97" id="QMd-LM-XM9"/>
+                <outlet property="LblDay" destination="SiB-uj-7jg" id="ZNn-Um-WBd"/>
+                <outlet property="LblTime" destination="UV3-G0-eVa" id="f2G-NX-V7s"/>
+            </connections>
+            <point key="canvasLocation" x="-73.599999999999994" y="479.46026986506752"/>
+        </collectionViewCell>
+    </objects>
+</document>

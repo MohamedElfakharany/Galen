@@ -10,5 +10,6 @@ target 'Galen' do
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'ADCountryPicker'
-
+  pod 'SwiftLint'
+  
 end

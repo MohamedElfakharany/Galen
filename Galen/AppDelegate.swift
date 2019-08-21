@@ -22,20 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Patient", bundle: nil)
         
-        if UserDefaults.standard.string(forKey: "accessToken") != nil || UserDefaults.standard.integer(forKey: "savedUserID") != 0 {
-            let tabbar = storyboard.instantiateViewController(withIdentifier: "mainPatientTabbar")
-            let nav = UINavigationController.init(rootViewController: tabbar)
-            self.window?.rootViewController = nav
-        } else {
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC2")
-            let nav = UINavigationController.init(rootViewController: initialViewController)
-            self.window?.rootViewController = nav
-        }
-
+        let storyboard = UIStoryboard(name: "NewHospital", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HFirstVC2")
+        
+        let navigationController = UINavigationController.init(rootViewController: initialViewController)
+        
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
+        
+//        let storyboard = UIStoryboard(name: "Patient", bundle: nil)
+//
+//        if UserDefaults.standard.string(forKey: "accessToken") != nil || UserDefaults.standard.integer(forKey: "savedUserID") != 0 {
+//            let tabbar = storyboard.instantiateViewController(withIdentifier: "mainPatientTabbar")
+//            let nav = UINavigationController.init(rootViewController: tabbar)
+//            self.window?.rootViewController = nav
+//        } else {
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC2")
+//            let nav = UINavigationController.init(rootViewController: initialViewController)
+//            self.window?.rootViewController = nav
+//        }
+//
+//        self.window?.makeKeyAndVisible()
+//
 //        if helper.getAPIToken().role == "doctor" {
 //            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DocAppoinment")
 //            window?.rootViewController = tab
